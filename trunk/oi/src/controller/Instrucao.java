@@ -6,7 +6,7 @@ public class Instrucao {
 	
 	private Arquitetura arquitetura;
 	private Conversor conversor;
-
+ 
 	public Instrucao(){
 		arquitetura = new Arquitetura();
 	}
