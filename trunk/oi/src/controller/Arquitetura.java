@@ -19,6 +19,7 @@ import model.ULA;
 	private int modo;
 	private Conversor conversor;
 	*/
+	public view.PainelBaixo painelBaixo;
 	public view.PainelULA ulaGrafica;
 	public Registrador r0, r1, r2, r3, r4, rx, ry, pc, rDado, rEnd, ir;
 	public Multiplexador mux, muxA, muxB;
@@ -52,7 +53,8 @@ import model.ULA;
 		memoriaDeControle = new MemoriaDeControle();
 		modo = Constantes.RODAPROGRAMA;
 		conversor = new Conversor();
-		ulaGrafica = new view.PainelULA();
+		ulaGrafica = null;
+		painelBaixo = null;
 	}
 	
 	public void setULA(boolean multiplexador){
@@ -306,6 +308,8 @@ import model.ULA;
 	public void atualizaPainel(){
 		mostraPontosDeControle();
 		atualizaRegistradores();
+		ulaGrafica.atualizarConteudo();
+		painelBaixo.atualizarConteudo();
 	}
 	
 	public void mostraPontosDeControle(){
@@ -551,6 +555,18 @@ import model.ULA;
 
 	public void setUlaGrafica(view.PainelULA ulaGrafica) {
 		this.ulaGrafica = ulaGrafica;
+	}
+
+	public void setPainelBaixo(view.PainelBaixo painelBaixo) {
+		this.painelBaixo = painelBaixo;
+	}
+	
+	public void zeraPontosDeControle(){
+		
+		for(int i = 0; i < pontosDeControle.length;i++){
+			pontosDeControle[i] = false;
+		}
+		
 	}
 	
 }

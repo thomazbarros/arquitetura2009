@@ -2,14 +2,11 @@ package view;
 
 import java.awt.Dimension;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import controller.ManipulaMemoria;
-import javax.swing.JButton;
-import java.awt.Rectangle;
-import java.awt.FlowLayout;
+import controller.RodaPrograma;
 
 public class PainelBase extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -18,6 +15,7 @@ public class PainelBase extends JPanel {
 	private PainelBaixo painelBaixo; //= new PainelBaixo();
 	private PainelULA painelULA;
 	public  JScrollPane scroll;
+	public RodaPrograma rodaPrograma;
 	/**
 	 * This method initializes painelbase	
 	 * 	
@@ -26,9 +24,10 @@ public class PainelBase extends JPanel {
 	/*public PainelBase(ManipulaMemoria manipulaMemoria){
 		this.manipulaMemoria = manipulaMemoria;
 	}*/
-	public PainelBase(ManipulaMemoria manipulaMemoria){
+	public PainelBase(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){
 		this.manipulaMemoria = manipulaMemoria;
-		painelBaixo = new PainelBaixo(manipulaMemoria);
+		this.rodaPrograma = rodaPrograma;
+		painelBaixo = new PainelBaixo(manipulaMemoria,rodaPrograma);
 
 		painelBaixo.reshape(0,400,1024,300);
 		painelULA = new PainelULA();
@@ -41,7 +40,7 @@ public class PainelBase extends JPanel {
 		this.add(scroll);
 		this.add(painelBaixo);
 		manipulaMemoria.getArquitetura().setUlaGrafica(painelULA);
-		
+		manipulaMemoria.getArquitetura().setPainelBaixo(painelBaixo);
 	}
 	public PainelBaixo getPainelBaixo() {
 		return painelBaixo;
