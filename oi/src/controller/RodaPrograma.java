@@ -25,6 +25,7 @@ public class RodaPrograma {
 			arquitetura.buscaInstrucao();
 			instrucao = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor());
 		}
+		manipulaMemoria.getArquitetura().zeraPontosDeControle();
 		manipulaMemoria.getArquitetura().atualizaPainel();
 		////System.out.println("R0 depois:"+arquitetura.getR0().getValor());
 		////System.out.println(arquitetura.getR1().getValor());

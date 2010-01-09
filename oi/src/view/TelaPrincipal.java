@@ -53,7 +53,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 	private void initialize(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma) {
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
-		painelbase = new PainelBase(manipulaMemoria);
+		painelbase = new PainelBase(manipulaMemoria,rodaPrograma);
 		try {
 			javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager
 					.getSystemLookAndFeelClassName());
@@ -266,13 +266,14 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 				painelbase.getPainelBaixo().preencheCache();
 				painelbase.getPainelBaixo().preencheMicroprograma(file.getPath());
 				painelbase.getPainelBaixo().preenchePSW();
-				rodaPrograma.rodar();
-				manipulaMemoria.getArquitetura().atualizaPainel();
-				System.out.println(manipulaMemoria.getArquitetura().getR0().getValor());
+				//rodaPrograma.rodar();
+				//manipulaMemoria.getArquitetura().atualizaPainel();
+				/*System.out.println(manipulaMemoria.getArquitetura().getR0().getValor());
 				System.out.println(manipulaMemoria.getArquitetura().getR1().getValor());
 				System.out.println(manipulaMemoria.getArquitetura().getR2().getValor());
 				System.out.println(manipulaMemoria.getArquitetura().getR3().getValor());
 				System.out.println(manipulaMemoria.getArquitetura().getR4().getValor());
+				*/
 				fileChooser.setSelectedFile(null);
 
 			} catch (Exception e2) {

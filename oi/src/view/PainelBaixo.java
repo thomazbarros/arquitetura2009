@@ -1,5 +1,6 @@
 package view;
  
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import javax.swing.JTextField;
 import controller.Arquitetura;
 import controller.ManipulaArquivo;
 import controller.ManipulaMemoria;
+import controller.RodaPrograma;
 
 public class PainelBaixo extends JPanel {
 
@@ -42,14 +44,16 @@ public class PainelBaixo extends JPanel {
 	private JButton proxPasso = null;
 	private JLabel labelComecar = null;
 	private JLabel labelProxPasso = null;
+	private RodaPrograma rodaPrograma;
 	/**
 	 * This method initializes painelBaixo	
 	 * 	
 	 * @return javax.swing.JPanel	
 	 */
 	
-	public PainelBaixo(ManipulaMemoria manipulaMemoria){
+	public PainelBaixo(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){
 		this.manipulaMemoria = manipulaMemoria;
+		this.rodaPrograma = rodaPrograma;
 		inicializar();
 	}
 
@@ -355,6 +359,16 @@ public class PainelBaixo extends JPanel {
 			comecar = new JButton();
 			comecar.setBounds(new Rectangle(832, 171, 128, 27));
 			comecar.setText("Começar");
+			comecar.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					rodaPrograma.rodar();
+					manipulaMemoria.getArquitetura().atualizaPainel();
+					//manipulaMemoria.getArquitetura().atualizaPainel();
+					//PainelBaixo temp = (PainelBaixo)comecar.getParent();
+					//temp.revalidate();
+					//temp.repaint();
+				}
+			});
 		}
 		return comecar;
 	}
@@ -370,9 +384,22 @@ public class PainelBaixo extends JPanel {
 			proxPasso = new JButton();
 			proxPasso.setBounds(new Rectangle(830, 244, 135, 25));
 			proxPasso.setText("Próximo Passo");
+			proxPasso.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					//rodaPrograma.rodar();
+					//manipulaMemoria.getArquitetura().atualizaPainel();
+				}
+			});
 		}
 		return proxPasso;
 	}
 	
+	public void atualizarConteudo(){
+		preenchePSW();
+		preencheMemoria();
+		preencheCache();
+		this.revalidate();
+		this.repaint();
+	}
 	
 }  //  @jve:decl-index=0:visual-constraint="10,10"
