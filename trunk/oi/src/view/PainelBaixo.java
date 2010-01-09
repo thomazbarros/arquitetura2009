@@ -20,14 +20,19 @@ import controller.RodaPrograma;
 
 public class PainelBaixo extends JPanel {
 
+	private static final long serialVersionUID = 1L;
 	//private PainelBaixo painelBaixo = null;  //  @jve:decl-index=0:visual-constraint="70,34"
 	private ManipulaMemoria manipulaMemoria;
-	private JScrollPane scrollmemoria = null;
-	private JList listMemória = null;
+
+
 	private JScrollPane scrollPrograma = null;
-	private JList listPrograma = null;
 	private JScrollPane scrollCache = null;
+	private JScrollPane scrollmemoria = null;
+	
+	private JList listPrograma = null;
 	private JList listCache = null;
+	private JList listMemória = null;
+	
 	private JLabel labelMicroprograma = null;
 	private JLabel memoria = null;
 	private JLabel cache = null;  //  @jve:decl-index=0:visual-constraint="196,47"
@@ -36,14 +41,17 @@ public class PainelBaixo extends JPanel {
 	private JLabel zero = null;
 	private JLabel carry = null;  //  @jve:decl-index=0:visual-constraint="916,10"
 	private JLabel sinal = null;
+	private JLabel labelComecar = null;
+	private JLabel labelProxPasso = null;
+	
 	private JTextField campoOverflow = null;
 	private JTextField campoZero = null;  //  @jve:decl-index=0:visual-constraint="537,10"
 	private JTextField campoCarry = null;
 	private JTextField campoSinal = null;
+	
 	private JButton comecar = null;
 	private JButton proxPasso = null;
-	private JLabel labelComecar = null;
-	private JLabel labelProxPasso = null;
+
 	private RodaPrograma rodaPrograma;
 	/**
 	 * This method initializes painelBaixo	
