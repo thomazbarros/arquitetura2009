@@ -310,6 +310,7 @@ import model.ULA;
 		atualizaRegistradores();
 		ulaGrafica.atualizarConteudo();
 		painelBaixo.atualizarConteudo();
+		while(true){}
 	}
 	
 	public void mostraPontosDeControle(){
