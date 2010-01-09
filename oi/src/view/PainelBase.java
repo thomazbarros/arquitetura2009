@@ -7,6 +7,7 @@ import javax.swing.JScrollPane;
 
 import controller.ManipulaMemoria;
 import controller.RodaPrograma;
+import controller.RodarThread;
 
 public class PainelBase extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -24,10 +25,10 @@ public class PainelBase extends JPanel {
 	/*public PainelBase(ManipulaMemoria manipulaMemoria){
 		this.manipulaMemoria = manipulaMemoria;
 	}*/
-	public PainelBase(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){
+	public PainelBase(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma,RodarThread rodarThread){
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
-		painelBaixo = new PainelBaixo(manipulaMemoria,rodaPrograma);
+		painelBaixo = new PainelBaixo(manipulaMemoria,rodaPrograma,rodarThread);
 
 		painelBaixo.reshape(0,400,1024,300);
 		painelULA = new PainelULA();

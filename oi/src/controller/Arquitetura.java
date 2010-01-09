@@ -310,7 +310,17 @@ import model.ULA;
 		atualizaRegistradores();
 		ulaGrafica.atualizarConteudo();
 		painelBaixo.atualizarConteudo();
-		while(true){}
+		while(true){
+			
+		}
+	
+		//while(!painelBaixo.getProximoPasso().getAction().isEnabled()){
+		//	System.out.println("passando");
+		//	try{
+		//		Thread.currentThread().sleep(10000);
+		//	}catch(Exception e){}
+			//sleep(400);
+		//}
 	}
 	
 	public void mostraPontosDeControle(){
