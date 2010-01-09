@@ -19,7 +19,7 @@ import model.ULA;
 	private int modo;
 	private Conversor conversor;
 	*/
-	public novoview.PainelULA ulaGrafica;
+	public view.PainelULA ulaGrafica;
 	public Registrador r0, r1, r2, r3, r4, rx, ry, pc, rDado, rEnd, ir;
 	public Multiplexador mux, muxA, muxB;
 	public Memoria memoria;
@@ -52,7 +52,7 @@ import model.ULA;
 		memoriaDeControle = new MemoriaDeControle();
 		modo = Constantes.RODAPROGRAMA;
 		conversor = new Conversor();
-		ulaGrafica = new novoview.PainelULA();
+		ulaGrafica = new view.PainelULA();
 	}
 	
 	public void setULA(boolean multiplexador){
@@ -549,7 +549,7 @@ import model.ULA;
 		return ry;
 	}
 
-	public void setUlaGrafica(novoview.PainelULA ulaGrafica) {
+	public void setUlaGrafica(view.PainelULA ulaGrafica) {
 		this.ulaGrafica = ulaGrafica;
 	}
 	
