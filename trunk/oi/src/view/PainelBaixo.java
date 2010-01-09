@@ -1,6 +1,5 @@
 package view;
  
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.util.ArrayList;
@@ -17,6 +16,7 @@ import controller.Arquitetura;
 import controller.ManipulaArquivo;
 import controller.ManipulaMemoria;
 import controller.RodaPrograma;
+import controller.RodarThread;
 
 public class PainelBaixo extends JPanel {
 
@@ -53,15 +53,17 @@ public class PainelBaixo extends JPanel {
 	private JButton proxPasso = null;
 
 	private RodaPrograma rodaPrograma;
+	private RodarThread rodarThread;
 	/**
 	 * This method initializes painelBaixo	
 	 * 	
 	 * @return javax.swing.JPanel	
 	 */
 	
-	public PainelBaixo(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){
+	public PainelBaixo(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma,RodarThread rodarThread){
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
+		this.rodarThread = rodarThread;
 		inicializar();
 	}
 
@@ -369,8 +371,9 @@ public class PainelBaixo extends JPanel {
 			comecar.setText("Começar");
 			comecar.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
-					rodaPrograma.rodar();
-					manipulaMemoria.getArquitetura().atualizaPainel();
+					//rodaPrograma.rodar();
+					rodarThread.setRodar(true);
+					rodarThread.run();
 					//manipulaMemoria.getArquitetura().atualizaPainel();
 					//PainelBaixo temp = (PainelBaixo)comecar.getParent();
 					//temp.revalidate();
@@ -400,6 +403,10 @@ public class PainelBaixo extends JPanel {
 			});
 		}
 		return proxPasso;
+	}
+	
+	public JButton getProximoPasso(){
+		return this.proxPasso;
 	}
 	
 	public void atualizarConteudo(){

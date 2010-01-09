@@ -17,6 +17,7 @@ import model.Constantes;
 import controller.FiltroData;
 import controller.ManipulaMemoria;
 import controller.RodaPrograma;
+import controller.RodarThread;
 
 public class TelaPrincipal extends JFrame implements ActionListener{
 
@@ -46,15 +47,15 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 	private JWindow jWindow = null;
 	private JPanel jContentPane = null;
 
-	public TelaPrincipal(String title,ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma) {
-		initialize(manipulaMemoria,rodaPrograma);
+	public TelaPrincipal(String title,ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma,RodarThread rodarThread) {
+		initialize(manipulaMemoria,rodaPrograma,rodarThread);
 	}
 
 	
-	private void initialize(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma) {
+	private void initialize(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma,RodarThread rodarThread) {
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
-		painelbase = new PainelBase(manipulaMemoria,rodaPrograma);
+		painelbase = new PainelBase(manipulaMemoria,rodaPrograma,rodarThread);
 		try {
 			javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager
 					.getSystemLookAndFeelClassName());
