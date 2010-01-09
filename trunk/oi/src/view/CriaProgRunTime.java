@@ -16,7 +16,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 
-public class CriaProgRunTime extends JFrame implements WindowListener/*, ActionListener*/{
+
+public class CriaProgRunTime extends JFrame implements WindowListener, ActionListener{
 
 	/**
 	 * Janela do Cria Programa
@@ -75,21 +76,34 @@ public class CriaProgRunTime extends JFrame implements WindowListener/*, ActionL
 		
 		botaoCarrega.setBounds(150, 360, 160, 20);
 		//botaoCarrega.addActionListener(this);
+		botaoCarrega.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				//ativaCarregamento();
+				//System.out.println("oi");
+				System.out.println(areaTexto.getText());
+				try{
+					if(areaTexto.getText().equals("Digite aqui...") || areaTexto.getText().equals("")){
+						JOptionPane.showMessageDialog(null, "Falha ao carregar este programa.\nDigite um programa válido ou feche a janela.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
+					}
+					else{
+						//arquivoLido = new LerEscreverArquivo(areaTexto.getText(),areaTexto.getText());
+						//Controlador.executa_por_micro = false;
+						//Controlador.executa_por_instrucao = false;
+						//Comecar.cliqueMenuComecar = false;
+						//AdministraView.cliqueMenuComecar=false;
+						//Comecar.proximoPasso.setEnabled(true);
+						//AdministraView.getView().zeraMemoriaEPrograma();
+						//setVisible(false);
+					}
+				}
+				catch(Exception evento){
+					System.out.println("Erro na gravacao do Arquivo - Clique do botao.");
+				}
+			}
+		});
 		painel.add(botaoCarrega);
 		
-		/**
-		 * Mostra a Janela
-		 */
-		add(painel);
-		setSize(tamanhoPrograma);
-		setResizable(false);
-		setLocation((screenSize.width - ProgramaLargura) / 2,(screenSize.height - ProgramaAltura) / 2);
-		setTitle("Cria Programa");
-		setVisible(true);
-		
-	}
-	
-	/*public void actionPerformed(ActionEvent evt) {
+		/**	public void actionPerformed(ActionEvent evt) {
 		
 		Object source = evt.getSource();
 
@@ -114,7 +128,21 @@ public class CriaProgRunTime extends JFrame implements WindowListener/*, ActionL
 				System.out.println("Erro na gravacao do Arquivo - Clique do botao.");
 			}		
 		}
-	}*/
+		
+		**/
+		/**
+		 * Mostra a Janela
+		 */
+		add(painel);
+		setSize(tamanhoPrograma);
+		setResizable(false);
+		setLocation((screenSize.width - ProgramaLargura) / 2,(screenSize.height - ProgramaAltura) / 2);
+		setTitle("Cria Programa");
+		setVisible(true);
+		
+	}
+	
+
 
 	public void windowActivated(WindowEvent e) {
 		// TODO Auto-generated method stub
@@ -150,4 +178,13 @@ public class CriaProgRunTime extends JFrame implements WindowListener/*, ActionL
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 }
