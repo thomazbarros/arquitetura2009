@@ -12,7 +12,7 @@ public class Principal {
 
 		//new TelaPrincipal("Simulador de Arquitetura de Computadores");
 
-		rodaPrograma.rodaMicro();
+		//rodaPrograma.rodaMicro();
 		rodaPrograma.rodar(); 
 		
 		System.out.println(arquitetura.getR0().getValor());
