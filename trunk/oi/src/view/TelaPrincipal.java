@@ -68,7 +68,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 
 		//setMinimumSize(new Dimension(1024, 768));
 		setPreferredSize(new Dimension(1024, 768));
-		setResizable(false);
+		setResizable(true);
 		pack();
 		setVisible(true);
 	}
@@ -95,7 +95,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 			opcoes = new JMenu();
 			opcoes.setText("Opções");
 			opcoes.add(getExecutar());
-			//opcoes.add(getCriarMicroprograma());
+			opcoes.add(getCriarMicroprograma());
 			opcoes.add(getExecutar2());
 			opcoes.add(getExecMicroinst());
 			opcoes.add(getExecMicroprog());
