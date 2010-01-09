@@ -33,6 +33,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 	private JMenuItem instrucoes = null;
 	private JMenuItem execMicroinst = null;
 	private JMenuItem execMicroprog = null;
+	private CriaProgRunTime criarPrograma = null;
 	
 	
 	private PainelBase painelbase;// = new PainelBase();
@@ -143,6 +144,11 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 		if (criarMicroprograma == null) {
 			criarMicroprograma = new JMenuItem();
 			criarMicroprograma.setText("Criar Microprograma");
+			criarMicroprograma.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					criarPrograma = new CriaProgRunTime();
+				}
+				});
 		}
 		return criarMicroprograma;
 	}
@@ -154,7 +160,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 	private JMenuItem getExecutar2() {
 		if (executar == null) {
 			executar = new JMenuItem();
-			executar.setText("Executar");
+			//executar.setText("Executar");
 			executar.setText("Executar Microinstruções Inteiro");
 			executar.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent e) {
