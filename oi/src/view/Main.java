@@ -1,4 +1,4 @@
-package novoview;
+package view;
 
 import controller.Arquitetura;
 import controller.ManipulaMemoria;
