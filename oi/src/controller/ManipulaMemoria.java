@@ -1073,5 +1073,9 @@ public class ManipulaMemoria {
 	public Arquitetura getArquitetura() {
 		return arquitetura;
 	}
+
+	public Instrucao getInstrucao() {
+		return instrucao;
+	}
 	
 }

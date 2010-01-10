@@ -2,18 +2,21 @@ package controller;
 
 import model.Registrador;
 
-public class Instrucao {
+public class Instrucao extends Thread{
 	
 	private Arquitetura arquitetura;
 	private Conversor conversor;
+	//private boolean loop;
  
 	public Instrucao(){
 		arquitetura = new Arquitetura();
+		//loop = true;
 	}
 	
 	Instrucao(Arquitetura arquitetura){
 		this.arquitetura = arquitetura;
 		conversor = new Conversor();
+		//loop = true;
 	}
 	
 	public void soma1(Registrador destino){
@@ -5270,5 +5273,38 @@ public class Instrucao {
 					}
 					
 					arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+	}
+				
+	public void travaThread(){
+		try {				
+			while (!arquitetura.isContinuar()) {// interrompe a thread
+				sleep(1000 / 80);
+				//AdministraView.getView().setStatus("Esperando ...");
+			}
+			//if (arquitetura.isContinuar()){
+			//	loop = true;
+			//}
+		} catch (Exception e) {
+			System.out.println("Erro na Thread Instrucoes");
+		}
+		
+		/*while(loop){
+			System.out.println("FOR");
+			while(!arquitetura.isContinuar()){
+				System.out.println("WHILE");
+				try{
+					System.out.println("SLEEP");
+					sleep(1000);
+					//Thread.currentThread().sleep(1000);
+				}catch(Exception e){}
+				//arquitetura.setContinuar(true);
+			}
+			System.out.println("IF "+arquitetura.isContinuar());
+			if (arquitetura.isContinuar()) {
+				System.out.println("NUNCA ENTREI AQUI");
+				loop = false;
+			}
+		}
+		loop = true;*/
 	}
 }
