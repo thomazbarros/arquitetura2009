@@ -68,7 +68,7 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 		
 		titulo = new JLabel("Digite seu programa na area abaixo:");
 		
-		painel.setLayout(null);
+
 		
 		areaTexto = new JTextArea("Digite aqui...");
 		
@@ -142,6 +142,7 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 		setSize(tamanhoPrograma);
 		setResizable(false);
 		setLocation((screenSize.width - ProgramaLargura) / 2,(screenSize.height - ProgramaAltura) / 2);
+		painel.setLayout(null);
 		setTitle("Cria Programa");
 		setVisible(true);
 		
