@@ -2,7 +2,7 @@ package controller;
 
 import model.Constantes;
 
-public class RodaPrograma {
+public class RodaPrograma extends Thread{
 	
 	private Arquitetura arquitetura;
 	private ManipulaMemoria manipulaMemoria;
@@ -12,7 +12,7 @@ public class RodaPrograma {
 		this.manipulaMemoria = manipulaMemoria;
 	}
 	
-	public void rodar(){
+	public void run(){
 		//System.out.println(arquitetura.getMemoria());
 		System.out.println("Rodando "+Thread.currentThread().getName());
 		String instrucao;

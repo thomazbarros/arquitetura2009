@@ -371,7 +371,7 @@ public class PainelBaixo extends JPanel {
 			comecar.setText("Começar");
 			comecar.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
-					rodaPrograma.rodar();
+					rodaPrograma.run();
 					//rodarThread.setRodar(true);
 					//rodarThread.run();
 					//manipulaMemoria.getArquitetura().atualizaPainel();

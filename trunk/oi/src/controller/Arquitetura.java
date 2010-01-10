@@ -56,8 +56,8 @@ import model.ULA;
 		ulaGrafica = null;
 		painelBaixo = null;
 		continuar = false;
-		rodarThread = new RodarThread(this);
-		rodarThread.start();
+		//rodarThread = new RodarThread(this);
+		//rodarThread.start();
 	}
 	
 	public void setULA(boolean multiplexador){
@@ -313,7 +313,7 @@ import model.ULA;
 		atualizaRegistradores();
 		ulaGrafica.atualizarConteudo();
 		painelBaixo.atualizarConteudo();
-		rodarThread.run();
+		rodarThread.travaThread();
 		/*while(!continuar){
 			//System.out.println("Nao dormindo");
 			System.out.println(Thread.currentThread().getName());
@@ -604,6 +604,10 @@ import model.ULA;
 
 	public boolean isContinuar() {
 		return continuar;
+	}
+
+	public void setRodarThread(RodarThread rodarThread) {
+		this.rodarThread = rodarThread;
 	}
 	
 }
