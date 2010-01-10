@@ -1,0 +1,32 @@
+Instruções
+Instrução Modos de endereçamento do operando Função
+ADD Constante, Rj Constante, (Rj) Ri, Rj Ri, (Rj) (Ri), Rj (Ri), (Rj) Soma
+SUB Constante, Rj Constante, (Rj) Ri, Rj Ri, (Rj) (Ri), Rj (Ri), (Rj) Subtração
+MOV Constante, Rj Constante, (Rj) Ri, Rj Ri, (Rj) (Ri), Rj (Ri), (Rj) Move fonte para destino
+CMP Constante, Rj Constante, (Rj) Ri, Rj Ri, (Rj) (Ri), Rj (Ri), (Rj) Subtrai destino da fonte, mas não altera os registradores
+AND Constante, Rj Constante, (Rj) Ri, Rj Ri, (Rj)  (Ri), Rj (Ri), (Rj)
+E lógico
+OR Constante, Rj Constante, (Rj) Ri, Rj Ri, (Rj) (Ri), Rj (Ri), (Rj)
+Ou lógico
+NOT Ri (Ri) Não lógico
+CLR Ri (Ri) Zera registrador
+NEG Ri (Ri) Negação aritmética
+SHL Ri (Ri) Deslocamento para esquerda
+SHR Ri (Ri) Deslocamento para direita
+BRZ Label Desvia se o resultado da instrução anterior é zero
+BRN Label Desvia se o resultado da instrução anterior é negativo
+BRE Label Desvia se no resultado da comparação os operandos eram iguais
+BRL Label Desvia se no resultado da comparação o fonte era menor
+BRG Label Desvia se no resultado da comparação o fonte era maior
+BRC Label Desvia se o resultado da instrução anterior teve carry
+JMP Label Desvia
+XOR Constante, Rj Constante, (Rj) Ri, Rj Ri, (Rj) (Ri), Rj (Ri), (Rj) Ou exclusivo lógico
+TEST Constante, Rj Constante, (Rj) Ri, Rj Ri, (Rj) (Ri), Rj (Ri), (Rj) E lógico, sem alterar registradores
+INC Ri (Ri) Incrementa registrador
+DEC Ri (Ri) Decrementa registrador
+BRNZ Label Desvia se o resultado da instrução anterior não é zero
+BRNN Label Desvia se o resultado da instrução anterior não tem sinal negativo
+BRNC Label Desvia se o resultado da instrução anterior não tem carry
+BRO Label Desvia se o resultado da instrução anterior tem overflow
+BRNO Label Desvia se o resultado da instrução anterior não tem overflow
+
