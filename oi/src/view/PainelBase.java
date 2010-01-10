@@ -26,10 +26,10 @@ public class PainelBase extends JPanel {
 	/*public PainelBase(ManipulaMemoria manipulaMemoria){
 		this.manipulaMemoria = manipulaMemoria;
 	}*/
-	public PainelBase(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma,RodarThread rodarThread){
+	public PainelBase(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){//,RodarThread rodarThread){
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
-		painelBaixo = new PainelBaixo(manipulaMemoria,rodaPrograma,rodarThread);
+		painelBaixo = new PainelBaixo(manipulaMemoria,rodaPrograma);//,rodarThread);
 
 		painelBaixo.reshape(0,400,1024,300);
 		painelULA = new PainelULA();

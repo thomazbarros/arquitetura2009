@@ -53,17 +53,17 @@ public class PainelBaixo extends JPanel {
 	private JButton proxPasso = null;
 
 	private RodaPrograma rodaPrograma;
-	private RodarThread rodarThread;
+	//private RodarThread rodarThread;
 	/**
 	 * This method initializes painelBaixo	
 	 * 	
 	 * @return javax.swing.JPanel	
 	 */
 	
-	public PainelBaixo(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma,RodarThread rodarThread){
+	public PainelBaixo(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){//,RodarThread rodarThread){
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
-		this.rodarThread = rodarThread;
+		//this.rodarThread = rodarThread;
 		inicializar();
 	}
 
@@ -371,9 +371,9 @@ public class PainelBaixo extends JPanel {
 			comecar.setText("Começar");
 			comecar.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
-					//rodaPrograma.rodar();
-					rodarThread.setRodar(true);
-					rodarThread.run();
+					rodaPrograma.rodar();
+					//rodarThread.setRodar(true);
+					//rodarThread.run();
 					//manipulaMemoria.getArquitetura().atualizaPainel();
 					//PainelBaixo temp = (PainelBaixo)comecar.getParent();
 					//temp.revalidate();
@@ -397,6 +397,7 @@ public class PainelBaixo extends JPanel {
 			proxPasso.setText("Próximo Passo");
 			proxPasso.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
+					manipulaMemoria.getArquitetura().setContinuar(true);
 					//rodaPrograma.rodar();
 					//manipulaMemoria.getArquitetura().atualizaPainel();
 				}

@@ -1,5 +1,6 @@
 package controller;
 
+import view.TelaPrincipal;
 import controller.Arquitetura;
 import controller.ManipulaMemoria;
 import controller.RodaPrograma;
@@ -18,10 +19,11 @@ public class Main {
 		Arquitetura arquitetura = new Arquitetura();
 		ManipulaMemoria manipulaMemoria = new ManipulaMemoria(arquitetura);
 		RodaPrograma rodaPrograma = new RodaPrograma(arquitetura,manipulaMemoria);
-		RodarThread rodarThread = new RodarThread(rodaPrograma,manipulaMemoria);
-		rodarThread.start();
-		ViewThread thread = new ViewThread(manipulaMemoria,rodaPrograma,rodarThread);
-		thread.start();
+		//RodarThread rodarThread = new RodarThread(rodaPrograma,manipulaMemoria);
+		new TelaPrincipal("",manipulaMemoria,rodaPrograma);//,rodarThread);
+		//rodarThread.start();
+		//ViewThread thread = new ViewThread(manipulaMemoria,rodaPrograma,rodarThread);
+		//thread.start();
 		
 		//while(true){
 	//		rodarThread.run();
