@@ -14,6 +14,7 @@ public class RodaPrograma {
 	
 	public void rodar(){
 		//System.out.println(arquitetura.getMemoria());
+		System.out.println("Rodando "+Thread.currentThread().getName());
 		String instrucao;
 		arquitetura.buscaInstrucao();
 		////System.out.println("R0 antes:"+arquitetura.getR0().getValor());

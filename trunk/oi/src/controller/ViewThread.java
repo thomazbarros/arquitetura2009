@@ -11,7 +11,7 @@ public class ViewThread extends Thread {
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
 		this.rodarThread = rodarThread;
-		new TelaPrincipal("",manipulaMemoria,rodaPrograma,rodarThread);
+		//new TelaPrincipal("",manipulaMemoria,rodaPrograma,rodarThread);
 	}
 	
 	public void run(){

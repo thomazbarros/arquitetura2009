@@ -1,5 +1,4 @@
 package controller;
-	
 import model.Constantes;
 import model.Memoria;
 import model.MemoriaCache;
@@ -19,18 +18,19 @@ import model.ULA;
 	private int modo;
 	private Conversor conversor;
 	*/
-	public view.PainelBaixo painelBaixo;
-	public view.PainelULA ulaGrafica;
-	public Registrador r0, r1, r2, r3, r4, rx, ry, pc, rDado, rEnd, ir;
-	public Multiplexador mux, muxA, muxB;
-	public Memoria memoria;
-	public MemoriaCache cache;
-	public ULA ula;
-	public MemoriaDeControle memoriaDeControle;
-	public int modo;
-	public Conversor conversor;
-	public boolean [] pontosDeControle = {false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
-
+	private view.PainelBaixo painelBaixo;
+	private view.PainelULA ulaGrafica;
+	private Registrador r0, r1, r2, r3, r4, rx, ry, pc, rDado, rEnd, ir;
+	private Multiplexador mux, muxA, muxB;
+	private Memoria memoria;
+	private MemoriaCache cache;
+	private ULA ula;
+	private MemoriaDeControle memoriaDeControle;
+	private int modo;
+	private Conversor conversor;
+	private boolean [] pontosDeControle = {false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
+	private boolean continuar;
+	private RodarThread rodarThread;
 		
 	public Arquitetura(){
 		r0 = new Registrador(false, 0);
@@ -55,6 +55,9 @@ import model.ULA;
 		conversor = new Conversor();
 		ulaGrafica = null;
 		painelBaixo = null;
+		continuar = false;
+		rodarThread = new RodarThread(this);
+		rodarThread.start();
 	}
 	
 	public void setULA(boolean multiplexador){
@@ -310,9 +313,23 @@ import model.ULA;
 		atualizaRegistradores();
 		ulaGrafica.atualizarConteudo();
 		painelBaixo.atualizarConteudo();
-		while(true){
-			
-		}
+		rodarThread.run();
+		/*while(!continuar){
+			//System.out.println("Nao dormindo");
+			System.out.println(Thread.currentThread().getName());
+			try{
+				System.out.println("Dormindo");
+				Thread.currentThread().sleep(100000 / 80);
+			}catch(Exception e){}
+			/*if(Thread.currentThread().getName().equals("Rodar")){
+				try{
+					System.out.println("Dormindo");
+					Thread.currentThread().sleep(100000 / 80);
+				}catch(Exception e){}
+			}
+		}*/
+		//System.out.println("Startou");
+		//rodarThread.run();
 	
 		//while(!painelBaixo.getProximoPasso().getAction().isEnabled()){
 		//	System.out.println("passando");
@@ -578,6 +595,15 @@ import model.ULA;
 			pontosDeControle[i] = false;
 		}
 		
+	}
+
+	public void setContinuar(boolean continuar) {
+		System.out.println("setei o continuar");
+		this.continuar = continuar;
+	}
+
+	public boolean isContinuar() {
+		return continuar;
 	}
 	
 }
