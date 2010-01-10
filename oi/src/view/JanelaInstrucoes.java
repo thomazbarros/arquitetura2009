@@ -47,7 +47,7 @@ public class JanelaInstrucoes extends JFrame implements WindowListener {
 
 		Dimension tamanhoPrograma = new Dimension(JanelaLargura, JanelaAltura);
 
-		titulo = new JLabel("As Instrucoes seguem abaixo:");
+		titulo = new JLabel("As Instruções seguem abaixo:");
 
 		areaTexto = new JList();
 		
