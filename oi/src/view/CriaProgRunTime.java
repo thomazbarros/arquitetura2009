@@ -98,7 +98,14 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 					else{
 						System.out.println(areaTexto.getText());
 						String end = popup();
-						setVisible(false);
+						if(end.equals(".nao")){
+							JOptionPane.showMessageDialog(null, "Ocorreu erro no endereco de gravacao. Tente novamente.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
+							setVisible(true);
+						}else{
+							setVisible(false);	
+						}
+							
+						
 					}
 				}
 				catch(Exception evento){
@@ -169,11 +176,15 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 					else{
 						if(file.getPath().indexOf(".dat") == -1){
 							//String string = file.getPath()+".dat";
+							System.out.println(file.getPath());
 							return file.getPath()+".dat";
+							
 							//janela.setNomeArquivo(file.getPath()+".dat");
 							//manipula.setNomeArquivo(file.getPath()+".dat");
 						}else{
+							System.out.println(file.getPath());
 							return file.getPath();
+							
 							//String string = file.getPath();
 							//janela.setNomeArquivo(file.getPath());
 							//manipula.setNomeArquivo(file.getPath());
@@ -186,6 +197,7 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 				System.out.println(" ERRO ");
 			}
 	    }
+		System.out.println("passei aqui");
 		return ".nao";
 	}
 
