@@ -22,8 +22,6 @@ import controller.FiltroData;
 import java.io.*; 
 import java.lang.*;
 
-import java.util.GregorianCalendar;  
-
 public class CriaProgRunTime extends JFrame implements WindowListener, ActionListener{
 
 	/**
@@ -55,8 +53,6 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 	@SuppressWarnings("unused")
 	private LerEscreverArquivo arquivoLido;
 	
-	//public GregorianCalendar calendario;
-
 	public CriaProgRunTime (){
 		
 		/**
@@ -156,16 +152,18 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 	}
 	
 	public String popup(){
+		String string = ".nao"; 
 		if (fc == null) {
 			fc = new JFileChooser();
 			fc.addChoosableFileFilter(new FiltroData());
-			fc.setAcceptAllFileFilterUsed(false);
+			//fc.setAcceptAllFileFilterUsed(false);
 		}
 		fc.setCurrentDirectory(new File("./"));
 		int returnVal = fc.showSaveDialog(this);
 		if(returnVal == JFileChooser.APPROVE_OPTION){
 			File file = fc.getSelectedFile();
-			File file2 = new File(file.getPath()+".txt");
+			System.out.println(fc.getSelectedFile());
+			File file2 = new File(fc.getSelectedFile()+".txt");
 			try{
 				if(file.exists() || file2.exists()){
 					int res = JOptionPane.showConfirmDialog(null,"Esse arquivo já existe. Tem certeza que deseja sobrescrever?");
@@ -173,23 +171,24 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 					{
 						return ".nao";
 					}
-					else{
-						if(file.getPath().indexOf(".dat") == -1){
-							//String string = file.getPath()+".dat";
-							System.out.println(file.getPath());
-							return file.getPath()+".dat";
+					else if(file.getPath().indexOf(".txt") == -1){
+						string = file2.getAbsolutePath();
+						System.out.println(string);
+						System.out.println(file2.getAbsolutePath());
+						System.out.println("1");
+						//return file.getPath()+".dat";
 							
 							//janela.setNomeArquivo(file.getPath()+".dat");
 							//manipula.setNomeArquivo(file.getPath()+".dat");
-						}else{
-							System.out.println(file.getPath());
-							return file.getPath();
+					}else{
+						System.out.println(file.getAbsolutePath());
+						//return file.getPath();
 							
-							//String string = file.getPath();
+						string = file.getAbsolutePath();
 							//janela.setNomeArquivo(file.getPath());
 							//manipula.setNomeArquivo(file.getPath());
-						}
 					}
+					
 				}
 				
 			} catch (Exception e2) {
@@ -198,7 +197,7 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 			}
 	    }
 		System.out.println("passei aqui");
-		return ".nao";
+		return string;
 	}
 
 	/**
