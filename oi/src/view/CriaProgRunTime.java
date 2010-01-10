@@ -63,6 +63,8 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 		
 		painel.setLayout(null);
 		
+		//LerEscreverArquivo lido;
+		
 		/**
 		 * Adiciona item no painel
 		 */
@@ -86,6 +88,8 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 						JOptionPane.showMessageDialog(null, "Falha ao carregar este programa.\nDigite um programa válido ou feche a janela.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
 					}
 					else{
+						//LerEscreverArquivo lido = new LerEscreverArquivo(areaTexto.getText(),areaTexto.getText());
+						System.out.println(areaTexto.getText());
 						//arquivoLido = new LerEscreverArquivo(areaTexto.getText(),areaTexto.getText());
 						//Controlador.executa_por_micro = false;
 						//Controlador.executa_por_instrucao = false;
@@ -93,7 +97,7 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 						//AdministraView.cliqueMenuComecar=false;
 						//Comecar.proximoPasso.setEnabled(true);
 						//AdministraView.getView().zeraMemoriaEPrograma();
-						//setVisible(false);
+						setVisible(false);
 					}
 				}
 				catch(Exception evento){
