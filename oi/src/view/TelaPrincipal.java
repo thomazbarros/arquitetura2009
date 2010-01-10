@@ -70,6 +70,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 
 		//setMinimumSize(new Dimension(1024, 768));
 		setPreferredSize(new Dimension(1024, 768));
+		//setPreferredSize(new Dimension(800, 600));
 		setResizable(true);
 		pack();
 		setVisible(true);
