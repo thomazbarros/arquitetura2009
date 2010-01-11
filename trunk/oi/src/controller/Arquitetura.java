@@ -520,7 +520,7 @@ import model.ULA;
 		ulaGrafica.setRegX(getRx().getValor());
 		ulaGrafica.setRegY(getRy().getValor());
 		ulaGrafica.setRend(getREnd().getValor());
-	
+		ulaGrafica.setPC(getPc().getValor());
 	}
 	
 	public void buscaInstrucao(){
