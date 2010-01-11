@@ -27,12 +27,15 @@ public class RodaPrograma extends Thread{
 			manipulaMemoria.ler(arquitetura.getPc().getValor());
 			arquitetura.buscaInstrucao();
 			instrucao = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor());
+			if(arquitetura.getModo() == Constantes.RODAINSTRUCAO){
+				//System.out.println("Pontos de controle no momento");
+				//manipulaMemoria.getArquitetura().atualizaPainel();
+				//System.out.println("Pontos de controle no momento seguinte");
+				travaThread();
+			}
 		}
 		manipulaMemoria.getArquitetura().zeraPontosDeControle();
 		manipulaMemoria.getArquitetura().atualizaPainel();
-		if(arquitetura.getModo() == Constantes.RODAINSTRUCAO){
-			travaThread();
-		}
 		////System.out.println("R0 depois:"+arquitetura.getR0().getValor());
 		////System.out.println(arquitetura.getR1().getValor());
 	}
