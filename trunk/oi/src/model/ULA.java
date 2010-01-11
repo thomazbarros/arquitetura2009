@@ -681,4 +681,20 @@ public class ULA{
 			valor = b+1;
 		}
 	}
+
+	public Integer getC() {
+		return c;
+	}
+
+	public Integer getN() {
+		return n;
+	}
+
+	public Integer getO() {
+		return o;
+	}
+
+	public Integer getZ() {
+		return z;
+	}
 }
