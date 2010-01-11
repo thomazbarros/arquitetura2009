@@ -510,6 +510,8 @@ import model.ULA;
 		System.out.println("RX :" + getRx().getValor());
 		System.out.println("RY :" + getRy().getValor());
 		System.out.println("REnd :" + getREnd().getValor());
+		System.out.println("PC :" + getPc().getValor());
+		System.out.println("IR :" + getIr().getValor());
 		
 		ulaGrafica.setRdados(getRDado().getValor());
 		ulaGrafica.setReg0(getR0().getValor());
@@ -520,7 +522,9 @@ import model.ULA;
 		ulaGrafica.setRegX(getRx().getValor());
 		ulaGrafica.setRegY(getRy().getValor());
 		ulaGrafica.setRend(getREnd().getValor());
-		ulaGrafica.setPC(getPc().getValor());
+		ulaGrafica.setPc(getPc().getValor());
+		ulaGrafica.setIr(getIr().getValor());
+
 	}
 	
 	public void buscaInstrucao(){

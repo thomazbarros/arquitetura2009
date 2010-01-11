@@ -678,8 +678,12 @@ public class PainelULA extends JPanel {
 		Rdados = rdados;
 	}
 
-	public void setPC(int PC) {
+	public void setPc(int PC) {
 		this.PC = PC;
+	}
+	
+	public void setIr(int IR) {
+		this.IR = IR;
 	}
 	
 	public void atualizarConteudo(){
