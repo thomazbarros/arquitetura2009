@@ -96,46 +96,31 @@ public class ULA{
 	
 	public void ativaPontoDeControle(){
 		if((!pontoDeControle1)&&(!pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(!pontoDeControle6)){
-			//System.out.println("PASSA O A");
 			A();
 		}
 		if((!pontoDeControle1)&&(!pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
-			//System.out.println("PASSA O B");
 			B();
 		}
 		if((!pontoDeControle1)&&(!pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(!pontoDeControle6)){
-			//System.out.println("PASSA O A + 1");
 			aMais1();
 		}
 		if((!pontoDeControle1)&&(!pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(pontoDeControle6)){
-			//System.out.println("A MAIS B");
-			//System.out.println("A: "+a);
-			//System.out.println("B: "+b);
 			aMaisB();
 		}
 		if((!pontoDeControle1)&&(!pontoDeControle2)&&(!pontoDeControle3)&&(pontoDeControle4)&&(!pontoDeControle5)&&(!pontoDeControle6)){
-			//System.out.println("A MENOS B:");
-			//System.out.println("A:" + a);
-			//System.out.println("B:" + b);
 			aMenosB();
 		}
 		if((!pontoDeControle1)&&(!pontoDeControle2)&&(!pontoDeControle3)&&(pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
-			//System.out.println("AND:");
-			//System.out.println("A:" + a);
-			//System.out.println("B:" + b);
 			aAndB();
-			//System.out.println(valor);
 		}
 		if((!pontoDeControle1)&&(!pontoDeControle2)&&(!pontoDeControle3)&&(pontoDeControle4)&&(pontoDeControle5)&&(!pontoDeControle6)){
 			aOrB();
 		}
 		if((!pontoDeControle1)&&(!pontoDeControle2)&&(!pontoDeControle3)&&(pontoDeControle4)&&(pontoDeControle5)&&(pontoDeControle6)){
 			aShiftLeft();
-			//System.out.println("Shift:" + valor);
 		}
 		if((!pontoDeControle1)&&(!pontoDeControle2)&&(pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(!pontoDeControle6)){
 			aShiftRight();
-			//System.out.println("Shift:" + valor);
 		}
 		if((!pontoDeControle1)&&(!pontoDeControle2)&&(pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
 			bShiftLeft();
@@ -162,12 +147,10 @@ public class ULA{
 			notB();
 		}
 		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
-			//System.out.println("PASSA O B + 1");
 			bMais1();
 		}
 		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(!pontoDeControle6)){
 			aXorB();
-			//System.out.println("XOR:" + valor);
 		}
 		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(pontoDeControle6)){
 			aMenos1();
