@@ -369,11 +369,14 @@ public class PainelBaixo extends JPanel {
 			comecar = new JButton();
 			comecar.setBounds(new Rectangle(832, 171, 128, 27));
 			comecar.setText("Começar");
+			setDisponibilidadeComecar(false);
 			comecar.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					//rodaPrograma.run();
 					//rodaPrograma.setRun();
 					manipulaMemoria.getArquitetura().setRodaThread(true);
+					setDisponibilidadeComecar(false);
+					setDisponibilidadeProximoPasso(true);
 					//rodarThread.setRodar(true);
 					//rodarThread.run();
 					//manipulaMemoria.getArquitetura().atualizaPainel();
@@ -397,6 +400,7 @@ public class PainelBaixo extends JPanel {
 			proxPasso = new JButton();
 			proxPasso.setBounds(new Rectangle(830, 244, 135, 25));
 			proxPasso.setText("Próximo Passo");
+			setDisponibilidadeProximoPasso(false);
 			proxPasso.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					manipulaMemoria.getArquitetura().setContinuar(true);
@@ -418,6 +422,14 @@ public class PainelBaixo extends JPanel {
 		preencheCache();
 		this.revalidate();
 		this.repaint();
+	}
+	
+	public void setDisponibilidadeProximoPasso(boolean disponivel){
+		proxPasso.setEnabled(disponivel);
+	}
+	
+	public void setDisponibilidadeComecar(boolean disponivel){
+		comecar.setEnabled(disponivel);
 	}
 	
 }  //  @jve:decl-index=0:visual-constraint="10,10"

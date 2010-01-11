@@ -5279,9 +5279,9 @@ public class Instrucao extends Thread{
 	public void travaThread(){
 		if(arquitetura.getModo() == Constantes.RODAMICRO){
 			try {				
-				System.out.println("RODAMICRO");
+				//System.out.println("RODAMICRO");
 				while (!arquitetura.isContinuar()) {// interrompe a thread
-					System.out.println("ESTOU NO LOOP");
+					//System.out.println("ESTOU NO LOOP");
 					sleep(1000 / 80);
 					//AdministraView.getView().setStatus("Esperando ...");
 				}
