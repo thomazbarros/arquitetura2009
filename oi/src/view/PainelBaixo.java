@@ -203,6 +203,7 @@ public class PainelBaixo extends JPanel {
 		
 		for(int i = 0; i < arquitetura.getCache().getTamanho();i++){
 			vetor.add(arquitetura.getCache().imprimeCache(i));
+			//System.out.println(arquitetura.getCache().imprimeCache(i));
 			posicoesOcupadas++;
 		}
 				
