@@ -14,10 +14,10 @@ import javax.swing.JPanel;
 import javax.swing.JWindow;
 
 import model.Constantes;
+import model.MemoriaCache;
 import controller.FiltroData;
 import controller.ManipulaMemoria;
 import controller.RodaPrograma;
-import controller.RodarThread;
 
 public class TelaPrincipal extends JFrame implements ActionListener{
 
@@ -268,7 +268,14 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 			File file = fileChooser.getSelectedFile();
 			try {
 				//manipula.setNomeArquivo(file.getPath());
-				//manipulaMemoria.getArquitetura().getMemoria().inicializaMemoria();
+				System.out.println("_________________________");
+				/*manipulaMemoria.getArquitetura().paraThreads();
+				//manipulaMemoria.getArquitetura().setRodaThread(false);
+				manipulaMemoria.getArquitetura().zeraRegistradores();
+				manipulaMemoria.getArquitetura().zeraPontosDeControleGrafico();
+				manipulaMemoria.getArquitetura().getUla().zeraPSW();
+				manipulaMemoria.getArquitetura().getMemoria().zeraMemoria();
+				manipulaMemoria.getArquitetura().getCache().zeraCache();*/
 				manipulaMemoria.decifraInstrucao(file.getPath());
 				painelbase.getPainelBaixo().preencheMemoria();
 				painelbase.getPainelBaixo().preencheCache();
