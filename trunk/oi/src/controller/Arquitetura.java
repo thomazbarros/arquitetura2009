@@ -30,6 +30,7 @@ import model.ULA;
 	private Conversor conversor;
 	private boolean [] pontosDeControle = {false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
 	private boolean continuar;
+	public boolean rodaThread;
 	private RodarThread rodarThread;
 		
 	public Arquitetura(){
@@ -51,11 +52,13 @@ import model.ULA;
 		memoria = new Memoria(false,cache);
 		ula = new ULA(false, false, false, false, false, false);
 		memoriaDeControle = new MemoriaDeControle();
-		modo = Constantes.RODAPROGRAMA;
+		//modo = Constantes.RODAPROGRAMA;
+		modo = Constantes.RODAMICRO;
 		conversor = new Conversor();
 		ulaGrafica = null;
 		painelBaixo = null;
 		continuar = false;
+		rodaThread = false;
 		//rodarThread = new RodarThread(this);
 		//rodarThread.start();
 	}
@@ -527,6 +530,7 @@ import model.ULA;
 		////System.out.println("Terceiro na busca");
 		ativaPontoDeControle(memoriaDeControle.irRecebeRDado());
 		////System.out.println("Final da busca");
+		//atualizaPainel();
 	}
 
 	public int getModo() {
@@ -534,6 +538,7 @@ import model.ULA;
 	}
 
 	public void setModo(int modo) {
+		System.out.println("setando o modo para "+modo);
 		this.modo = modo;
 	}
 
@@ -608,6 +613,14 @@ import model.ULA;
 
 	public void setRodarThread(RodarThread rodarThread) {
 		this.rodarThread = rodarThread;
+	}
+	
+	public boolean isRodaThread() {
+		return rodaThread;
+	}
+
+	public void setRodaThread(boolean rodaThread) {
+		this.rodaThread = rodaThread;
 	}
 	
 }

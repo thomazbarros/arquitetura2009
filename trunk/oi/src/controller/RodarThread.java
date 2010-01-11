@@ -4,14 +4,33 @@ public class RodarThread extends Thread{
 	//private RodaPrograma rodaPrograma;
 	//private ManipulaMemoria manipulaMemoria;
 	private ManipulaMemoria manipulaMemoria;
+	private RodaPrograma rodaPrograma;
 	private boolean loop;
 	
-	public RodarThread(ManipulaMemoria manipulaMemoria){//RodaPrograma rodaPrograma,ManipulaMemoria manipulaMemoria){
+	public RodarThread(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){//RodaPrograma rodaPrograma,ManipulaMemoria manipulaMemoria){
 		super("Rodar");
+		this.rodaPrograma = rodaPrograma;
 		this.manipulaMemoria = manipulaMemoria;
 		loop = true;
 		//this.rodaPrograma = rodaPrograma;
 		//this.manipulaMemoria = manipulaMemoria;
+	}
+	
+	public void run(){
+		while(true){
+			//System.out.println(getName());
+			if(!manipulaMemoria.getArquitetura().isRodaThread()){
+				try{
+					sleep(1000/80);
+				}catch(Exception e){}
+			}else{
+				System.out.println("ENTREI AQUI");
+				rodaPrograma.run();
+				manipulaMemoria.getArquitetura().setRodaThread(false);
+				System.out.println("SAI DAQUI");
+				//break;
+			}
+		}
 	}
 	
 	/*public void run(){

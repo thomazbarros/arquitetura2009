@@ -12,6 +12,8 @@ public class RodaPrograma extends Thread{
 		this.manipulaMemoria = manipulaMemoria;
 	}
 	
+	public void start(){}
+	
 	public void run(){
 		//System.out.println(arquitetura.getMemoria());
 		System.out.println("Rodando "+Thread.currentThread().getName());
@@ -28,6 +30,9 @@ public class RodaPrograma extends Thread{
 		}
 		manipulaMemoria.getArquitetura().zeraPontosDeControle();
 		manipulaMemoria.getArquitetura().atualizaPainel();
+		if(arquitetura.getModo() == Constantes.RODAINSTRUCAO){
+			travaThread();
+		}
 		////System.out.println("R0 depois:"+arquitetura.getR0().getValor());
 		////System.out.println(arquitetura.getR1().getValor());
 	}
@@ -43,5 +48,25 @@ public class RodaPrograma extends Thread{
 	public void rodaPrograma(){
 		arquitetura.setModo(Constantes.RODAPROGRAMA);
 	}
-		
+	
+	public void setRun(){
+		run();
+	}
+	
+	public void travaThread(){
+		try {				
+			System.out.println("RODAMICRO");
+			while (!arquitetura.isContinuar()) {// interrompe a thread
+				System.out.println("ESTOU NO LOOP");
+				sleep(1000 / 80);
+				//AdministraView.getView().setStatus("Esperando ...");
+			}
+			arquitetura.setContinuar(false);
+			//if (arquitetura.isContinuar()){
+			//	loop = true;
+			//}
+		} catch (Exception e) {
+			System.out.println("Erro na Thread Instrucoes");
+		}
+	}
 }

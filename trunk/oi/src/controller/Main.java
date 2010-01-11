@@ -20,8 +20,10 @@ public class Main {
 		ManipulaMemoria manipulaMemoria = new ManipulaMemoria(arquitetura);
 		RodaPrograma rodaPrograma = new RodaPrograma(arquitetura,manipulaMemoria);
 		rodaPrograma.start();
-		RodarThread rodarThread = new RodarThread(manipulaMemoria);
+		RodarThread rodarThread = new RodarThread(manipulaMemoria,rodaPrograma);
+		rodarThread.start();
 		arquitetura.setRodarThread(rodarThread);
+		//arquitetura.setRodarThread(rodarThread);
 		new TelaPrincipal("",manipulaMemoria,rodaPrograma);//,rodarThread);
 		//rodarThread.start();
 		//ViewThread thread = new ViewThread(manipulaMemoria,rodaPrograma,rodarThread);
