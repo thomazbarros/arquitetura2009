@@ -175,6 +175,36 @@ public class ULA{
 		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(pontoDeControle4)&&(!pontoDeControle5)&&(!pontoDeControle6)){
 			bMenos1();
 		}
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
+			brz();
+		}
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(pontoDeControle4)&&(pontoDeControle5)&&(!pontoDeControle6)){
+			brn();
+		}
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(pontoDeControle4)&&(pontoDeControle5)&&(pontoDeControle6)){
+			brl();
+		}
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(!pontoDeControle6)){
+			brg();
+		}
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
+			brc();
+		}
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(!pontoDeControle6)){
+			brnz();
+		}
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(pontoDeControle6)){
+			brnn();
+		}
+		if((!pontoDeControle1)&&(!pontoDeControle2)&&(pontoDeControle3)&&(pontoDeControle4)&&(!pontoDeControle5)&&(!pontoDeControle6)){
+			brnc();
+		}
+		if((!pontoDeControle1)&&(!pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
+			bro();
+		}
+		if((!pontoDeControle1)&&(!pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(!pontoDeControle6)){
+			brno();
+		}
 		
 		pontoDeControle1 = false;
 		pontoDeControle2 = false;
@@ -182,21 +212,6 @@ public class ULA{
 		pontoDeControle4 = false;
 		pontoDeControle5 = false;
 		pontoDeControle6 = false;
-		
-		if(z == 1){
-			//System.out.println("Z");
-		}
-		if(n == 1){
-			//System.out.println("N");
-		}
-		if(c == 1){
-			//System.out.println("C");
-		}
-		if(o == 1){
-			//System.out.println("O");
-		}
-		
-		//System.out.println(valor);
 	}
 	
 	public void A(){
@@ -576,36 +591,94 @@ public class ULA{
 	public void bMenos1(){
 		valor = b-1;
 	}
-
-	public Integer getC() {
-		return c;
-	}
-
-	public Integer getN() {
-		return n;
-	}
-
-	public Integer getO() {
-		return o;
-	}
-
-	public Integer getZ() {
-		return z;
+	
+	public void brz(){
+		if(z == 1){
+			valor = a;
+		}
+		else{
+			valor = b+1;
+		}
 	}
 	
-	public Integer getC2() {
-		return 1-c;
+	public void brn(){
+		if(n == 1){
+			valor = a;
+		}
+		else{
+			valor = b+1;
+		}
 	}
-
-	public Integer getN2() {
-		return 1-n;
+	
+	public void brl(){
+		if(n*o + (1-n)*(1-o) == 1){
+			valor = a;
+		}
+		else{
+			valor = b+1;
+		}
 	}
-
-	public Integer getO2() {
-		return 1-o;
+	
+	public void brg(){
+		if(n*(1-o) + (1-n)*o == 1){
+			valor = a;
+		}
+		else{
+			valor = b+1;
+		}
 	}
-
-	public Integer getZ2() {
-		return 1-z;
+	
+	public void brc(){
+		if(c == 1){
+			valor = a;
+		}
+		else{
+			valor = b+1;
+		}
+	}
+	
+	public void brnz(){
+		if(z == 0){
+			valor = a;
+		}
+		else{
+			valor = b+1;
+		}
+	}
+	
+	public void brnn(){
+		if(n == 0){
+			valor = a;
+		}
+		else{
+			valor = b+1;
+		}
+	}
+	
+	public void brnc(){
+		if(c == 0){
+			valor = a;
+		}
+		else{
+			valor = b+1;
+		}
+	}
+	
+	public void bro(){
+		if(o == 1){
+			valor = a;
+		}
+		else{
+			 valor = b+1;
+		}
+	}
+	
+	public void brno(){
+		if(o == 0){
+			valor = a;
+		}
+		else{
+			valor = b+1;
+		}
 	}
 }

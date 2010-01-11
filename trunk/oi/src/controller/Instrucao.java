@@ -3398,243 +3398,75 @@ public class Instrucao extends Thread{
 	}*/
 	
 	public void desvioCondicional1(){
-		if(arquitetura.getUla().getZ() == 1){
-			String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor()+1);
-			int label = conversor.binarioParaInteiro(binario);
-			int temp = arquitetura.getMemoria().getPosicaoLabel(label);
-			if(temp != -1){
-				arquitetura.getMemoria().setPosicaoAtual(temp);
-				arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
-				arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			}else{
-				//System.out.println("Deu erro");
-				return;
-			}
-		}else{
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-		//	arquitetura.getMemoriaDeControle().atualizaPC();
-		}
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brz());
 	}
 	
 	public void desvioCondicional2(){
-		
-		//System.out.println("DESVIO" + arquitetura.getUla().getN());
-		
-		if(arquitetura.getUla().getN() == 1){			
-			String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor()+1);
-			int label = conversor.binarioParaInteiro(binario);
-			int temp = arquitetura.getMemoria().getPosicaoLabel(label);
-			if(temp != -1){
-				arquitetura.getMemoria().setPosicaoAtual(temp);
-				arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
-				arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			}else{
-				//System.out.println("Deu erro");
-				return;
-			}
-		}else{
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-		//	arquitetura.getMemoriaDeControle().atualizaPC();
-		}
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brn());
 	}
 	
 	public void desvioCondicional3(){
-		if(arquitetura.getUla().getZ() == 1){
-			String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor()+1);
-			int label = conversor.binarioParaInteiro(binario);
-			int temp = arquitetura.getMemoria().getPosicaoLabel(label);
-			if(temp != -1){
-				arquitetura.getMemoria().setPosicaoAtual(temp);
-				arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
-				arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			}else{
-				//System.out.println("Deu erro");
-				return;
-			}
-		}else{
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			//arquitetura.getMemoriaDeControle().atualizaPC();
-		}
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brz());
 	}
 	
 	public void desvioCondicional4(){
-		if(arquitetura.getUla().getN()*arquitetura.getUla().getO()+arquitetura.getUla().getZ2()*arquitetura.getUla().getO2()  == 1){
-			String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor()+1);
-			int label = conversor.binarioParaInteiro(binario);
-			int temp = arquitetura.getMemoria().getPosicaoLabel(label);
-			if(temp != -1){
-				arquitetura.getMemoria().setPosicaoAtual(temp);
-				arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
-				arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			}else{
-				//System.out.println("Deu erro");
-				return;
-			}
-		}else{
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-		//	arquitetura.getMemoriaDeControle().atualizaPC();
-		}
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brl());
 	}
 	
 	public void desvioCondicional5(){
-		if(arquitetura.getUla().getN()*arquitetura.getUla().getO2()+arquitetura.getUla().getZ2()+arquitetura.getUla().getO() == 1){
-			String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor()+1);
-			int label = conversor.binarioParaInteiro(binario);
-			int temp = arquitetura.getMemoria().getPosicaoLabel(label);
-			if(temp != -1){
-				arquitetura.getMemoria().setPosicaoAtual(temp);
-				arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
-				arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			}else{
-				//System.out.println("Deu erro");
-				return;
-			}
-		}else{
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			//arquitetura.getMemoriaDeControle().atualizaPC();
-		}
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brg());
 	}
 	
 	public void desvioCondicional6(){
-		if(arquitetura.getUla().getC() == 0){
-			String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor()+1);
-			int label = conversor.binarioParaInteiro(binario);
-			int temp = arquitetura.getMemoria().getPosicaoLabel(label);
-			if(temp != -1){
-				arquitetura.getMemoria().setPosicaoAtual(temp);
-				arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
-				arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			}else{
-				//System.out.println("Deu erro");
-				return;
-			}
-		}else{
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			//arquitetura.getMemoriaDeControle().atualizaPC();
-		}
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brc());
 	}
 	
 	public void desvioCondicional7(){
-		
-		if(arquitetura.getUla().getZ() == 0){
-			
-			String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor()+1);
-			int label = conversor.binarioParaInteiro(binario);
-			int temp = arquitetura.getMemoria().getPosicaoLabel(label);
-			if(temp != -1){
-				arquitetura.getMemoria().setPosicaoAtual(temp);
-				arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
-				arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			}else{
-				//System.out.println("Deu erro");
-				return;
-			}
-		}else{
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			//arquitetura.getMemoriaDeControle().atualizaPC();
-		}
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brnz());
 	}
 	
 	public void desvioCondicional8(){
-		//System.out.println("DESVIO" + arquitetura.getUla().getN());
-		
-		if(arquitetura.getUla().getN() == 0){
-			
-			//System.out.println("DESVIO");
-			
-			String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor()+1);
-			int label = conversor.binarioParaInteiro(binario);
-			int temp = arquitetura.getMemoria().getPosicaoLabel(label);
-			if(temp != -1){
-				arquitetura.getMemoria().setPosicaoAtual(temp);
-				arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
-				arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			}else{
-				//System.out.println("Deu erro");
-				return;
-			}
-		}else{
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			//arquitetura.getMemoriaDeControle().atualizaPC();
-		}
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brnn());
 	}
 	
 	public void desvioCondicional9(){
-		if(arquitetura.getUla().getC() == 0){
-			String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor()+1);
-			int label = conversor.binarioParaInteiro(binario);
-			int temp = arquitetura.getMemoria().getPosicaoLabel(label);
-			if(temp != -1){
-				arquitetura.getMemoria().setPosicaoAtual(temp);
-				arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
-				arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			}else{
-				//System.out.println("Deu erro");
-				return;
-			}
-		}else{
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			//arquitetura.getMemoriaDeControle().atualizaPC();
-		}
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brnc());
 	}
 	
 	public void desvioCondicional10(){
-		if(arquitetura.getUla().getO() == 1){
-			String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor()+1);
-			int label = conversor.binarioParaInteiro(binario);
-			int temp = arquitetura.getMemoria().getPosicaoLabel(label);
-			if(temp != -1){
-				arquitetura.getMemoria().setPosicaoAtual(temp);
-				arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
-				arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			}else{
-				//System.out.println("Deu erro");
-				return;
-			}
-		}else{
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			//arquitetura.getMemoriaDeControle().atualizaPC();
-		}
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().bro());
 	}
 	
 	public void desvioCondicional11(){
-		if(arquitetura.getUla().getO() == 0){
-			String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor()+1);
-			int label = conversor.binarioParaInteiro(binario);
-			int temp = arquitetura.getMemoria().getPosicaoLabel(label);
-			if(temp != -1){
-				arquitetura.getMemoria().setPosicaoAtual(temp);
-				arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
-				arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			}else{
-				//System.out.println("Deu erro");
-				//System.exit(1);
-				return;
-			}
-		}else{
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			//arquitetura.getMemoriaDeControle().atualizaPC();
-		}
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brno());
 	}
 	
 	public void desvioIncondicional(){
-		String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor()+1);
-		int label = conversor.binarioParaInteiro(binario);
-		int temp = arquitetura.getMemoria().getPosicaoLabel(label);
-		if(temp != -1){
-			arquitetura.getMemoria().setPosicaoAtual(temp);
-			arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			//System.out.println("TEMP :"+ temp);
-			//System.out.println(arquitetura.getPc().getValor());
-			//System.out.println(arquitetura.getMemoria().getPosicaoAtual());
-			//arquitetura.getMemoria().imprimeTestes();
-			//System.exit(1);
-		}else{
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			//System.out.println("Deu erro");
-			return;
-		}
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().jump());
 	}
 	
 	public void xor1(Registrador destino){
