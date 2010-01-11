@@ -1,5 +1,6 @@
 package controller;
 
+import model.Constantes;
 import model.Registrador;
 
 public class Instrucao extends Thread{
@@ -5276,16 +5277,21 @@ public class Instrucao extends Thread{
 	}
 				
 	public void travaThread(){
-		try {				
-			while (!arquitetura.isContinuar()) {// interrompe a thread
-				sleep(1000 / 80);
-				//AdministraView.getView().setStatus("Esperando ...");
+		if(arquitetura.getModo() == Constantes.RODAMICRO){
+			try {				
+				System.out.println("RODAMICRO");
+				while (!arquitetura.isContinuar()) {// interrompe a thread
+					System.out.println("ESTOU NO LOOP");
+					sleep(1000 / 80);
+					//AdministraView.getView().setStatus("Esperando ...");
+				}
+				arquitetura.setContinuar(false);
+				//if (arquitetura.isContinuar()){
+				//	loop = true;
+				//}
+			} catch (Exception e) {
+				System.out.println("Erro na Thread Instrucoes");
 			}
-			//if (arquitetura.isContinuar()){
-			//	loop = true;
-			//}
-		} catch (Exception e) {
-			System.out.println("Erro na Thread Instrucoes");
 		}
 		
 		/*while(loop){
