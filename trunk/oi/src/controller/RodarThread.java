@@ -28,6 +28,7 @@ public class RodarThread extends Thread{
 				rodaPrograma.run();
 				manipulaMemoria.getArquitetura().setRodaThread(false);
 				System.out.println("SAI DAQUI");
+				manipulaMemoria.getArquitetura().getPainelBaixo().setDisponibilidadeProximoPasso(false);
 				//break;
 			}
 		}

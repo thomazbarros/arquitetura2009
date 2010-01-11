@@ -84,7 +84,6 @@ import model.ULA;
 		int conteudoMemoria,valorMux;
 		
 		//pontosDeControle = pontoDeControle2;
-		atualizaPainel();
 		////System.out.println("REND : "+ rEnd.getValor());
 		for(int i = 0; i < pontoDeControle.length; i++)
 		{
@@ -222,6 +221,7 @@ import model.ULA;
 					ry.ativaPontoDeControle(ula.getValor());
 			}
 		}
+		atualizaPainel();		
 		////System.out.println("Modo : "+ modo);		
 	}
 
@@ -492,7 +492,7 @@ import model.ULA;
 		ulaGrafica.setV(pontosDeControle[21]);
 		ulaGrafica.setW(pontosDeControle[22]);
 		//ulaGrafica.setXx(pontosDeControle[23]);
-		ulaGrafica.setXx(true);
+		ulaGrafica.setXx(pontosDeControle[23]);
 		//for
 		////System.out.println(pontosDeControle);
 		for(int i = 0; i < pontosDeControle.length;i++){
@@ -525,10 +525,13 @@ import model.ULA;
 	public void buscaInstrucao(){
 		////System.out.println("Primeiro na busca");
 		ativaPontoDeControle(memoriaDeControle.rEndRecebePC());
+		//atualizaPainel();
 		////System.out.println("Segundo na busca");
 		ativaPontoDeControle(memoriaDeControle.rDadoRecebeInformacaoLida());
+		//atualizaPainel();
 		////System.out.println("Terceiro na busca");
 		ativaPontoDeControle(memoriaDeControle.irRecebeRDado());
+		//atualizaPainel();
 		////System.out.println("Final da busca");
 		//atualizaPainel();
 	}
@@ -621,6 +624,10 @@ import model.ULA;
 
 	public void setRodaThread(boolean rodaThread) {
 		this.rodaThread = rodaThread;
+	}
+
+	public view.PainelBaixo getPainelBaixo() {
+		return painelBaixo;
 	}
 	
 }
