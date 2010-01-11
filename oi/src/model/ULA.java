@@ -647,6 +647,29 @@ public class ULA{
 		}
 	}
 	
+	public void zeraPSW(){
+		setO(0);
+		setZ(0);
+		setC(0);
+		setN(0);
+	}
+
+	public void setC(Integer c) {
+		this.c = c;
+	}
+
+	public void setZ(Integer z) {
+		this.z = z;
+	}
+
+	public void setN(Integer n) {
+		this.n = n;
+	}
+
+	public void setO(Integer o) {
+		this.o = o;
+	}
+	
 	public void bro(){
 		if(o == 1){
 			valor = a;
