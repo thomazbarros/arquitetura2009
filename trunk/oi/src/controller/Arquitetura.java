@@ -209,6 +209,8 @@ import model.ULA;
 					memoria.setPontoDeControle(pontoDeControle2[i]);
 					//System.out.println("REND pra mem"+rEnd.getValor());
 					memoria.ativaPontoDeControle(rEnd.getValor());
+					painelBaixo.setTextoLabelPercentagemCache(getCache().getPorcentagemAcerto());
+					painelBaixo.setTextoLabelLocalBusca(getLocalBusca());
 					break;
 				case 'w':
 					pontosDeControle[22] = pontoDeControle2[i];
@@ -697,4 +699,12 @@ import model.ULA;
 	public void paraThreads(){
 		rodarThread.paraThreads();
 	}
+	
+	public String getLocalBusca(){
+		if(getCache().isAcessoBacking() == true){
+			return "Busca realizada na backing";
+		}
+		return "Busca realizada na cache";
+	}
+	
 }

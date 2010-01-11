@@ -279,6 +279,9 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 				manipulaMemoria.decifraInstrucao(file.getPath());
 				painelbase.getPainelBaixo().preencheMemoria();
 				painelbase.getPainelBaixo().preencheCache();
+				painelbase.getPainelBaixo().setTextoLabelPercentagemCache(
+						manipulaMemoria.getArquitetura().getCache().getPorcentagemAcerto());
+				painelbase.getPainelBaixo().setTextoLabelLocalBusca("");
 				painelbase.getPainelBaixo().preencheMicroprograma(file.getPath());
 				painelbase.getPainelBaixo().preenchePSW();
 				painelbase.getPainelBaixo().setDisponibilidadeComecar(true);

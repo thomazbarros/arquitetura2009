@@ -13,6 +13,7 @@ public class MemoriaCache {
 	private int posicoesOcupadas;
 	private int numeroAcertos;
 	private int totalTentativas;
+	private boolean acessoBacking;
 	
 	public MemoriaCache()
 	{
@@ -24,6 +25,7 @@ public class MemoriaCache {
 		posicoesOcupadas = 0;
 		numeroAcertos = 0;
 		totalTentativas = 0;
+		acessoBacking = true;
 	}
 	
 	public void getDadosBacking(int posicao, Memoria backing){
@@ -116,9 +118,11 @@ public class MemoriaCache {
 		if(acerto){
 			System.out.println("Leitura realizada na cache");
 			System.out.println("Porcentagem de acerto :"+getPorcentagemAcerto());
+			acessoBacking = false;
 		}else{
 			System.out.println("Leitura realizada na backing");
 			System.out.println("Porcentagem de acerto :"+getPorcentagemAcerto());
+			acessoBacking = true;
 		}
 	}
 
@@ -139,6 +143,10 @@ public class MemoriaCache {
 		posicoesOcupadas = 0;
 		numeroAcertos = 0;
 		totalTentativas = 0;
+	}
+
+	public boolean isAcessoBacking() {
+		return acessoBacking;
 	}
 	
 }

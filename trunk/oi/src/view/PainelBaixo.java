@@ -2,6 +2,7 @@ package view;
  
 import java.awt.Dimension;
 import java.awt.Rectangle;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -16,7 +17,6 @@ import controller.Arquitetura;
 import controller.ManipulaArquivo;
 import controller.ManipulaMemoria;
 import controller.RodaPrograma;
-import controller.RodarThread;
 
 public class PainelBaixo extends JPanel {
 
@@ -43,6 +43,8 @@ public class PainelBaixo extends JPanel {
 	private JLabel sinal = null;
 	private JLabel labelComecar = null;
 	private JLabel labelProxPasso = null;
+	private JLabel labelPercentagemCache = null;
+	private JLabel labelLocalBusca = null;
 	
 	private JTextField campoOverflow = null;
 	private JTextField campoZero = null;  //  @jve:decl-index=0:visual-constraint="537,10"
@@ -53,6 +55,8 @@ public class PainelBaixo extends JPanel {
 	private JButton proxPasso = null;
 
 	private RodaPrograma rodaPrograma;
+	private DecimalFormat formataDecimal;
+
 	//private RodarThread rodarThread;
 	/**
 	 * This method initializes painelBaixo	
@@ -63,6 +67,7 @@ public class PainelBaixo extends JPanel {
 	public PainelBaixo(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){//,RodarThread rodarThread){
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
+		formataDecimal = new DecimalFormat("0.00");  
 		//this.rodarThread = rodarThread;
 		inicializar();
 	}
@@ -90,6 +95,12 @@ public class PainelBaixo extends JPanel {
 			psw = new JLabel();
 			psw.setBounds(new Rectangle(610, 40, 362, 23));
 			psw.setText("PSW");
+			labelPercentagemCache = new JLabel();
+			labelPercentagemCache.setBounds(new Rectangle(610, 150, 362, 23));
+			labelPercentagemCache.setText("Percentagem do Cache:");
+			labelLocalBusca = new JLabel();
+			labelLocalBusca.setBounds(new Rectangle(610, 200, 362, 23));
+			//labelLocalBusca.setText("Local da busca");
 			cache = new JLabel();
 			cache.setBounds(new Rectangle(500, 40, 153, 18));
 			cache.setText("Cache");
@@ -122,6 +133,8 @@ public class PainelBaixo extends JPanel {
 			this.add(getProxPasso(), null);
 			this.add(labelComecar, null);
 			this.add(labelProxPasso, null);
+			this.add(labelPercentagemCache,null);
+			this.add(labelLocalBusca,null);
 	}
 	
 	/*public PainelBaixo getPainelBaixo() {
@@ -373,6 +386,7 @@ public class PainelBaixo extends JPanel {
 			setDisponibilidadeComecar(false);
 			comecar.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
+					setTextoLabelLocalBusca("");
 					//rodaPrograma.run();
 					//rodaPrograma.setRun();
 					manipulaMemoria.getArquitetura().setRodaThread(true);
@@ -404,6 +418,7 @@ public class PainelBaixo extends JPanel {
 			setDisponibilidadeProximoPasso(false);
 			proxPasso.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
+					setTextoLabelLocalBusca("");
 					manipulaMemoria.getArquitetura().setContinuar(true);
 					//rodaPrograma.rodar();
 					//manipulaMemoria.getArquitetura().atualizaPainel();
@@ -433,4 +448,12 @@ public class PainelBaixo extends JPanel {
 		comecar.setEnabled(disponivel);
 	}
 	
+	public void setTextoLabelPercentagemCache(Double percentagem){
+		labelPercentagemCache.setText("Percentagem do Cache: "+formataDecimal.format(percentagem));
+	}
+	
+	public void setTextoLabelLocalBusca(String texto){
+		labelLocalBusca.setText(texto);
+	}
+
 }  //  @jve:decl-index=0:visual-constraint="10,10"
