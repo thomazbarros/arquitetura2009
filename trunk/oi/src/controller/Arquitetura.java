@@ -491,7 +491,6 @@ import model.ULA;
 		ulaGrafica.setU(pontosDeControle[20]);
 		ulaGrafica.setV(pontosDeControle[21]);
 		ulaGrafica.setW(pontosDeControle[22]);
-		//ulaGrafica.setXx(pontosDeControle[23]);
 		ulaGrafica.setXx(pontosDeControle[23]);
 		//for
 		////System.out.println(pontosDeControle);
@@ -609,6 +608,39 @@ import model.ULA;
 		}
 		
 	}
+	
+	public void zeraPontosDeControleGrafico(){
+		
+		for(int i = 0; i < pontosDeControle.length;i++){
+			pontosDeControle[i] = false;
+		}
+		
+		ulaGrafica.setA(pontosDeControle[0]);
+		ulaGrafica.setB(pontosDeControle[1]);
+		ulaGrafica.setC(pontosDeControle[2]);
+		ulaGrafica.setD(pontosDeControle[3]);
+		ulaGrafica.setE(pontosDeControle[4]);
+		ulaGrafica.setF(pontosDeControle[5]);
+		ulaGrafica.setG(pontosDeControle[6]);
+		ulaGrafica.setH(pontosDeControle[7]);
+		ulaGrafica.setI(pontosDeControle[8]);
+		ulaGrafica.setJ(pontosDeControle[9]);
+		ulaGrafica.setK(pontosDeControle[10]);
+		ulaGrafica.setL(pontosDeControle[11]);
+		ulaGrafica.setM(pontosDeControle[12]);
+		ulaGrafica.setN(pontosDeControle[13]);
+		ulaGrafica.setO(pontosDeControle[14]);
+		ulaGrafica.setP(pontosDeControle[15]);
+		ulaGrafica.setQ(pontosDeControle[16]);
+		ulaGrafica.setR(pontosDeControle[17]);
+		ulaGrafica.setS(pontosDeControle[18]);
+		ulaGrafica.setT(pontosDeControle[19]);
+		ulaGrafica.setU(pontosDeControle[20]);
+		ulaGrafica.setV(pontosDeControle[21]);
+		ulaGrafica.setW(pontosDeControle[22]);
+		ulaGrafica.setXx(pontosDeControle[23]);
+		
+	}
 
 	public void setContinuar(boolean continuar) {
 		System.out.println("setei o continuar");
@@ -635,4 +667,34 @@ import model.ULA;
 		return painelBaixo;
 	}
 	
+	public void zeraRegistradores(){
+		getRDado().setValor(0);
+		getR0().setValor(0);
+		getR1().setValor(0);
+		getR2().setValor(0);
+		getR3().setValor(0);
+		getR4().setValor(0);
+		getRx().setValor(0);
+		getRy().setValor(0);
+		getREnd().setValor(0);
+		getPc().setValor(0);
+		getIr().setValor(0);
+		
+		ulaGrafica.setRdados(getRDado().getValor());
+		ulaGrafica.setReg0(getR0().getValor());
+		ulaGrafica.setReg1(getR1().getValor());
+		ulaGrafica.setReg2(getR2().getValor());
+		ulaGrafica.setReg3(getR3().getValor());
+		ulaGrafica.setReg4(getR4().getValor());
+		ulaGrafica.setRegX(getRx().getValor());
+		ulaGrafica.setRegY(getRy().getValor());
+		ulaGrafica.setRend(getREnd().getValor());
+		ulaGrafica.setPc(getPc().getValor());
+		ulaGrafica.setIr(getIr().getValor());
+		
+	}
+	
+	public void paraThreads(){
+		rodarThread.paraThreads();
+	}
 }

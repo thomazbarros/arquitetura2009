@@ -66,6 +66,11 @@ public class RodarThread extends Thread{
 		manipulaMemoria.getInstrucao().travaThread();
 	}
 	
+	public void paraThreads(){
+		manipulaMemoria.getInstrucao().interrupt();
+		rodaPrograma.interrupt();
+	}
+	
 	/*public void setContinuar(boolean continuar){
 		manipulaMemoria.getArquitetura().setContinuar(true);
 	}*/
