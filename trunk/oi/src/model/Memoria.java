@@ -56,10 +56,13 @@ public class Memoria{
 	
 	public String getDado(int posicao){
 		//return dados[posicao];
+		System.out.println("PEGANDO DADOS. POSICAO :"+posicao);
 		if(cache.verificaElementoCache(posicao)){
+			System.out.println("Esta na cache");
 			return cache.getElementoCache(posicao);
 		}
 		if(posicao < tamanho){
+				System.out.println("nao esta na cache");
 				cache.getDadosBacking(posicao, this);
 				return dados[posicao];
 		}
@@ -209,10 +212,12 @@ public class Memoria{
 		return posicaoLivre;
 	}
 	
-	public void inicializaMemoria(){
+	public void zeraMemoria(){
 		for(int i = 0; i < dados.length; i++){
 			dados[i] = "0000000000000000";
 		}
 		zeraLabels();
+		posicaoLivre = 0;
+		constanteLabel = 1;
 	}
 }

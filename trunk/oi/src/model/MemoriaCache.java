@@ -130,4 +130,15 @@ public class MemoriaCache {
 		return posicoesOcupadas;
 	}
 	
+	public void zeraCache(){
+		dados = null;
+		fila = null;
+		dados = new HashMap<Integer,String>(tamanho);
+		fila = new TreeMap<Integer, Integer>();
+		contadorFifo = 0;
+		posicoesOcupadas = 0;
+		numeroAcertos = 0;
+		totalTentativas = 0;
+	}
+	
 }
