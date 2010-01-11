@@ -7,17 +7,17 @@ public class Instrucao extends Thread{
 	
 	private Arquitetura arquitetura;
 	private Conversor conversor;
-	//private boolean loop;
+	private boolean sair;
  
 	public Instrucao(){
 		arquitetura = new Arquitetura();
-		//loop = true;
+		sair = false;
 	}
 	
 	Instrucao(Arquitetura arquitetura){
 		this.arquitetura = arquitetura;
 		conversor = new Conversor();
-		//loop = true;
+		sair = false;
 	}
 	
 	public void soma1(Registrador destino){
@@ -5112,15 +5112,17 @@ public class Instrucao extends Thread{
 		if(arquitetura.getModo() == Constantes.RODAMICRO){
 			try {				
 				//System.out.println("RODAMICRO");
-				while (!arquitetura.isContinuar()) {// interrompe a thread
+				while (!arquitetura.isContinuar() && !sair) {// interrompe a thread
 					//System.out.println("ESTOU NO LOOP");
 					sleep(1000 / 80);
 					//AdministraView.getView().setStatus("Esperando ...");
 				}
 				arquitetura.setContinuar(false);
+				sair = false;
 				//if (arquitetura.isContinuar()){
 				//	loop = true;
 				//}
+				System.out.println("SAINDO DA INSTRUCAO");
 			} catch (Exception e) {
 				System.out.println("Erro na Thread Instrucoes");
 			}
@@ -5144,5 +5146,9 @@ public class Instrucao extends Thread{
 			}
 		}
 		loop = true;*/
+	}
+	
+	public void setSair(boolean sair){
+		this.sair = sair;
 	}
 }
