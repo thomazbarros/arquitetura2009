@@ -108,6 +108,7 @@ import model.ULA;
 				case 'c':
 					pontosDeControle[2] = pontoDeControle2[i];
 					pc.setPontoDeControle(pontoDeControle2[i]);
+					System.out.println("VALOR QUE ELE VAI PEGAR DA ULA" + ula.getValor());
 					pc.ativaPontoDeControle(ula.getValor());
 					break;
 				case 'd':
@@ -202,7 +203,9 @@ import model.ULA;
 				case 'u':
 					pontosDeControle[20] = pontoDeControle2[i];
 					ula.setPontoDeControle6(pontoDeControle2[i]);
+					System.out.println("SETANDO A ULA");
 					ula.ativaPontoDeControle();
+					System.out.println("ULA SETADA : "+ula.getValor());
 					//System.out.println(ula.getValor());
 					break;
 				case 'v':
