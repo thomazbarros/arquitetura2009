@@ -24,10 +24,10 @@ public class RodarThread extends Thread{
 					sleep(1000/80);
 				}catch(Exception e){}
 			}else{
-				System.out.println("ENTREI AQUI");
+				//System.out.println("ENTREI AQUI");
 				rodaPrograma.run();
 				manipulaMemoria.getArquitetura().setRodaThread(false);
-				System.out.println("SAI DAQUI");
+				//System.out.println("SAI DAQUI");
 				manipulaMemoria.getArquitetura().getPainelBaixo().setDisponibilidadeProximoPasso(false);
 				//break;
 			}
