@@ -46,6 +46,9 @@ public class Parser {
 		String [] separaEspaco;
 		String primeiroArgumento;
 		
+		instrucao = instrucao.replaceAll("<", "");
+		instrucao = instrucao.replaceAll(">", ""); 
+		
 		separaEspaco = instrucao.split(" ");
 		
 		if(separaEspaco.length > 2){
@@ -84,6 +87,9 @@ public class Parser {
 	public int decifraArgumento(String instrucao){
 		String [] separaEspaco;
 		
+		instrucao = instrucao.replaceAll("<", "");
+		instrucao = instrucao.replaceAll(">", "");
+		
 		separaEspaco = instrucao.split(" ");
 		
 		if(separaEspaco.length >= 2){
@@ -107,6 +113,8 @@ public class Parser {
 	
 	public String decifraLabel(String instrucao){
 		String [] separaEspaco;
+		instrucao = instrucao.replaceAll("<", "");
+		instrucao = instrucao.replaceAll(">", "");		
 		
 		separaEspaco = instrucao.split(" ");
 		
@@ -127,6 +135,8 @@ public class Parser {
 	
 	public String decifraLabelArgumento(String instrucao){
 		String [] separaEspaco;
+		instrucao = instrucao.replaceAll("<", "");
+		instrucao = instrucao.replaceAll(">", "");
 		
 		separaEspaco = instrucao.split(" ");
 		
@@ -180,8 +190,12 @@ public class Parser {
 		
 	}
 	
-	public int getTipo(String argumento){
-	
+	public int getTipo(String tipo){
+		String argumento;
+		
+		argumento = tipo.replaceAll("<", "");
+		argumento = argumento.replaceAll(">", "");
+		
 		try{
 			Integer.parseInt(argumento);
 			return Constantes.CONSTANTE;
@@ -236,6 +250,9 @@ public class Parser {
 		String primeiroArgumento;
 		String aux;
 		
+		instrucao = instrucao.replaceAll("<", "");
+		instrucao = instrucao.replaceAll(">", "");
+		
 		separaEspaco = instrucao.split(" ");
 		
 		if(separaEspaco.length > 2){
@@ -271,6 +288,8 @@ public class Parser {
 	
 	public boolean hasLabel(String instrucao){
 		String [] separaEspaco;
+		//instrucao = instrucao.replaceAll("<", "");
+		//instrucao = instrucao.replaceAll(">", "");
 		
 		separaEspaco = instrucao.split(" ");
 		if(separaEspaco.length >= 2){
