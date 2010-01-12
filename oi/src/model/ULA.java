@@ -544,6 +544,7 @@ public class ULA{
 	
 	public void bMais1(){
 		valor = b+1;
+		//System.out.println("VALOR :"+valor);
 	}
 	
 	public void aXorB(){
