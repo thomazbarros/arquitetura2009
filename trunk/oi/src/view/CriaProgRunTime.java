@@ -99,7 +99,7 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 							JOptionPane.showMessageDialog(null, "Ocorreu erro no endereco de gravacao. Tente novamente.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
 							setVisible(true);
 						}else{
-							
+							arquivoLido = new LerEscreverArquivo(areaTexto.getText(),end);
 							setVisible(false);	
 						}
 							

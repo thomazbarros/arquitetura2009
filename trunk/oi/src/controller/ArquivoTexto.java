@@ -33,8 +33,8 @@ public class ArquivoTexto {
 	 * texto.
 	 */
 
-	public ArquivoTexto() throws IOException {
-		bw = new BufferedWriter(new FileWriter("./programa.txt "));
+	public ArquivoTexto(String endereco, int a) throws IOException {
+		bw = new BufferedWriter(new FileWriter(endereco));
 	}
 
 	/**
