@@ -215,7 +215,7 @@ public class ULA{
 	public void aMaisB(){
 		valor = conversor.valorOverflow(a+b);
 		
-		if(valor <= 0){
+		if(valor < 0){
 			n = 1;
 		}
 		else{
@@ -273,7 +273,7 @@ public class ULA{
 	public void aMenosB(){
 		valor = a-b;
 		
-		if(valor <= 0){
+		if(valor < 0){
 			n = 1;
 		}
 		else{
@@ -313,7 +313,7 @@ public class ULA{
 	public void aAndB(){
 		valor = a&b;
 		
-		if(valor <= 0){
+		if(valor < 0){
 			n = 1;
 		}
 		else{
@@ -335,7 +335,7 @@ public class ULA{
 	public void aOrB(){
 		valor = a|b;
 		
-		if(valor <= 0){
+		if(valor < 0){
 			n = 1;
 		}
 		else{
@@ -389,7 +389,7 @@ public class ULA{
 	public void aShiftRight(){
 		valor = a>>1;
 		
-		if(valor <= 0){
+		if(valor < 0){
 			n = 1;
 		}
 		else{
@@ -421,7 +421,7 @@ public class ULA{
 	public void bShiftLeft(){
 		valor = b<<1;
 		
-		if(valor <= 0){
+		if(valor < 0){
 			n = 1;
 		}
 		else{
@@ -453,7 +453,7 @@ public class ULA{
 	public void bShiftRight(){
 		valor = b>>1;
 		
-		if(valor <= 0){
+		if(valor < 0){
 			n = 1;
 		}
 		else{
@@ -497,7 +497,7 @@ public class ULA{
 	public void bMenosA(){
 		valor = b - a;
 		
-		if(valor <= 0){
+		if(valor < 0){
 			n = 1;
 		}
 		else{
@@ -549,7 +549,7 @@ public class ULA{
 	public void aXorB(){
 		valor = a ^ b;
 		
-		if(valor <= 0){
+		if(valor < 0){
 			n = 1;
 		}
 		else{

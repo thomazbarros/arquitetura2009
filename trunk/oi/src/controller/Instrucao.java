@@ -6,7 +6,6 @@ import model.Registrador;
 public class Instrucao extends Thread{
 	
 	private Arquitetura arquitetura;
-	private Conversor conversor;
 	private boolean sair;
  
 	public Instrucao(){
@@ -16,7 +15,6 @@ public class Instrucao extends Thread{
 	
 	Instrucao(Arquitetura arquitetura){
 		this.arquitetura = arquitetura;
-		conversor = new Conversor();
 		sair = false;
 	}
 	
@@ -3400,72 +3398,84 @@ public class Instrucao extends Thread{
 	public void desvioCondicional1(){
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brz());
 	}
 	
 	public void desvioCondicional2(){
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brn());
 	}
 	
 	public void desvioCondicional3(){
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brz());
 	}
 	
 	public void desvioCondicional4(){
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brl());
 	}
 	
 	public void desvioCondicional5(){
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brg());
 	}
 	
 	public void desvioCondicional6(){
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brc());
 	}
 	
 	public void desvioCondicional7(){
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brnz());
 	}
 	
 	public void desvioCondicional8(){
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brnn());
 	}
 	
 	public void desvioCondicional9(){
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brnc());
 	}
 	
 	public void desvioCondicional10(){
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().bro());
 	}
 	
 	public void desvioCondicional11(){
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().brno());
 	}
 	
 	public void desvioIncondicional(){
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePC());
+		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().jump());
 	}
 	
