@@ -236,7 +236,10 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 		 */
 		fc.setCurrentDirectory(new File("./"));
 		int returnVal = fc.showSaveDialog(this);
+		System.out.println(returnVal);
+		System.out.println(JFileChooser.APPROVE_OPTION);
 		if(returnVal == JFileChooser.APPROVE_OPTION){
+			System.out.println("APROVADO :)");
 			File file = fc.getSelectedFile();
 			System.out.println(fc.getSelectedFile());
 			File file2 = new File(fc.getSelectedFile()+".txt");
@@ -247,29 +250,30 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 					int res = JOptionPane.showConfirmDialog(null,"Esse arquivo já existe. Tem certeza que deseja sobrescrever?");
 					if(res == JOptionPane.NO_OPTION || res == JOptionPane.CANCEL_OPTION || res == JOptionPane.CLOSED_OPTION)
 					{
+						System.out.println("ESSE NAO");
 						return ".nao";
 					}
-					else{
-						if(file.getPath().indexOf(".txt") == -1){
+				}
+
+				if(file.getPath().indexOf(".txt") == -1){
 						string = file2.getAbsolutePath();
 						System.out.println(string);
 						//System.out.println(file2.getAbsolutePath());
 						System.out.println("1");
 						//return file.getPath()+".dat";
+						//return file.getPath() + ".txt";
 							
-							//janela.setNomeArquivo(file.getPath()+".dat");
-							//manipula.setNomeArquivo(file.getPath()+".dat");
-					}else{
+					//janela.setNomeArquivo(file.getPath()+".dat");
+					//manipula.setNomeArquivo(file.getPath()+".dat");
+				}else{
 						System.out.println(file.getAbsolutePath());
 						//return file.getPath();
-							
+						
 						string = file.getAbsolutePath();
 							//janela.setNomeArquivo(file.getPath());
 							//manipula.setNomeArquivo(file.getPath());
-					}
-					}
 				}
-				
+		
 			} catch (Exception e2) {
 				e2.printStackTrace();
 				System.out.println(" ERRO ");
