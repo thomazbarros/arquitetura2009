@@ -87,13 +87,13 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 		botaoSalvarComo.setBounds(150, 400, 160, 20);
 		botaoSalvarComo.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent e) {
-				System.out.println(areaTexto.getText());
+				//System.out.println(areaTexto.getText());
 				try{
 					if(areaTexto.getText().equals("Digite aqui...") || areaTexto.getText().equals("")){
 						JOptionPane.showMessageDialog(null, "Falha ao carregar este programa.\nDigite um programa válido ou feche a janela.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
 					}
 					else{
-						System.out.println(areaTexto.getText());
+						//System.out.println(areaTexto.getText());
 						String end = popup();
 						if(end.equals(".nao")){
 							JOptionPane.showMessageDialog(null, "Ocorreu erro no endereco de gravacao. Tente novamente.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
@@ -175,7 +175,7 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 			}
 	    }
 		//System.out.println("passei aqui");
-		System.out.println("String saída:" + string);
+		//System.out.println("String saída:" + string);
 		return string;
 	}
 

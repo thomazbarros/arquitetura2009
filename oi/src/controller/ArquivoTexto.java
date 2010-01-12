@@ -6,12 +6,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-/**
- * Classe responsavel por criar um arquivo.
- * 
- * @author Projeto Arquitetura
- *  
- */
 public class ArquivoTexto {
 
 	BufferedReader bf;
