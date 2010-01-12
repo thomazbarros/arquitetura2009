@@ -1,0 +1,11 @@
+MOV <20, R0>
+MOV <30, R1>
+MOV <R0, R2>
+MOV <R1, R3>
+SUB <R1, R0>
+NEG <R1>
+ADD <R0, R1>
+ADD <R2, R3>
+SUB <R1, R3>
+
+HALT
