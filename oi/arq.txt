@@ -1,2 +1,5 @@
-ADD 1, R0
+ADD <1, R1>
+JMP <BLA>
+ADD <2, R2>
+BLA : ADD <1, R2>
 HALT

@@ -659,6 +659,7 @@ import model.ULA;
 
 	public void setRodarThread(RodarThread rodarThread) {
 		this.rodarThread = rodarThread;
+		ula.setRodarThread(rodarThread);
 	}
 	
 	public boolean isRodaThread() {

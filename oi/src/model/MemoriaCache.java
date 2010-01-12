@@ -43,7 +43,10 @@ public class MemoriaCache {
 	}
 	
 	public void adicionaCache(int posicaoInicial,int numeroPalavras,Memoria backing){
-		if(posicoesOcupadas+numeroPalavras < tamanho){
+		System.out.println("POSICOES OCUPADAS :"+posicoesOcupadas);
+		System.out.println("NUMEROPALAVRAS :"+numeroPalavras);
+		System.out.println("TAMANHO :"+tamanho);
+		if(posicoesOcupadas+numeroPalavras <= tamanho){
 			posicoesOcupadas += numeroPalavras;
 		}else{
 			removeFifo(numeroPalavras);
@@ -62,6 +65,7 @@ public class MemoriaCache {
 			fila.remove(i);
 			contadorFifo--;
 		}
+		posicoesOcupadas -= numeroPalavras;
 		arrumaFila(numeroPalavras);
 	}
 	

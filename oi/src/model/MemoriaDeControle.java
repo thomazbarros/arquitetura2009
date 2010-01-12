@@ -2000,7 +2000,7 @@ public class MemoriaDeControle {
 	
 	public Microinstrucao jump(){
 		char[] pontoDeControle = {'k', 'l', 'p', 'q', 'r', 's', 't', 'u', 'c'};
-		boolean[] pontoDeControle2 = {false, false, false, false, false, false, false, false, true};
+		boolean[] pontoDeControle2 = {false, false, false, true, true, true, true, true, true};
 		
 		microinstrucao.setPontoDeControle(pontoDeControle);
 		microinstrucao.setPontoDeControle2(pontoDeControle2);

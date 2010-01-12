@@ -1,20 +1,22 @@
 package model;
 
 import controller.Conversor;
+import controller.RodarThread;
 
 public class ULA{
 	
 	private boolean pontoDeControle1, pontoDeControle2, pontoDeControle3, pontoDeControle4, pontoDeControle5, pontoDeControle6;
 	private Integer a, b, valor, c, z, n, o;
 	private Conversor conversor;
+	private RodarThread rodarThread;
 	
 	public Integer getValor() {
-		//System.out.println("VALOR RETORNADO :" + valor);
+		////System.out.println("VALOR RETORNADO :" + valor);
 		return valor;
 	}
      
 	public void setValor(Integer valor) {
-		//System.out.println("SETARAM O VALOR!!!!!!!!!!");
+		////System.out.println("SETARAM O VALOR!!!!!!!!!!");
 		this.valor = valor;
 	}
 
@@ -184,12 +186,24 @@ public class ULA{
 		if((!pontoDeControle1)&&(pontoDeControle2)&&(pontoDeControle3)&&(pontoDeControle4)&&(!pontoDeControle5)&&(!pontoDeControle6)){
 			brnc();
 		}
-		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(pontoDeControle3)&&(pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
+			bro();
+		}
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(pontoDeControle3)&&(pontoDeControle4)&&(pontoDeControle5)&&(!pontoDeControle6)){
+			brno();
+		}
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(pontoDeControle3)&&(pontoDeControle4)&&(pontoDeControle5)&&(pontoDeControle6)){
+			jmp();
+		}
+		/*if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
 			bro();
 		}
 		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(!pontoDeControle6)){
 			brno();
 		}
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(pontoDeControle6)){
+			jmp();
+		}*/
 		
 		pontoDeControle1 = false;
 		pontoDeControle2 = false;
@@ -544,7 +558,7 @@ public class ULA{
 	
 	public void bMais1(){
 		valor = b+1;
-		//System.out.println("VALOR :"+valor);
+		////System.out.println("VALOR :"+valor);
 	}
 	
 	public void aXorB(){
@@ -579,7 +593,10 @@ public class ULA{
 	
 	public void brz(){
 		if(z == 1){
-			valor = a;
+			valor = rodarThread.getValorDesvio();
+			if(valor == -1){
+				valor = b+1;
+			}
 		}
 		else{
 			valor = b+1;
@@ -588,7 +605,11 @@ public class ULA{
 	
 	public void brn(){
 		if(n == 1){
-			valor = a;
+			//valor = a;
+			valor = rodarThread.getValorDesvio();
+			if(valor == -1){
+				valor = b+1;
+			}
 		}
 		else{
 			valor = b+1;
@@ -597,7 +618,10 @@ public class ULA{
 	
 	public void brl(){
 		if(n*o + (1-n)*(1-o) == 1){
-			valor = a;
+			valor = rodarThread.getValorDesvio();
+			if(valor == -1){
+				valor = b+1;
+			}
 		}
 		else{
 			valor = b+1;
@@ -606,7 +630,10 @@ public class ULA{
 	
 	public void brg(){
 		if(n*(1-o) + (1-n)*o == 1){
-			valor = a;
+			valor = rodarThread.getValorDesvio();
+			if(valor == -1){
+				valor = b+1;
+			}
 		}
 		else{
 			valor = b+1;
@@ -615,7 +642,10 @@ public class ULA{
 	
 	public void brc(){
 		if(c == 1){
-			valor = a;
+			valor = rodarThread.getValorDesvio();
+			if(valor == -1){
+				valor = b+1;
+			}
 		}
 		else{
 			valor = b+1;
@@ -624,7 +654,10 @@ public class ULA{
 	
 	public void brnz(){
 		if(z == 0){
-			valor = a;
+			valor = rodarThread.getValorDesvio();
+			if(valor == -1){
+				valor = b+1;
+			}
 		}
 		else{
 			valor = b+1;
@@ -633,7 +666,10 @@ public class ULA{
 	
 	public void brnn(){
 		if(n == 0){
-			valor = a;
+			valor = rodarThread.getValorDesvio();
+			if(valor == -1){
+				valor = b+1;
+			}
 		}
 		else{
 			valor = b+1;
@@ -642,11 +678,26 @@ public class ULA{
 	
 	public void brnc(){
 		if(c == 0){
-			valor = a;
+			valor = rodarThread.getValorDesvio();
+			if(valor == -1){
+				valor = b+1;
+			}
 		}
 		else{
 			valor = b+1;
 		}
+	}
+	
+	public void jmp(){
+		System.out.println("CHEGUEI A JUMPAR");
+		valor = rodarThread.getValorDesvio();
+		if(valor == -1){
+			System.out.println("DEU ERRADO :/");
+			valor = b+1;
+		}else{
+			System.out.println("PSEUDO DEU CERTO");
+		}
+		System.out.println("VALOR FINAL : "+valor);
 	}
 	
 	public void zeraPSW(){
@@ -704,5 +755,9 @@ public class ULA{
 
 	public Integer getZ() {
 		return z;
+	}
+	
+	public void setRodarThread(RodarThread rodarThread){
+		this.rodarThread = rodarThread;
 	}
 }

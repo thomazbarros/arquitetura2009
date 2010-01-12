@@ -75,4 +75,23 @@ public class RodarThread extends Thread{
 		manipulaMemoria.getArquitetura().setContinuar(true);
 	}*/
 	
+	public int getValorDesvio(){
+		Arquitetura arquitetura = manipulaMemoria.getArquitetura();
+		Conversor conversor = new Conversor();
+		
+		String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor());
+		int label = conversor.binarioParaInteiro(binario);
+		System.out.println(label);
+		arquitetura.getMemoria().imprimeTestes();
+		int temp = arquitetura.getMemoria().getPosicaoLabel(label);
+		if(temp != -1){
+			arquitetura.getMemoria().setPosicaoAtual(temp);
+			return temp;
+			//arquitetura.getPc().setValor(arquitetura.getMemoria().getPosicaoLabel(label));
+			//arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		}else{
+			return -1;
+		}
+	}
+	
 }
