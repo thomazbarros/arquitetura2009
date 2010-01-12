@@ -220,4 +220,9 @@ public class Memoria{
 		posicaoLivre = 0;
 		constanteLabel = 1;
 	}
+	
+	public void imprimeTestes(){
+		System.out.println(labels);
+		System.out.println(labelMemoria);
+	}
 }
