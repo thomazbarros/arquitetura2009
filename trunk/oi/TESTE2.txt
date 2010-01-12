@@ -1,0 +1,6 @@
+MOV <5,R1>
+CLR R0
+SUB <1,R1>
+CMP <R1,R0>
+BRG <1>
+
