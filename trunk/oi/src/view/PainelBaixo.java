@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
+import model.Constantes;
+
 import controller.Arquitetura;
 import controller.ManipulaArquivo;
 import controller.ManipulaMemoria;
@@ -453,7 +455,9 @@ public class PainelBaixo extends JPanel {
 	}
 	
 	public void setTextoLabelLocalBusca(String texto){
-		labelLocalBusca.setText(texto);
+		if(manipulaMemoria.getArquitetura().getModo() == Constantes.RODAMICRO){
+			labelLocalBusca.setText(texto);
+		}
 	}
 
 }  //  @jve:decl-index=0:visual-constraint="10,10"

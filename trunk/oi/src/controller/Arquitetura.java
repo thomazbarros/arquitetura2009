@@ -145,6 +145,7 @@ import model.ULA;
 					break;
 				case 'i':
 					pontosDeControle[8] = pontoDeControle2[i];
+					//System.out.println("REND : " + ula.getValor());
 					rEnd.setPontoDeControle(pontoDeControle2[i]);
 					rEnd.ativaPontoDeControle(ula.getValor());
 					break;
