@@ -1,9 +1,9 @@
-package view;
+package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+ 
 /**
  * Classe responsavel por instanciar um arquivo e ler ou escrever no mesmo.
  */

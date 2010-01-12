@@ -1,4 +1,4 @@
-package view;
+package controller;
  
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -10,7 +10,7 @@ import java.io.IOException;
  * Classe responsavel por criar um arquivo.
  * 
  * @author Projeto Arquitetura
- * 
+ *  
  */
 public class ArquivoTexto {
 
@@ -34,7 +34,7 @@ public class ArquivoTexto {
 	 */
 
 	public ArquivoTexto() throws IOException {
-		bw = new BufferedWriter(new FileWriter("./arquivo/programa.txt"));
+		bw = new BufferedWriter(new FileWriter("./programa.txt "));
 	}
 
 	/**

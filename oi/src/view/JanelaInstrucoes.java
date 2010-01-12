@@ -12,6 +12,8 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import controller.ArquivoTexto;
+
 
 public class JanelaInstrucoes extends JFrame implements WindowListener {
 
