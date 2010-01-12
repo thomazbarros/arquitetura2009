@@ -9,10 +9,12 @@ public class ULA{
 	private Conversor conversor;
 	
 	public Integer getValor() {
+		//System.out.println("VALOR RETORNADO :" + valor);
 		return valor;
 	}
      
 	public void setValor(Integer valor) {
+		//System.out.println("SETARAM O VALOR!!!!!!!!!!");
 		this.valor = valor;
 	}
 
@@ -202,6 +204,7 @@ public class ULA{
 	}
 	
 	public void B(){
+		
 		valor = b;
 	}
 	
