@@ -18,7 +18,7 @@ public class RodaPrograma extends Thread{
 	
 	public void run(){
 		//System.out.println(arquitetura.getMemoria());
-		System.out.println("Rodando "+Thread.currentThread().getName());
+		//System.out.println("Rodando "+Thread.currentThread().getName());
 		String instrucao;
 		arquitetura.buscaInstrucao();
 		////System.out.println("R0 antes:"+arquitetura.getR0().getValor());
@@ -40,7 +40,7 @@ public class RodaPrograma extends Thread{
 		manipulaMemoria.getArquitetura().atualizaPainel();
 		////System.out.println("R0 depois:"+arquitetura.getR0().getValor());
 		////System.out.println(arquitetura.getR1().getValor());
-		System.out.println("Parando Rodar");
+		//System.out.println("Parando Rodar");
 	}
 	
 	public void rodaMicro(){
