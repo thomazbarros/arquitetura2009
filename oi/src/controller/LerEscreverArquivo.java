@@ -34,8 +34,8 @@ public class LerEscreverArquivo {
 		}
 	}
 
-	public LerEscreverArquivo(String gravacao, String teste) throws IOException {
-		ArquivoTexto novoArquivo = new ArquivoTexto();
+	public LerEscreverArquivo(String gravacao, String endereco) throws IOException {
+		ArquivoTexto novoArquivo = new ArquivoTexto(endereco, 1);
 		try {
 			novoArquivo.gravarLinha(gravacao);
 		} catch (Exception e) {
