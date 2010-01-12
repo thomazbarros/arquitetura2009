@@ -150,20 +150,98 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 		setVisible(true);
 		
 	}
+	/**
+	 * public void ativa(){
+		if (fc == null) {
+			fc = new JFileChooser();
+			fc.addChoosableFileFilter(new FiltroData());
+			fc.setAcceptAllFileFilterUsed(false);
+		}
+		fc.setCurrentDirectory(new File("./"));
+		int returnVal = fc.showSaveDialog(this);
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			File file = fc.getSelectedFile();
+			File file2 = new File(file.getPath()+".dat");
+			try {
+				if(file.exists() || file2.exists()){
+					int res = JOptionPane.showConfirmDialog(null,"Esse arquivo já existe. Tem certeza que deseja sobrescrever?");
+					if(res == JOptionPane.NO_OPTION || res == JOptionPane.CANCEL_OPTION || res == JOptionPane.CLOSED_OPTION)
+					{
+						return;
+					}
+				}
+				if(janela.getCliente() == null){
+					janela.setCliente(new Cliente(manipula.ler(),
+							campoNomeCliente.getText(), textoNumeroContrato.getText(),textoNumeroDocumento1.getText()
+							,textoNumeroDocumento2.getText(),textoNumeroDocumento3.getText(),textoNumeroDocumento4.getText(),
+							textoNumeroMarte1.getText(),textoNumeroMarte2.getText(),textoNumeroMarte3.getText()
+							,textoElaborado1.getText(), textoElaborado2.getText(),
+							textoElaborado3.getText(), textoElaborado4.getText(),""));
+					if(file.getPath().indexOf(".dat") == -1){
+						janela.setNomeArquivo(file.getPath()+".dat");
+						manipula.setNomeArquivo(file.getPath()+".dat");
+					}else{
+						janela.setNomeArquivo(file.getPath());
+						manipula.setNomeArquivo(file.getPath());
+					}
+					manipula.gravar(janela.getCliente());
+					atualizaLista();
+				}
+				else{
+					janela.getCliente().setNome(campoNomeCliente.getText());
+					janela.getCliente().setNumeroContrato(textoNumeroContrato.getText());
+					janela.getCliente().setNumeroDocumento1(textoNumeroDocumento1.getText());
+					janela.getCliente().setNumeroDocumento2(textoNumeroDocumento2.getText());
+					janela.getCliente().setNumeroDocumento3(textoNumeroDocumento3.getText());
+					janela.getCliente().setNumeroDocumento4(textoNumeroDocumento4.getText());
+					janela.getCliente().setNumeroMarte1(textoNumeroMarte1.getText());
+					janela.getCliente().setNumeroMarte2(textoNumeroMarte2.getText());
+					janela.getCliente().setNumeroMarte3(textoNumeroMarte3.getText());
+					janela.getCliente().setElaborado1(textoElaborado1.getText());
+					janela.getCliente().setElaborado2(textoElaborado2.getText());
+					janela.getCliente().setElaborado3(textoElaborado3.getText());
+					janela.getCliente().setElaborado4(textoElaborado4.getText());
+					if(file.getPath().indexOf(".dat") == -1){
+						janela.setNomeArquivo(file.getPath()+".dat");
+						manipula.setNomeArquivo(file.getPath()+".dat");
+					}else{
+						janela.setNomeArquivo(file.getPath());
+						manipula.setNomeArquivo(file.getPath());
+					}
+					manipula.gravar(janela.getCliente());
+					atualizaLista();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
 	
+	 * @return
+	 */
 	public String popup(){
 		String string = ".nao"; 
 		if (fc == null) {
 			fc = new JFileChooser();
 			fc.addChoosableFileFilter(new FiltroData());
-			//fc.setAcceptAllFileFilterUsed(false);
+			fc.setAcceptAllFileFilterUsed(false);
 		}
+		/**
+			fc = new JFileChooser();
+			fc.addChoosableFileFilter(new FiltroData());
+			fc.setAcceptAllFileFilterUsed(false);
+		}
+		fc.setCurrentDirectory(new File("./"));
+		int returnVal = fc.showSaveDialog(this);
+		 */
 		fc.setCurrentDirectory(new File("./"));
 		int returnVal = fc.showSaveDialog(this);
 		if(returnVal == JFileChooser.APPROVE_OPTION){
 			File file = fc.getSelectedFile();
 			System.out.println(fc.getSelectedFile());
 			File file2 = new File(fc.getSelectedFile()+".txt");
+			System.out.println(file.getAbsolutePath());
+			System.out.println(file2.getAbsolutePath());
 			try{
 				if(file.exists() || file2.exists()){
 					int res = JOptionPane.showConfirmDialog(null,"Esse arquivo já existe. Tem certeza que deseja sobrescrever?");
@@ -171,10 +249,11 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 					{
 						return ".nao";
 					}
-					else if(file.getPath().indexOf(".txt") == -1){
+					else{
+						if(file.getPath().indexOf(".txt") == -1){
 						string = file2.getAbsolutePath();
 						System.out.println(string);
-						System.out.println(file2.getAbsolutePath());
+						//System.out.println(file2.getAbsolutePath());
 						System.out.println("1");
 						//return file.getPath()+".dat";
 							
@@ -188,7 +267,7 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 							//janela.setNomeArquivo(file.getPath());
 							//manipula.setNomeArquivo(file.getPath());
 					}
-					
+					}
 				}
 				
 			} catch (Exception e2) {
@@ -197,6 +276,7 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 			}
 	    }
 		System.out.println("passei aqui");
+		System.out.println("String saída:" + string);
 		return string;
 	}
 
