@@ -179,13 +179,13 @@ public class ULA{
 		if((!pontoDeControle1)&&(pontoDeControle2)&&(pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(pontoDeControle6)){
 			brnn();
 		}
-		if((!pontoDeControle1)&&(!pontoDeControle2)&&(pontoDeControle3)&&(pontoDeControle4)&&(!pontoDeControle5)&&(!pontoDeControle6)){
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(pontoDeControle3)&&(pontoDeControle4)&&(!pontoDeControle5)&&(!pontoDeControle6)){
 			brnc();
 		}
-		if((!pontoDeControle1)&&(!pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
 			bro();
 		}
-		if((!pontoDeControle1)&&(!pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(!pontoDeControle6)){
+		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(!pontoDeControle6)){
 			brno();
 		}
 		
@@ -202,8 +202,6 @@ public class ULA{
 	}
 	
 	public void B(){
-		//System.out.println("B");
-		
 		valor = b;
 	}
 	
