@@ -7,11 +7,13 @@ import javax.swing.JScrollPane;
 
 import controller.ManipulaMemoria;
 import controller.RodaPrograma;
-import controller.RodarThread;
+//import controller.RodarThread;
 
 public class PainelBase extends JPanel {
 	private static final long serialVersionUID = 1L;
+	@SuppressWarnings("unused")
 	private PainelBase painelbase = null;  //  @jve:decl-index=0:visual-constraint="100,13"
+	@SuppressWarnings("unused")
 	private ManipulaMemoria manipulaMemoria;
 	private PainelBaixo painelBaixo; //= new PainelBaixo();
 	private PainelULA painelULA;

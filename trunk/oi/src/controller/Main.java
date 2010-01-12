@@ -12,7 +12,9 @@ import controller.ViewThread;
 public class Main {
 
 	private static final long serialVersionUID = 1L;
+	@SuppressWarnings("unused")
 	private static Arquitetura arquitetura;
+	@SuppressWarnings("unused")
 	private static ManipulaMemoria manipulaMemoria;
 	
 	public static void main(String[] args) {

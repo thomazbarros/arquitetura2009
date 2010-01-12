@@ -25,6 +25,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private JMenuBar menuPrincipal = null;
 	private JMenu opcoes = null;
+	@SuppressWarnings("unused")
 	private JMenu jMenu = null;
 	private JMenu ajuda = null;
 	private JMenuItem carregarMicroprograma = null;
@@ -34,6 +35,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 	private JMenuItem instrucoes = null;
 	private JMenuItem execMicroinst = null;
 	private JMenuItem execMicroprog = null;
+	@SuppressWarnings("unused")
 	private CriaProgRunTime criarPrograma = null;
 	
 	

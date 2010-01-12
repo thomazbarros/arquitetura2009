@@ -55,7 +55,7 @@ public class PainelBaixo extends JPanel {
 	
 	private JButton comecar = null;
 	private JButton proxPasso = null;
-
+	@SuppressWarnings("unused")
 	private RodaPrograma rodaPrograma;
 	private DecimalFormat formataDecimal;
 
