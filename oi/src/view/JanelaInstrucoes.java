@@ -69,7 +69,7 @@ public class JanelaInstrucoes extends JFrame implements WindowListener {
 		listModel = new DefaultListModel();
 		
 		try {
-			arquivoLido = new ArquivoTexto("C:\\Users\\thomaz\\Desktop\\instrucao.txt");
+			arquivoLido = new ArquivoTexto("C:\\Users\\thomaz\\Workspace Eclipse\\arq-2009\\instrucao.txt"/*"C:\\Users\\thomaz\\Desktop\\instrucao.txt"*/);
 			contador = 0;
 			while (arquivoLido.maisLinhas()) {
 
