@@ -27,7 +27,7 @@ public class MemoriaDeControle {
 	
 	public Microinstrucao rEndRecebeRX(){
 		char[] pontoDeControle = {'k', 'l', 'p', 'q', 'r', 's', 't', 'u', 'i', 'v'};
-		boolean[] pontoDeControle2 = {true, true, false, true, false, false, true, true, true, true};
+		boolean[] pontoDeControle2 = {true, true, false, false, false, false, false, false, true, true};
 		
 		microinstrucao.setPontoDeControle(pontoDeControle);
 		microinstrucao.setPontoDeControle2(pontoDeControle2);
@@ -73,7 +73,7 @@ public class MemoriaDeControle {
 	
 	public Microinstrucao rEndRecebeRY(){
 		char[] pontoDeControle = {'m', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'i', 'v'};
-		boolean[] pontoDeControle2 = {false, true, true, false, true, false, true, false, false, true, true};
+		boolean[] pontoDeControle2 = {false, true, true, false, false, false, false, false, true, true, true};
 		
 		microinstrucao.setPontoDeControle(pontoDeControle);
 		microinstrucao.setPontoDeControle2(pontoDeControle2);
