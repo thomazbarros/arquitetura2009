@@ -10,14 +10,6 @@ import model.ULA;
 	
 	public class Arquitetura {
 	
-	/*private Registrador r0, r1, r2, r3, r4, rx, ry, pc, rDado, rEnd, ir;
-	private Multiplexador mux, muxA, muxB;
-	private Memoria memoria;
-	private ULA ula;
-	private MemoriaDeControle memoriaDeControle;
-	private int modo;
-	private Conversor conversor;
-	*/
 	private view.PainelBaixo painelBaixo;
 	private view.PainelULA ulaGrafica;
 	private Registrador r0, r1, r2, r3, r4, rx, ry, pc, rDado, rEnd, ir;
@@ -52,28 +44,26 @@ import model.ULA;
 		memoria = new Memoria(false,cache);
 		ula = new ULA(false, false, false, false, false, false);
 		memoriaDeControle = new MemoriaDeControle();
-		//modo = Constantes.RODAPROGRAMA;
 		modo = Constantes.RODAMICRO;
 		conversor = new Conversor();
 		ulaGrafica = null;
 		painelBaixo = null;
 		continuar = false;
 		rodaThread = false;
-		//rodarThread = new RodarThread(this);
-		//rodarThread.start();
+
 	}
 	
 	public void setULA(boolean multiplexador){
 		if(multiplexador){
-			//System.out.println("Setando o A");
+			
 			ula.setA(muxA.ativaPontoDeControle(rDado.getValor(), r0.getValor(), r1.getValor(), rx.getValor()));
-			//System.out.println("Depois de setar o A"  + ula.getA());
+			
 		}
 		else{
-			//System.out.println("Setando o B");
-			//System.out.println("RY na ula: "+ry.getValor());
+			
+			
 			ula.setB(muxB.ativaPontoDeControle(r2.getValor(), r3.getValor(), r4.getValor(), ry.getValor(), pc.getValor()));
-			//System.out.println("Depois de setar o B"  + ula.getB());
+			
 		}
 	}
 	
@@ -82,53 +72,46 @@ import model.ULA;
 		char[] pontoDeControle = microinstrucao.getPontoDeControle();
 		boolean[] pontoDeControle2 = microinstrucao.getPontoDeControle2();
 		int conteudoMemoria,valorMux;
-		
-		//pontosDeControle = pontoDeControle2;
-		////System.out.println("REND : "+ rEnd.getValor());
+
 		for(int i = 0; i < pontoDeControle.length; i++)
 		{
 
-			//System.out.println(memoria.getDado(0));
-			
-			////System.out.println("REND : "+ rEnd.getValor());
-			
 			switch(pontoDeControle[i]){
 				case 'a':
 					pontosDeControle[0] = pontoDeControle2[i];
 					r0.setPontoDeControle(pontoDeControle2[i]);
 					r0.ativaPontoDeControle(ula.getValor());
-					//System.out.println("R0:" + r0.getValor());
+
 					break;
 				case 'b':
 					pontosDeControle[1] = pontoDeControle2[i];
 					r1.setPontoDeControle(pontoDeControle2[i]);
 					r1.ativaPontoDeControle(ula.getValor());
-					//System.out.println("R1:" + r1.getValor());
+
 					break;
 				case 'c':
 					pontosDeControle[2] = pontoDeControle2[i];
 					pc.setPontoDeControle(pontoDeControle2[i]);
-					//System.out.println("VALOR QUE ELE VAI PEGAR DA ULA" + ula.getValor());
+
 					pc.ativaPontoDeControle(ula.getValor());
 					break;
 				case 'd':
 					pontosDeControle[3] = pontoDeControle2[i];
 					r2.setPontoDeControle(pontoDeControle2[i]);
 					r2.ativaPontoDeControle(ula.getValor());
-					//System.out.println("R2:" + r2.getValor());
+
 					break;
 				case 'e':
 					pontosDeControle[4] = pontoDeControle2[i];
 					r3.setPontoDeControle(pontoDeControle2[i]);
 					r3.ativaPontoDeControle(ula.getValor());
-					//System.out.println("R3:" + r3.getValor());
+
 					break;
 				case 'f':
 					pontosDeControle[5] = pontoDeControle2[i];
 					r4.setPontoDeControle(pontoDeControle2[i]);
 					r4.ativaPontoDeControle(ula.getValor());
-					//System.out.println(ula.getValor());
-					//System.out.println("R4:" + r4.getValor());
+
 					break;
 				case 'g':
 					pontosDeControle[6] = pontoDeControle2[i];
@@ -139,22 +122,20 @@ import model.ULA;
 					pontosDeControle[7] = pontoDeControle2[i];
 					rDado.setPontoDeControle(pontoDeControle2[i]);
 					conteudoMemoria = conversor.binarioParaInteiro(memoria.obtemDadoBacking(rEnd.getValor()));
-					//System.out.println("CONTEUDOMEMORIA:"+conteudoMemoria);
+
 					valorMux = mux.ativaPontoDeControle(conteudoMemoria,ula.getValor());
-					//System.out.println("VALOR MUX :"+valorMux);
+
 					rDado.ativaPontoDeControle(valorMux);
 					break;
 				case 'i':
 					pontosDeControle[8] = pontoDeControle2[i];
-					//System.out.println("REND : " + ula.getValor());
 					rEnd.setPontoDeControle(pontoDeControle2[i]);
 					rEnd.ativaPontoDeControle(ula.getValor());
 					break;
 				case 'j':
 					pontosDeControle[9] = pontoDeControle2[i];
 					mux.setPontoDeControle(pontoDeControle2[i]);
-					//conteudoMemoria = conversor.binarioParaInteiro(memoria.getDado(rEnd.getValor()));
-					//mux.ativaPontoDeControle(conteudoMemoria,ula.getValor());
+					
 					break;
 				case 'k':
 					pontosDeControle[10] = pontoDeControle2[i];
@@ -177,8 +158,6 @@ import model.ULA;
 					pontosDeControle[14] = pontoDeControle2[i];
 					muxB.setPontoDeControle3(pontoDeControle2[i]);
 					setULA(false);
-					////System.out.println(ula.getB());
-					////System.out.println(ula.getValor());
 					break;
 				case 'p':
 					pontosDeControle[15] = pontoDeControle2[i];
@@ -203,15 +182,11 @@ import model.ULA;
 				case 'u':
 					pontosDeControle[20] = pontoDeControle2[i];
 					ula.setPontoDeControle6(pontoDeControle2[i]);
-					//System.out.println("SETANDO A ULA");
 					ula.ativaPontoDeControle();
-					//System.out.println("ULA SETADA : "+ula.getValor());
-					//System.out.println(ula.getValor());
 					break;
 				case 'v':
 					pontosDeControle[21] = pontoDeControle2[i];
 					memoria.setPontoDeControle(pontoDeControle2[i]);
-					//System.out.println("REND pra mem"+rEnd.getValor());
 					memoria.ativaPontoDeControle(rEnd.getValor());
 					painelBaixo.setTextoLabelPercentagemCache(getCache().getPorcentagemAcerto());
 					painelBaixo.setTextoLabelLocalBusca(getLocalBusca());
@@ -228,26 +203,10 @@ import model.ULA;
 			}
 		}
 		atualizaPainel();		
-		////System.out.println("Modo : "+ modo);		
+	
 	}
 
 	
-	/*public void teste(){
-	soma3(r3, r4);
-	//System.out.println(r4.getValor());*/
-	
-	/*ativaPontoDeControle(memoriaDeControle.rEndRecebePC());
-	ativaPontoDeControle(memoriaDeControle.rDadoRecebeInformacaoLida());
-	ativaPontoDeControle(memoriaDeControle.irRecebeRDado());
-	ativaPontoDeControle(memoriaDeControle.rEndRecebePCMais1());
-	ativaPontoDeControle(memoriaDeControle.rDadoRecebeInformacaoLida());
-	ativaPontoDeControle(memoriaDeControle.r2RecebeRDado());
-	ativaPontoDeControle(memoriaDeControle.r0MenosR2());
-	ativaPontoDeControle(memoriaDeControle.atualizaPC());
-	
-	//System.out.println(r0.getValor());*/
-	//}
-
 	public Memoria getMemoria() {
 		return memoria;
 	}
@@ -323,30 +282,6 @@ import model.ULA;
 		ulaGrafica.atualizarConteudo();
 		painelBaixo.atualizarConteudo();
 		rodarThread.travaThread();
-		/*while(!continuar){
-			//System.out.println("Nao dormindo");
-			System.out.println(Thread.currentThread().getName());
-			try{
-				System.out.println("Dormindo");
-				Thread.currentThread().sleep(100000 / 80);
-			}catch(Exception e){}
-			/*if(Thread.currentThread().getName().equals("Rodar")){
-				try{
-					System.out.println("Dormindo");
-					Thread.currentThread().sleep(100000 / 80);
-				}catch(Exception e){}
-			}
-		}*/
-		//System.out.println("Startou");
-		//rodarThread.run();
-	
-		//while(!painelBaixo.getProximoPasso().getAction().isEnabled()){
-		//	System.out.println("passando");
-		//	try{
-		//		Thread.currentThread().sleep(10000);
-		//	}catch(Exception e){}
-			//sleep(400);
-		//}
 	}
 	
 	public void mostraPontosDeControle(){
@@ -498,8 +433,6 @@ import model.ULA;
 		ulaGrafica.setV(pontosDeControle[21]);
 		ulaGrafica.setW(pontosDeControle[22]);
 		ulaGrafica.setXx(pontosDeControle[23]);
-		//for
-		////System.out.println(pontosDeControle);
 		for(int i = 0; i < pontosDeControle.length;i++){
 			pontosDeControle[i] = false;
 		}
@@ -533,17 +466,13 @@ import model.ULA;
 	}
 	
 	public void buscaInstrucao(){
-		////System.out.println("Primeiro na busca");
+
 		ativaPontoDeControle(memoriaDeControle.rEndRecebePC());
-		//atualizaPainel();
-		////System.out.println("Segundo na busca");
+
 		ativaPontoDeControle(memoriaDeControle.rDadoRecebeInformacaoLida());
-		//atualizaPainel();
-		////System.out.println("Terceiro na busca");
+
 		ativaPontoDeControle(memoriaDeControle.irRecebeRDado());
-		//atualizaPainel();
-		////System.out.println("Final da busca");
-		//atualizaPainel();
+
 	}
 
 	public int getModo() {
@@ -551,7 +480,7 @@ import model.ULA;
 	}
 
 	public void setModo(int modo) {
-		//System.out.println("setando o modo para "+modo);
+
 		this.modo = modo;
 	}
 
@@ -649,7 +578,7 @@ import model.ULA;
 	}
 
 	public void setContinuar(boolean continuar) {
-		//System.out.println("setei o continuar");
+
 		this.continuar = continuar;
 	}
 

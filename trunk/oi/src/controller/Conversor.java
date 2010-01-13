@@ -16,30 +16,28 @@ public class Conversor {
 		numero = Math.abs(numero);
 
 		System.out.println("NUMERO :"+numero);
-		//////System.out.println(numero);
+
 		while(numero != 0){
 			temp += String.valueOf(numero%2);
 			numero /= 2;
-			//////System.out.println(numero);
-			//////System.out.println("TEMP : " + temp);
+
 		}
 		temp = 	reverter(temp);
-		//////System.out.println(temp);
+
 		
 		return completaBinario(temp,isNegativo);
 	}
 		
 	public String labelParaBinario(int label){
 		String temp = "";
-		////System.out.println(label);
+
 		while(label != 0){
 			temp += String.valueOf(label%2);
 			label /= 2;
-			////System.out.println(label);
-			////System.out.println("TEMP : " + temp);
+
 		}
 		temp = 	reverter(temp);
-		//////System.out.println(temp);
+
 		return completaLabel(temp);
 	}
 	
@@ -55,16 +53,14 @@ public class Conversor {
 		
 		for(int i = 0; i < aux.length(); i++){
 			if(aux.charAt(aux.length()-i-1) == '1'){
-			//	////System.out.println("I:"+i);
+
 				numero += Math.pow(2,i);
-			//	////System.out.println(numero);
-			//	////System.out.println(2^i);
+
 			}
 		}
-	//	////System.out.println("BINARIO : "+binario);
-	//	////System.out.println("NUMERO : "+numero);
+
 		if(isConstante(binario) && binario.charAt(2) == '1'){
-			//System.out.println("NUMERO POSITIVO/NEGATIVO"+ numero+"/"+numero*-1);
+
 			return -1 * numero;
 		}
 		
@@ -79,7 +75,7 @@ public class Conversor {
 		
 		numeroLoops = Constantes.TAMANHO_PALAVRA - fim.length();
 		numeroLoops -= Constantes.BITS_CONSTANTE.length();
-		//numeroLoops -= 1;
+
 		
 		for(int i = 0; i < numeroLoops; i++){
 			meio += "0";
