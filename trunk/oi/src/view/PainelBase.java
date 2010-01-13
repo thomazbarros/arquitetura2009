@@ -37,7 +37,7 @@ public class PainelBase extends JPanel {
 		scroll = new JScrollPane(painelULA);
 		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		scroll.reshape(0,0,1020,422);
+		scroll.reshape(0,0,1010,422);
 
 		this.add(scroll);
 		this.add(painelBaixo);

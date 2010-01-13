@@ -67,12 +67,6 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
 		painelbase = new PainelBase(manipulaMemoria,rodaPrograma);
-		/*try {
-			javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager
-					.getSystemLookAndFeelClassName());
-		} catch (Exception e) {
-			setDefaultLookAndFeelDecorated(false);
-		}*/
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setJMenuBar(getMenuPrincipal());
 		
