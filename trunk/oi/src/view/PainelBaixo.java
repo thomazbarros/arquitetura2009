@@ -83,7 +83,7 @@ public class PainelBaixo extends JPanel {
 			labelComecar.setBounds(new Rectangle(815, 140, 188, 23));
 			labelComecar.setText("Clique abaixo para começar:");
 			sinal = new JLabel();
-			sinal.setBounds(new Rectangle(769, 78, 14, 20));
+			sinal.setBounds(new Rectangle(754, 78, 14, 20));
 			sinal.setText("S");
 			carry = new JLabel();
 			carry.setBounds(new Rectangle(711, 78, 14, 20));
@@ -104,13 +104,13 @@ public class PainelBaixo extends JPanel {
 			labelLocalBusca.setBounds(new Rectangle(610, 200, 362, 23));
 			//labelLocalBusca.setText("Local da busca");
 			cache = new JLabel();
-			cache.setBounds(new Rectangle(500, 40, 153, 18));
+			cache.setBounds(new Rectangle(405, 40, 153, 18));
 			cache.setText("Cache");
 			memoria = new JLabel();
-			memoria.setBounds(new Rectangle(225, 28, 143, 34));
+			memoria.setBounds(new Rectangle(219, 28, 143, 34));
 			memoria.setText("Memória");
 			labelMicroprograma = new JLabel();
-			labelMicroprograma.setBounds(new Rectangle(24, 30, 154, 30));
+			labelMicroprograma.setBounds(new Rectangle(27, 30, 154, 30));
 			labelMicroprograma.setText("Microprograma");
 			//painelBaixo = new JPanel();
 			//this = new PainelBaixo();
