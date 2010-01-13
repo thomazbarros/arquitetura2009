@@ -8,10 +8,14 @@ public class Conversor {
 		String temp = "";
 		boolean isNegativo = false;
 		
+		numero = valorOverflow(numero);		
+		
 		if(numero < 0){
 			isNegativo = true;
 		}
 		numero = Math.abs(numero);
+
+		System.out.println("NUMERO :"+numero);
 		//////System.out.println(numero);
 		while(numero != 0){
 			temp += String.valueOf(numero%2);
