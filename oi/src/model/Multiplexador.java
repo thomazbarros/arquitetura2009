@@ -25,12 +25,10 @@ public class Multiplexador{
 
 	public Integer ativaPontoDeControle(Integer valor1, Integer valor2){
 		if(!pontoDeControle){
-			//System.out.println("Valor 1: "+valor1);
 			return valor1; 
 		}
 		else{
 			pontoDeControle = false;
-			//System.out.println("Valor 2: "+valor2);
 			return valor2;
 		}
 	}
@@ -78,31 +76,26 @@ public class Multiplexador{
 		if(!pontoDeControle){
 			if(!pontoDeControle2){
 				if(!pontoDeControle3){
-					//System.out.println("Valor 1:"+valor1);
 					return valor1;
 				}
 				else{
 					pontoDeControle3 = false;
-					//System.out.println("Valor 2:"+valor2);
 					return valor2;
 				}
 			}
 			else{
 				pontoDeControle2 = false;
 				if(!pontoDeControle3){
-					//System.out.println("Valor 3:"+valor3);
 					return valor3;
 				}
 				else{
 					pontoDeControle3 = false;
-					//System.out.println("Valor 4:"+valor4);
 					return valor4;
 				}
 			}
 		}
 		else{
 			pontoDeControle = false;
-			//System.out.println("Valor 5:"+valor5);
 			return valor5;
 		}
 	}

@@ -40,7 +40,6 @@ public class MemoriaDeControle {
 		
 		microinstrucao.setPontoDeControle(pontoDeControle);
 		microinstrucao.setPontoDeControle2(pontoDeControle2);
-		//System.out.println("Micro :)");
 		return microinstrucao;
 	}
 	

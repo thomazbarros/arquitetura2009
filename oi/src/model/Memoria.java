@@ -57,7 +57,6 @@ public class Memoria{
 	}
 	
 	public String getDado(int posicao){
-		//return dados[posicao];
 		System.out.println("PEGANDO DADOS. POSICAO :"+posicao);
 		if(cache.verificaElementoCache(posicao)){
 			System.out.println("Esta na cache");
@@ -80,7 +79,6 @@ public class Memoria{
 	
 	public void ativaPontoDeControle(Integer posicao) {
 		if(pontoDeControle){
-			//this.valor = dados[posicao];
 			
 			if(ler){
 				this.valor = getDado(posicao);
@@ -112,48 +110,18 @@ public class Memoria{
 		}
 	}
 	
-	/*public void relacionaLabelMemoria(String label,int posicao){
-		//try{
-		int chave = labels.get(label);
-		labelMemoria.put(chave, posicao);
-		/*}catch(Exception e){
-			//e.printStackTrace();
-			//System.out.println("Label sem desvio antes");
-			return;
-		}
-	}*/
-	
 	public void adicionaLabel(String label){
-		/*if(labels.isEmpty()){
-			labels.put(label,1);
-			this.addDado(conversor.labelParaBinario(1));
-			return;
-		}
-		labels.put(label,posicaoLivre);*/
 		int constante;
 		
 		constante = getConstanteLabel(label);
 		
-		//System.out.println(label);
-		//System.out.println(constante);
-		//if(!label.equals("BLA"))
-		//System.exit(1);
 		if(constante != -1){
 			this.addDado(conversor.labelParaBinario(constante));
 		}else{
-			//System.out.println("ERRO DO -1[2]");
-			//System.exit(1);
-			////System.out.println("ERRO!");
-			//System.exit(1);
 		}
 	}
 	
 	public void relacionaLabelMemoria(String label,int posicao){
-		/*if(labels.isEmpty()){
-			labels.put(label,1);
-			//this.addDado(conversor.labelParaBinario(1));
-			//return;
-		}*/
 		labels.put(label,constanteLabel);
 		labelMemoria.put(constanteLabel,posicao);
 		constanteLabel++;
@@ -165,10 +133,6 @@ public class Memoria{
 			temp = labelMemoria.get(label);
 			return temp;
 		}catch(Exception e){
-			//System.out.println("ERRO DO -1");
-			//System.out.println("LABEL :"+label);
-			//System.out.println(labelMemoria);
-			//System.exit(1);
 			return -1;
 		}
 	}
@@ -179,31 +143,15 @@ public class Memoria{
 			temp = labels.get(label);
 			return temp;
 		}catch(Exception e){
-			//System.out.println("ERRO DO -1");
-			//System.out.println("LABEL :"+label);
-			//System.out.println(labelMemoria);
-			//System.exit(1);
 			return -1;
 		}
 	}
-	
-	/*public int getPosicaoLabel(String label){
-		int temp;
-		temp = labels.get(label);
-		return labelMemoria.get(temp);
-	}*/
 	
 	public String obtemDadoBacking(int posicao){
 			return dados[posicao];
 	}
 	
 	public String getDadoAtual() {
-		/*if(cache.verificaElementoCache(posicaoLivre)){
-			//System.out.println("Leitura realizada na cache");
-			return cache.getElementoCache(posicaoLivre);
-		}
-		//System.out.println("Leitura realizada na backing");
-		cache.getDadosBacking(posicaoLivre, this);*/
 		return dados[posicaoLivre];
 	}
 	
