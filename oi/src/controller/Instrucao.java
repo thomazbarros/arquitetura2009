@@ -2573,7 +2573,7 @@ public class Instrucao extends Thread{
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYAndRX());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR1());
 			arquitetura.getMemoria().setLer(true);
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRX());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRY());
 		}
 		
 		if(enderecoDestino == arquitetura.getR2()){
@@ -2583,7 +2583,7 @@ public class Instrucao extends Thread{
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXAndRY());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR2());
 			arquitetura.getMemoria().setLer(true);
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRX());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRY());
 		}
 		if(enderecoDestino == arquitetura.getR3()){
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePCMais1());
@@ -3411,7 +3411,7 @@ public class Instrucao extends Thread{
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYOrRX());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR0());
 			arquitetura.getMemoria().setLer(true);
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRX());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRY());
 		}
 		
 		if(enderecoDestino == arquitetura.getR1()){
@@ -3421,7 +3421,7 @@ public class Instrucao extends Thread{
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYOrRX());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR1());
 			arquitetura.getMemoria().setLer(true);
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRX());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRY());
 		}
 		
 		if(enderecoDestino == arquitetura.getR2()){
@@ -4173,130 +4173,53 @@ public class Instrucao extends Thread{
 	}
 	
 	public void not2(Registrador enderecoFonte){
-		/*if(enderecoFonte == arquitetura.getR0()){
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR0());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYRecebeRDado());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYNot());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR0());
-			arquitetura.getMemoria().setLer(false);
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRY());
-		}
-		if(enderecoFonte == arquitetura.getR1()){
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR1());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYRecebeRDado());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYNot());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR1());
-			arquitetura.getMemoria().setLer(false);
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRY());
-		}
-		if(enderecoFonte == arquitetura.getR2()){
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR2());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXRecebeRDado());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXNot());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR2());
-			arquitetura.getMemoria().setLer(false);
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRX());
-		}
-		if(enderecoFonte == arquitetura.getR3()){
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR3());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXRecebeRDado());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXNot());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR3());
-			arquitetura.getMemoria().setLer(false);
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRX());
-		}
-		if(enderecoFonte == arquitetura.getR4()){
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR4());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXRecebeRDado());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXNot());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR4());
-			arquitetura.getMemoria().setLer(false);
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRX());
-		}
-		
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());*/
-		/*Era enderecaoDestino*/
 		if(enderecoFonte == arquitetura.getR0()){
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR0());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYRecebeRDado());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYNot());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR0());
+			arquitetura.getMemoria().setLer(false);
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRY());
 		}
 		if(enderecoFonte == arquitetura.getR1()){
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR1());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYRecebeRDado());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYNot());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR1());
+			arquitetura.getMemoria().setLer(false);
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRY());
 		}
 		if(enderecoFonte == arquitetura.getR2()){
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR2());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXRecebeRDado());
-		}
-		if(enderecoDestino == arquitetura.getR3()){
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR3());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXRecebeRDado());
-		}
-		if(enderecoDestino == arquitetura.getR4()){
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR4());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXRecebeRDado());
-		}
-
-		if(enderecoDestino == arquitetura.getR0()){
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePCMais1());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXRecebeRDado());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYNotRX());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR0());
-			arquitetura.getMemoria().setLer(false);
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRY());
-		}
-		
-		if(enderecoDestino == arquitetura.getR1()){
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePCMais1());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXRecebeRDado());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYNotRX());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR1());
-			arquitetura.getMemoria().setLer(false);
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRY());
-		}
-		
-		if(enderecoFonte == arquitetura.getR2()){
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePCMais1());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYRecebeRDado());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXNotRY());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXNot());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR2());
 			arquitetura.getMemoria().setLer(false);
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRX());
 		}
 		if(enderecoFonte == arquitetura.getR3()){
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePCMais1());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR3());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYRecebeRDado());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXNotRY());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXRecebeRDado());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXNot());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR3());
 			arquitetura.getMemoria().setLer(false);
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRX());
 		}
 		if(enderecoFonte == arquitetura.getR4()){
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebePCMais1());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR4());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYRecebeRDado());
-			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXNotRY());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXRecebeRDado());
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rXNot());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR4());
 			arquitetura.getMemoria().setLer(false);
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRX());
 		}
 		
-		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-		
+			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 	}
 	
 	public void limpa1(Registrador fonte){
@@ -4392,7 +4315,7 @@ public class Instrucao extends Thread{
 	}
 	
 	public void negacao2(Registrador enderecoFonte){
-		(enderecoFonte == arquitetura.getR0()){
+	  if(enderecoFonte == arquitetura.getR0()){
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeR0());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rDadoRecebeInformacaoLida());
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rYRecebeRDado());
@@ -4438,8 +4361,10 @@ public class Instrucao extends Thread{
 			arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().rEndRecebeRX());
 		}
 	
+
 	arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-		
+	
+
 	}
 	
 	public void deslocamentoEsquerda1(Registrador fonte){
