@@ -16,7 +16,7 @@ public class ManipulaArquivo {
 	            while (in.ready()) {
 	                str = in.readLine();
 	                linhas.add(str);
-	                //System.out.println(str);
+
 	            }
 	            in.close();
 	    } catch (IOException e) {

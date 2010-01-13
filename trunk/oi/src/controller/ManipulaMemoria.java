@@ -32,10 +32,6 @@ public class ManipulaMemoria {
 			if(parser.hasLabel(linha)){
 				label = parser.decifraLabel(linha);
 				arquitetura.getMemoria().relacionaLabelMemoria(label, posicao);
-				//arquitetura.getMemoria().relacionaLabelMemoria(label, posicao+1);
-				//constanteLabel = arquitetura.getMemoria().getPosicaoLabel(label);
-				//temp = conversor.labelParaBinario(constanteLabel);
-				//arquitetura.getMemoria().addDado(temp);
 				posicao++;
 			}
 			
@@ -63,8 +59,6 @@ public class ManipulaMemoria {
 		adicionaTodasLabels(caminhoArquivo);
 		ManipulaArquivo manipulaArquivo = new ManipulaArquivo();
 		Parser parser = new Parser();
-		//ArrayList<String> linhas = manipulaArquivo
-		//		.ler("C:\\Users\\GustavoSantos\\Desktop\\Teste.txt");
 		ArrayList<String> linhas = manipulaArquivo
 				.ler(caminhoArquivo);
 		String instrucao,label,temp;
@@ -73,17 +67,17 @@ public class ManipulaMemoria {
 
 		for (String linha : linhas) {
 			
-			//System.out.println("POSICAO :"+posicao);
+
 			instrucao = parser.decifraInstrucao(linha);
 
 			if (instrucao.equals("")) {
-				//System.out.println("Instrução Inválida aqui, olha soh");
+
 				continue;
 			}
 			
 			if(parser.hasLabel(linha)){
 				label = parser.decifraLabel(linha);
-				//arquitetura.getMemoria().relacionaLabelMemoria(label, posicao+1);
+
 				constanteLabel = arquitetura.getMemoria().getConstanteLabel(label);
 				temp = conversor.labelParaBinario(constanteLabel);
 				arquitetura.getMemoria().addDado(temp);
@@ -105,7 +99,7 @@ public class ManipulaMemoria {
 						posicao++;
 					}
 				} else {
-					//System.out.println("Instrução Inválida");
+
 				}
 				continue;
 			}
@@ -217,8 +211,7 @@ public class ManipulaMemoria {
 			break;
 		}
 
-		//System.out.println(instrucao);
-		//System.out.println(codigoInstrucao);
+
 		arquitetura.getMemoria().addDado(codigoInstrucao);
 	}
 
@@ -258,9 +251,7 @@ public class ManipulaMemoria {
 			break;
 		}
 		
-		//System.out.println(instrucao);
-		//System.out.println(constante);
-		//System.out.println(codigoInstrucao);
+
 		arquitetura.getMemoria().addDado(codigoInstrucao);
 		arquitetura.getMemoria().addDado(conversor.inteiroParaBinario(constante));
 	}	
@@ -303,19 +294,13 @@ public class ManipulaMemoria {
 
 		codigoInstrucao += Constantes.NENHUM_DESTINO;
 
-		//System.out.println(instrucao);
-		//System.out.println(codigoInstrucao);
-		
 		arquitetura.getMemoria().addDado(codigoInstrucao);
 	}
 	
 	public void instrucaoGrupo3(String label, String instrucao) {
 		String codigoInstrucao = getConstanteInstrucao(instrucao); 
 		codigoInstrucao += Constantes.LABEL + Constantes.NENHUM_DESTINO;
-		
-		//System.out.println(instrucao);
-		//System.out.println(label);
-		//System.out.println(codigoInstrucao);
+
 		arquitetura.getMemoria().addDado(codigoInstrucao);
 		arquitetura.getMemoria().adicionaLabel(label);
 	}
@@ -452,36 +437,22 @@ public class ManipulaMemoria {
 	}
 	
 	public int ler(int posicao){
-		//System.out.println("POSICAO LIDA AGORA : "+posicao);
+
 		String binario;
 		Parser parser = new Parser();
-		/*if(arquitetura.getCache().verificaElementoCache(posicao)){
-			binario = arquitetura.getCache().getElementoCache(posicao);
-		}else{
-			binario = arquitetura.getMemoria().ler(posicao);
-			arquitetura.getCache().getDadosBacking(posicao,arquitetura.getMemoria());
-		}*/
+
 		binario = arquitetura.getMemoria().obtemDadoBacking(posicao);
-		
-		//System.out.println(arquitetura.getMemoria());
-		//System.exit(1);
+
 		
 		if(binario.substring(0, 1).equals("1")){
 			decodificaInstrucao(binario);
-			//System.out.println("INSTRUCAO DE AGORA/POSICAO :"+parser.decifraInstrucao(binario)+"/"+posicao);
+
 			if(arquitetura.getModo() == Constantes.RODAINSTRUCAO){
 				arquitetura.atualizaPainel();
 			}
 			return -1;
 		}
-		//if(isLabel(binario)){
-			//arquitetura.getPc().setValor(arquitetura.getPc().getValor()+1);
-			//arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
-			//return conversor.binarioParaInteiro(binario);
-	//	}
-		//System.out.println("LENDO CONSTANTE! PC:"+arquitetura.getPc().getValor());
-		//arquitetura.getPc().setValor(arquitetura.getPc().getValor()+1);
-		//arquitetura.getMemoriaDeControle().atualizaPC();
+
 		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		return conversor.binarioParaInteiro(binario);
 		
@@ -769,7 +740,7 @@ public class ManipulaMemoria {
 			break;
 		case 5:
 			instrucao.soma5(getRegistradorFonte(binario.substring(8,12)),getRegistradorDestino(binario.substring(12,16)));			
-			//System.out.println("soma5 : " + (getRegistradorDestino(binario.substring(12,16)) == arquitetura.getR2()));
+			
 			break;
 		case 6:
 			instrucao.soma6(getRegistradorFonte(binario.substring(8,12)),getRegistradorDestino(binario.substring(12,16)));			

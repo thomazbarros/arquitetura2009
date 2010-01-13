@@ -202,7 +202,7 @@ public class Parser {
 		}catch(Exception e){
 			try{
 				String aux;
-				//aux = argumento.substring(argumento.length()-2,argumento.length()-1);
+			
 				if(argumento.endsWith("H") || argumento.endsWith("h")){
 					aux = argumento.substring(0, argumento.length()-1);
 					Integer.parseInt(aux,16);
@@ -288,9 +288,6 @@ public class Parser {
 	
 	public boolean hasLabel(String instrucao){
 		String [] separaEspaco;
-		//instrucao = instrucao.replaceAll("<", "");
-		//instrucao = instrucao.replaceAll(">", "");
-		
 		separaEspaco = instrucao.split(" ");
 		if(separaEspaco.length >= 2){
 			if(separaEspaco[1].equals(":")){
@@ -320,18 +317,5 @@ public class Parser {
 		
 		return false;
 	}
-	
-	/*public String getLabel(String instrucao){
-		String [] separaEspaco;
-		
-		separaEspaco = instrucao.split(" ");
-		if(separaEspaco.length > 3){
-			if(separaEspaco[1].equals(":")){
-				return separaEspaco[0];
-			}else{
-				return "";
-			}
-		}
-		return "";
-	}*/
+
 }
