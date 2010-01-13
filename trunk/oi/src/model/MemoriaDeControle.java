@@ -1989,6 +1989,33 @@ public class MemoriaDeControle {
 		return microinstrucao;
 	}
 	
+	public Microinstrucao rXXorR2(){
+      char[] pontoDeControle = {'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w'};
+      boolean[] pontoDeControle2 = {true, true, false, false, false, false, true, false, false, true, false, true};
+      
+      microinstrucao.setPontoDeControle(pontoDeControle);
+      microinstrucao.setPontoDeControle2(pontoDeControle2);
+      return microinstrucao;
+  }
+
+  public Microinstrucao rXXorR3(){
+      char[] pontoDeControle = {'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w'};
+      boolean[] pontoDeControle2 = {true, true, false, false, true, false, true, false, false, true, false, true};
+      
+      microinstrucao.setPontoDeControle(pontoDeControle);
+      microinstrucao.setPontoDeControle2(pontoDeControle2);
+      return microinstrucao;
+  }
+  
+  public Microinstrucao rXXorR4(){
+      char[] pontoDeControle = {'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w'};
+      boolean[] pontoDeControle2 = {true, true, false, true, false, false, true, false, false, true, false, true};
+      
+      microinstrucao.setPontoDeControle(pontoDeControle);
+      microinstrucao.setPontoDeControle2(pontoDeControle2);
+      return microinstrucao;
+  }
+	
 	public Microinstrucao rXXorRY(){
 		char[] pontoDeControle = {'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w'};
 		boolean[] pontoDeControle2 = {false, true, true, false, true, false, true, false, false, true, false, true};
@@ -2078,6 +2105,24 @@ public class MemoriaDeControle {
 		microinstrucao.setPontoDeControle2(pontoDeControle2);
 		return microinstrucao;
 	}
+	
+	public Microinstrucao rYXorR0(){
+      char[] pontoDeControle = {'m', 'n', 'o', 'k', 'l', 'p', 'q', 'r', 's', 't', 'u', 'v'};
+      boolean[] pontoDeControle2 = {false, true, true, false, true, false, true, false, false, true, false, true};
+      
+      microinstrucao.setPontoDeControle(pontoDeControle);
+      microinstrucao.setPontoDeControle2(pontoDeControle2);
+      return microinstrucao;
+  }
+  
+  public Microinstrucao rYXorR1(){
+      char[] pontoDeControle = {'m', 'n', 'o', 'k', 'l', 'p', 'q', 'r', 's', 't', 'u', 'v'};
+      boolean[] pontoDeControle2 = {false, true, true, true, false, false, true, false, false, true, false, true};
+      
+      microinstrucao.setPontoDeControle(pontoDeControle);
+      microinstrucao.setPontoDeControle2(pontoDeControle2);
+      return microinstrucao;
+  }
 	
 	public Microinstrucao rYXorRX(){
 		char[] pontoDeControle = {'m', 'n', 'o', 'k', 'l', 'p', 'q', 'r', 's', 't', 'u', 'x'};
