@@ -10,9 +10,6 @@ public class Principal {
 
 		manipulaMemoria.decifraInstrucao("D:/ciencia da computacao/arquitetura.txt");
 
-		//new TelaPrincipal("Simulador de Arquitetura de Computadores");
-
-		//rodaPrograma.rodaMicro();
 
 		rodaPrograma.run(); 
 

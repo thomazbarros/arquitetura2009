@@ -25,22 +25,9 @@ public class Main {
 		RodarThread rodarThread = new RodarThread(manipulaMemoria,rodaPrograma);
 		rodarThread.start();
 		arquitetura.setRodarThread(rodarThread);
-		//arquitetura.setRodarThread(rodarThread);
+
 		new TelaPrincipal("",manipulaMemoria,rodaPrograma);//,rodarThread);
-		//rodarThread.start();
-		//ViewThread thread = new ViewThread(manipulaMemoria,rodaPrograma,rodarThread);
-		//thread.start();
-		
-		//while(true){
-	//		rodarThread.run();
-	//		thread.run();
-	//	}
-		//arquitetura = new Arquitetura();
-		//manipulaMemoria = new ManipulaMemoria(arquitetura);
-		//new TelaPrincipal("",manipulaMemoria,rodaPrograma);
-		
-		//rodaPrograma.rodaMicro();
-		//rodaPrograma.rodar();
+
 	}
 	
 }
