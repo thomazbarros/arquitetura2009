@@ -45,11 +45,20 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 
 	private JFileChooser fileChooser;
 	private ManipulaMemoria manipulaMemoria;
+	@SuppressWarnings("unused")
 	private RodaPrograma rodaPrograma;
+	@SuppressWarnings("unused")
 	private JWindow jWindow = null;
+	@SuppressWarnings("unused")
 	private JPanel jContentPane = null;
 
 	public TelaPrincipal(String title,ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){//,RodarThread rodarThread) {
+		try {
+			javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager
+					.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+			setDefaultLookAndFeelDecorated(false);
+		}
 		initialize(manipulaMemoria,rodaPrograma);//,rodarThread);
 	}
 
@@ -58,12 +67,12 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
 		painelbase = new PainelBase(manipulaMemoria,rodaPrograma);
-		try {
+		/*try {
 			javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager
 					.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
 			setDefaultLookAndFeelDecorated(false);
-		}
+		}*/
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setJMenuBar(getMenuPrincipal());
 		
