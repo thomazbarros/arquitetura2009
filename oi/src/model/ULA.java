@@ -605,7 +605,7 @@ public class ULA{
 		}
 	}
 	
-	public void brl(){
+	public void brg(){
 		if(n*o + (1-n)*(1-o) == 1){
 			valor = rodarThread.getValorDesvio();
 			if(valor == -1){
@@ -617,7 +617,7 @@ public class ULA{
 		}
 	}
 	
-	public void brg(){
+	public void brl(){
 		if(n*(1-o) + (1-n)*o == 1){
 			valor = rodarThread.getValorDesvio();
 			if(valor == -1){
