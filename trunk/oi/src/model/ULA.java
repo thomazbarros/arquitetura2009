@@ -11,12 +11,10 @@ public class ULA{
 	private RodarThread rodarThread;
 	
 	public Integer getValor() {
-		////System.out.println("VALOR RETORNADO :" + valor);
 		return valor;
 	}
      
 	public void setValor(Integer valor) {
-		////System.out.println("SETARAM O VALOR!!!!!!!!!!");
 		this.valor = valor;
 	}
 
@@ -195,15 +193,6 @@ public class ULA{
 		if((!pontoDeControle1)&&(pontoDeControle2)&&(pontoDeControle3)&&(pontoDeControle4)&&(pontoDeControle5)&&(pontoDeControle6)){
 			jmp();
 		}
-		/*if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(!pontoDeControle5)&&(pontoDeControle6)){
-			bro();
-		}
-		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(!pontoDeControle6)){
-			brno();
-		}
-		if((!pontoDeControle1)&&(pontoDeControle2)&&(!pontoDeControle3)&&(!pontoDeControle4)&&(pontoDeControle5)&&(pontoDeControle6)){
-			jmp();
-		}*/
 		
 		verificaOverflow();
 		
@@ -560,7 +549,6 @@ public class ULA{
 	
 	public void bMais1(){
 		valor = b+1;
-		////System.out.println("VALOR :"+valor);
 	}
 	
 	public void aXorB(){
@@ -607,7 +595,6 @@ public class ULA{
 	
 	public void brn(){
 		if(n == 1){
-			//valor = a;
 			valor = rodarThread.getValorDesvio();
 			if(valor == -1){
 				valor = b+1;

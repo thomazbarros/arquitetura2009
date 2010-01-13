@@ -76,10 +76,8 @@ public class MemoriaCache {
 		
 		chaves = (Set<Integer>)fila.keySet();
 		
-		//chaves = (TreeSet<Integer>) set;
 		for(int chave : chaves){
 			temp = fila.get(chave);
-			//fila.remove(chave);
 			aux.put(chave-numeroPalavras,temp);
 		}
 		fila = aux;
