@@ -88,7 +88,7 @@ public class Memoria{
 			}
 			else{
 				dados[posicaoAtual] = conversor.inteiroParaBinario(posicao);
-				ler = false;
+				ler = true;
 			}
 			
 			pontoDeControle = false;
