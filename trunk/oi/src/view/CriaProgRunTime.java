@@ -87,13 +87,13 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 		botaoSalvarComo.setBounds(150, 400, 160, 20);
 		botaoSalvarComo.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent e) {
-				//System.out.println(areaTexto.getText());
+				
 				try{
 					if(areaTexto.getText().equals("Digite aqui...") || areaTexto.getText().equals("")){
 						JOptionPane.showMessageDialog(null, "Falha ao carregar este programa.\nDigite um programa válido ou feche a janela.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
 					}
 					else{
-						//System.out.println(areaTexto.getText());
+						
 						String end = popup();
 						if(end.equals(".nao")){
 							JOptionPane.showMessageDialog(null, "Ocorreu erro no endereco de gravacao. Tente novamente.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
@@ -131,42 +131,32 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 		}
 		fc.setCurrentDirectory(new File("./"));
 		int returnVal = fc.showSaveDialog(this);
-		//System.out.println(returnVal);
-		//System.out.println(JFileChooser.APPROVE_OPTION);
+
 		if(returnVal == JFileChooser.APPROVE_OPTION){
-			//System.out.println("APROVADO :)");
+
 			File file = fc.getSelectedFile();
-			//System.out.println(fc.getSelectedFile());
+
 			File file2 = new File(fc.getSelectedFile()+".txt");
-			//System.out.println(file.getAbsolutePath());
-			//System.out.println(file2.getAbsolutePath());
+
 			try{
 				if(file.exists() || file2.exists()){
 					int res = JOptionPane.showConfirmDialog(null,"Esse arquivo já existe. Tem certeza que deseja sobrescrever?");
 					if(res == JOptionPane.NO_OPTION || res == JOptionPane.CANCEL_OPTION || res == JOptionPane.CLOSED_OPTION)
 					{
-						//System.out.println("ESSE NAO");
+
 						return ".nao";
 					}
 				}
 
 				if(file.getPath().indexOf(".txt") == -1){
 						string = file2.getAbsolutePath();
-						//System.out.println(string);
-						//System.out.println(file2.getAbsolutePath());
-						//System.out.println("1");
-						//return file.getPath()+".dat";
-						//return file.getPath() + ".txt";
-							
-					//janela.setNomeArquivo(file.getPath()+".dat");
-					//manipula.setNomeArquivo(file.getPath()+".dat");
+
+
 				}else{
-						//System.out.println(file.getAbsolutePath());
-						//return file.getPath();
+
 						
 						string = file.getAbsolutePath();
-							//janela.setNomeArquivo(file.getPath());
-							//manipula.setNomeArquivo(file.getPath());
+
 				}
 		
 			} catch (Exception e2) {
@@ -174,8 +164,7 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 				System.out.println(" ERRO ");
 			}
 	    }
-		//System.out.println("passei aqui");
-		//System.out.println("String saída:" + string);
+
 		return string;
 	}
 

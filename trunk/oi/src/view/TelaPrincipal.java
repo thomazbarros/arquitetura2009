@@ -54,10 +54,10 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 	}
 
 	
-	private void initialize(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){//,RodarThread rodarThread) {
+	private void initialize(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
-		painelbase = new PainelBase(manipulaMemoria,rodaPrograma);//,rodarThread);
+		painelbase = new PainelBase(manipulaMemoria,rodaPrograma);
 		try {
 			javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager
 					.getSystemLookAndFeelClassName());
@@ -70,9 +70,8 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 		setTitle("Simulador de Arquitetura de Computadores");
 		setContentPane(painelbase);
 
-		//setMinimumSize(new Dimension(1024, 768));
+
 		setPreferredSize(new Dimension(1024, 768));
-		//setPreferredSize(new Dimension(800, 600));
 		setResizable(true);
 		pack();
 		setVisible(true);
@@ -207,7 +206,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 					}
 				};
 			});
-			//instrucoes.addActionListener(this);
+			
 		}
 		return instrucoes;
 	}
@@ -269,15 +268,9 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			File file = fileChooser.getSelectedFile();
 			try {
-				//manipula.setNomeArquivo(file.getPath());
+
 				System.out.println("_________________________");
-				/*manipulaMemoria.getArquitetura().paraThreads();
-				//manipulaMemoria.getArquitetura().setRodaThread(false);
-				manipulaMemoria.getArquitetura().zeraRegistradores();
-				manipulaMemoria.getArquitetura().zeraPontosDeControleGrafico();
-				manipulaMemoria.getArquitetura().getUla().zeraPSW();
-				manipulaMemoria.getArquitetura().getMemoria().zeraMemoria();
-				manipulaMemoria.getArquitetura().getCache().zeraCache();*/
+
 				manipulaMemoria.decifraInstrucao(file.getPath());
 				painelbase.getPainelBaixo().preencheMemoria();
 				painelbase.getPainelBaixo().preencheCache();
@@ -287,14 +280,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 				painelbase.getPainelBaixo().preencheMicroprograma(file.getPath());
 				painelbase.getPainelBaixo().preenchePSW();
 				painelbase.getPainelBaixo().setDisponibilidadeComecar(true);
-				//rodaPrograma.rodar();
-				//manipulaMemoria.getArquitetura().atualizaPainel();
-				/*System.out.println(manipulaMemoria.getArquitetura().getR0().getValor());
-				System.out.println(manipulaMemoria.getArquitetura().getR1().getValor());
-				System.out.println(manipulaMemoria.getArquitetura().getR2().getValor());
-				System.out.println(manipulaMemoria.getArquitetura().getR3().getValor());
-				System.out.println(manipulaMemoria.getArquitetura().getR4().getValor());
-				*/
+
 				fileChooser.setSelectedFile(null);
 
 			} catch (Exception e2) {

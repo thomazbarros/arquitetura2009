@@ -59,7 +59,7 @@ public class PainelBaixo extends JPanel {
 	private RodaPrograma rodaPrograma;
 	private DecimalFormat formataDecimal;
 
-	//private RodarThread rodarThread;
+	
 	/**
 	 * This method initializes painelBaixo	
 	 * 	
@@ -70,7 +70,6 @@ public class PainelBaixo extends JPanel {
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
 		formataDecimal = new DecimalFormat("0.00");  
-		//this.rodarThread = rodarThread;
 		inicializar();
 	}
 
@@ -104,7 +103,7 @@ public class PainelBaixo extends JPanel {
 			labelLocalBusca.setBounds(new Rectangle(610, 200, 362, 23));
 			//labelLocalBusca.setText("Local da busca");
 			cache = new JLabel();
-			cache.setBounds(new Rectangle(405, 40, 153, 18));
+			cache.setBounds(new Rectangle(405+20, 40, 153, 18));
 			cache.setText("Cache");
 			memoria = new JLabel();
 			memoria.setBounds(new Rectangle(219, 28, 143, 34));
@@ -112,8 +111,6 @@ public class PainelBaixo extends JPanel {
 			labelMicroprograma = new JLabel();
 			labelMicroprograma.setBounds(new Rectangle(27, 30, 154, 30));
 			labelMicroprograma.setText("Microprograma");
-			//painelBaixo = new JPanel();
-			//this = new PainelBaixo();
 			this.setLayout(null);
 			this.setSize(new Dimension(1024, 768));
 			this.add(getScrollmemoria(), null);
@@ -139,71 +136,14 @@ public class PainelBaixo extends JPanel {
 			this.add(labelLocalBusca,null);
 	}
 	
-	/*public PainelBaixo getPainelBaixo() {
-		if (painelBaixo == null) {
-			labelProxPasso = new JLabel();
-			labelProxPasso.setBounds(new Rectangle(784, 214, 214, 27));
-			labelProxPasso.setText("Clique abaixo para o próximo passo:");
-			labelComecar = new JLabel();
-			labelComecar.setBounds(new Rectangle(815, 140, 188, 23));
-			labelComecar.setText("Clique abaixo para começar:");
-			sinal = new JLabel();
-			sinal.setBounds(new Rectangle(769, 78, 13, 26));
-			sinal.setText("S");
-			carry = new JLabel();
-			carry.setBounds(new Rectangle(711, 77, 10, 26));
-			carry.setText("C");
-			zero = new JLabel();
-			zero.setBounds(new Rectangle(664, 78, 13, 23));
-			zero.setText("Z");
-			overflow = new JLabel();
-			overflow.setBounds(new Rectangle(623, 77, 15, 23));
-			overflow.setText("O");
-			psw = new JLabel();
-			psw.setBounds(new Rectangle(610, 40, 362, 23));
-			psw.setText("PSW");
-			cache = new JLabel();
-			cache.setBounds(new Rectangle(411, 40, 164, 18));
-			cache.setText("Cache");
-			memoria = new JLabel();
-			memoria.setBounds(new Rectangle(225, 28, 143, 34));
-			memoria.setText("Memória");
-			labelMicroprograma = new JLabel();
-			labelMicroprograma.setBounds(new Rectangle(24, 30, 154, 30));
-			labelMicroprograma.setText("Microprograma");
-			//painelBaixo = new JPanel();
-			painelBaixo = new PainelBaixo();
-			painelBaixo.setLayout(null);
-			painelBaixo.setSize(new Dimension(1024, 768));
-			painelBaixo.add(getScrollmemoria(), null);
-			painelBaixo.add(getScrollPrograma(), null);
-			painelBaixo.add(getScrollCache(), null);
-			painelBaixo.add(labelMicroprograma, null);
-			painelBaixo.add(memoria, null);
-			painelBaixo.add(cache, null);
-			painelBaixo.add(psw, null);
-			painelBaixo.add(overflow, null);
-			painelBaixo.add(zero, null);
-			painelBaixo.add(carry, null);
-			painelBaixo.add(sinal, null);
-			painelBaixo.add(getCampoOverflow(), null);
-			painelBaixo.add(getCampoZero(), null);
-			painelBaixo.add(getCampoCarry(), null);
-			painelBaixo.add(getCampoSinal(), null);
-			painelBaixo.add(getComecar(), null);
-			painelBaixo.add(getProxPasso(), null);
-			painelBaixo.add(labelComecar, null);
-			painelBaixo.add(labelProxPasso, null);
-		}
-		return painelBaixo;
-	}*/
-	
+
 	public void preencheMemoria(){
 		Arquitetura arquitetura = manipulaMemoria.getArquitetura();
 		Vector<String> vetor = new Vector<String>();
-		
+		int posicao = 0;
 		for(int i = 0; i < arquitetura.getMemoria().getTamanho();i++){
-			vetor.add(arquitetura.getMemoria().obtemDadoBacking(i));
+			vetor.add(posicao +".  " +arquitetura.getMemoria().obtemDadoBacking(i));
+			posicao++;
 		}
 		
 		listMemória.setListData(vetor);
@@ -218,7 +158,7 @@ public class PainelBaixo extends JPanel {
 		
 		for(int i = 0; i < arquitetura.getCache().getTamanho();i++){
 			vetor.add(arquitetura.getCache().imprimeCache(i));
-			//System.out.println(arquitetura.getCache().imprimeCache(i));
+			
 			posicoesOcupadas++;
 		}
 				
@@ -252,7 +192,7 @@ public class PainelBaixo extends JPanel {
 	private JScrollPane getScrollmemoria() {
 		if (scrollmemoria == null) {
 			scrollmemoria = new JScrollPane();
-			scrollmemoria.setBounds(new Rectangle(214, 72, 176, 225));
+			scrollmemoria.setBounds(new Rectangle(214, 72, 176 + 20, 225));
 			scrollmemoria.setViewportView(getListMemória());
 		}
 		return scrollmemoria;
@@ -304,7 +244,7 @@ public class PainelBaixo extends JPanel {
 	private JScrollPane getScrollCache() {
 		if (scrollCache == null) {
 			scrollCache = new JScrollPane();
-			scrollCache.setBounds(new Rectangle(400, 70, 176, 225));
+			scrollCache.setBounds(new Rectangle(400+20, 70, 176, 225));
 			scrollCache.setViewportView(getListCache());
 		}
 		return scrollCache;
@@ -389,17 +329,10 @@ public class PainelBaixo extends JPanel {
 			comecar.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					setTextoLabelLocalBusca("");
-					//rodaPrograma.run();
-					//rodaPrograma.setRun();
 					manipulaMemoria.getArquitetura().setRodaThread(true);
 					setDisponibilidadeComecar(false);
 					setDisponibilidadeProximoPasso(true);
-					//rodarThread.setRodar(true);
-					//rodarThread.run();
-					//manipulaMemoria.getArquitetura().atualizaPainel();
-					//PainelBaixo temp = (PainelBaixo)comecar.getParent();
-					//temp.revalidate();
-					//temp.repaint();
+
 				}
 			});
 		}
@@ -422,8 +355,7 @@ public class PainelBaixo extends JPanel {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					setTextoLabelLocalBusca("");
 					manipulaMemoria.getArquitetura().setContinuar(true);
-					//rodaPrograma.rodar();
-					//manipulaMemoria.getArquitetura().atualizaPainel();
+
 				}
 			});
 		}

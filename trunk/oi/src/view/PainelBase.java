@@ -25,13 +25,11 @@ public class PainelBase extends JPanel {
 	 * 	
 	 * @return javax.swing.JPanel	
 	 */
-	/*public PainelBase(ManipulaMemoria manipulaMemoria){
-		this.manipulaMemoria = manipulaMemoria;
-	}*/
-	public PainelBase(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){//,RodarThread rodarThread){
+
+	public PainelBase(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){
 		this.manipulaMemoria = manipulaMemoria;
 		this.rodaPrograma = rodaPrograma;
-		painelBaixo = new PainelBaixo(manipulaMemoria,rodaPrograma);//,rodarThread);
+		painelBaixo = new PainelBaixo(manipulaMemoria,rodaPrograma);
 
 		painelBaixo.reshape(0,400,1024,300);
 		painelULA = new PainelULA();
@@ -42,15 +40,6 @@ public class PainelBase extends JPanel {
 		scroll.reshape(0,0,1020,422);
 
 		this.add(scroll);
-		//PARTE PROVISORIA PRO LEPOD
-		//painelBaixo.setPreferredSize(new Dimension(1024, 600));
-		//scroll2 = new JScrollPane(painelBaixo);
-		//s//croll2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		//scroll2.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		//scroll2.reshape(0,400,1024,300);
-		//this.add(scroll2);
-		
-		//FIM PROVISORIA PRO LEPOD
 		this.add(painelBaixo);
 		this.setLayout(null);
 		manipulaMemoria.getArquitetura().setUlaGrafica(painelULA);
