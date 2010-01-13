@@ -6,10 +6,10 @@ import controller.Conversor;
 
 public class Memoria{
 	private Conversor conversor;
-	private boolean pontoDeControle;
+	private boolean pontoDeControle, ler;
 	private String [] dados;
 	private String valor;
-	private Integer posicaoLivre;
+	private Integer posicaoLivre, posicaoAtual;
 	private final int tamanho = 1024;
 	TreeMap<String,Integer> labels; 
 	TreeMap<Integer,Integer> labelMemoria;
@@ -28,6 +28,8 @@ public class Memoria{
 		conversor = new Conversor();
 		this.cache = cache;
 		constanteLabel = 1;
+		ler = true;
+		posicaoAtual = 0;
 	}
 
 	public String getValor() {
@@ -79,7 +81,16 @@ public class Memoria{
 	public void ativaPontoDeControle(Integer posicao) {
 		if(pontoDeControle){
 			//this.valor = dados[posicao];
-			this.valor = getDado(posicao);
+			
+			if(ler){
+				this.valor = getDado(posicao);
+				posicaoAtual = posicao;
+			}
+			else{
+				dados[posicaoAtual] = conversor.inteiroParaBinario(posicao);
+				ler = false;
+			}
+			
 			pontoDeControle = false;
 		}
 	}
@@ -220,9 +231,16 @@ public class Memoria{
 		posicaoLivre = 0;
 		constanteLabel = 1;
 	}
+
+
+	public void setLer(boolean ler) {
+		this.ler = ler;
+	}
+
 	
 	public void imprimeTestes(){
 		System.out.println(labels);
 		System.out.println(labelMemoria);
 	}
+
 }
