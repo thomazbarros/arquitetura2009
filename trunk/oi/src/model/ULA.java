@@ -205,6 +205,8 @@ public class ULA{
 			jmp();
 		}*/
 		
+		verificaOverflow();
+		
 		pontoDeControle1 = false;
 		pontoDeControle2 = false;
 		pontoDeControle3 = false;
@@ -759,5 +761,12 @@ public class ULA{
 	
 	public void setRodarThread(RodarThread rodarThread){
 		this.rodarThread = rodarThread;
+	}
+	
+	public void verificaOverflow(){
+		if(valor > Constantes.LIMITE_CONSTANTE){
+			o = 1;
+			valor = conversor.valorOverflow(valor);
+		}
 	}
 }

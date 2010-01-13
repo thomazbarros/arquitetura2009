@@ -1,8 +1,10 @@
 package model;
  
 public class Constantes {
-	public static final int LIMITE_CONSTANTE = 16833;
-	public static final int LIMITE_NEGATIVO_CONSTANTE = -16832;
+	public static final int LIMITE_CONSTANTE = 8191;
+	public static final int LIMITE_NEGATIVO_CONSTANTE = -8191;
+	public static final int LIMITE_LABEL = 16383;
+	public static final int LIMITE_NEGATIVO_LABEL = -16382;
 	public static final int ERRO = -999999;
 	public static final int CONSTANTE = 0;
 	public static final int R0 = 1;

@@ -9,6 +9,3 @@ OR <R0, R2>
 NOT <R2>
 AND <R0, R3>
 HALT
-
-4096
-256
