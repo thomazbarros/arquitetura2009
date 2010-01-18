@@ -63,7 +63,8 @@ public class ManipulaMemoria {
 				.ler(caminhoArquivo);
 		String instrucao,label,temp;
 		int[] tipos;
-		int tipo1,posicao = 0,constanteLabel;
+		int tipo1,posicao = 0;
+		long constanteLabel;
 
 		for (String linha : linhas) {
 			
@@ -439,7 +440,6 @@ public class ManipulaMemoria {
 	public int ler(int posicao){
 
 		String binario;
-		Parser parser = new Parser();
 
 		binario = arquitetura.getMemoria().obtemDadoBacking(posicao);
 

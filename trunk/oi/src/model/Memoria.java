@@ -11,10 +11,10 @@ public class Memoria{
 	private String valor;
 	private Integer posicaoLivre, posicaoAtual;
 	private final int tamanho = 1024;
-	TreeMap<String,Integer> labels; 
-	TreeMap<Integer,Integer> labelMemoria;
+	TreeMap<String,Long> labels; 
+	TreeMap<Long,Long> labelMemoria;
 	MemoriaCache cache;
-	int constanteLabel;
+	long constanteLabel;
 	
 	public Memoria(boolean pontoDeControle,MemoriaCache cache){
 		this.pontoDeControle = pontoDeControle;
@@ -23,8 +23,8 @@ public class Memoria{
 			dados[i] = "00000000000000000000000000000000";
 		}
 		posicaoLivre = 0;
-		labels = new TreeMap<String, Integer>();
-		labelMemoria = new TreeMap<Integer, Integer>();
+		labels = new TreeMap<String, Long>();
+		labelMemoria = new TreeMap<Long, Long>();
 		conversor = new Conversor();
 		this.cache = cache;
 		constanteLabel = 1;
@@ -77,12 +77,12 @@ public class Memoria{
 		}
 	}
 	
-	public void ativaPontoDeControle(Integer posicao) {
+	public void ativaPontoDeControle(long posicao) {
 		if(pontoDeControle){
 			
 			if(ler){
-				this.valor = getDado(posicao);
-				posicaoAtual = posicao;
+				this.valor = getDado((int) posicao);
+				posicaoAtual = (int) posicao;
 			}
 			else{
 				dados[posicaoAtual] = conversor.inteiroParaBinario(posicao);
@@ -105,13 +105,13 @@ public class Memoria{
 		for(String chave : labels.keySet()){
 			labels.remove(chave);
 		}
-		for(Integer chave : labelMemoria.keySet()){
+		for(Long chave : labelMemoria.keySet()){
 			labelMemoria.remove(chave);
 		}
 	}
 	
 	public void adicionaLabel(String label){
-		int constante;
+		long constante;
 		
 		constante = getConstanteLabel(label);
 		
@@ -121,14 +121,14 @@ public class Memoria{
 		}
 	}
 	
-	public void relacionaLabelMemoria(String label,int posicao){
+	public void relacionaLabelMemoria(String label, long posicao){
 		labels.put(label,constanteLabel);
 		labelMemoria.put(constanteLabel,posicao);
 		constanteLabel++;
 	}
 	
-	public int getPosicaoLabel(int label){
-		int temp; 
+	public long getPosicaoLabel(int label){
+		long temp; 
 		try{
 			temp = labelMemoria.get(label);
 			return temp;
@@ -137,8 +137,8 @@ public class Memoria{
 		}
 	}
 	
-	public int getConstanteLabel(String label){
-		int temp; 
+	public long getConstanteLabel(String label){
+		long temp; 
 		try{
 			temp = labels.get(label);
 			return temp;
@@ -147,8 +147,8 @@ public class Memoria{
 		}
 	}
 	
-	public String obtemDadoBacking(int posicao){
-			return dados[posicao];
+	public String obtemDadoBacking(long posicao){
+			return dados[(int) posicao];
 	}
 	
 	public String getDadoAtual() {

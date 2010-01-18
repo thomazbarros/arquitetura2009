@@ -23,7 +23,7 @@ public class Multiplexador{
 		return pontoDeControle;
 	}
 
-	public Integer ativaPontoDeControle(Integer valor1, Integer valor2){
+	public long ativaPontoDeControle(long valor1, long valor2){
 		if(!pontoDeControle){
 			return valor1; 
 		}
@@ -33,7 +33,7 @@ public class Multiplexador{
 		}
 	}
 	
-	public Integer ativaPontoDeControle(Integer valor1, Integer valor2, Integer valor3){
+	public long ativaPontoDeControle(long valor1, long valor2, long valor3){
 		if(!pontoDeControle){
 			if(!pontoDeControle2){
 				return valor1;
@@ -49,7 +49,7 @@ public class Multiplexador{
 		}
 	}
 			
-	public Integer ativaPontoDeControle(Integer valor1, Integer valor2, Integer valor3, Integer valor4){
+	public long ativaPontoDeControle(long valor1, long valor2, long valor3, long valor4){
 		if(!pontoDeControle){
 			if(!pontoDeControle2){
 				return valor1;
@@ -72,7 +72,7 @@ public class Multiplexador{
 		}
 	}
 	
-	public Integer ativaPontoDeControle(Integer valor1, Integer valor2, Integer valor3, Integer valor4, Integer valor5){
+	public long ativaPontoDeControle(long valor1, long valor2, long valor3, long valor4, long valor5){
 		if(!pontoDeControle){
 			if(!pontoDeControle2){
 				if(!pontoDeControle3){

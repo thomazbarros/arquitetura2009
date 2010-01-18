@@ -4,7 +4,7 @@ import model.Constantes;
 
 public class Conversor {
 
-	public String inteiroParaBinario(int numero){
+	public String inteiroParaBinario(long numero){
 		String temp = "";
 		boolean isNegativo = false;
 		
@@ -28,7 +28,7 @@ public class Conversor {
 		return completaBinario(temp,isNegativo);
 	}
 		
-	public String labelParaBinario(int label){
+	public String labelParaBinario(long label){
 		String temp = "";
 
 		while(label != 0){
@@ -121,8 +121,8 @@ public class Conversor {
 		return false;
 	}
 	
-	public int valorOverflow(int valor){
-		int aux;
+	public long valorOverflow(long valor){
+		long aux;
 		
 		if(valor <= Constantes.LIMITE_CONSTANTE){
 			return valor;
