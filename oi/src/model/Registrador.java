@@ -3,9 +3,9 @@ package model;
 public class Registrador{
 	
 	private boolean pontoDeControle;
-	private Integer valor;
+	private long valor;
 		
-	public Registrador(boolean pontoDeControle, Integer valor){
+	public Registrador(boolean pontoDeControle, long valor){
 		this.pontoDeControle = pontoDeControle;
 		this.valor = valor;
 	}
@@ -18,18 +18,18 @@ public class Registrador{
 		this.pontoDeControle = pontoDeControle;
 	}
 	
-	public void ativaPontoDeControle(Integer valor) {
+	public void ativaPontoDeControle(long valor) {
 			if(pontoDeControle){
 				this.valor = valor;
 				pontoDeControle = false;
 			}
 	}
 	
-	public Integer getValor() {
+	public long getValor() {
 			return valor;
 	}
 	
-	public void setValor(Integer valor) {
+	public void setValor(long valor) {
 			this.valor = valor;
 	}
 }

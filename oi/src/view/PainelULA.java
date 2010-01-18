@@ -37,7 +37,7 @@ public class PainelULA extends JPanel {
 	
 	
 	PontoDeControle[] pontosDeControle = new PontoDeControle[24];  
-	int Reg0, Reg1, RegX, Reg2, Reg3, Reg4, RegY, PC, IR, Rend, Rdados = 0;	
+	long Reg0, Reg1, RegX, Reg2, Reg3, Reg4, RegY, PC, IR, Rend, Rdados = 0;	
 
 	
 	public PainelULA() {
@@ -606,83 +606,83 @@ public class PainelULA extends JPanel {
 		pontosDeControle[23].setAtivo(b);
 	}
 	
-	public int getReg0() {
+	public long getReg0() {
 		return Reg0;
 	}
 
-	public void setReg0(int reg0) {
+	public void setReg0(long reg0) {
 		Reg0 = reg0;
 	}
 
-	public int getReg1() {
+	public long getReg1() {
 		return Reg1;
 	}
 
-	public void setReg1(int reg1) {
+	public void setReg1(long reg1) {
 		Reg1 = reg1;
 	}
 
-	public int getRegX() {
+	public long getRegX() {
 		return RegX;
 	}
 
-	public void setRegX(int regX) {
+	public void setRegX(long regX) {
 		RegX = regX;
 	}
 
-	public int getReg2() {
+	public long getReg2() {
 		return Reg2;
 	}
 
-	public void setReg2(int reg2) {
+	public void setReg2(long reg2) {
 		Reg2 = reg2;
 	}
 
-	public int getReg3() {
+	public long getReg3() {
 		return Reg3;
 	}
 
-	public void setReg3(int reg3) {
+	public void setReg3(long reg3) {
 		Reg3 = reg3;
 	}
 
-	public int getReg4() {
+	public long getReg4() {
 		return Reg4;
 	}
 
-	public void setReg4(int reg4) {
+	public void setReg4(long reg4) {
 		Reg4 = reg4;
 	}
 
-	public int getRegY() {
+	public long getRegY() {
 		return RegY;
 	}
 
-	public void setRegY(int regY) {
+	public void setRegY(long regY) {
 		RegY = regY;
 	}
 
-	public int getRend() {
+	public long getRend() {
 		return Rend;
 	}
 
-	public void setRend(int rend) {
+	public void setRend(long rend) {
 		Rend = rend;
 	}
 
-	public int getRdados() {
+	public long getRdados() {
 		return Rdados;
 	}
 
-	public void setRdados(int rdados) {
+	public void setRdados(long rdados) {
 		Rdados = rdados;
 	}
 
-	public void setPc(int PC) {
+	public void setPc(long PC) {
 		this.PC = PC;
 	}
 	
-	public void setIr(int IR) {
+	public void setIr(long IR) {
 		this.IR = IR;
 	}
 	

@@ -21,12 +21,12 @@ public class RodaPrograma extends Thread{
 		String instrucao;
 		arquitetura.buscaInstrucao();
 
-		instrucao = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor());
+		instrucao = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());
 		while(!manipulaMemoria.isHalt(instrucao)){
 
-			manipulaMemoria.ler(arquitetura.getPc().getValor());
+			manipulaMemoria.ler((int) arquitetura.getPc().getValor());
 			arquitetura.buscaInstrucao();
-			instrucao = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor());
+			instrucao = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());
 			if(arquitetura.getModo() == Constantes.RODAINSTRUCAO){
 
 				travaThread();

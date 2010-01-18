@@ -71,7 +71,7 @@ import model.ULA;
 	public void ativaPontoDeControle(Microinstrucao microinstrucao){
 		char[] pontoDeControle = microinstrucao.getPontoDeControle();
 		boolean[] pontoDeControle2 = microinstrucao.getPontoDeControle2();
-		int conteudoMemoria,valorMux;
+		long conteudoMemoria,valorMux;
 
 		for(int i = 0; i < pontoDeControle.length; i++)
 		{

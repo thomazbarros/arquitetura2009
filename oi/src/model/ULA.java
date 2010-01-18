@@ -6,11 +6,12 @@ import controller.RodarThread;
 public class ULA{
 	
 	private boolean pontoDeControle1, pontoDeControle2, pontoDeControle3, pontoDeControle4, pontoDeControle5, pontoDeControle6;
-	private Integer a, b, valor, c, z, n, o;
+	private Integer c, z, n, o;
+	private long valor, a, b;
 	private Conversor conversor;
 	private RodarThread rodarThread;
 	
-	public Integer getValor() {
+	public long getValor() {
 		return valor;
 	}
      
@@ -32,19 +33,19 @@ public class ULA{
 		conversor = new Conversor();
 	}
 
-	public Integer getA() {
+	public long getA() {
 		return a;
 	}
 
-	public void setA(Integer a) {
+	public void setA(long a) {
 		this.a = a;
 	}
 
-	public Integer getB() {
+	public long getB() {
 		return b;
 	}
 
-	public void setB(Integer b) {
+	public void setB(long b) {
 		this.b = b;
 	}
 
@@ -194,8 +195,6 @@ public class ULA{
 			jmp();
 		}
 		
-		verificaOverflow();
-		
 		pontoDeControle1 = false;
 		pontoDeControle2 = false;
 		pontoDeControle3 = false;
@@ -227,25 +226,25 @@ public class ULA{
 			n = 0;
 		}
 		
-		String s1 = Integer.toBinaryString(a), s2 = Integer.toBinaryString(b);
+		String s1 = Long.toBinaryString(a), s2 = Long.toBinaryString(b);
 		int i = 0;
 		
 		if(a>=0){
-			s1 = "0000000000000000";
+			s1 = "00000000000000000000000000000000";
 		}
 		else{
 			s1 = s1.substring(16);
 		}
 		
 		if(b>=0){
-			s2 = "0000000000000000";
+			s2 = "00000000000000000000000000000000";
 		}
 		else{
 			s2 = s2.substring(16);
 		}
 		
 		for(int j = 15; j>=0; j--){
-			if(Integer.parseInt(s1.substring(j, j+1)) + Integer.parseInt(s2.substring(j, j+1)) + i >= 2){
+			if(Long.parseLong(s1.substring(j, j+1)) + Long.parseLong(s2.substring(j, j+1)) + i >= 2){
 				i = 1;
 			}
 			else{
@@ -267,12 +266,7 @@ public class ULA{
 			z = 0;
 		}
 		
-		if(Math.abs(a+b) > 16383){
-			o = 1;
-		}
-		else{
-			o = 0;
-		}
+		verificaOverflow();
 	}
 	
 	public void aMenosB(){
@@ -307,12 +301,7 @@ public class ULA{
 			c = 0;
 		}
 		
-		if(Math.abs(a-b) > 16383){
-			o = 1;
-		}
-		else{
-			o = 0;
-		}
+		verificaOverflow();
 	}
 	
 	public void aAndB(){
@@ -383,12 +372,7 @@ public class ULA{
 			c = 0;
 		}
 		
-		if(Math.abs(a<<1) > 16383){
-			o = 1;
-		}
-		else{
-			o = 0;
-		}
+		verificaOverflow();
 	}
 	
 	public void aShiftRight(){
@@ -415,12 +399,7 @@ public class ULA{
 			c = 0;
 		}
 		
-		if(Math.abs(a>>1) > 16383){
-			o = 1;
-		}
-		else{
-			o = 0;
-		}
+		verificaOverflow();
 	}
 	
 	public void bShiftLeft(){
@@ -447,12 +426,7 @@ public class ULA{
 			c = 0;
 		}
 		
-		if(Math.abs(b<<1) > 16383){
-			o = 1;
-		}
-		else{
-			o = 0;
-		}
+		verificaOverflow();
 	}
 	
 	public void bShiftRight(){
@@ -479,12 +453,7 @@ public class ULA{
 			c = 0;
 		}
 		
-		if(Math.abs(b>>1) > 16383){
-			o = 1;
-		}
-		else{
-			o = 0;
-		}
+		verificaOverflow();
 	}
 	
 	public void zera(){
@@ -531,12 +500,7 @@ public class ULA{
 			c = 0;
 		}
 		
-		if(Math.abs(b-a) > 16383){
-			o = 1;
-		}
-		else{
-			o = 0;
-		}
+		verificaOverflow();
 	}
 	
 	public void notA(){
@@ -754,6 +718,9 @@ public class ULA{
 		if(valor > Constantes.LIMITE_CONSTANTE){
 			o = 1;
 			valor = conversor.valorOverflow(valor);
+		}
+		else{
+			o = 0;
 		}
 	}
 }

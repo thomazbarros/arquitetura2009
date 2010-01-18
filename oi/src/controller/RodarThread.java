@@ -51,11 +51,11 @@ public class RodarThread extends Thread{
 		Arquitetura arquitetura = manipulaMemoria.getArquitetura();
 		Conversor conversor = new Conversor();
 		
-		String binario = arquitetura.getMemoria().obtemDadoBacking(arquitetura.getPc().getValor());
+		String binario = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());
 		int label = conversor.binarioParaInteiro(binario);
 		System.out.println(label);
 		arquitetura.getMemoria().imprimeTestes();
-		int temp = arquitetura.getMemoria().getPosicaoLabel(label);
+		int temp = (int) arquitetura.getMemoria().getPosicaoLabel(label);
 		if(temp != -1){
 			arquitetura.getMemoria().setPosicaoAtual(temp);
 			return temp;
