@@ -20,7 +20,7 @@ public class Memoria{
 		this.pontoDeControle = pontoDeControle;
 		dados = new String[tamanho]; 
 		for(int i = 0; i < dados.length; i++){
-			dados[i] = "0000000000000000";
+			dados[i] = "00000000000000000000000000000000";
 		}
 		posicaoLivre = 0;
 		labels = new TreeMap<String, Integer>();
@@ -173,7 +173,7 @@ public class Memoria{
 	
 	public void zeraMemoria(){
 		for(int i = 0; i < dados.length; i++){
-			dados[i] = "0000000000000000";
+			dados[i] = "00000000000000000000000000000000";
 		}
 		zeraLabels();
 		posicaoLivre = 0;
