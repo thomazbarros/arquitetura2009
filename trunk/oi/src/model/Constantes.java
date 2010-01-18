@@ -1,10 +1,10 @@
 package model;
  
 public class Constantes {
-	public static final int LIMITE_CONSTANTE = 8191;
-	public static final int LIMITE_NEGATIVO_CONSTANTE = -8191;
-	public static final int LIMITE_LABEL = 16383;
-	public static final int LIMITE_NEGATIVO_LABEL = -16382;
+	public static final long LIMITE_CONSTANTE = 2147483648L;
+	public static final long LIMITE_NEGATIVO_CONSTANTE = -2147483648L;
+	public static final long LIMITE_LABEL = 4294967295L;
+	public static final long LIMITE_NEGATIVO_LABEL = -4294967295l;
 	public static final int ERRO = -999999;
 	public static final int CONSTANTE = 0;
 	public static final int R0 = 1;
@@ -75,7 +75,7 @@ public class Constantes {
 	public static final int RODAPROGRAMA = 0;
 	public static final int RODAINSTRUCAO = 1;
 	public static final int RODAMICRO = 2;
-	public static final int TAMANHO_PALAVRA = 16;
+	public static final int TAMANHO_PALAVRA = 32;
 	public static final int TAMANHO_CACHE = 12;
 	public static final int TAMANHO_BLOCO_CACHE = 4;
 }
