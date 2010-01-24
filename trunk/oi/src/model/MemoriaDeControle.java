@@ -3,10 +3,6 @@ package model;
 public class MemoriaDeControle {
 	private Microinstrucao microinstrucao;
 	
-	public MemoriaDeControle(){
-		microinstrucao = new Microinstrucao();
-	}
-	
 	public Microinstrucao rEndRecebeR0(){
 		char[] pontoDeControle = {'k', 'l', 'p', 'q', 'r', 's', 't', 'u', 'i', 'v'};
 		boolean[] pontoDeControle2 = {false, true, false, true, false, false, true, true, true, true};
