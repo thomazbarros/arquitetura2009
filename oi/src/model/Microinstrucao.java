@@ -4,6 +4,479 @@ public class Microinstrucao {
 	private char[] pontoDeControle;
 	private boolean[] pontoDeControle2;
 	
+	public Microinstrucao(int[] pontosDeControle, int proximo){
+		int j = 0;
+		for(int i = 0; i < pontosDeControle.length; i++){
+			if(pontosDeControle[i] == Constantes.R0_ATIVADO){
+				pontoDeControle[j] = 'a';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.R0_DESATIVADO){
+				pontoDeControle[j] = 'a';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.R1_ATIVADO){
+				pontoDeControle[j] = 'b';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.R1_DESATIVADO){
+				pontoDeControle[j] = 'b';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.PC_ATIVADO){
+				pontoDeControle[j] = 'c';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.PC_DESATIVADO){
+				pontoDeControle[j] = 'c';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.R2_ATIVADO){
+				pontoDeControle[j] = 'd';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.R2_DESATIVADO){
+				pontoDeControle[j] = 'd';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.R3_ATIVADO){
+				pontoDeControle[j] = 'e';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.R3_DESATIVADO){
+				pontoDeControle[j] = 'e';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.R4_ATIVADO){
+				pontoDeControle[j] = 'f';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.R4_DESATIVADO){
+				pontoDeControle[j] = 'f';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.IR_ATIVADO){
+				pontoDeControle[j] = 'g';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.IR_DESATIVADO){
+				pontoDeControle[j] = 'g';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.RDADO_ATIVADO){
+				pontoDeControle[j] = 'h';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.RDADO_DESATIVADO){
+				pontoDeControle[j] = 'h';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.REND_ATIVADO){
+				pontoDeControle[j] = 'i';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.REND_DESATIVADO){
+				pontoDeControle[j] = 'i';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.MUX_ATIVADO){
+				pontoDeControle[j] = 'j';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.MUX_DESATIVADO){
+				pontoDeControle[j] = 'j';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.MUX_A_RDADO){
+				pontoDeControle[j] = 'k';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'l';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.MUX_A_R0){
+				pontoDeControle[j] = 'k';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'l';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.MUX_A_R1){
+				pontoDeControle[j] = 'k';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'l';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.MUX_A_RX){
+				pontoDeControle[j] = 'k';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'l';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.MUX_B_R2){
+				pontoDeControle[j] = 'm';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'n';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'o';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.MUX_B_R3){
+				pontoDeControle[j] = 'm';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'n';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'o';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.MUX_B_R4){
+				pontoDeControle[j] = 'm';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'n';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'o';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.MUX_B_RY){
+				pontoDeControle[j] = 'm';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'n';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'o';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.MUX_B_PC){
+				pontoDeControle[j] = 'm';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'n';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'o';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.A){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.B){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.A_MAIS_1){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.A_MAIS_B){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.A_MENOS_B){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.A_AND_B){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.A_OR_B){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.A_SHIFT_LEFT){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.A_SHIFT_RIGHT){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.B_SHIFT_LEFT){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.B_SHIFT_RIGHT){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.A_MENOS_1){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.B_MAIS_1){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.B_MENOS_1){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.B_MENOS_A){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[j] = false;
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[j] = true;
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.MEMORIA_ATIVADO){
+				pontoDeControle[j] = 'v';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.MEMORIA_DESATIVADO){
+				pontoDeControle[j] = 'v';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.RX_ATIVADO){
+				pontoDeControle[j] = 'w';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.RX_DESATIVADO){
+				pontoDeControle[j] = 'w';
+				pontoDeControle2[j] = false;
+			}
+			if(pontosDeControle[i] == Constantes.RY_ATIVADO){
+				pontoDeControle[j] = 'x';
+				pontoDeControle2[j] = true;
+			}
+			if(pontosDeControle[i] == Constantes.RY_DESATIVADO){
+				pontoDeControle[j] = 'x';
+				pontoDeControle2[j] = false;
+			}
+		}
+	}
+	
 	public char[] getPontoDeControle() {
 		return pontoDeControle;
 	}
