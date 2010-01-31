@@ -22,6 +22,8 @@ public class RodaPrograma extends Thread{
 		arquitetura.buscaInstrucao();
 
 		instrucao = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());
+		System.out.println("TESTES : ");
+		arquitetura.getMemoria().imprimeTestes();
 		while(!manipulaMemoria.isHalt(instrucao)){
 
 			manipulaMemoria.ler((int) arquitetura.getPc().getValor());
