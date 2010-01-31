@@ -67,6 +67,7 @@ public class Constantes {
 	public static final int RX_DESATIVADO = 47;
 	public static final int RY_ATIVADO = 48;
 	public static final int RY_DESATIVADO = 49;
+	public static final int NOT_A = 50;
 	public static final String BITS_CONSTANTE = "00";
 	public static final String BITS_LABEL = "01";
 	public static final String BITS_INSTRUCAO = "10";
