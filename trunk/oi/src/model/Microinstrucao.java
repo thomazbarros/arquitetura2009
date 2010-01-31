@@ -303,6 +303,25 @@ public class Microinstrucao {
 				pontoDeControle[j] = 'u';
 				pontoDeControle2[20] = '0';
 			}
+			if(pontosDeControle[i] == Constantes.NOT_A){
+				pontoDeControle[j] = 'p';
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle[j] = 'q';
+				pontoDeControle2[16] = '0';
+				j++;
+				pontoDeControle[j] = 'r';
+				pontoDeControle2[17] = '1';
+				j++;
+				pontoDeControle[j] = 's';
+				pontoDeControle2[18] = '1';
+				j++;
+				pontoDeControle[j] = 't';
+				pontoDeControle2[19] = '1';
+				j++;
+				pontoDeControle[j] = 'u';
+				pontoDeControle2[20] = '1';
+			}
 			if(pontosDeControle[i] == Constantes.A_SHIFT_LEFT){
 				pontoDeControle[j] = 'p';
 				pontoDeControle2[15] = '0';
