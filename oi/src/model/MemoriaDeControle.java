@@ -9,6 +9,24 @@ public class MemoriaDeControle {
 	public MemoriaDeControle(){
 		memoriaDeControle = new ArrayList<Microinstrucao>();
 		
+		//rEndRecebeR0
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
+		
+		//rEndRecebeR1
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R1, Constantes.A, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
+		
+		//rEndRecebeR2
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R2, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
+		
+		//rEndRecebeR3
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R3, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
+		
+		//rEndRecebeR4
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R4, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
+		
+		//rEndRecebeRY
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_RY, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
+		
 		//atualizaPC
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_PC, Constantes.B_MAIS_1, Constantes.PC_ATIVADO}));
 		
@@ -1173,7 +1191,160 @@ public class MemoriaDeControle {
 		
 		//rYRecebeRDado
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RY_ATIVADO}));
+		
+		//SHL <constante, rj>
+		
+		//atualizaPC
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_PC, Constantes.B_MAIS_1, Constantes.PC_ATIVADO}));
+		
+		//rYRecebeR0
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR1
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR2
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R2, Constantes.B, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR3
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R3, Constantes.B, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR4
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R4, Constantes.B, Constantes.RY_ATIVADO}));
+		
+		//rEndRecebePC
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_PC, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
+		
+		//rDadoRecebeInformacaoLida
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}));
+		
+		//rXRecebeRDado
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RX_ATIVADO}));
+		
+		//r0RecebeDeslocamentoEsquerda
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.A_SHIFT_LEFT, Constantes.R0_ATIVADO}));
+		
+		//r1RecebeDeslocamentoEsquerda
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.A_SHIFT_LEFT, Constantes.R1_ATIVADO}));
+		
+		//r2RecebeDeslocamentoEsquerda
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.A_SHIFT_LEFT, Constantes.R2_ATIVADO}));
+		
+		//r3RecebeDeslocamentoEsquerda
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.A_SHIFT_LEFT, Constantes.R3_ATIVADO}));
+		
+		//r4RecebeDeslocamentoEsquerda
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.A_SHIFT_LEFT, Constantes.R4_ATIVADO}));
+		
+		//SHL <constante, (rj)>
+		
+		//rEndRecebePCMais1
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_PC, Constantes.B_MAIS_1, Constantes.REND_ATIVADO}));
+		
+		//rDadoRecebeInformacaoLida
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}));
+		
+		//rXRecebeRDado
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RX_ATIVADO}));
+		
+		//rYRecebeR1
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR2
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R2, Constantes.B, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR3
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R3, Constantes.B, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR4
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R4, Constantes.B, Constantes.RY_ATIVADO}));
+		
+		//rEndRecebeRY
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_RY, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
+		
+		//rDadoRecebeInformacaoLida
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}));
+		
+		//rYRecebeRDado
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RY_ATIVADO}));
+		
+		//SHR <constante, rj>
+		
+		//atualizaPC
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_PC, Constantes.B_MAIS_1, Constantes.PC_ATIVADO}));
+		
+		//rYRecebeR0
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR1
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR2
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R2, Constantes.B, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR3
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R3, Constantes.B, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR4
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R4, Constantes.B, Constantes.RY_ATIVADO}));
+		
+		//rEndRecebePC
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_PC, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
+		
+		//rDadoRecebeInformacaoLida
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}));
+		
+		//rXRecebeRDado
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RX_ATIVADO}));
+		
+		//r0RecebeDeslocamentoDireita
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.A_SHIFT_RIGHT, Constantes.R0_ATIVADO}));
+		
+		//r1RecebeDeslocamentoDireita
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.A_SHIFT_RIGHT, Constantes.R1_ATIVADO}));
+		
+		//r2RecebeDeslocamentoDireita
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.A_SHIFT_RIGHT, Constantes.R2_ATIVADO}));
+		
+		//r3RecebeDeslocamentoDireita
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.A_SHIFT_RIGHT, Constantes.R3_ATIVADO}));
+		
+		//r4RecebeDeslocamentoDireita
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.A_SHIFT_RIGHT, Constantes.R4_ATIVADO}));
+		
+		//SHR <constante, (rj)>
+		
+		//rEndRecebePCMais1
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_PC, Constantes.B_MAIS_1, Constantes.REND_ATIVADO}));
+		
+		//rDadoRecebeInformacaoLida
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}));
+		
+		//rXRecebeRDado
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RX_ATIVADO}));
+		
+		//rYRecebeR1
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR2
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R2, Constantes.B, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR3
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R3, Constantes.B, Constantes.RY_ATIVADO}));
+		
+		//rYRecebeR4
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R4, Constantes.B, Constantes.RY_ATIVADO}));
+		
+		//rEndRecebeRY
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_RY, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
+		
+		//rDadoRecebeInformacaoLida
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}));
+		
+		//rYRecebeRDado
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RY_ATIVADO}));
 	}
+	
 	
 	/*public Microinstrucao rEndRecebeR0(){
 		char[] pontoDeControle = {'k', 'l', 'p', 'q', 'r', 's', 't', 'u', 'i', 'v'};
