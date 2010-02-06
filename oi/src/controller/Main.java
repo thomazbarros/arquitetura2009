@@ -18,13 +18,13 @@ public class Main {
 	private static ManipulaMemoria manipulaMemoria;
 	
 	public static void main(String[] args) {
-		Arquitetura arquitetura = null;//= new Arquitetura();
-		ManipulaMemoria manipulaMemoria = null;// new ManipulaMemoria(arquitetura);
+		Arquitetura arquitetura = new Arquitetura();
+		ManipulaMemoria manipulaMemoria = new ManipulaMemoria(arquitetura);
 		RodaPrograma rodaPrograma = new RodaPrograma(arquitetura,manipulaMemoria);
-		//rodaPrograma.start();
-		//RodarThread rodarThread = new RodarThread(manipulaMemoria,rodaPrograma);
-		//rodarThread.start();
-		//arquitetura.setRodarThread(rodarThread);
+		rodaPrograma.start();
+		RodarThread rodarThread = new RodarThread(manipulaMemoria,rodaPrograma);
+		rodarThread.start();
+		arquitetura.setRodarThread(rodarThread);
 
 		new TelaPrincipal("",manipulaMemoria,rodaPrograma);//,rodarThread);
 
