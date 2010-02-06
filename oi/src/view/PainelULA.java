@@ -37,7 +37,7 @@ public class PainelULA extends JPanel {
 	
 	
 	PontoDeControle[] pontosDeControle = new PontoDeControle[24];  
-	long Reg0, Reg1, RegX, Reg2, Reg3, Reg4, RegY, PC, IR, Rend, Rdados = 0;	
+	String Reg0, Reg1, RegX, Reg2, Reg3, Reg4, RegY, PC, IR, Rend, Rdados = "0";	
 
 	
 	public PainelULA() {
@@ -61,7 +61,7 @@ public class PainelULA extends JPanel {
 	}
 
 	public void resetDados() {
-		Reg0 = Reg1 = RegX = Reg2 = Reg3 = Reg4 = RegY = PC = IR = Rend = Rdados = 0;
+		Reg0 = Reg1 = RegX = Reg2 = Reg3 = Reg4 = RegY = PC = IR = Rend = Rdados = "0";
 	}
 
 	@Override
@@ -606,83 +606,83 @@ public class PainelULA extends JPanel {
 		pontosDeControle[23].setAtivo(b);
 	}
 	
-	public long getReg0() {
+	public String getReg0() {
 		return Reg0;
 	}
 
-	public void setReg0(long reg0) {
+	public void setReg0(String reg0) {
 		Reg0 = reg0;
 	}
 
-	public long getReg1() {
+	public String getReg1() {
 		return Reg1;
 	}
 
-	public void setReg1(long reg1) {
+	public void setReg1(String reg1) {
 		Reg1 = reg1;
 	}
 
-	public long getRegX() {
+	public String getRegX() {
 		return RegX;
 	}
 
-	public void setRegX(long regX) {
+	public void setRegX(String regX) {
 		RegX = regX;
 	}
 
-	public long getReg2() {
+	public String getReg2() {
 		return Reg2;
 	}
 
-	public void setReg2(long reg2) {
+	public void setReg2(String reg2) {
 		Reg2 = reg2;
 	}
 
-	public long getReg3() {
+	public String getReg3() {
 		return Reg3;
 	}
 
-	public void setReg3(long reg3) {
+	public void setReg3(String reg3) {
 		Reg3 = reg3;
 	}
 
-	public long getReg4() {
+	public String getReg4() {
 		return Reg4;
 	}
 
-	public void setReg4(long reg4) {
+	public void setReg4(String reg4) {
 		Reg4 = reg4;
 	}
 
-	public long getRegY() {
+	public String getRegY() {
 		return RegY;
 	}
 
-	public void setRegY(long regY) {
+	public void setRegY(String regY) {
 		RegY = regY;
 	}
 
-	public long getRend() {
+	public String getRend() {
 		return Rend;
 	}
 
-	public void setRend(long rend) {
+	public void setRend(String rend) {
 		Rend = rend;
 	}
 
-	public long getRdados() {
+	public String getRdados() {
 		return Rdados;
 	}
 
-	public void setRdados(long rdados) {
+	public void setRdados(String rdados) {
 		Rdados = rdados;
 	}
 
-	public void setPc(long PC) {
+	public void setPc(String PC) {
 		this.PC = PC;
 	}
 	
-	public void setIr(long IR) {
+	public void setIr(String IR) {
 		this.IR = IR;
 	}
 	

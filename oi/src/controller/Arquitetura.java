@@ -24,6 +24,7 @@ import model.ULA;
 	private boolean continuar;
 	public boolean rodaThread;
 	private RodarThread rodarThread;
+	private boolean isHexa;
 		
 	public Arquitetura(){
 		r0 = new Registrador(false, 0);
@@ -50,7 +51,7 @@ import model.ULA;
 		painelBaixo = null;
 		continuar = false;
 		rodaThread = false;
-
+		isHexa = false;
 	}
 	
 	public void setULA(boolean multiplexador){
@@ -634,29 +635,55 @@ import model.ULA;
 	}
 	
 	public void atualizaRegistradores(){
-		System.out.println("RDados :" + getRDado().getValor());
-		System.out.println("R0 :" + getR0().getValor());
-		System.out.println("R1 :" + getR1().getValor());
-		System.out.println("R2 :" + getR2().getValor());
-		System.out.println("R3 :" + getR3().getValor());
-		System.out.println("R4 :" + getR4().getValor());
-		System.out.println("RX :" + getRx().getValor());
-		System.out.println("RY :" + getRy().getValor());
-		System.out.println("REnd :" + getREnd().getValor());
-		System.out.println("PC :" + getPc().getValor());
-		System.out.println("IR :" + getIr().getValor());
-		
-		ulaGrafica.setRdados(getRDado().getValor());
-		ulaGrafica.setReg0(getR0().getValor());
-		ulaGrafica.setReg1(getR1().getValor());
-		ulaGrafica.setReg2(getR2().getValor());
-		ulaGrafica.setReg3(getR3().getValor());
-		ulaGrafica.setReg4(getR4().getValor());
-		ulaGrafica.setRegX(getRx().getValor());
-		ulaGrafica.setRegY(getRy().getValor());
-		ulaGrafica.setRend(getREnd().getValor());
-		ulaGrafica.setPc(getPc().getValor());
-		ulaGrafica.setIr(getIr().getValor());
+		if(isHexa){
+			System.out.println("RDados :" + getRDado().getValor());
+			System.out.println("R0 :" + getR0().getValor());
+			System.out.println("R1 :" + getR1().getValor());
+			System.out.println("R2 :" + getR2().getValor());
+			System.out.println("R3 :" + getR3().getValor());
+			System.out.println("R4 :" + getR4().getValor());
+			System.out.println("RX :" + getRx().getValor());
+			System.out.println("RY :" + getRy().getValor());
+			System.out.println("REnd :" + getREnd().getValor());
+			System.out.println("PC :" + getPc().getValor());
+			System.out.println("IR :" + getIr().getValor());
+			
+			ulaGrafica.setRdados(String.valueOf(getRDado().getValor()));
+			ulaGrafica.setReg0(String.valueOf(getR0().getValor()));
+			ulaGrafica.setReg1(String.valueOf(getR1().getValor()));
+			ulaGrafica.setReg2(String.valueOf(getR2().getValor()));
+			ulaGrafica.setReg3(String.valueOf(getR3().getValor()));
+			ulaGrafica.setReg4(String.valueOf(getR4().getValor()));
+			ulaGrafica.setRegX(String.valueOf(getRx().getValor()));
+			ulaGrafica.setRegY(String.valueOf(getRy().getValor()));
+			ulaGrafica.setRend(String.valueOf(getREnd().getValor()));
+			ulaGrafica.setPc(String.valueOf(getPc().getValor()));
+			ulaGrafica.setIr(String.valueOf(getIr().getValor()));
+		}else{
+			System.out.println("RDados :" + Long.toHexString(getRDado().getValor()));
+			System.out.println("R0 :" + Long.toHexString(getR0().getValor()));
+			System.out.println("R1 :" + Long.toHexString(getR1().getValor()));
+			System.out.println("R2 :" + Long.toHexString(getR2().getValor()));
+			System.out.println("R3 :" + Long.toHexString(getR3().getValor()));
+			System.out.println("R4 :" + Long.toHexString(getR4().getValor()));
+			System.out.println("RX :" + Long.toHexString(getRx().getValor()));
+			System.out.println("RY :" + Long.toHexString(getRy().getValor()));
+			System.out.println("REnd :" + Long.toHexString(getREnd().getValor()));
+			System.out.println("PC :" + Long.toHexString(getPc().getValor()));
+			System.out.println("IR :" + Long.toHexString(getIr().getValor()));
+			
+			ulaGrafica.setRdados(Long.toHexString(getRDado().getValor()));
+			ulaGrafica.setReg0(Long.toHexString(getR0().getValor()));
+			ulaGrafica.setReg1(Long.toHexString(getR1().getValor()));
+			ulaGrafica.setReg2(Long.toHexString(getR2().getValor()));
+			ulaGrafica.setReg3(Long.toHexString(getR3().getValor()));
+			ulaGrafica.setReg4(Long.toHexString(getR4().getValor()));
+			ulaGrafica.setRegX(Long.toHexString(getRx().getValor()));
+			ulaGrafica.setRegY(Long.toHexString(getRy().getValor()));
+			ulaGrafica.setRend(Long.toHexString(getREnd().getValor()));
+			ulaGrafica.setPc(Long.toHexString(getPc().getValor()));
+			ulaGrafica.setIr(Long.toHexString(getIr().getValor()));
+		}
 
 	}
 	
@@ -811,17 +838,17 @@ import model.ULA;
 		getPc().setValor(0);
 		getIr().setValor(0);
 		
-		ulaGrafica.setRdados(getRDado().getValor());
-		ulaGrafica.setReg0(getR0().getValor());
-		ulaGrafica.setReg1(getR1().getValor());
-		ulaGrafica.setReg2(getR2().getValor());
-		ulaGrafica.setReg3(getR3().getValor());
-		ulaGrafica.setReg4(getR4().getValor());
-		ulaGrafica.setRegX(getRx().getValor());
-		ulaGrafica.setRegY(getRy().getValor());
-		ulaGrafica.setRend(getREnd().getValor());
-		ulaGrafica.setPc(getPc().getValor());
-		ulaGrafica.setIr(getIr().getValor());
+		ulaGrafica.setRdados(String.valueOf(getRDado().getValor()));
+		ulaGrafica.setReg0(String.valueOf(getR0().getValor()));
+		ulaGrafica.setReg1(String.valueOf(getR1().getValor()));
+		ulaGrafica.setReg2(String.valueOf(getR2().getValor()));
+		ulaGrafica.setReg3(String.valueOf(getR3().getValor()));
+		ulaGrafica.setReg4(String.valueOf(getR4().getValor()));
+		ulaGrafica.setRegX(String.valueOf(getRx().getValor()));
+		ulaGrafica.setRegY(String.valueOf(getRy().getValor()));
+		ulaGrafica.setRend(String.valueOf(getREnd().getValor()));
+		ulaGrafica.setPc(String.valueOf(getPc().getValor()));
+		ulaGrafica.setIr(String.valueOf(getIr().getValor()));
 		
 	}
 	

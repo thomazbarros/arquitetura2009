@@ -1,6 +1,18 @@
 package model;
  
 public class Constantes {
+	public static final String RY_RECEBE_RJ = "";
+	public static final String RY_RECEBE_R0 = "";
+	public static final String RY_RECEBE_R1 = "";
+	public static final String RY_RECEBE_R2 = "";
+	public static final String RY_RECEBE_R3 = "";
+	public static final String RY_RECEBE_R4 = "";
+	public static final String RX_RECEBE_RI = "";
+	public static final String RX_RECEBE_R0 = "";
+	public static final String RX_RECEBE_R1 = "";
+	public static final String RX_RECEBE_R2 = "";
+	public static final String RX_RECEBE_R3 = "";
+	public static final String RX_RECEBE_R4 = "";
 	public static final long LIMITE_CONSTANTE = 2147483648L;
 	public static final long LIMITE_NEGATIVO_CONSTANTE = -2147483648L;
 	public static final long LIMITE_LABEL = 4294967295L;
