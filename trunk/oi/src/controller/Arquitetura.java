@@ -862,5 +862,13 @@ import model.ULA;
 		}
 		return "Busca realizada na cache";
 	}
+
+	public boolean isHexa() {
+		return isHexa;
+	}
+
+	public void setHexa(boolean isHexa) {
+		this.isHexa = isHexa;
+	}
 	
 }
