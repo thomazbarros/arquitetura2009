@@ -2,9 +2,9 @@ package model;
  
 public class Microinstrucao {
 	private char[] pontoDeControle;
-	private char[] pontoDeControle2 = new char[24];
+	private char[] pontoDeControle2 = new char[33];
 	
-	public Microinstrucao(int[] pontosDeControle){
+	public Microinstrucao(int[] pontosDeControle, String proximo){
 		int j = 0;
 		
 		for(int i = 0; i < pontoDeControle2.length; i++){
@@ -498,6 +498,30 @@ public class Microinstrucao {
 				pontoDeControle[j] = 'x';
 				pontoDeControle2[23] = '0';
 			}
+		}
+		
+		if(proximo == Constantes.RY_RECEBE_RJ){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '0';
+			pontoDeControle2[29] = '0';
+			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '0';
+		}
+		
+		if(proximo == Constantes.RY_RECEBE_RJ){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '0';
+			pontoDeControle2[29] = '0';
+			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '0';
 		}
 	}
 	
