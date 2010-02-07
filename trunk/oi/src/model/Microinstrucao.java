@@ -500,6 +500,17 @@ public class Microinstrucao {
 			}
 		}
 		
+		if(proximo == Constantes.ATUALIZA_PC){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '0';
+			pontoDeControle2[29] = '0';
+			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '0';
+		}
 		if(proximo == Constantes.REND_RECEBE_PC){
 			pontoDeControle2[24] = '0';
 			pontoDeControle2[25] = '0';
@@ -608,6 +619,226 @@ public class Microinstrucao {
 			pontoDeControle2[28] = '0';
 			pontoDeControle2[29] = '1';
 			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '1';
+			pontoDeControle2[32] = '0';
+		}
+		if(proximo == Constantes.R0_RECEBE_SOMA){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '0';
+			pontoDeControle2[29] = '1';
+			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '1';
+			pontoDeControle2[32] = '1';
+		}
+		if(proximo == Constantes.R1_RECEBE_SOMA){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '0';
+			pontoDeControle2[29] = '1';
+			pontoDeControle2[30] = '1';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '0';
+		}
+		if(proximo == Constantes.R2_RECEBE_SOMA){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '0';
+			pontoDeControle2[29] = '1';
+			pontoDeControle2[30] = '1';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '1';
+		}
+		if(proximo == Constantes.R3_RECEBE_SOMA){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '0';
+			pontoDeControle2[29] = '1';
+			pontoDeControle2[30] = '1';
+			pontoDeControle2[31] = '1';
+			pontoDeControle2[32] = '0';
+		}
+		if(proximo == Constantes.R4_RECEBE_SOMA){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '0';
+			pontoDeControle2[29] = '1';
+			pontoDeControle2[30] = '1';
+			pontoDeControle2[31] = '1';
+			pontoDeControle2[32] = '1';
+		}
+		if(proximo == Constantes.R0_RECEBE_DIFERENCA){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '0';
+			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '0';
+		}
+		if(proximo == Constantes.R1_RECEBE_DIFERENCA){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '0';
+			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '1';
+		}
+		if(proximo == Constantes.R2_RECEBE_DIFERENCA){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '0';
+			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '1';
+			pontoDeControle2[32] = '0';
+		}
+		if(proximo == Constantes.R3_RECEBE_DIFERENCA){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '0';
+			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '1';
+			pontoDeControle2[32] = '1';
+		}
+		if(proximo == Constantes.R4_RECEBE_DIFERENCA){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '0';
+			pontoDeControle2[30] = '1';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '0';
+		}
+		if(proximo == Constantes.R0_RECEBE_E){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '0';
+			pontoDeControle2[30] = '1';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '1';
+		}
+		if(proximo == Constantes.R1_RECEBE_E){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '0';
+			pontoDeControle2[30] = '1';
+			pontoDeControle2[31] = '1';
+			pontoDeControle2[32] = '0';
+		}
+		if(proximo == Constantes.R2_RECEBE_E){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '0';
+			pontoDeControle2[30] = '1';
+			pontoDeControle2[31] = '1';
+			pontoDeControle2[32] = '1';
+		}
+		if(proximo == Constantes.R3_RECEBE_E){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '1';
+			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '0';
+		}
+		if(proximo == Constantes.R4_RECEBE_E){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '1';
+			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '1';
+		}
+		if(proximo == Constantes.R0_RECEBE_OU){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '1';
+			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '1';
+			pontoDeControle2[32] = '0';
+		}
+		if(proximo == Constantes.R1_RECEBE_OU){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '1';
+			pontoDeControle2[30] = '0';
+			pontoDeControle2[31] = '1';
+			pontoDeControle2[32] = '1';
+		}
+		if(proximo == Constantes.R2_RECEBE_OU){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '1';
+			pontoDeControle2[30] = '1';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '0';
+		}
+		if(proximo == Constantes.R3_RECEBE_OU){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '1';
+			pontoDeControle2[30] = '1';
+			pontoDeControle2[31] = '0';
+			pontoDeControle2[32] = '1';
+		}
+		if(proximo == Constantes.R4_RECEBE_OU){
+			pontoDeControle2[24] = '0';
+			pontoDeControle2[25] = '0';
+			pontoDeControle2[26] = '0';
+			pontoDeControle2[27] = '0';
+			pontoDeControle2[28] = '1';
+			pontoDeControle2[29] = '1';
+			pontoDeControle2[30] = '1';
 			pontoDeControle2[31] = '1';
 			pontoDeControle2[32] = '0';
 		}

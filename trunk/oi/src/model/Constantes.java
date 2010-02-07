@@ -1,6 +1,7 @@
 package model;
  
 public class Constantes {
+	public static final String ATUALIZA_PC = "000000000";
 	public static final String REND_RECEBE_PC = "000000001";
 	public static final String RDADO_RECEBE_INFORMACAO_LIDA = "000000010";
 	public static final String RX_RECBE_RDADO = "000000011";
@@ -11,6 +12,26 @@ public class Constantes {
 	public static final String RY_RECEBE_R3 = "000001000";
 	public static final String RY_RECEBE_R4 = "000001001";
 	public static final String RJ_RECEBE_OPERACAO = "000001010";
+	public static final String R0_RECEBE_SOMA = "000001011";
+	public static final String R1_RECEBE_SOMA = "000001100";
+	public static final String R2_RECEBE_SOMA = "000001101";
+	public static final String R3_RECEBE_SOMA = "000001110";
+	public static final String R4_RECEBE_SOMA = "000001111";
+	public static final String R0_RECEBE_DIFERENCA = "000010000";
+	public static final String R1_RECEBE_DIFERENCA = "000010001";
+	public static final String R2_RECEBE_DIFERENCA = "000010010";
+	public static final String R3_RECEBE_DIFERENCA = "000010011";
+	public static final String R4_RECEBE_DIFERENCA = "000010100";
+	public static final String R0_RECEBE_E = "000010101";
+	public static final String R1_RECEBE_E = "000010110";
+	public static final String R2_RECEBE_E = "000010111";
+	public static final String R3_RECEBE_E = "000011000";
+	public static final String R4_RECEBE_E = "000011001";
+	public static final String R0_RECEBE_OU = "000011010";
+	public static final String R1_RECEBE_OU = "000011011";
+	public static final String R2_RECEBE_OU = "000011100";
+	public static final String R3_RECEBE_OU = "000011101";
+	public static final String R4_RECEBE_OU = "000011110";
 	public static final String RX_RECEBE_RI = "";
 	public static final String RX_RECEBE_R0 = "";
 	public static final String RX_RECEBE_R1 = "";
