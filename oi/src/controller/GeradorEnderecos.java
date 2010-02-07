@@ -11,13 +11,16 @@ public class GeradorEnderecos {
 		if(endereco.equals(Constantes.RY_RECEBE_RJ)){
 			return ryRecebeRj(codigo);
 		}
+		if(endereco.equals(Constantes.REALIZA_OPERACAO)){
+			return realizaOperacao(codigo);
+		}
 		return endereco;
 	}
 	
 	public String rxRecebeRi(String codigo){
 		int registrador;
 		
-		registrador = identificaRegistradorFonte(codigo.substring(8,12));
+		registrador = identificaRegistradorFonte(codigo.substring(10,12));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.RX_RECEBE_R0;
@@ -35,8 +38,7 @@ public class GeradorEnderecos {
 	
 	public String ryRecebeRj(String codigo){
 		int registrador;
-		System.out.println("Passei por aqui");
-		registrador = identificaRegistradorDestino(codigo.substring(12,16));
+		registrador = identificaRegistradorDestino(codigo.substring(14,16));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.RY_RECEBE_R0;
@@ -100,5 +102,96 @@ public class GeradorEnderecos {
 			return Constantes.R4;
 		}
 		return Constantes.ERRO;
+	}
+	
+	
+	public String realizaOperacao(String codigo){
+		String operacao = codigo.substring(Constantes.BITS_INSTRUCAO.length(),
+				Constantes.BITS_INSTRUCAO.length()+Constantes.ADD.length());
+		if(operacao.equals(Constantes.ADD)){
+			return Constantes.ENDERECO_ADD;
+		}
+		if(operacao.equals(Constantes.SUB)){
+			return Constantes.ENDERECO_SUB;	
+		}
+		if(operacao.equals(Constantes.MOV)){
+			return Constantes.ENDERECO_MOV;
+		}
+		if(operacao.equals(Constantes.CMP)){
+			return Constantes.ENDERECO_CMP;
+		}
+		if(operacao.equals(Constantes.AND)){
+			return Constantes.ENDERECO_AND;
+		}
+		if(operacao.equals(Constantes.OR)){
+			return Constantes.ENDERECO_OR;	
+		}
+		if(operacao.equals(Constantes.NOT)){
+			return Constantes.ENDERECO_NOT;
+		}
+		if(operacao.equals(Constantes.CLR)){
+			return Constantes.ENDERECO_CLR;
+		}
+		if(operacao.equals(Constantes.NEG)){
+			return Constantes.ENDERECO_NEG;
+		}
+		if(operacao.equals(Constantes.SHL)){
+			return Constantes.ENDERECO_SHL;
+		}
+		if(operacao.equals(Constantes.SHR)){
+			return Constantes.ENDERECO_SHR;	
+		}
+		if(operacao.equals(Constantes.BRZ)){
+			return Constantes.ENDERECO_BRZ;
+		}
+		if(operacao.equals(Constantes.BRN)){
+			return Constantes.ENDERECO_BRN;
+		}
+		if(operacao.equals(Constantes.BRE)){
+			return Constantes.ENDERECO_BRE;	
+		}
+		if(operacao.equals(Constantes.BRL)){
+			return Constantes.ENDERECO_BRL;	
+		}
+		if(operacao.equals(Constantes.BRG)){
+			return Constantes.ENDERECO_BRG;	
+		}
+		if(operacao.equals(Constantes.BRC)){
+			return Constantes.ENDERECO_BRC;	
+		}
+		if(operacao.equals(Constantes.JMP)){
+			return Constantes.ENDERECO_JMP;
+		}
+		if(operacao.equals(Constantes.XOR)){
+			return Constantes.ENDERECO_XOR;	
+		}
+		if(operacao.equals(Constantes.TEST)){
+			return Constantes.ENDERECO_TEST;
+		}
+		if(operacao.equals(Constantes.INC)){
+			return Constantes.ENDERECO_INC;
+		}
+		if(operacao.equals(Constantes.DEC)){
+			return Constantes.ENDERECO_DEC;
+		}
+		if(operacao.equals(Constantes.BRNZ)){
+			return Constantes.ENDERECO_BRNZ;
+		}
+		if(operacao.equals(Constantes.BRNN)){
+			return Constantes.ENDERECO_BRNN;
+		}
+		if(operacao.equals(Constantes.BRNC)){
+			return Constantes.ENDERECO_BRNC;
+		}
+		if(operacao.equals(Constantes.BRO)){
+			return Constantes.ENDERECO_BRO;
+		}
+		if(operacao.equals(Constantes.BRNO)){
+			return Constantes.ENDERECO_BRNO;
+		}
+		if(operacao.equals(Constantes.HALT)){
+			return Constantes.ENDERECO_HALT;
+		}
+		return "";
 	}
 }
