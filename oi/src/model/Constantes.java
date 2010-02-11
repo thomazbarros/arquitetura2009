@@ -32,6 +32,10 @@ public class Constantes {
 	public static final String R2_RECEBE_OU = "000011100";
 	public static final String R3_RECEBE_OU = "000011101";
 	public static final String R4_RECEBE_OU = "000011110";
+	public static final String ATUALIZA_PC_2 = "000011111";
+	public static final String REND_RECEBE_PC_2 = "000100000";
+	public static final String RDADO_RECEBE_INFORMACAO_LIDA_2 = "000100001";
+	public static final String IR_RECEBE_RDADO = "000100010";
 	public static final String RX_RECEBE_RI = "";
 	public static final String RX_RECEBE_R0 = "";
 	public static final String RX_RECEBE_R1 = "";
