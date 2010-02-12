@@ -110,24 +110,40 @@ public class MemoriaDeControle {
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}, Constantes.IR_RECEBE_RDADO));
 		
 		//iRRecebeRDado - 000100010
-		//memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.IR_ATIVADO}));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.IR_ATIVADO}, Constantes.OPERACAO));
 		
+		//rEndRecebeR0 - 000100100
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}, Constantes.RDADO_RECEBE_INFORMACAO_LIDA_3));
+		
+		//rEndRecebeR1 - 000100101
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R1, Constantes.A, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}, Constantes.RDADO_RECEBE_INFORMACAO_LIDA_3));
+		
+		//rEndRecebeR2 - 000100110
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R2, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}, Constantes.RDADO_RECEBE_INFORMACAO_LIDA_3));
+		
+		//rEndRecebeR3 - 000100111
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R3, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}, Constantes.RDADO_RECEBE_INFORMACAO_LIDA_3));
+		
+		//rEndRecebeR4 - 000101000
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R4, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}, Constantes.RDADO_RECEBE_INFORMACAO_LIDA_3));
+		
+		//rDadoRecebeInformacaoLida - 000101001
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}, Constantes.RX_RECEBE_RDADO_2));
+		
+		//rXRecebeRDado - 000101010
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RX_ATIVADO}, Constantes.REND_RECEBE_PC_MAIS_1));
+		
+		//rEndRecebePCMais1 - 000101011
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_PC, Constantes.B_MAIS_1, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}, Constantes.RDADO_RECEBE_INFORMACAO_LIDA_4));
+		
+		//rDadoRecebeInformacaoLida - 000101100
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}, Constantes.RY_RECEBE_RDADO));
+		
+		//rYRecebeRDado - 000101101
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RY_ATIVADO}, Constantes.RJ_RECEBE_OPERACAO));
+		
+	}
 		/*
-		//rEndRecebeR0
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
-		
-		//rEndRecebeR1
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R1, Constantes.A, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
-		
-		//rEndRecebeR2
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R2, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
-		
-		//rEndRecebeR3
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R3, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
-		
-		//rEndRecebeR4
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R4, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
-		
 		//rEndRecebeRY
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_RY, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
 		
@@ -164,11 +180,7 @@ public class MemoriaDeControle {
 		//rEndRecebeRY
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_RY, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}));
 		
-		//rDadoRecebeInformacaoLida
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}));
 		
-		//rYRecebeRDado
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RY_ATIVADO}));
 		
 		//ADD <ri, rj>
 		
@@ -3759,4 +3771,4 @@ public class MemoriaDeControle {
 		microinstrucao.setPontoDeControle2(pontoDeControle2);
 		return microinstrucao;
 	}*/
-}
+
