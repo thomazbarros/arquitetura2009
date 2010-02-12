@@ -19,16 +19,18 @@ public class RodaPrograma extends Thread{
 	public void run(){
 
 		String instrucao;
-		arquitetura.buscaInstrucao();
+		//arquitetura.buscaInstrucao();
 
 		instrucao = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());
 		System.out.println("TESTES : ");
 		arquitetura.getMemoria().imprimeTestes();
 		while(!manipulaMemoria.isHalt(instrucao)){
 
-			manipulaMemoria.ler((int) arquitetura.getPc().getValor());
+			/*manipulaMemoria.ler((int) arquitetura.getPc().getValor());
 			arquitetura.buscaInstrucao();
-			instrucao = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());
+			instrucao = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());*/
+			
+			
 			if(arquitetura.getModo() == Constantes.RODAINSTRUCAO){
 
 				travaThread();
