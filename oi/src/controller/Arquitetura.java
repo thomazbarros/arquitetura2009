@@ -25,6 +25,7 @@ import model.ULA;
 	public boolean rodaThread;
 	private RodarThread rodarThread;
 	private boolean isHexa;
+	private GeradorEnderecos gerador;
 		
 	public Arquitetura(){
 		r0 = new Registrador(false, 0);
@@ -52,6 +53,7 @@ import model.ULA;
 		continuar = false;
 		rodaThread = false;
 		isHexa = false;
+		gerador = new GeradorEnderecos();
 	}
 	
 	public void setULA(boolean multiplexador){
@@ -71,10 +73,10 @@ import model.ULA;
 	
 	public void ativaPontoDeControle(Microinstrucao microinstrucao){
 		char[] pontoDeControle = microinstrucao.getPontoDeControle();
-		boolean[] pontoDeControle2 = new boolean[microinstrucao.getPontoDeControle().length];
+		boolean[] pontoDeControle2 = new boolean[24];
 		long conteudoMemoria,valorMux;
 		
-		for(int i = 0; i < microinstrucao.getPontoDeControle().length; i++){
+		for(int i = 0; i < 24; i++){
 			if(pontoDeControle[i] == 'a'){
 				if(microinstrucao.getPontoDeControle2()[0] == '1'){
 					pontoDeControle2[i] = true;
@@ -269,7 +271,7 @@ import model.ULA;
 			}
 		}
 
-		for(int i = 0; i < pontoDeControle.length; i++)
+		for(int i = 0; i < 24; i++)
 		{
 
 			switch(pontoDeControle[i]){
@@ -398,8 +400,7 @@ import model.ULA;
 					ry.ativaPontoDeControle(ula.getValor());
 			}
 		}
-		atualizaPainel();		
-	
+		atualizaPainel();	
 	}
 
 	
@@ -687,7 +688,7 @@ import model.ULA;
 
 	}
 	
-	public void buscaInstrucao(){
+	/*public void buscaInstrucao(){
 
 		ativaPontoDeControle(memoriaDeControle.rEndRecebePC());
 
@@ -695,7 +696,7 @@ import model.ULA;
 
 		ativaPontoDeControle(memoriaDeControle.irRecebeRDado());
 
-	}
+	}*/
 
 	public int getModo() {
 		return modo;

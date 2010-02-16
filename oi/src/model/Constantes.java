@@ -37,7 +37,7 @@ public class Constantes {
 	public static final String REND_RECEBE_PC_2 = "000100000";
 	public static final String RDADO_RECEBE_INFORMACAO_LIDA_BUSCA = "000100001";
 	public static final String IR_RECEBE_RDADO = "000100010";
-	public static final String OPERACAO = "000100011";
+	public static final String HALT = "000100011";
 	public static final String REND_RECEBE_RJ = "000100100";
 	public static final String REND_RECEBE_R0 = "000100101";
 	public static final String REND_RECEBE_R1 = "000100110";
