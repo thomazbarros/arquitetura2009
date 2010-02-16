@@ -14,13 +14,16 @@ public class GeradorEnderecos {
 		if(endereco.equals(Constantes.REALIZA_OPERACAO)){
 			return realizaOperacao(codigo);
 		}
+		if(endereco.equals(Constantes.PRIMEIRA_MICRO_INSTRUCAO)){
+			return primeiraMicro(codigo);
+		}
 		return endereco;
 	}
 	
 	public String rxRecebeRi(String codigo){
 		int registrador;
 		
-		registrador = identificaRegistradorFonte(codigo.substring(10,12));
+		registrador = identificaRegistradorFonte(codigo.substring(10,14));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.RX_RECEBE_R0;
@@ -38,7 +41,7 @@ public class GeradorEnderecos {
 	
 	public String ryRecebeRj(String codigo){
 		int registrador;
-		registrador = identificaRegistradorDestino(codigo.substring(14,16));
+		registrador = identificaRegistradorDestino(codigo.substring(14,18));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.RY_RECEBE_R0;
@@ -193,5 +196,108 @@ public class GeradorEnderecos {
 			return Constantes.ENDERECO_HALT;
 		}
 		return "";
+	}
+	
+	public String primeiraMicro(String codigo){
+		int tipo = getTipo(codigo);
+		switch(tipo){
+			case Constantes.CONSTANTE_REGISTRADOR:
+				return Constantes.ATUALIZA_PC;
+			case Constantes.CONSTANTE_ENDERECO:
+				//return Constantes.REND_RECEBE_RI;
+			case Constantes.REGISTRADOR_REGISTRADOR:
+			//	return Constantes.;
+			case Constantes.REGISTRADOR_ENDERECO:
+				//return Constantes.;
+			case Constantes.ENDERECO_REGISTRADOR:
+			//	return Constantes.;
+			case Constantes.ENDERECO_ENDERECO:
+			//	return Constantes.;
+			case Constantes.REGISTRADOR:
+		//		return Constantes.;
+			case Constantes.ENDERECO:
+	//			return Constantes.;
+		}
+		return "";
+	}
+	
+	public int getTipo(String codigo){
+		String primeiroArgumento,segundoArgumento;
+		int tipo1,tipo2;
+		
+		primeiroArgumento = codigo.substring(10,14);
+		segundoArgumento = codigo.substring(14,18);
+		
+		tipo1 = getTipoFonte(primeiroArgumento);
+		tipo2 = getTipoDestino(segundoArgumento);
+		
+		switch(tipo1){
+			case Constantes.TIPO_CONSTANTE:
+				if(tipo2 == Constantes.TIPO_REGISTRADOR){
+					return Constantes.CONSTANTE_REGISTRADOR;
+				}
+				return Constantes.CONSTANTE_ENDERECO;
+				
+			case Constantes.TIPO_REGISTRADOR:
+				if(tipo2 == Constantes.TIPO_REGISTRADOR){
+					return Constantes.REGISTRADOR_REGISTRADOR;
+				}
+				return Constantes.REGISTRADOR_ENDERECO;
+				
+			case Constantes.TIPO_ENDERECO:
+				if(tipo2 == Constantes.TIPO_REGISTRADOR){
+					return Constantes.ENDERECO_REGISTRADOR;
+				}
+				return Constantes.ENDERECO_ENDERECO;
+		}
+		
+		return Constantes.ERRO;
+	}
+	
+	public int getTipoFonte(String argumento){
+		if(argumento.equals(Constantes.CONSTANTE_FONTE)){
+			return Constantes.TIPO_CONSTANTE;
+		}
+		if(argumento.equals(Constantes.R0_FONTE)||
+				argumento.equals(Constantes.R1_FONTE)||
+				argumento.equals(Constantes.R2_FONTE)||
+				argumento.equals(Constantes.R3_FONTE)||
+				argumento.equals(Constantes.R4_FONTE))
+		{
+			return Constantes.TIPO_REGISTRADOR;
+		}
+		if(argumento.equals(Constantes.PR0_FONTE)||
+				argumento.equals(Constantes.PR1_FONTE)||
+				argumento.equals(Constantes.PR2_FONTE)||
+				argumento.equals(Constantes.PR3_FONTE)||
+				argumento.equals(Constantes.PR4_FONTE))
+		{
+			return Constantes.TIPO_ENDERECO;
+		}
+		
+		return Constantes.ERRO;
+	}
+	
+	
+	public int getTipoDestino(String argumento){
+
+		if(argumento.equals(Constantes.R0_DESTINO)||
+				argumento.equals(Constantes.R1_DESTINO)||
+				argumento.equals(Constantes.R2_DESTINO)||
+				argumento.equals(Constantes.R3_DESTINO)||
+				argumento.equals(Constantes.R4_DESTINO))
+		{
+			return Constantes.TIPO_REGISTRADOR;
+		}
+		if(argumento.equals(Constantes.PR0_DESTINO)||
+				argumento.equals(Constantes.PR1_DESTINO)||
+				argumento.equals(Constantes.PR2_DESTINO)||
+				argumento.equals(Constantes.PR3_DESTINO)||
+				argumento.equals(Constantes.PR4_DESTINO))
+		{
+			return Constantes.TIPO_ENDERECO;
+		}
+		
+		return Constantes.ERRO;
 	}
 }

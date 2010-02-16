@@ -1,6 +1,7 @@
 package model;
  
 public class Constantes {
+	public static final String PRIMEIRA_MICRO_INSTRUCAO = "TESTE";
 	public static final String ATUALIZA_PC = "000000000";
 	public static final String REND_RECEBE_PC = "000000001";
 	public static final String RDADO_RECEBE_INFORMACAO_LIDA = "000000010";
@@ -303,4 +304,15 @@ public class Constantes {
 	public static final int TAMANHO_PALAVRA = 32;
 	public static final int TAMANHO_CACHE = 12;
 	public static final int TAMANHO_BLOCO_CACHE = 4;
+	public static final int CONSTANTE_REGISTRADOR = 0;
+	public static final int CONSTANTE_ENDERECO = 1;
+	public static final int REGISTRADOR_REGISTRADOR = 2;
+	public static final int REGISTRADOR_ENDERECO = 3;
+	public static final int ENDERECO_REGISTRADOR = 4;
+	public static final int ENDERECO_ENDERECO = 5;
+	public static final int REGISTRADOR = 6;
+	public static final int ENDERECO = 7;
+	public static final int TIPO_CONSTANTE = 0;
+	public static final int TIPO_REGISTRADOR = 1;
+	public static final int TIPO_ENDERECO = 2;
 }
