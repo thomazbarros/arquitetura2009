@@ -11,12 +11,45 @@ public class GeradorEnderecos {
 		if(endereco.equals(Constantes.RY_RECEBE_RJ)){
 			return ryRecebeRj(codigo);
 		}
+		if(endereco.equals(Constantes.REND_RECEBE_RI)){
+			return rEndRecebeRi(codigo);
+		}
+		if(endereco.equals(Constantes.REND_RECEBE_RJ)){
+			return rEndRecebeRj(codigo);
+		}
+		if(endereco.equals(Constantes.REND_RECEBE_RI_2)){
+			return rEndRecebeRi2(codigo);
+		}
+		if(endereco.equals(Constantes.REND_RECEBE_RJ_2)){
+			return rEndRecebeRj2(codigo);
+		}
+		if(endereco.equals(Constantes.REND_RECEBE_RI_3)){
+			return rEndRecebeRi3(codigo);
+		}
 		if(endereco.equals(Constantes.REALIZA_OPERACAO)){
 			return realizaOperacao(codigo);
 		}
 		if(endereco.equals(Constantes.PRIMEIRA_MICRO_INSTRUCAO)){
 			return primeiraMicro(codigo);
 		}
+		if(endereco.equals(Constantes.CAMINHO)){
+			return caminho(codigo);
+		}
+		/*if(endereco.equals(Constantes.CAMINHO_2)){
+			return caminho2(codigo);
+		}
+		if(endereco.equals(Constantes.CAMINHO_3)){
+			return caminho3(codigo);
+		}
+		if(endereco.equals(Constantes.CAMINHO_4)){
+			return caminho4(codigo);
+		}
+		if(endereco.equals(Constantes.CAMINHO_5)){
+			return caminho5(codigo);
+		}
+		if(endereco.equals(Constantes.CAMINHO_6)){
+			return caminho6(codigo);
+		}*/
 		return endereco;
 	}
 	
@@ -56,7 +89,97 @@ public class GeradorEnderecos {
 		}
 		return "";
 	}
-
+	
+	public String rEndRecebeRi(String codigo){
+		int registrador;
+		registrador = identificaRegistradorDestino(codigo.substring(10,14));
+		switch(registrador){
+			case Constantes.R0:
+				return Constantes.REND_RECEBE_R0;
+			case Constantes.R1:
+				return Constantes.REND_RECEBE_R1;
+			case Constantes.R2:
+				return Constantes.REND_RECEBE_R2;
+			case Constantes.R3:
+				return Constantes.REND_RECEBE_R3;
+			case Constantes.R4:
+				return Constantes.REND_RECEBE_R4;
+		}
+		return "";
+	}
+	
+	public String rEndRecebeRj(String codigo){
+		int registrador;
+		registrador = identificaRegistradorDestino(codigo.substring(14,18));
+		switch(registrador){
+			case Constantes.R0:
+				return Constantes.REND_RECEBE_R0;
+			case Constantes.R1:
+				return Constantes.REND_RECEBE_R1;
+			case Constantes.R2:
+				return Constantes.REND_RECEBE_R2;
+			case Constantes.R3:
+				return Constantes.REND_RECEBE_R3;
+			case Constantes.R4:
+				return Constantes.REND_RECEBE_R4;
+		}
+		return "";
+	}
+	
+	public String rEndRecebeRi2(String codigo){
+		int registrador;
+		registrador = identificaRegistradorDestino(codigo.substring(10,14));
+		switch(registrador){
+			case Constantes.R0:
+				return Constantes.REND_RECEBE_R0_2;
+			case Constantes.R1:
+				return Constantes.REND_RECEBE_R1_2;
+			case Constantes.R2:
+				return Constantes.REND_RECEBE_R2_2;
+			case Constantes.R3:
+				return Constantes.REND_RECEBE_R3_2;
+			case Constantes.R4:
+				return Constantes.REND_RECEBE_R4_2;
+		}
+		return "";
+	}
+	
+	public String rEndRecebeRj2(String codigo){
+		int registrador;
+		registrador = identificaRegistradorDestino(codigo.substring(14,18));
+		switch(registrador){
+			case Constantes.R0:
+				return Constantes.REND_RECEBE_R0_2;
+			case Constantes.R1:
+				return Constantes.REND_RECEBE_R1_2;
+			case Constantes.R2:
+				return Constantes.REND_RECEBE_R2_2;
+			case Constantes.R3:
+				return Constantes.REND_RECEBE_R3_2;
+			case Constantes.R4:
+				return Constantes.REND_RECEBE_R4_2;
+		}
+		return "";
+	}
+	
+	public String rEndRecebeRi3(String codigo){
+		int registrador;
+		registrador = identificaRegistradorDestino(codigo.substring(10,14));
+		switch(registrador){
+			case Constantes.R0:
+				return Constantes.REND_RECEBE_R0_3;
+			case Constantes.R1:
+				return Constantes.REND_RECEBE_R1_3;
+			case Constantes.R2:
+				return Constantes.REND_RECEBE_R2_3;
+			case Constantes.R3:
+				return Constantes.REND_RECEBE_R3_3;
+			case Constantes.R4:
+				return Constantes.REND_RECEBE_R4_3;
+		}
+		return "";
+	}
+	
 	/*public int identificaRegistrador(String codigo,boolean isFonte){
 		Parser parser = new Parser();
 		int [] tiposArgumentos;
@@ -204,22 +327,99 @@ public class GeradorEnderecos {
 			case Constantes.CONSTANTE_REGISTRADOR:
 				return Constantes.ATUALIZA_PC;
 			case Constantes.CONSTANTE_ENDERECO:
-				//return Constantes.REND_RECEBE_RI;
+				return rEndRecebeRi(codigo);
 			case Constantes.REGISTRADOR_REGISTRADOR:
-			//	return Constantes.;
+				return rxRecebeRi(codigo);
 			case Constantes.REGISTRADOR_ENDERECO:
-				//return Constantes.;
+				return rEndRecebeRj(codigo);
 			case Constantes.ENDERECO_REGISTRADOR:
-			//	return Constantes.;
+				return rEndRecebeRi(codigo);
 			case Constantes.ENDERECO_ENDERECO:
-			//	return Constantes.;
+				return rEndRecebeRi(codigo);
 			case Constantes.REGISTRADOR:
-		//		return Constantes.;
+				return Constantes.ATUALIZA_PC;
 			case Constantes.ENDERECO:
-	//			return Constantes.;
+				return rEndRecebeRj(codigo);
 		}
 		return "";
 	}
+	
+	public String caminho(String codigo){
+		int tipo = getTipo(codigo);
+		switch(tipo){
+			case Constantes.CONSTANTE_ENDERECO:
+				return Constantes.REND_RECEBE_PC_MAIS_1;
+			case Constantes.REGISTRADOR_ENDERECO:
+				return rxRecebeRi(codigo);
+			case Constantes.ENDERECO_ENDERECO:
+				return rEndRecebeRi2(codigo);
+		}
+		return "";
+	}
+	
+	/*public String caminho2(String codigo){
+		int tipo = getTipo(codigo);
+		switch(tipo){
+			case Constantes.CONSTANTE_ENDERECO:
+				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_MOV)){
+					return rxRecebeRDado2(codigo);
+				}
+				return ryRecebeRDado2(codigo);
+			case Constantes.ENDERECO:
+				return rxRecebeRDado2(codigo);
+		}
+		return "";
+	}
+		
+	public String caminho3(String codigo){
+		int tipo = getTipo(codigo);
+		switch(tipo){
+			case Constantes.CONSTANTE_REGISTRADOR:
+				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_MOV)){
+					return rjRecebeRDado(codigo);
+				}
+				return Constantes.RX_RECEBE_RDADO;
+		}
+		return "";
+	}
+	
+	public String caminho4(String codigo){
+		int tipo = getTipo(codigo);
+		switch(tipo){
+			case Constantes.CONSTANTE_REGISTRADOR:
+				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_CMP)){
+					//return rxComparaRy(codigo);
+				}
+				return rjRecebeOperacao(codigo);
+		}
+		return "";
+	}
+	
+	public String caminho5(String codigo){
+		int tipo = getTipo(codigo);
+		switch(tipo){
+			case Constantes.CONSTANTE_ENDERECO:
+				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_CMP)){
+					return ryRecebeOperacao(codigo);
+				}
+				return rxComparaRy(codigo);
+			case Constantes.ENDERECO:
+				return rxRecebeOperacao(codigo);
+		}
+		return "";
+	}
+	
+	public String caminho6(String codigo){
+		int tipo = getTipo(codigo);
+		switch(tipo){
+			case Constantes.REGISTRADOR_ENDERECO:
+				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_CMP)){
+					return rxComparaRi(codigo);
+				}
+				return ryRecebeOperacao(codigo);
+		}
+		return "";
+	}*/
 	
 	public int getTipo(String codigo){
 		String primeiroArgumento,segundoArgumento;
