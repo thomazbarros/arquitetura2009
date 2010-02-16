@@ -3,9 +3,15 @@ package model;
 public class Microinstrucao {
 	private char[] pontoDeControle;
 	private char[] pontoDeControle2 = new char[33];
+	String proximo;
 	
+	public String getProximo() {
+		return proximo;
+	}
+
 	public Microinstrucao(int[] pontosDeControle, String proximo){
 		int j = 0;
+		this.proximo = proximo;
 		
 		for(int i = 0; i < pontoDeControle2.length; i++){
 			pontoDeControle2[i] = '0';
