@@ -321,8 +321,14 @@ public class GeradorEnderecos {
 		return "";
 	}
 	
-	public String primeiraMicro(String codigo){
+	public String primeiraMicro(String codigo){		
 		int tipo = getTipo(codigo);
+		String testaHalt = realizaOperacao(codigo);
+		
+		if(testaHalt.equals(Constantes.ENDERECO_HALT)){
+			return Constantes.ENDERECO_HALT;
+		}
+		
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
 				return Constantes.ATUALIZA_PC;
