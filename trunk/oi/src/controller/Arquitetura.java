@@ -401,6 +401,8 @@ import model.ULA;
 			}
 		}
 		atualizaPainel();	
+		
+		ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.obtemDadoBacking(memoria.getPosicao())))));
 	}
 
 	
@@ -854,7 +856,7 @@ import model.ULA;
 	}
 	
 	public void paraThreads(){
-		rodarThread.paraThreads();
+		rodarThread.paraThread();
 	}
 	
 	public String getLocalBusca(){

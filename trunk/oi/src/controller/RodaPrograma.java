@@ -1,17 +1,19 @@
 package controller;
 
 import model.Constantes;
+import model.MemoriaDeControle;
 
 public class RodaPrograma extends Thread{
 	
 	private Arquitetura arquitetura;
 	private ManipulaMemoria manipulaMemoria;
+	private MemoriaDeControle memoriaDeControle;
 
 	
 	public RodaPrograma(Arquitetura arquitetura, ManipulaMemoria manipulaMemoria){
 		this.arquitetura = arquitetura;
 		this.manipulaMemoria = manipulaMemoria;
-
+		memoriaDeControle = new MemoriaDeControle();
 	}
 	
 	public void start(){}
@@ -19,17 +21,14 @@ public class RodaPrograma extends Thread{
 	public void run(){
 
 		String instrucao;
-		//arquitetura.buscaInstrucao();
+		Conversor conversor = new Conversor();
+		
+		arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(Constantes.REND_RECEBE_PC_2)));
 
 		instrucao = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());
 		System.out.println("TESTES : ");
 		arquitetura.getMemoria().imprimeTestes();
 		while(!manipulaMemoria.isHalt(instrucao)){
-
-			/*manipulaMemoria.ler((int) arquitetura.getPc().getValor());
-			arquitetura.buscaInstrucao();
-			instrucao = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());*/
-			
 			
 			if(arquitetura.getModo() == Constantes.RODAINSTRUCAO){
 

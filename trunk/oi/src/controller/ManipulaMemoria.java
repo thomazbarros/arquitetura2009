@@ -7,12 +7,10 @@ import model.Registrador;
 
 public class ManipulaMemoria {
 	private Arquitetura arquitetura;
-	private Instrucao instrucao;
 	private Conversor conversor;
 	
 	public ManipulaMemoria(Arquitetura arquitetura){
 		this.arquitetura = arquitetura;
-		instrucao = new Instrucao(arquitetura);
 		conversor = new Conversor();
 	}
 	
@@ -445,7 +443,7 @@ public class ManipulaMemoria {
 
 		
 		if(binario.substring(0, 1).equals("1")){
-			decodificaInstrucao(binario);
+			//decodificaInstrucao(binario);
 
 			if(arquitetura.getModo() == Constantes.RODAINSTRUCAO){
 				arquitetura.atualizaPainel();
@@ -453,7 +451,7 @@ public class ManipulaMemoria {
 			return -1;
 		}
 
-		arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
+		//arquitetura.ativaPontoDeControle(arquitetura.getMemoriaDeControle().atualizaPC());
 		return conversor.binarioParaInteiro(binario);
 		
 	}
@@ -553,7 +551,7 @@ public class ManipulaMemoria {
 		return false;
 	}
 	
-	public void decodificaInstrucao(String binario){
+	/*public void decodificaInstrucao(String binario){
 		String instrucao = binario.substring(0,8);
 		//System.out.println("INSTRUCAO/POSICAO: "+instrucao+"/"+arquitetura.getPc().getValor());
 		if(instrucao.equals(Constantes.ADD)){
@@ -1032,7 +1030,7 @@ public class ManipulaMemoria {
 			instrucao.decrementa2(getRegistradorFonte(binario.substring(8,12)));
 			break;
 		}
-	}
+	}*/
 	
 	public boolean isLabel(String binario){
 		if(binario.substring(0,2).equals(Constantes.BITS_LABEL)){
@@ -1043,10 +1041,6 @@ public class ManipulaMemoria {
 
 	public Arquitetura getArquitetura() {
 		return arquitetura;
-	}
-
-	public Instrucao getInstrucao() {
-		return instrucao;
 	}
 	
 }
