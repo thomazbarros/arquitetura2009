@@ -15,6 +15,7 @@ public class Memoria{
 	TreeMap<Long,Long> labelMemoria;
 	MemoriaCache cache;
 	long constanteLabel;
+	long posicao;
 	
 	public Memoria(boolean pontoDeControle,MemoriaCache cache){
 		this.pontoDeControle = pontoDeControle;
@@ -189,6 +190,14 @@ public class Memoria{
 	public void imprimeTestes(){
 		System.out.println(labels);
 		System.out.println(labelMemoria);
+	}
+
+	public long getPosicao() {
+		return posicao;
+	}
+
+	public void setPosicao(long posicao) {
+		this.posicao = posicao;
 	}
 
 }

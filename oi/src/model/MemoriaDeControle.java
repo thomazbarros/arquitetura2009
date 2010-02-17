@@ -1602,6 +1602,10 @@ public class MemoriaDeControle {
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RY_ATIVADO}));
 		
 		*/
+
+	public ArrayList<Microinstrucao> getMemoriaDeControle() {
+		return memoriaDeControle;
+	}
 		
 	}
 	

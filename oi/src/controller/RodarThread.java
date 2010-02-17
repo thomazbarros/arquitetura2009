@@ -1,17 +1,19 @@
 package controller;
 
+import model.Constantes;
+
 public class RodarThread extends Thread{
 
 	private ManipulaMemoria manipulaMemoria;
 	private RodaPrograma rodaPrograma;
-	private boolean loop;
+	private boolean loop, sair;
 	
 	public RodarThread(ManipulaMemoria manipulaMemoria,RodaPrograma rodaPrograma){
 		super("Rodar");
 		this.rodaPrograma = rodaPrograma;
 		this.manipulaMemoria = manipulaMemoria;
 		loop = true;
-
+		sair = false;
 	}
 	
 	public void run(){
@@ -36,16 +38,9 @@ public class RodarThread extends Thread{
 		return loop;
 	}
 	
-	public void travaThread(){
-		manipulaMemoria.getInstrucao().travaThread();
-	}
-	
-	public void paraThreads(){
-		manipulaMemoria.getInstrucao().interrupt();
+	public void paraThread(){
 		rodaPrograma.interrupt();
 	}
-	
-
 	
 	public int getValorDesvio(){
 		Arquitetura arquitetura = manipulaMemoria.getArquitetura();
@@ -62,6 +57,25 @@ public class RodarThread extends Thread{
 
 		}else{
 			return -1;
+		}
+	}
+	
+	public void travaThread(){
+		if(manipulaMemoria.getArquitetura().getModo() == Constantes.RODAMICRO){
+			try {				
+
+				while (!manipulaMemoria.getArquitetura().isContinuar() && !sair) {// interrompe a thread
+
+					sleep(1000 / 80);
+
+				}
+				manipulaMemoria.getArquitetura().setContinuar(false);
+				sair = false;
+
+				System.out.println("SAINDO DA INSTRUCAO");
+			} catch (Exception e) {
+				System.out.println("Erro na Thread Instrucoes");
+			}
 		}
 	}
 	
