@@ -1,4 +1,6 @@
 package controller;
+import java.util.ArrayList;
+
 import model.Constantes;
 import model.Memoria;
 import model.MemoriaCache;
@@ -74,12 +76,12 @@ import model.ULA;
 	
 	
 	public void ativaPontoDeControle(Microinstrucao microinstrucao){
-		char[] pontoDeControle = microinstrucao.getPontoDeControle();
+		ArrayList<Character> pontoDeControle = microinstrucao.getPontoDeControle();
 		boolean[] pontoDeControle2 = new boolean[24];
 		long conteudoMemoria,valorMux;
 		
 		for(int i = 0; i < 24; i++){
-			if(pontoDeControle[i] == 'a'){
+			if(pontoDeControle.get(i)== 'a'){
 				if(microinstrucao.getPontoDeControle2()[0] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -87,7 +89,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'b'){
+			if(pontoDeControle.get(i) == 'b'){
 				if(microinstrucao.getPontoDeControle2()[1] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -95,7 +97,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'c'){
+			if(pontoDeControle.get(i) == 'c'){
 				if(microinstrucao.getPontoDeControle2()[2] == '2'){
 					pontoDeControle2[i] = true;
 				}
@@ -103,7 +105,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'd'){
+			if(pontoDeControle.get(i) == 'd'){
 				if(microinstrucao.getPontoDeControle2()[3] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -111,7 +113,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'e'){
+			if(pontoDeControle.get(i) == 'e'){
 				if(microinstrucao.getPontoDeControle2()[4] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -119,7 +121,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'f'){
+			if(pontoDeControle.get(i) == 'f'){
 				if(microinstrucao.getPontoDeControle2()[5] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -127,7 +129,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'g'){
+			if(pontoDeControle.get(i) == 'g'){
 				if(microinstrucao.getPontoDeControle2()[6] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -135,7 +137,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'h'){
+			if(pontoDeControle.get(i) == 'h'){
 				if(microinstrucao.getPontoDeControle2()[7] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -143,7 +145,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'i'){
+			if(pontoDeControle.get(i) == 'i'){
 				if(microinstrucao.getPontoDeControle2()[8] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -151,7 +153,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'j'){
+			if(pontoDeControle.get(i) == 'j'){
 				if(microinstrucao.getPontoDeControle2()[9] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -159,7 +161,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'k'){
+			if(pontoDeControle.get(i) == 'k'){
 				if(microinstrucao.getPontoDeControle2()[10] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -167,7 +169,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'l'){
+			if(pontoDeControle.get(i) == 'l'){
 				if(microinstrucao.getPontoDeControle2()[11] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -175,7 +177,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'm'){
+			if(pontoDeControle.get(i) == 'm'){
 				if(microinstrucao.getPontoDeControle2()[12] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -183,7 +185,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'n'){
+			if(pontoDeControle.get(i) == 'n'){
 				if(microinstrucao.getPontoDeControle2()[13] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -191,7 +193,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'o'){
+			if(pontoDeControle.get(i) == 'o'){
 				if(microinstrucao.getPontoDeControle2()[14] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -199,7 +201,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'p'){
+			if(pontoDeControle.get(i) == 'p'){
 				if(microinstrucao.getPontoDeControle2()[15] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -207,7 +209,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'q'){
+			if(pontoDeControle.get(i) == 'q'){
 				if(microinstrucao.getPontoDeControle2()[16] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -215,7 +217,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'r'){
+			if(pontoDeControle.get(i) == 'r'){
 				if(microinstrucao.getPontoDeControle2()[17] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -223,7 +225,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 's'){
+			if(pontoDeControle.get(i) == 's'){
 				if(microinstrucao.getPontoDeControle2()[18] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -231,7 +233,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 't'){
+			if(pontoDeControle.get(i) == 't'){
 				if(microinstrucao.getPontoDeControle2()[19] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -239,7 +241,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'u'){
+			if(pontoDeControle.get(i) == 'u'){
 				if(microinstrucao.getPontoDeControle2()[20] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -247,7 +249,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'v'){
+			if(pontoDeControle.get(i) == 'v'){
 				if(microinstrucao.getPontoDeControle2()[21] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -255,7 +257,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'w'){
+			if(pontoDeControle.get(i) == 'w'){
 				if(microinstrucao.getPontoDeControle2()[22] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -263,7 +265,7 @@ import model.ULA;
 					pontoDeControle2[i] = false;
 				}
 			}
-			if(pontoDeControle[i] == 'x'){
+			if(pontoDeControle.get(i) == 'x'){
 				if(microinstrucao.getPontoDeControle2()[23] == '1'){
 					pontoDeControle2[i] = true;
 				}
@@ -276,7 +278,7 @@ import model.ULA;
 		for(int i = 0; i < 24; i++)
 		{
 
-			switch(pontoDeControle[i]){
+			switch(pontoDeControle.get(i)){
 				case 'a':
 					pontosDeControle[0] = pontoDeControle2[i];
 					r0.setPontoDeControle(pontoDeControle2[i]);
