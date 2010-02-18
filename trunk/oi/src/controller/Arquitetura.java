@@ -80,7 +80,7 @@ import model.ULA;
 		boolean[] pontoDeControle2 = new boolean[24];
 		long conteudoMemoria,valorMux;
 		
-		for(int i = 0; i < 24; i++){
+		for(int i = 0; i < pontoDeControle.size(); i++){
 			if(pontoDeControle.get(i)== 'a'){
 				if(microinstrucao.getPontoDeControle2()[0] == '1'){
 					pontoDeControle2[i] = true;
@@ -275,7 +275,7 @@ import model.ULA;
 			}
 		}
 
-		for(int i = 0; i < 24; i++)
+		for(int i = 0; i < pontoDeControle.size(); i++)
 		{
 
 			switch(pontoDeControle.get(i)){
