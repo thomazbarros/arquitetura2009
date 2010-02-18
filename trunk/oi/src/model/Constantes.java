@@ -298,6 +298,7 @@ public class Constantes {
 	public static final String PR3_DESTINO = "1000";
 	public static final String PR4_DESTINO = "1001";
 	public static final String NENHUM_DESTINO = "1010";
+	public static final String ZEROS_FINAL_INSTRUCAO = "0000000000000000";
 	public static final int RODAPROGRAMA = 0;
 	public static final int RODAINSTRUCAO = 1;
 	public static final int RODAMICRO = 2;
