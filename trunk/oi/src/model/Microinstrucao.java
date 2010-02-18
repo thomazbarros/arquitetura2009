@@ -15,6 +15,8 @@ public class Microinstrucao {
 		int j = 0;
 		this.proximo = proximo;
 		
+		pontoDeControle =  new ArrayList<Character>();
+		
 		for(int i = 0; i < pontoDeControle2.length; i++){
 			pontoDeControle2[i] = '0';
 		}
@@ -510,15 +512,17 @@ public class Microinstrucao {
 			j++;
 		}
 		
-		pontoDeControle2[24] = proximo.charAt(0);
-		pontoDeControle2[25] = proximo.charAt(1);
-		pontoDeControle2[26] = proximo.charAt(2);
-		pontoDeControle2[27] = proximo.charAt(3);
-		pontoDeControle2[28] = proximo.charAt(4);
-		pontoDeControle2[29] = proximo.charAt(5);
-		pontoDeControle2[30] = proximo.charAt(6);
-		pontoDeControle2[31] = proximo.charAt(7);
-		pontoDeControle2[32] = proximo.charAt(8);
+		if(proximo != ""){
+			pontoDeControle2[24] = proximo.charAt(0);
+			pontoDeControle2[25] = proximo.charAt(1);
+			pontoDeControle2[26] = proximo.charAt(2);
+			pontoDeControle2[27] = proximo.charAt(3);
+			pontoDeControle2[28] = proximo.charAt(4);
+			pontoDeControle2[29] = proximo.charAt(5);
+			pontoDeControle2[30] = proximo.charAt(6);
+			pontoDeControle2[31] = proximo.charAt(7);
+			pontoDeControle2[32] = proximo.charAt(8);
+		}
 	}
 	
 	public char[] getPontoDeControle2() {

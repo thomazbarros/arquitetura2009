@@ -5,7 +5,6 @@ import controller.Arquitetura;
 import controller.ManipulaMemoria;
 import controller.RodaPrograma;
 import controller.RodarThread;
-import controller.ViewThread;
 
 
 
