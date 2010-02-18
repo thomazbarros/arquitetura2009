@@ -62,6 +62,8 @@ public class Memoria{
 		while(dados[(int) (posicao-1)].substring(0,1) != "10"){
 			posicao++;
 		}
+		
+		codigo = dados[(int) posicao];
 	}
 	
 	public String getDado(int posicao){
@@ -205,6 +207,10 @@ public class Memoria{
 
 	public void setPosicao(long posicao) {
 		this.posicao = posicao;
+	}
+
+	public String getCodigo() {
+		return codigo;
 	}
 
 }

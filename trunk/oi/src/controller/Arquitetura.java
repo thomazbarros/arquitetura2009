@@ -26,6 +26,7 @@ import model.ULA;
 	private RodarThread rodarThread;
 	private boolean isHexa;
 	private GeradorEnderecos gerador;
+	private boolean halt;
 		
 	public Arquitetura(){
 		r0 = new Registrador(false, 0);
@@ -54,6 +55,7 @@ import model.ULA;
 		rodaThread = false;
 		isHexa = false;
 		gerador = new GeradorEnderecos();
+		halt = false;
 	}
 	
 	public void setULA(boolean multiplexador){
@@ -402,7 +404,11 @@ import model.ULA;
 		}
 		atualizaPainel();	
 		
-		ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.obtemDadoBacking(memoria.getPosicao())))));
+		if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()) == Constantes.INSTRUCAO_HALT){
+			halt = true;
+		}
+		
+		ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()))));
 	}
 
 	
@@ -872,6 +878,10 @@ import model.ULA;
 
 	public void setHexa(boolean isHexa) {
 		this.isHexa = isHexa;
+	}
+
+	public boolean isHalt() {
+		return halt;
 	}
 	
 }
