@@ -337,7 +337,6 @@ import model.ULA;
 				case 'j':
 					pontosDeControle[9] = pontoDeControle2[i];
 					mux.setPontoDeControle(pontoDeControle2[i]);
-					
 					break;
 				case 'k':
 					pontosDeControle[10] = pontoDeControle2[i];
@@ -406,7 +405,7 @@ import model.ULA;
 		}
 		atualizaPainel();	
 		
-		if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()) == Constantes.INSTRUCAO_HALT){
+		if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()).equals(Constantes.INSTRUCAO_HALT)){
 			halt = true;
 		}
 		
