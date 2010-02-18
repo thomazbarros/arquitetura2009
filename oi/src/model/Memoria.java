@@ -59,7 +59,7 @@ public class Memoria{
 	}
 	
 	public void atualizaPosicao(){
-		while(dados[(int) (posicao-1)].substring(0,1) != "10"){
+		while(!dados[(int) (posicao-1)].substring(0,1).equals("10")){
 			posicao++;
 		}
 		
