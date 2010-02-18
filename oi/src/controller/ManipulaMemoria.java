@@ -129,6 +129,7 @@ public class ManipulaMemoria {
 	public void halt(){
 		String binario = Constantes.HALT;
 		binario += Constantes.NENHUMA_FONTE + Constantes.NENHUM_DESTINO;
+		binario += Constantes.ZEROS_FINAL_INSTRUCAO;
 		arquitetura.getMemoria().addDado(binario);
 	}
 	
@@ -210,7 +211,7 @@ public class ManipulaMemoria {
 			break;
 		}
 
-
+		codigoInstrucao += Constantes.ZEROS_FINAL_INSTRUCAO;
 		arquitetura.getMemoria().addDado(codigoInstrucao);
 	}
 
@@ -250,7 +251,7 @@ public class ManipulaMemoria {
 			break;
 		}
 		
-
+		codigoInstrucao += Constantes.ZEROS_FINAL_INSTRUCAO;
 		arquitetura.getMemoria().addDado(codigoInstrucao);
 		arquitetura.getMemoria().addDado(conversor.inteiroParaBinario(constante));
 	}	
@@ -292,7 +293,8 @@ public class ManipulaMemoria {
 		}
 
 		codigoInstrucao += Constantes.NENHUM_DESTINO;
-
+		
+		codigoInstrucao += Constantes.ZEROS_FINAL_INSTRUCAO;
 		arquitetura.getMemoria().addDado(codigoInstrucao);
 	}
 	
@@ -300,6 +302,7 @@ public class ManipulaMemoria {
 		String codigoInstrucao = getConstanteInstrucao(instrucao); 
 		codigoInstrucao += Constantes.LABEL + Constantes.NENHUM_DESTINO;
 
+		codigoInstrucao += Constantes.ZEROS_FINAL_INSTRUCAO;
 		arquitetura.getMemoria().addDado(codigoInstrucao);
 		arquitetura.getMemoria().adicionaLabel(label);
 	}
