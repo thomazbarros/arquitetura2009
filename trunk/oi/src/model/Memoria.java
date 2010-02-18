@@ -8,14 +8,13 @@ public class Memoria{
 	private Conversor conversor;
 	private boolean pontoDeControle, ler;
 	private String [] dados;
-	private String valor;
+	private String valor, codigo;
 	private Integer posicaoLivre, posicaoAtual;
 	private final int tamanho = 1024;
-	TreeMap<String,Long> labels; 
-	TreeMap<Long,Long> labelMemoria;
-	MemoriaCache cache;
-	long constanteLabel;
-	long posicao;
+	private TreeMap<String,Long> labels; 
+    private TreeMap<Long,Long> labelMemoria;
+	private MemoriaCache cache;
+	private long constanteLabel, posicao;
 	
 	public Memoria(boolean pontoDeControle,MemoriaCache cache){
 		this.pontoDeControle = pontoDeControle;
@@ -31,6 +30,8 @@ public class Memoria{
 		constanteLabel = 1;
 		ler = true;
 		posicaoAtual = 0;
+		posicao = 0;
+		codigo = "";
 	}
 
 	public String getValor() {
@@ -55,6 +56,12 @@ public class Memoria{
 
 	public void setDados(String[] dados) {
 		this.dados = dados;
+	}
+	
+	public void atualizaPosicao(){
+		while(dados[(int) (posicao-1)].substring(0,1) != "10"){
+			posicao++;
+		}
 	}
 	
 	public String getDado(int posicao){
