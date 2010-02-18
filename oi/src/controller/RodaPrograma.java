@@ -20,16 +20,15 @@ public class RodaPrograma extends Thread{
 	
 	public void run(){
 
-		String instrucao;
 		Conversor conversor = new Conversor();
 		
 		arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(Constantes.REND_RECEBE_PC_2)));
 
-		instrucao = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());
-		System.out.println("TESTES : ");
-		arquitetura.getMemoria().imprimeTestes();
+	//instrucao = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());
+		//System.out.println("TESTES : ");
+		//arquitetura.getMemoria().imprimeTestes();
 		
-		while(!manipulaMemoria.isHalt(instrucao)){
+		while(!arquitetura.isHalt()){
 			
 			arquitetura.getMemoria().atualizaPosicao();
 			
