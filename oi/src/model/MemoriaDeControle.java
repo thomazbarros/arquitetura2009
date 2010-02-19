@@ -443,6 +443,12 @@ public class MemoriaDeControle {
 
 		//r4RecebeR3 - 010010000
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R3, Constantes.A, Constantes.R4_ATIVADO}, Constantes.ATUALIZA_PC_2));
+		
+		//rXRecebeRDado2 - 010010001
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RX_ATIVADO}, Constantes.CAMINHO_5));
+		
+		//rYRecebeRDado2 - 010010010
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ_2));
 	}
 		/*
 		//rEndRecebeRY

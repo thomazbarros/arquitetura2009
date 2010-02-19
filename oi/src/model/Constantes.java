@@ -147,6 +147,8 @@ public class Constantes {
 	public static final String R4_RECEBE_R1 = "010001110";
 	public static final String R4_RECEBE_R2 = "010001111";
 	public static final String R4_RECEBE_R3 = "010010000";
+	public static final String RX_RECEBE_RDADO_2 = "010010001";
+	public static final String RY_RECEBE_RDADO_2 = "010010010";
 	public static final String REALIZA_OPERACAO = "OPERACAO";
 	public static final String OPERACAO_ADD = "ADD";
 	public static final String OPERACAO_SUB = "SUB";
