@@ -40,10 +40,10 @@ public class GeradorEnderecos {
 		}
 		if(endereco.equals(Constantes.CAMINHO_3)){
 			return caminho3(codigo);
-		}
+		}*/
 		if(endereco.equals(Constantes.CAMINHO_4)){
 			return caminho4(codigo);
-		}
+		}/*
 		if(endereco.equals(Constantes.CAMINHO_5)){
 			return caminho5(codigo);
 		}
@@ -387,21 +387,21 @@ public class GeradorEnderecos {
 				return Constantes.RX_RECEBE_RDADO;
 		}
 		return "";
-	}
+	}*/
 	
 	public String caminho4(String codigo){
 		int tipo = getTipo(codigo);
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
 				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_CMP)){
-					return rxComparaRy(codigo);
+					return Constantes.RX_COMPARA_RY;
 				}
 				return rjRecebeOperacao(codigo);
 		}
 		return "";
 	}
 	
-	public String caminho5(String codigo){
+	/*public String caminho5(String codigo){
 		int tipo = getTipo(codigo);
 		switch(tipo){
 			case Constantes.CONSTANTE_ENDERECO:
