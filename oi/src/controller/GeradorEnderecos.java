@@ -118,25 +118,6 @@ public class GeradorEnderecos {
 		return "";
 	}
 	
-	public String rxComparaRi(String codigo){
-		int registrador;
-		
-		registrador = identificaRegistradorFonte(codigo.substring(10,14));
-		switch(registrador){
-			case Constantes.R0:
-				return Constantes.RX_COMPARA_R0;
-			case Constantes.R1:
-				return Constantes.RX_COMPARA_R1;
-			case Constantes.R2:
-				return Constantes.RX_COMPARA_R2;
-			case Constantes.R3:
-				return Constantes.RX_COMPARA_R3;
-			case Constantes.R4:
-				return Constantes.RX_COMPARA_R4;
-		}
-		return "";
-	}
-	
 	public String ryRecebeRj(String codigo){
 		int registrador;
 		registrador = identificaRegistradorDestino(codigo.substring(14,18));
@@ -577,7 +558,7 @@ public class GeradorEnderecos {
 		switch(tipo){
 			case Constantes.REGISTRADOR_ENDERECO:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
-					return rxComparaRi(codigo);
+					return Constantes.RX_COMPARA_RY;
 				}
 				return ryRecebeOperacao(codigo);
 		}
