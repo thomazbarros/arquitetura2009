@@ -1,8 +1,54 @@
 package controller;
 
+import java.util.ArrayList;
+
 import model.Constantes;
 
 public class GeradorEnderecos {
+	ArrayList<String> registradorOperacao;
+	
+	public GeradorEnderecos(){
+		inicializaComponentes();
+	}
+	
+	public void inicializaComponentes(){
+		registradorOperacao = new ArrayList<String>();
+		registradorOperacao.add(Constantes.R0_RECEBE_SOMA);
+		registradorOperacao.add(Constantes.R1_RECEBE_SOMA);
+		registradorOperacao.add(Constantes.R2_RECEBE_SOMA);
+		registradorOperacao.add(Constantes.R3_RECEBE_SOMA);
+		registradorOperacao.add(Constantes.R4_RECEBE_SOMA);
+		registradorOperacao.add(Constantes.R0_RECEBE_DIFERENCA);
+		registradorOperacao.add(Constantes.R1_RECEBE_DIFERENCA);
+		registradorOperacao.add(Constantes.R2_RECEBE_DIFERENCA);
+		registradorOperacao.add(Constantes.R3_RECEBE_DIFERENCA);
+		registradorOperacao.add(Constantes.R4_RECEBE_DIFERENCA);
+		registradorOperacao.add(Constantes.R0_RECEBE_E);
+		registradorOperacao.add(Constantes.R1_RECEBE_E);
+		registradorOperacao.add(Constantes.R2_RECEBE_E);
+		registradorOperacao.add(Constantes.R3_RECEBE_E);
+		registradorOperacao.add(Constantes.R4_RECEBE_E);
+		registradorOperacao.add(Constantes.R0_RECEBE_OU);
+		registradorOperacao.add(Constantes.R1_RECEBE_OU);
+		registradorOperacao.add(Constantes.R2_RECEBE_OU);
+		registradorOperacao.add(Constantes.R3_RECEBE_OU);
+		registradorOperacao.add(Constantes.R4_RECEBE_OU);
+		registradorOperacao.add(Constantes.R0_RECEBE_NOT);
+		registradorOperacao.add(Constantes.R1_RECEBE_NOT);
+		registradorOperacao.add(Constantes.R2_RECEBE_NOT);
+		registradorOperacao.add(Constantes.R3_RECEBE_NOT);
+		registradorOperacao.add(Constantes.R4_RECEBE_NOT);
+		registradorOperacao.add(Constantes.R0_RECEBE_DESLOCAMENTO_ESQUERDA);
+		registradorOperacao.add(Constantes.R1_RECEBE_DESLOCAMENTO_ESQUERDA);
+		registradorOperacao.add(Constantes.R2_RECEBE_DESLOCAMENTO_ESQUERDA);
+		registradorOperacao.add(Constantes.R3_RECEBE_DESLOCAMENTO_ESQUERDA);
+		registradorOperacao.add(Constantes.R4_RECEBE_DESLOCAMENTO_ESQUERDA);
+		registradorOperacao.add(Constantes.R0_RECEBE_DESLOCAMENTO_DIREITA);
+		registradorOperacao.add(Constantes.R1_RECEBE_DESLOCAMENTO_DIREITA);
+		registradorOperacao.add(Constantes.R2_RECEBE_DESLOCAMENTO_DIREITA);
+		registradorOperacao.add(Constantes.R3_RECEBE_DESLOCAMENTO_DIREITA);
+		registradorOperacao.add(Constantes.R4_RECEBE_DESLOCAMENTO_DIREITA);
+	}
 	
 	public String proximoEndereco(String endereco,String codigo){
 		if(endereco.equals(Constantes.RX_RECEBE_RI)){
@@ -230,102 +276,137 @@ public class GeradorEnderecos {
 		return Constantes.ERRO;
 	}
 	
+	public int indiceOperacao(String codigo){
+		String operacao = codigo.substring(Constantes.BITS_INSTRUCAO.length(),
+				Constantes.BITS_INSTRUCAO.length()+Constantes.ADD.length());
+		if(operacao.equals(Constantes.ADD)){
+			return Constantes.INDICE_ADD;
+		}
+		if(operacao.equals(Constantes.SUB)){
+			return Constantes.INDICE_SUB;	
+		}
+		if(operacao.equals(Constantes.AND)){
+			return Constantes.INDICE_AND;
+		}
+		if(operacao.equals(Constantes.OR)){
+			return Constantes.INDICE_OR;	
+		}
+		if(operacao.equals(Constantes.NOT)){
+			return Constantes.INDICE_NOT;
+		}
+		if(operacao.equals(Constantes.SHL)){
+			return Constantes.INDICE_SHL;
+		}
+		if(operacao.equals(Constantes.SHR)){
+			return Constantes.INDICE_SHR;	
+		}
+		return Constantes.ERRO;
+	}
 	
 	public String realizaOperacao(String codigo){
 		String operacao = codigo.substring(Constantes.BITS_INSTRUCAO.length(),
 				Constantes.BITS_INSTRUCAO.length()+Constantes.ADD.length());
 		if(operacao.equals(Constantes.ADD)){
-			return Constantes.ENDERECO_ADD;
+			return Constantes.OPERACAO_ADD;
 		}
 		if(operacao.equals(Constantes.SUB)){
-			return Constantes.ENDERECO_SUB;	
+			return Constantes.OPERACAO_SUB;	
 		}
 		if(operacao.equals(Constantes.MOV)){
-			return Constantes.ENDERECO_MOV;
+			return Constantes.OPERACAO_MOV;
 		}
 		if(operacao.equals(Constantes.CMP)){
-			return Constantes.ENDERECO_CMP;
+			return Constantes.OPERACAO_CMP;
 		}
 		if(operacao.equals(Constantes.AND)){
-			return Constantes.ENDERECO_AND;
+			return Constantes.OPERACAO_AND;
 		}
 		if(operacao.equals(Constantes.OR)){
-			return Constantes.ENDERECO_OR;	
+			return Constantes.OPERACAO_OR;	
 		}
 		if(operacao.equals(Constantes.NOT)){
-			return Constantes.ENDERECO_NOT;
+			return Constantes.OPERACAO_NOT;
 		}
 		if(operacao.equals(Constantes.CLR)){
-			return Constantes.ENDERECO_CLR;
+			return Constantes.OPERACAO_CLR;
 		}
 		if(operacao.equals(Constantes.NEG)){
-			return Constantes.ENDERECO_NEG;
+			return Constantes.OPERACAO_NEG;
 		}
 		if(operacao.equals(Constantes.SHL)){
-			return Constantes.ENDERECO_SHL;
+			return Constantes.OPERACAO_SHL;
 		}
 		if(operacao.equals(Constantes.SHR)){
-			return Constantes.ENDERECO_SHR;	
+			return Constantes.OPERACAO_SHR;	
 		}
 		if(operacao.equals(Constantes.BRZ)){
-			return Constantes.ENDERECO_BRZ;
+			return Constantes.OPERACAO_BRZ;
 		}
 		if(operacao.equals(Constantes.BRN)){
-			return Constantes.ENDERECO_BRN;
+			return Constantes.OPERACAO_BRN;
 		}
 		if(operacao.equals(Constantes.BRE)){
-			return Constantes.ENDERECO_BRE;	
+			return Constantes.OPERACAO_BRE;	
 		}
 		if(operacao.equals(Constantes.BRL)){
-			return Constantes.ENDERECO_BRL;	
+			return Constantes.OPERACAO_BRL;	
 		}
 		if(operacao.equals(Constantes.BRG)){
-			return Constantes.ENDERECO_BRG;	
+			return Constantes.OPERACAO_BRG;	
 		}
 		if(operacao.equals(Constantes.BRC)){
-			return Constantes.ENDERECO_BRC;	
+			return Constantes.OPERACAO_BRC;	
 		}
 		if(operacao.equals(Constantes.JMP)){
-			return Constantes.ENDERECO_JMP;
+			return Constantes.OPERACAO_JMP;
 		}
 		if(operacao.equals(Constantes.XOR)){
-			return Constantes.ENDERECO_XOR;	
+			return Constantes.OPERACAO_XOR;	
 		}
 		if(operacao.equals(Constantes.TEST)){
-			return Constantes.ENDERECO_TEST;
+			return Constantes.OPERACAO_TEST;
 		}
 		if(operacao.equals(Constantes.INC)){
-			return Constantes.ENDERECO_INC;
+			return Constantes.OPERACAO_INC;
 		}
 		if(operacao.equals(Constantes.DEC)){
-			return Constantes.ENDERECO_DEC;
+			return Constantes.OPERACAO_DEC;
 		}
 		if(operacao.equals(Constantes.BRNZ)){
-			return Constantes.ENDERECO_BRNZ;
+			return Constantes.OPERACAO_BRNZ;
 		}
 		if(operacao.equals(Constantes.BRNN)){
-			return Constantes.ENDERECO_BRNN;
+			return Constantes.OPERACAO_BRNN;
 		}
 		if(operacao.equals(Constantes.BRNC)){
-			return Constantes.ENDERECO_BRNC;
+			return Constantes.OPERACAO_BRNC;
 		}
 		if(operacao.equals(Constantes.BRO)){
-			return Constantes.ENDERECO_BRO;
+			return Constantes.OPERACAO_BRO;
 		}
 		if(operacao.equals(Constantes.BRNO)){
-			return Constantes.ENDERECO_BRNO;
+			return Constantes.OPERACAO_BRNO;
 		}
 		if(operacao.equals(Constantes.HALT)){
-			return Constantes.ENDERECO_HALT;
+			return Constantes.OPERACAO_HALT;
 		}
 		return "";
 	}
 	
+	public boolean isHalt(String codigo){
+		String operacao = codigo.substring(Constantes.BITS_INSTRUCAO.length(),
+				Constantes.BITS_INSTRUCAO.length()+Constantes.ADD.length());
+		if(operacao.equals(Constantes.HALT)){
+			return true;
+		}
+		return false;
+	}
+	
 	public String primeiraMicro(String codigo){		
 		int tipo = getTipo(codigo);
-		String testaHalt = realizaOperacao(codigo);
+		boolean testaHalt = isHalt(codigo);
 		
-		if(testaHalt.equals(Constantes.ENDERECO_HALT)){
+		if(testaHalt){
 			return Constantes.ENDERECO_HALT;
 		}
 		
@@ -393,12 +474,20 @@ public class GeradorEnderecos {
 		int tipo = getTipo(codigo);
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
-				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_CMP)){
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
 					return Constantes.RX_COMPARA_RY;
 				}
 				return rjRecebeOperacao(codigo);
 		}
 		return "";
+	}
+	
+	public String rjRecebeOperacao(String codigo){
+		int posicao = -1;
+		
+		posicao += indiceOperacao(codigo) + identificaRegistradorDestino(codigo);
+		
+		return registradorOperacao.get(posicao);
 	}
 	
 	/*public String caminho5(String codigo){
