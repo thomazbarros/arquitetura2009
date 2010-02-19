@@ -73,9 +73,8 @@ public class Conversor {
 		String meio = "";
 		int numeroLoops;
 		
-		numeroLoops = Constantes.TAMANHO_PALAVRA - fim.length();
+		numeroLoops = Constantes.TAMANHO_PALAVRA - fim.length() - 1;
 		numeroLoops -= Constantes.BITS_CONSTANTE.length();
-
 		
 		for(int i = 0; i < numeroLoops; i++){
 			meio += "0";

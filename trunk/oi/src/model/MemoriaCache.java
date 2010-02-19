@@ -104,7 +104,7 @@ public class MemoriaCache {
 	
 	public String imprimeCache(int posicao){
 		if(dados.get(posicao) == null){
-			return "0000000000000000";
+			return "00000000000000000000000000000000";
 		}
 		return dados.get(posicao);
 	}
