@@ -25,7 +25,7 @@ public class Main {
 		rodarThread.start();
 		arquitetura.setRodarThread(rodarThread);
 
-		new TelaPrincipal("",manipulaMemoria,rodaPrograma);//,rodarThread);
+		new TelaPrincipal("",manipulaMemoria,rodaPrograma);
 
 	}
 	
