@@ -368,9 +368,9 @@ public class GeradorEnderecos {
 		switch(tipo){
 			case Constantes.CONSTANTE_ENDERECO:
 				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_MOV)){
-					return rxRecebeRDado2(codigo);
+					return ryRecebeRDado2(codigo);
 				}
-				return ryRecebeRDado2(codigo);
+				return rxRecebeRDado2(codigo);
 			case Constantes.ENDERECO:
 				return rxRecebeRDado2(codigo);
 		}
