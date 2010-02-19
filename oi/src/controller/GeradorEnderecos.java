@@ -136,6 +136,24 @@ public class GeradorEnderecos {
 		return "";
 	}
 	
+	public String rjRecebeRDado(String codigo){
+		int registrador;
+		registrador = identificaRegistradorDestino(codigo.substring(14,18));
+		switch(registrador){
+			case Constantes.R0:
+				return Constantes.R0_RECEBE_RDADO;
+			case Constantes.R1:
+				return Constantes.R1_RECEBE_RDADO;
+			case Constantes.R2:
+				return Constantes.R2_RECEBE_RDADO;
+			case Constantes.R3:
+				return Constantes.R3_RECEBE_RDADO;
+			case Constantes.R4:
+				return Constantes.R4_RECEBE_RDADO;
+		}
+		return "";
+	}
+	
 	public String rEndRecebeRi(String codigo){
 		int registrador;
 		registrador = identificaRegistradorDestino(codigo.substring(10,14));
@@ -444,16 +462,16 @@ public class GeradorEnderecos {
 		return "";
 	}
 	
-	/*public String caminho2(String codigo){
+	public String caminho2(String codigo){
 		int tipo = getTipo(codigo);
 		switch(tipo){
 			case Constantes.CONSTANTE_ENDERECO:
-				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_MOV)){
-					return ryRecebeRDado2(codigo);
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
+					Constantes.RY_RECEBE_RDADO_2;
 				}
-				return rxRecebeRDado2(codigo);
+				return Constantes.RX_RECEBE_RDADO_2(codigo);
 			case Constantes.ENDERECO:
-				return rxRecebeRDado2(codigo);
+				return Constantes.RX_RECEBE_RDADO_2(codigo);
 		}
 		return "";
 	}
@@ -462,13 +480,13 @@ public class GeradorEnderecos {
 		int tipo = getTipo(codigo);
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
-				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_MOV)){
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
 					return rjRecebeRDado(codigo);
 				}
 				return Constantes.RX_RECEBE_RDADO;
 		}
 		return "";
-	}*/
+	}
 	
 	public String caminho4(String codigo){
 		int tipo = getTipo(codigo);
@@ -490,12 +508,43 @@ public class GeradorEnderecos {
 		return registradorOperacao.get(posicao);
 	}
 	
-	/*public String caminho5(String codigo){
+	public String rxRecebeOperacao(String codigo){
+		String operacao = realizaOperacao(codigo);
+		if(operacao.equals(Constantes.OPERACAO_NOT)){
+			return Constantes.RX_RECEBE_NOT;
+		}
+		if(operacao.equals(Constantes.OPERACAO_SHL)){
+			return Constantes.RX_RECEBE_DESLOCAMENTO_ESQUERDA;
+		}
+		if(operacao.equals(Constantes.OPERACAO_SHR)){
+			return Constantes.RX_RECEBE_DESLOCAMENTO_DIREITA;
+		}
+		return "";
+	}
+	
+	public String ryRecebeOperacao(String codigo){
+		String operacao = realizaOperacao(codigo);
+		if(operacao.equals(Constantes.OPERACAO_ADD)){
+			return Constantes.RY_RECEBE_SOMA;
+		}
+		if(operacao.equals(Constantes.OPERACAO_SUB)){
+			return Constantes.RY_RECEBE_DIFERENCA;
+		}
+		if(operacao.equals(Constantes.OPERACAO_AND)){
+			return Constantes.RY_RECEBE_E;
+		}
+		if(operacao.equals(Constantes.OPERACAO_OR)){
+			return Constantes.RY_RECEBE_OU;
+		}
+		return "";
+	}
+	
+	public String caminho5(String codigo){
 		int tipo = getTipo(codigo);
 		switch(tipo){
 			case Constantes.CONSTANTE_ENDERECO:
-				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_CMP)){
-					return rxComparaRy(codigo);
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
+					return Constantes.RX_COMPARA_RY;
 				}
 				return ryRecebeOperacao(codigo);
 			case Constantes.ENDERECO:
@@ -508,13 +557,13 @@ public class GeradorEnderecos {
 		int tipo = getTipo(codigo);
 		switch(tipo){
 			case Constantes.REGISTRADOR_ENDERECO:
-				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_CMP)){
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
 					return rxComparaRi(codigo);
 				}
 				return ryRecebeOperacao(codigo);
 		}
 		return "";
-	}*/
+	}
 	
 	public int getTipo(String codigo){
 		String primeiroArgumento,segundoArgumento;
