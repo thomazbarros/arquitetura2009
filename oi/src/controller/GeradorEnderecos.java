@@ -394,7 +394,7 @@ public class GeradorEnderecos {
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
 				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_CMP)){
-					//return rxComparaRy(codigo);
+					return rxComparaRy(codigo);
 				}
 				return rjRecebeOperacao(codigo);
 		}
@@ -406,9 +406,9 @@ public class GeradorEnderecos {
 		switch(tipo){
 			case Constantes.CONSTANTE_ENDERECO:
 				if(realizaOperacao(codigo).equals(Constantes.ENDERECO_CMP)){
-					return ryRecebeOperacao(codigo);
+					return rxComparaRy(codigo);
 				}
-				return rxComparaRy(codigo);
+				return ryRecebeOperacao(codigo);
 			case Constantes.ENDERECO:
 				return rxRecebeOperacao(codigo);
 		}
