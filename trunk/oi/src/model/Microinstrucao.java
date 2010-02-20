@@ -15,6 +15,10 @@ public class Microinstrucao {
 		int j = 0;
 		this.proximo = proximo;
 		
+		if(proximo.equals("")){
+			proximo = "000000000";
+		}
+		
 		pontoDeControle =  new ArrayList<Character>();
 		
 		for(int i = 0; i < pontoDeControle2.length; i++){
@@ -471,6 +475,196 @@ public class Microinstrucao {
 				j++;
 				pontoDeControle.add('q');
 				pontoDeControle2[16] = '0';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '1';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '1';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '1';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '0';
+			}
+			if(pontosDeControle[i] == Constantes.ULA_BRZ){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '1';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '0';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '1';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '0';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '1';
+			}
+			if(pontosDeControle[i] == Constantes.ULA_BRN){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '1';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '0';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '1';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '1';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '0';
+			}
+			if(pontosDeControle[i] == Constantes.ULA_BRL){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '1';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '0';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '1';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '1';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '1';
+			}
+			if(pontosDeControle[i] == Constantes.ULA_BRG){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '1';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '1';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '0';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '0';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '0';
+			}
+			if(pontosDeControle[i] == Constantes.ULA_BRC){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '1';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '1';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '0';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '0';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '1';
+			}
+			if(pontosDeControle[i] == Constantes.ULA_BRNZ){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '1';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '1';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '0';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '1';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '0';
+			}
+			if(pontosDeControle[i] == Constantes.ULA_BRNN){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '1';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '1';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '0';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '1';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '1';
+			}
+			if(pontosDeControle[i] == Constantes.ULA_BRNC){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '1';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '1';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '1';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '0';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '0';
+			}
+			if(pontosDeControle[i] == Constantes.ULA_BRO){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '1';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '1';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '1';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '0';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '1';
+			}
+			if(pontosDeControle[i] == Constantes.ULA_BRNO){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '1';
 				j++;
 				pontoDeControle.add('r');
 				pontoDeControle2[17] = '1';
