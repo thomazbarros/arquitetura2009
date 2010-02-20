@@ -54,8 +54,14 @@ public class GeradorEnderecos {
 		if(endereco.equals(Constantes.RX_RECEBE_RI)){
 			return rxRecebeRi(codigo);
 		}
+		if(endereco.equals(Constantes.RX_RECEBE_RI_2)){
+			return rxRecebeRi2(codigo);
+		}
 		if(endereco.equals(Constantes.RY_RECEBE_RJ)){
 			return ryRecebeRj(codigo);
+		}
+		if(endereco.equals(Constantes.RY_RECEBE_RI)){
+			return ryRecebeRi(codigo);
 		}
 		if(endereco.equals(Constantes.REND_RECEBE_RI)){
 			return rEndRecebeRi(codigo);
@@ -72,8 +78,26 @@ public class GeradorEnderecos {
 		if(endereco.equals(Constantes.REND_RECEBE_RI_3)){
 			return rEndRecebeRi3(codigo);
 		}
-		if(endereco.equals(Constantes.REALIZA_OPERACAO)){
-			return realizaOperacao(codigo);
+		//if(endereco.equals(Constantes.REALIZA_OPERACAO)){
+		//	return realizaOperacao(codigo);
+		//}
+		if(endereco.equals(Constantes.RJ_RECEBE_RDADO)){
+			return rjRecebeRDado(codigo);
+		}
+		if(endereco.equals(Constantes.RJ_RECEBE_RI)){
+			return rjRecebeRi(codigo);
+		}
+		if(endereco.equals(Constantes.RJ_RECEBE_OPERACAO)){
+			return rjRecebeOperacao(codigo);
+		}
+		if(endereco.equals(Constantes.RY_RECEBE_OPERACAO)){
+			return ryRecebeOperacao(codigo);
+		}
+		if(endereco.equals(Constantes.RI_RECEBE_OPERACAO)){
+			return riRecebeOperacao(codigo);
+		}
+		if(endereco.equals(Constantes.PC_RECEBE_OPERACAO)){
+			return pcRecebeOperacao(codigo);
 		}
 		if(endereco.equals(Constantes.PRIMEIRA_MICRO_INSTRUCAO)){
 			return primeiraMicro(codigo);
@@ -603,7 +627,7 @@ public class GeradorEnderecos {
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_JMP)){
 					Constantes.PC_RECEBE_RDADO;
 				}
-				return pcRecebeOperacao();
+				return pcRecebeOperacao(codigo);
 		}
 		return "";
 	}
@@ -650,7 +674,7 @@ public class GeradorEnderecos {
 		return "";
 	}
 	
-	public String pcRecebeOperacao(){
+	public String pcRecebeOperacao(String codigo){
 		String operacao = realizaOperacao(codigo);
 		
 		if(operacao.equals(Constantes.OPERACAO_BRZ)){
