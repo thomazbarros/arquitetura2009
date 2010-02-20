@@ -444,11 +444,65 @@ public class MemoriaDeControle {
 		//r4RecebeR3 - 010010000
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R3, Constantes.A, Constantes.R4_ATIVADO}, Constantes.ATUALIZA_PC_2));
 		
-		//rXRecebeRDado2 - 010010001
+		//rXRecebeRDado - 010010001
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RX_ATIVADO}, Constantes.CAMINHO_5));
 		
-		//rYRecebeRDado2 - 010010010
+		//rYRecebeRDado - 010010010
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ_2));
+		
+		//rYRecebeRI - 010010011
+		memoriaDeControle.add(new Microinstrucao(new int[]{}, ""));
+		
+		//rYRecebeR0 - 010010100
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ));
+		
+		//rYRecebeR1 - 010010101
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ));
+		
+		//rYRecebeR2 - 010010110
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R2, Constantes.B, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ));
+		
+		//rYRecebeR3 - 010010111
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R3, Constantes.B, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ));
+		
+		//rYRecebeR4 - 010011000
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R4, Constantes.B, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ));
+		
+		//pCRecebeOperacao - 010011001
+		memoriaDeControle.add(new Microinstrucao(new int[] {}, ""));
+		
+		//pCRecebeDesvioSeZero - 010011010
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.MUX_B_PC, Constantes.ULA_BRZ, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
+		
+		//pCRecebeDesvioSeNegativo - 010011011
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.MUX_B_PC, Constantes.ULA_BRN, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
+		
+		//pCRecebeDesvioSeMenor - 010011100
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.MUX_B_PC, Constantes.ULA_BRL, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
+		
+		//pCRecebeDesvioSeMaior - 010011101
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.MUX_B_PC, Constantes.ULA_BRG, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
+		
+		//pCRecebeDesvioSeCarry - 010011110
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.MUX_B_PC, Constantes.ULA_BRC, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
+		
+		//pCRecebeDesvioSeNaoZero - 010011111
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.MUX_B_PC, Constantes.ULA_BRNZ, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
+		
+		//pCRecebeDesvioSeNaoNegativo - 010100000
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.MUX_B_PC, Constantes.ULA_BRNN, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
+		
+		//pCRecebeDesvioSeNaoCarry - 010100001
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.MUX_B_PC, Constantes.ULA_BRNC, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
+		
+		//pCRecebeDesvioSeOverflow - 010100010
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.MUX_B_PC, Constantes.ULA_BRO, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
+		
+		//pCRecebeDesvioSeNaoOverflow - 010100011
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.MUX_B_PC, Constantes.ULA_BRZ, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
+		
+		//pCRecebeRDado - 010100100
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
 	}
 		/*
 		//rEndRecebeRY

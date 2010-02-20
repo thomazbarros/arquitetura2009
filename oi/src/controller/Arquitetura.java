@@ -409,6 +409,10 @@ import model.ULA;
 			halt = true;
 		}
 		
+		if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()).equals(Constantes.REND_RECEBE_RY)){
+			memoria.setLer(false);
+		}
+		
 		ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()))));
 	}
 
