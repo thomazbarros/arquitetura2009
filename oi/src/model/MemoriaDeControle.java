@@ -112,7 +112,7 @@ public class MemoriaDeControle {
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}, Constantes.IR_RECEBE_RDADO));
 		
 		//iRRecebeRDado - 000100010
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.IR_ATIVADO}, ""));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.IR_ATIVADO}, Constantes.PRIMEIRA_MICRO_INSTRUCAO));
 		
 		//halt - 000100011
 		memoriaDeControle.add(new Microinstrucao(new int[]{}, ""));
