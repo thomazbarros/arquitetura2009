@@ -295,7 +295,7 @@ public class Constantes {
 	public static final String PR2_FONTE = "1000";
 	public static final String PR3_FONTE = "1001";
 	public static final String PR4_FONTE = "1010";
-	public static final String LABEL = "1011";
+	public static final String LABEL_FONTE = "1011";
 	public static final String NENHUMA_FONTE = "1100";
 	public static final String R0_DESTINO = "0000";
 	public static final String R1_DESTINO = "0001";
@@ -323,7 +323,10 @@ public class Constantes {
 	public static final int ENDERECO_ENDERECO = 5;
 	public static final int REGISTRADOR = 6;
 	public static final int ENDERECO = 7;
+	public static final int LABEL = 7;
 	public static final int TIPO_CONSTANTE = 0;
 	public static final int TIPO_REGISTRADOR = 1;
 	public static final int TIPO_ENDERECO = 2;
+	public static final int TIPO_LABEL = 3;
+	public static final int TIPO_NENHUM = 3;
 }

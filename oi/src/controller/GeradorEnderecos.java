@@ -81,21 +81,21 @@ public class GeradorEnderecos {
 		if(endereco.equals(Constantes.CAMINHO)){
 			return caminho(codigo);
 		}
-		/*if(endereco.equals(Constantes.CAMINHO_2)){
+		if(endereco.equals(Constantes.CAMINHO_2)){
 			return caminho2(codigo);
 		}
 		if(endereco.equals(Constantes.CAMINHO_3)){
 			return caminho3(codigo);
-		}*/
+		}
 		if(endereco.equals(Constantes.CAMINHO_4)){
 			return caminho4(codigo);
-		}/*
+		}
 		if(endereco.equals(Constantes.CAMINHO_5)){
 			return caminho5(codigo);
 		}
 		if(endereco.equals(Constantes.CAMINHO_6)){
 			return caminho6(codigo);
-		}*/
+		}
 		return endereco;
 	}
 	
@@ -114,6 +114,120 @@ public class GeradorEnderecos {
 				return Constantes.RX_RECEBE_R3;
 			case Constantes.R4:
 				return Constantes.RX_RECEBE_R4;
+		}
+		return "";
+	}
+	
+	public String rjRecebeRi(String codigo){
+		int fonte,destino;
+		
+		fonte = identificaRegistradorFonte(codigo.substring(10,14));
+		destino = identificaRegistradorDestino(codigo.substring(14,18));
+		
+		switch(fonte){
+			case Constantes.R0:
+				switch(destino){
+					case Constantes.R1:
+						return Constantes.R0_RECEBE_R1;
+					case Constantes.R2:
+						return Constantes.R0_RECEBE_R2;
+					case Constantes.R3:
+						return Constantes.R0_RECEBE_R3;
+					case Constantes.R4:
+						return Constantes.R0_RECEBE_R4;
+					default:
+						return "";
+				}
+			case Constantes.R1:
+				switch(destino){
+					case Constantes.R0:
+						return Constantes.R1_RECEBE_R0;
+					case Constantes.R2:
+						return Constantes.R1_RECEBE_R2;
+					case Constantes.R3:
+						return Constantes.R1_RECEBE_R3;
+					case Constantes.R4:
+						return Constantes.R1_RECEBE_R4;
+					default:
+						return "";
+				}
+			case Constantes.R2:
+				switch(destino){
+					case Constantes.R0:
+						return Constantes.R2_RECEBE_R0;
+					case Constantes.R1:
+						return Constantes.R2_RECEBE_R1;
+					case Constantes.R3:
+						return Constantes.R2_RECEBE_R3;
+					case Constantes.R4:
+						return Constantes.R2_RECEBE_R4;
+					default:
+						return "";
+				}
+			case Constantes.R3:
+				switch(destino){
+					case Constantes.R0:
+						return Constantes.R3_RECEBE_R0;
+					case Constantes.R1:
+						return Constantes.R3_RECEBE_R1;
+					case Constantes.R2:
+						return Constantes.R3_RECEBE_R2;
+					case Constantes.R4:
+						return Constantes.R3_RECEBE_R4;
+					default:
+						return "";
+				}
+			case Constantes.R4:
+				switch(destino){
+					case Constantes.R0:
+						return Constantes.R4_RECEBE_R0;
+					case Constantes.R1:
+						return Constantes.R4_RECEBE_R1;
+					case Constantes.R2:
+						return Constantes.R4_RECEBE_R2;
+					case Constantes.R3:
+						return Constantes.R4_RECEBE_R3;
+					default:
+						return "";
+				}
+		}
+		return "";
+	}
+	
+	public String rxRecebeRi2(String codigo){
+		int registrador;
+		
+		registrador = identificaRegistradorFonte(codigo.substring(10,14));
+		switch(registrador){
+			case Constantes.R0:
+				return Constantes.RX_RECEBE_R0_2;
+			case Constantes.R1:
+				return Constantes.RX_RECEBE_R1_2;
+			case Constantes.R2:
+				return Constantes.RX_RECEBE_R2_2;
+			case Constantes.R3:
+				return Constantes.RX_RECEBE_R3_2;
+			case Constantes.R4:
+				return Constantes.RX_RECEBE_R4_2;
+		}
+		return "";
+	}
+	
+	public String ryRecebeRi(String codigo){
+		int registrador;
+		
+		registrador = identificaRegistradorFonte(codigo.substring(10,14));
+		switch(registrador){
+			case Constantes.R0:
+				return Constantes.RY_RECEBE_R0;
+			case Constantes.R1:
+				return Constantes.RY_RECEBE_R1;
+			case Constantes.R2:
+				return Constantes.RY_RECEBE_R2;
+			case Constantes.R3:
+				return Constantes.RY_RECEBE_R3;
+			case Constantes.R4:
+				return Constantes.RY_RECEBE_R4;
 		}
 		return "";
 	}
@@ -156,7 +270,7 @@ public class GeradorEnderecos {
 	
 	public String rEndRecebeRi(String codigo){
 		int registrador;
-		registrador = identificaRegistradorDestino(codigo.substring(10,14));
+		registrador = identificaRegistradorFonte(codigo.substring(10,14));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.REND_RECEBE_R0;
@@ -192,7 +306,7 @@ public class GeradorEnderecos {
 	
 	public String rEndRecebeRi2(String codigo){
 		int registrador;
-		registrador = identificaRegistradorDestino(codigo.substring(10,14));
+		registrador = identificaRegistradorFonte(codigo.substring(10,14));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.REND_RECEBE_R0_2;
@@ -228,7 +342,7 @@ public class GeradorEnderecos {
 	
 	public String rEndRecebeRi3(String codigo){
 		int registrador;
-		registrador = identificaRegistradorDestino(codigo.substring(10,14));
+		registrador = identificaRegistradorFonte(codigo.substring(10,14));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.REND_RECEBE_R0_3;
@@ -445,6 +559,7 @@ public class GeradorEnderecos {
 				return Constantes.ATUALIZA_PC;
 			case Constantes.ENDERECO:
 				return rEndRecebeRj(codigo);
+			//case Constantes.LABEL:
 		}
 		return "";
 	}
@@ -484,6 +599,11 @@ public class GeradorEnderecos {
 					return rjRecebeRDado(codigo);
 				}
 				return Constantes.RX_RECEBE_RDADO;
+			case Constantes.LABEL:
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_JMP)){
+					Constantes.PC_RECEBE_RDADO;
+				}
+				return pcRecebeOperacao();
 		}
 		return "";
 	}
@@ -503,7 +623,15 @@ public class GeradorEnderecos {
 	public String rjRecebeOperacao(String codigo){
 		int posicao = -1;
 		
-		posicao += indiceOperacao(codigo) + identificaRegistradorDestino(codigo);
+		posicao += indiceOperacao(codigo) + identificaRegistradorDestino(codigo.substring(14,18));
+		
+		return registradorOperacao.get(posicao);
+	}
+	
+	public String riRecebeOperacao(String codigo){
+		int posicao = -1;
+		
+		posicao += indiceOperacao(codigo) + identificaRegistradorFonte(codigo.substring(10,14));
 		
 		return registradorOperacao.get(posicao);
 	}
@@ -520,6 +648,44 @@ public class GeradorEnderecos {
 			return Constantes.RX_RECEBE_DESLOCAMENTO_DIREITA;
 		}
 		return "";
+	}
+	
+	public String pcRecebeOperacao(){
+		String operacao = realizaOperacao(codigo);
+		
+		if(operacao.equals(Constantes.OPERACAO_BRZ)){
+			return Constantes.PC_RECEBE_DESVIO_SE_ZERO;
+		}
+		if(operacao.equals(Constantes.OPERACAO_BRN)){
+			return Constantes.PC_RECEBE_DESVIO_SE_NEGATIVO;
+		}
+		if(operacao.equals(Constantes.OPERACAO_BRE)){
+			return Constantes.PC_RECEBE_DESVIO_SE_ZERO;
+		}
+		if(operacao.equals(Constantes.OPERACAO_BRL)){
+			return Constantes.PC_RECEBE_DESVIO_SE_MENOR;
+		}
+		if(operacao.equals(Constantes.OPERACAO_BRG)){
+			return Constantes.PC_RECEBE_DESVIO_SE_MAIOR;
+		}
+		if(operacao.equals(Constantes.OPERACAO_BRC)){
+			return Constantes.PC_RECEBE_DESVIO_SE_CARRY;
+		}
+		if(operacao.equals(Constantes.OPERACAO_BRNZ)){
+			return Constantes.PC_RECEBE_DESVIO_SE_NAO_ZERO;
+		}
+		if(operacao.equals(Constantes.OPERACAO_BRNN)){
+			return Constantes.PC_RECEBE_DESVIO_SE_NAO_NEGATIVO;
+		}
+		if(operacao.equals(Constantes.OPERACAO_BRNC)){
+			return Constantes.PC_RECEBE_DESVIO_SE_NAO_CARRY;
+		}
+		if(operacao.equals(Constantes.OPERACAO_BRO)){
+			return Constantes.PC_RECEBE_DESVIO_SE_OVERFLOW;
+		}
+		if(operacao.equals(Constantes.OPERACAO_BRNO)){
+			return Constantes.PC_RECEBE_DESVIO_SE_NAO_OVERFLOW;
+		}
 	}
 	
 	public String ryRecebeOperacao(String codigo){
@@ -586,13 +752,21 @@ public class GeradorEnderecos {
 				if(tipo2 == Constantes.TIPO_REGISTRADOR){
 					return Constantes.REGISTRADOR_REGISTRADOR;
 				}
+				if(tipo2 == Constantes.TIPO_NENHUM){
+					return Constantes.REGISTRADOR;
+				}
 				return Constantes.REGISTRADOR_ENDERECO;
 				
 			case Constantes.TIPO_ENDERECO:
 				if(tipo2 == Constantes.TIPO_REGISTRADOR){
 					return Constantes.ENDERECO_REGISTRADOR;
 				}
+				if(tipo2 == Constantes.TIPO_NENHUM){
+					return Constantes.ENDERECO;
+				}
 				return Constantes.ENDERECO_ENDERECO;
+			case Constantes.TIPO_LABEL:
+				return Constantes.LABEL;
 		}
 		
 		return Constantes.ERRO;
@@ -601,6 +775,9 @@ public class GeradorEnderecos {
 	public int getTipoFonte(String argumento){
 		if(argumento.equals(Constantes.CONSTANTE_FONTE)){
 			return Constantes.TIPO_CONSTANTE;
+		}
+		if(argumento.equals(Constantes.LABEL)){
+			return Constantes.TIPO_LABEL;
 		}
 		if(argumento.equals(Constantes.R0_FONTE)||
 				argumento.equals(Constantes.R1_FONTE)||
@@ -640,6 +817,9 @@ public class GeradorEnderecos {
 				argumento.equals(Constantes.PR4_DESTINO))
 		{
 			return Constantes.TIPO_ENDERECO;
+		}
+		if(argumento.equals(Constantes.NENHUM_DESTINO)){
+			return Constantes.TIPO_NENHUM;
 		}
 		
 		return Constantes.ERRO;
