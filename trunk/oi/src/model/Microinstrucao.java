@@ -16,7 +16,7 @@ public class Microinstrucao {
 		this.proximo = proximo;
 		
 		if(proximo.equals("")){
-			proximo = "000000000";
+			this.proximo = "000000000";
 		}
 		
 		pontoDeControle =  new ArrayList<Character>();
