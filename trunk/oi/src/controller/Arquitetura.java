@@ -333,6 +333,7 @@ import model.ULA;
 					pontosDeControle[8] = pontoDeControle2[i];
 					rEnd.setPontoDeControle(pontoDeControle2[i]);
 					rEnd.ativaPontoDeControle(ula.getValor());
+					memoria.atualizaPosicao();
 					break;
 				case 'j':
 					pontosDeControle[9] = pontoDeControle2[i];
@@ -404,10 +405,6 @@ import model.ULA;
 			}
 		}
 		atualizaPainel();	
-		
-		if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()).equals(Constantes.IR_RECEBE_RDADO)){
-			memoria.atualizaPosicao();
-		}
 		
 		if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()).equals(Constantes.INSTRUCAO_HALT)){
 			halt = true;
