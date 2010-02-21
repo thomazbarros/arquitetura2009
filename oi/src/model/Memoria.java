@@ -30,7 +30,7 @@ public class Memoria{
 		constanteLabel = 1;
 		ler = true;
 		posicaoAtual = 0;
-		posicao = 0;
+		posicao = 1;
 		codigo = "";
 	}
 
@@ -59,11 +59,13 @@ public class Memoria{
 	}
 	
 	public void atualizaPosicao(){
-		while(!dados[(int) (posicao-1)].substring(0,1).equals("10")){
+		while(!dados[(int) (posicao-1)].substring(0,2).equals(Constantes.BITS_INSTRUCAO)){
 			posicao++;
 		}
 		
 		codigo = dados[(int) posicao];
+		
+		System.out.println("codigo" + codigo);
 	}
 	
 	public String getDado(int posicao){
