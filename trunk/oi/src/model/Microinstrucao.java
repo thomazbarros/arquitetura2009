@@ -706,7 +706,7 @@ public class Microinstrucao {
 			j++;
 		}
 		
-		if(proximo != ""){
+		if((proximo != "")&&(proximo != "TESTE")){
 			pontoDeControle2[24] = proximo.charAt(0);
 			pontoDeControle2[25] = proximo.charAt(1);
 			pontoDeControle2[26] = proximo.charAt(2);
