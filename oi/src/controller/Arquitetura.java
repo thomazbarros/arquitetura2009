@@ -294,8 +294,8 @@ import model.ULA;
 				case 'c':
 					pontosDeControle[2] = pontoDeControle2[i];
 					pc.setPontoDeControle(pontoDeControle2[i]);
-
 					pc.ativaPontoDeControle(ula.getValor());
+					
 					break;
 				case 'd':
 					pontosDeControle[3] = pontoDeControle2[i];
@@ -319,6 +319,9 @@ import model.ULA;
 					pontosDeControle[6] = pontoDeControle2[i];
 					ir.setPontoDeControle(pontoDeControle2[i]);
 					ir.ativaPontoDeControle(ula.getValor());
+					
+					memoria.atualizaPosicao();
+					
 					break;
 				case 'h':
 					pontosDeControle[7] = pontoDeControle2[i];
@@ -332,8 +335,8 @@ import model.ULA;
 				case 'i':
 					pontosDeControle[8] = pontoDeControle2[i];
 					rEnd.setPontoDeControle(pontoDeControle2[i]);
-					rEnd.ativaPontoDeControle(ula.getValor());
-					memoria.atualizaPosicao();
+       				rEnd.ativaPontoDeControle(ula.getValor());
+
 					break;
 				case 'j':
 					pontosDeControle[9] = pontoDeControle2[i];
