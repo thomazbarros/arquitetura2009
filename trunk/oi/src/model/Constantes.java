@@ -207,7 +207,7 @@ public class Constantes {
 	public static final long LIMITE_CONSTANTE = 2147483648L;
 	public static final long LIMITE_NEGATIVO_CONSTANTE = -2147483648L;
 	public static final long LIMITE_LABEL = 4294967295L;
-	public static final long LIMITE_NEGATIVO_LABEL = -4294967295l;
+	public static final long LIMITE_NEGATIVO_LABEL = -4294967295L;
 	public static final int ERRO = -999999;
 	public static final int CONSTANTE = 0;
 	public static final int R0 = 1;
