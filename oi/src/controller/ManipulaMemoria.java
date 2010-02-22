@@ -619,8 +619,8 @@ public class ManipulaMemoria {
 			return;
 		}
 		
-		if(instrucao.equals(Constantes.BRZ)){
-			this.instrucao.desvioCondicional1();
+	if(instrucao.equals(Constantes.BRZ)){
+			instrucao.desvioCondicional1();
 			//brz(binario);
 			return;
 		}

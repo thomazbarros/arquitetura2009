@@ -127,6 +127,9 @@ public class GeradorEnderecos {
 		int registrador;
 		
 		registrador = identificaRegistradorFonte(codigo.substring(10,14));
+		
+		System.out.println(registrador);
+		
 		switch(registrador){
 			case Constantes.R0:
 				
