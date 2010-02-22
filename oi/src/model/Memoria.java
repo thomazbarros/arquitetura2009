@@ -30,7 +30,7 @@ public class Memoria{
 		constanteLabel = 1;
 		ler = true;
 		posicaoAtual = 0;
-		posicao = 1;
+		posicao = -1;
 		codigo = "";
 	}
 
@@ -59,9 +59,11 @@ public class Memoria{
 	}
 	
 	public void atualizaPosicao(){
-		while(!dados[(int) (posicao-1)].substring(0,2).equals(Constantes.BITS_INSTRUCAO)){
+		while(!dados[(int) posicao + 1].substring(0,2).equals(Constantes.BITS_INSTRUCAO)){
 			posicao++;
 		}
+		
+		posicao++;
 		
 		codigo = dados[(int) posicao];
 		
