@@ -98,7 +98,7 @@ import model.ULA;
 				}
 			}
 			if(pontoDeControle.get(i) == 'c'){
-				if(microinstrucao.getPontoDeControle2()[2] == '2'){
+				if(microinstrucao.getPontoDeControle2()[2] == '1'){
 					pontoDeControle2[i] = true;
 				}
 				else{
@@ -408,6 +408,8 @@ import model.ULA;
 			}
 		}
 		atualizaPainel();	
+		
+		System.out.println(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()));
 		
 		if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()).equals(Constantes.INSTRUCAO_HALT)){
 			halt = true;

@@ -16,7 +16,7 @@ public class MemoriaDeControle {
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_PC, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}, Constantes.RDADO_RECEBE_INFORMACAO_LIDA));
 
 		//rDadoRecebeInformacaoLida - 000000010
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}, Constantes.CAMINHO_3));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_DESATIVADO, Constantes.RDADO_ATIVADO}, Constantes.CAMINHO_3));
 		
 		//rXRecebeRDado - 000000011
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RX_ATIVADO}, Constantes.RY_RECEBE_RJ));
@@ -109,7 +109,7 @@ public class MemoriaDeControle {
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_PC, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}, Constantes.RDADO_RECEBE_INFORMACAO_LIDA_BUSCA));
 		
 		//rDadoRecebeInformacaoLida - 000100001
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}, Constantes.IR_RECEBE_RDADO));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_DESATIVADO, Constantes.RDADO_ATIVADO}, Constantes.IR_RECEBE_RDADO));
 		
 		//iRRecebeRDado - 000100010
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.IR_ATIVADO}, Constantes.PRIMEIRA_MICRO_INSTRUCAO));
@@ -136,7 +136,7 @@ public class MemoriaDeControle {
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R4, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}, Constantes.RDADO_RECEBE_INFORMACAO_LIDA_2));
 		
 		//rDadoRecebeInformacaoLida - 000101010
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}, Constantes.RY_RECEBE_RDADO));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_DESATIVADO, Constantes.RDADO_ATIVADO}, Constantes.RY_RECEBE_RDADO));
 		
 		//rYRecebeRDado - 000101011
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RX_ATIVADO}, Constantes.CAMINHO));
@@ -145,7 +145,7 @@ public class MemoriaDeControle {
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_PC, Constantes.B_MAIS_1, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}, Constantes.RDADO_RECEBE_INFORMACAO_LIDA_3));
 		
 		//rDadoRecebeInformacaoLida - 000101101
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_ATIVADO, Constantes.RDADO_ATIVADO}, Constantes.CAMINHO_2));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_DESATIVADO, Constantes.RDADO_ATIVADO}, Constantes.CAMINHO_2));
 		
 		//rXRecebeRDado - 000101110
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RX_ATIVADO}, Constantes.CAMINHO_5));
