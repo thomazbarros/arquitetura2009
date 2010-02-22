@@ -26,6 +26,8 @@ public class RodaPrograma extends Thread{
 		
 		while(!arquitetura.isHalt()){
 			
+			manipulaMemoria.ler((int) arquitetura.getPc().getValor());
+			
 			if(arquitetura.getModo() == Constantes.RODAINSTRUCAO){
 				travaThread();
 			}

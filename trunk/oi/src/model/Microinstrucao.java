@@ -15,7 +15,7 @@ public class Microinstrucao {
 		int j = 0;
 		this.proximo = proximo;
 		
-		if(proximo.equals("")){
+		if((proximo.equals(""))||(proximo.equals(Constantes.PRIMEIRA_MICRO_INSTRUCAO))){
 			this.proximo = "000000000";
 		}
 		
@@ -706,7 +706,7 @@ public class Microinstrucao {
 			j++;
 		}
 		
-		if((proximo != "")&&(proximo != "TESTE")){
+		if((proximo != "")&&(proximo != Constantes.PRIMEIRA_MICRO_INSTRUCAO)){
 			pontoDeControle2[24] = proximo.charAt(0);
 			pontoDeControle2[25] = proximo.charAt(1);
 			pontoDeControle2[26] = proximo.charAt(2);
