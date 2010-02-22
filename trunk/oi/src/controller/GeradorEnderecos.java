@@ -129,14 +129,29 @@ public class GeradorEnderecos {
 		registrador = identificaRegistradorFonte(codigo.substring(10,14));
 		switch(registrador){
 			case Constantes.R0:
+				
+				System.out.println("R0");
+				
 				return Constantes.RX_RECEBE_R0;
 			case Constantes.R1:
+				
+				System.out.println("R1");
+				
 				return Constantes.RX_RECEBE_R1;
 			case Constantes.R2:
+				
+				System.out.println("R2");
+				
 				return Constantes.RX_RECEBE_R2;
 			case Constantes.R3:
+				
+				System.out.println("R3");
+				
 				return Constantes.RX_RECEBE_R3;
 			case Constantes.R4:
+				
+				System.out.println("R4");
+				
 				return Constantes.RX_RECEBE_R4;
 		}
 		return "";
