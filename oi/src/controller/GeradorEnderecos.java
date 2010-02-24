@@ -751,6 +751,7 @@ public class GeradorEnderecos {
 	
 	public String caminho5(String codigo){
 		int tipo = getTipo(codigo);
+		
 		switch(tipo){
 			case Constantes.CONSTANTE_ENDERECO:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
