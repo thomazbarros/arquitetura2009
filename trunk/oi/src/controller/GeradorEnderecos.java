@@ -430,6 +430,8 @@ public class GeradorEnderecos {
 			return Constantes.R4;
 		}
 		
+		System.out.println("Erro");
+		
 		return Constantes.ERRO;
 	}
 	
@@ -449,6 +451,9 @@ public class GeradorEnderecos {
 		if(codigo.equals(Constantes.R4_DESTINO)){// || codigo.equals(Constantes.PR4_DESTINO)){
 			return Constantes.R4;
 		}
+		
+		System.out.println("Erro1");
+		
 		return Constantes.ERRO;
 	}
 	
@@ -476,6 +481,9 @@ public class GeradorEnderecos {
 		if(operacao.equals(Constantes.SHR)){
 			return Constantes.INDICE_SHR;	
 		}
+		
+		System.out.println("Erro2");
+		
 		return Constantes.ERRO;
 	}
 	
@@ -595,7 +603,8 @@ public class GeradorEnderecos {
 			case Constantes.CONSTANTE_ENDERECO:
 				return rEndRecebeRi(codigo);
 			case Constantes.REGISTRADOR_REGISTRADOR:
-				System.out.println("ate aqui vim certo");
+				System.out.println("INSTRUCAO");
+				
 				return rxRecebeRi(codigo);
 			case Constantes.REGISTRADOR_ENDERECO:
 				return rEndRecebeRj(codigo);
@@ -644,6 +653,8 @@ public class GeradorEnderecos {
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
+					System.out.println("INSTRUCAO");
+					
 					return rjRecebeRDado(codigo);
 				}
 				return Constantes.RX_RECEBE_RDADO;
