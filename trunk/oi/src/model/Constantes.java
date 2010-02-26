@@ -351,10 +351,10 @@ public class Constantes {
 	public static final int ENDERECO_ENDERECO = 5;
 	public static final int REGISTRADOR = 6;
 	public static final int ENDERECO = 7;
-	public static final int LABEL = 7;
+	public static final int LABEL = 8;
 	public static final int TIPO_CONSTANTE = 0;
 	public static final int TIPO_REGISTRADOR = 1;
 	public static final int TIPO_ENDERECO = 2;
 	public static final int TIPO_LABEL = 3;
-	public static final int TIPO_NENHUM = 3;
+	public static final int TIPO_NENHUM = 4;
 }

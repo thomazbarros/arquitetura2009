@@ -51,6 +51,7 @@ public class GeradorEnderecos {
 	}
 	
 	public String proximoEndereco(String endereco,String codigo){
+		System.out.println("PROXIMO ENDERECO :" + endereco);
 		if(endereco.equals(Constantes.RX_RECEBE_RI)){
 			return rxRecebeRi(codigo);
 		}
@@ -100,6 +101,7 @@ public class GeradorEnderecos {
 			return pcRecebeOperacao(codigo);
 		}
 		if(endereco.equals(Constantes.PRIMEIRA_MICRO_INSTRUCAO)){
+			System.out.println("ENTREI NA PRIMEIRA MICRO INSTRUCAO");
 			return primeiraMicro(codigo);
 		}
 		if(endereco.equals(Constantes.CAMINHO)){
@@ -576,20 +578,24 @@ public class GeradorEnderecos {
 		return false;
 	}
 	
-	public String primeiraMicro(String codigo){		
+	public String primeiraMicro(String codigo){
+		System.out.println("PRIMEIRA MICRO");
 		int tipo = getTipo(codigo);
+		System.out.println("GETEI O TIPO");
 		boolean testaHalt = isHalt(codigo);
 		
 		if(testaHalt){
 			return Constantes.ENDERECO_HALT;
 		}
 		
+		System.out.println("TESTEI O HALT");
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
 				return Constantes.ATUALIZA_PC;
 			case Constantes.CONSTANTE_ENDERECO:
 				return rEndRecebeRi(codigo);
 			case Constantes.REGISTRADOR_REGISTRADOR:
+				System.out.println("ate aqui vim certo");
 				return rxRecebeRi(codigo);
 			case Constantes.REGISTRADOR_ENDERECO:
 				return rEndRecebeRj(codigo);
