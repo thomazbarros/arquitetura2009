@@ -1,7 +1,7 @@
 package model;
  
 public class Constantes {
-	public static final String PRIMEIRA_MICRO_INSTRUCAO = "TESTE";
+	public static final String PRIMEIRA_MICRO_INSTRUCAO = "111111111";
 	public static final String ATUALIZA_PC = "000000000";
 	public static final String REND_RECEBE_PC = "000000001";
 	public static final String RDADO_RECEBE_INFORMACAO_LIDA = "000000010";
