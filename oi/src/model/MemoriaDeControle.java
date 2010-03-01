@@ -28,7 +28,7 @@ public class MemoriaDeControle {
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.RY_ATIVADO}, Constantes.CAMINHO_4));
 		
 		//rYRecebeR1 - 000000110
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.RY_ATIVADO}, Constantes.CAMINHO_4));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R1, Constantes.A, Constantes.RY_ATIVADO}, Constantes.CAMINHO_4));
 		
 		//rYRecebeR2 - 000000111
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R2, Constantes.B, Constantes.RY_ATIVADO}, Constantes.CAMINHO_4));
@@ -457,7 +457,7 @@ public class MemoriaDeControle {
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ));
 		
 		//rYRecebeR1 - 010010101
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R0, Constantes.A, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_R1, Constantes.A, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ));
 		
 		//rYRecebeR2 - 010010110
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R2, Constantes.B, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ));
