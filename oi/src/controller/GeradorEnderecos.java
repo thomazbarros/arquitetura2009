@@ -128,9 +128,9 @@ public class GeradorEnderecos {
 	public String rxRecebeRi(String codigo){
 		int registrador;
 		
-		registrador = identificaRegistradorFonte(codigo.substring(10,14));
-		
-		System.out.println(registrador);
+		registrador = identificaRegistradorFonte(codigo.substring(8,12));
+				
+		System.out.println("REGISTRADOR :" + registrador);
 		
 		switch(registrador){
 			case Constantes.R0:
@@ -165,8 +165,8 @@ public class GeradorEnderecos {
 	public String rjRecebeRi(String codigo){
 		int fonte,destino;
 		
-		fonte = identificaRegistradorFonte(codigo.substring(10,14));
-		destino = identificaRegistradorDestino(codigo.substring(14,18));
+		fonte = identificaRegistradorFonte(codigo.substring(8,12));
+		destino = identificaRegistradorDestino(codigo.substring(12,16));
 		
 		switch(fonte){
 			case Constantes.R0:
@@ -241,7 +241,7 @@ public class GeradorEnderecos {
 	public String rxRecebeRi2(String codigo){
 		int registrador;
 		
-		registrador = identificaRegistradorFonte(codigo.substring(10,14));
+		registrador = identificaRegistradorFonte(codigo.substring(8,12));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.RX_RECEBE_R0_2;
@@ -260,7 +260,7 @@ public class GeradorEnderecos {
 	public String ryRecebeRi(String codigo){
 		int registrador;
 		
-		registrador = identificaRegistradorFonte(codigo.substring(10,14));
+		registrador = identificaRegistradorFonte(codigo.substring(8,12));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.RY_RECEBE_R0;
@@ -278,11 +278,14 @@ public class GeradorEnderecos {
 	
 	public String ryRecebeRj(String codigo){
 		int registrador;
-		registrador = identificaRegistradorDestino(codigo.substring(14,18));
+		registrador = identificaRegistradorDestino(codigo.substring(12,16));
+		System.out.println("DESTINO :"+registrador);
 		switch(registrador){
 			case Constantes.R0:
+				System.out.println("A CONSTANTE ESTA ERRADA!!!!!");
 				return Constantes.RY_RECEBE_R0;
 			case Constantes.R1:
+				System.out.println("A CONSTANTE ESTA CERTA!!!!!!!");
 				return Constantes.RY_RECEBE_R1;
 			case Constantes.R2:
 				return Constantes.RY_RECEBE_R2;
@@ -296,7 +299,7 @@ public class GeradorEnderecos {
 	
 	public String rjRecebeRDado(String codigo){
 		int registrador;
-		registrador = identificaRegistradorDestino(codigo.substring(14,18));
+		registrador = identificaRegistradorDestino(codigo.substring(12,16));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.R0_RECEBE_RDADO;
@@ -314,7 +317,7 @@ public class GeradorEnderecos {
 	
 	public String rEndRecebeRi(String codigo){
 		int registrador;
-		registrador = identificaRegistradorFonte(codigo.substring(10,14));
+		registrador = identificaRegistradorFonte(codigo.substring(8,12));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.REND_RECEBE_R0;
@@ -332,7 +335,7 @@ public class GeradorEnderecos {
 	
 	public String rEndRecebeRj(String codigo){
 		int registrador;
-		registrador = identificaRegistradorDestino(codigo.substring(14,18));
+		registrador = identificaRegistradorDestino(codigo.substring(12,16));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.REND_RECEBE_R0;
@@ -350,7 +353,7 @@ public class GeradorEnderecos {
 	
 	public String rEndRecebeRi2(String codigo){
 		int registrador;
-		registrador = identificaRegistradorFonte(codigo.substring(10,14));
+		registrador = identificaRegistradorFonte(codigo.substring(8,12));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.REND_RECEBE_R0_2;
@@ -368,7 +371,7 @@ public class GeradorEnderecos {
 	
 	public String rEndRecebeRj2(String codigo){
 		int registrador;
-		registrador = identificaRegistradorDestino(codigo.substring(14,18));
+		registrador = identificaRegistradorDestino(codigo.substring(12,16));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.REND_RECEBE_R0_2;
@@ -386,7 +389,7 @@ public class GeradorEnderecos {
 	
 	public String rEndRecebeRi3(String codigo){
 		int registrador;
-		registrador = identificaRegistradorFonte(codigo.substring(10,14));
+		registrador = identificaRegistradorFonte(codigo.substring(8,12));
 		switch(registrador){
 			case Constantes.R0:
 				return Constantes.REND_RECEBE_R0_3;
@@ -436,6 +439,7 @@ public class GeradorEnderecos {
 	}
 	
 	public int identificaRegistradorDestino(String codigo){
+		System.out.println("CODIGO DESTINO :"+codigo);
 		if(codigo.equals(Constantes.R0_DESTINO)){// || codigo.equals(Constantes.PR0_DESTINO)){
 			return Constantes.R0;
 		}
@@ -680,7 +684,7 @@ public class GeradorEnderecos {
 	public String rjRecebeOperacao(String codigo){
 		int posicao = -1;
 		
-		posicao += indiceOperacao(codigo) + identificaRegistradorDestino(codigo.substring(14,18));
+		posicao += indiceOperacao(codigo) + identificaRegistradorDestino(codigo.substring(12,16));
 		
 		System.out.println(posicao);
 		
@@ -690,7 +694,7 @@ public class GeradorEnderecos {
 	public String riRecebeOperacao(String codigo){
 		int posicao = -1;
 		
-		posicao += indiceOperacao(codigo) + identificaRegistradorFonte(codigo.substring(10,14));
+		posicao += indiceOperacao(codigo) + identificaRegistradorFonte(codigo.substring(8,12));
 		
 		return registradorOperacao.get(posicao);
 	}
@@ -797,8 +801,8 @@ public class GeradorEnderecos {
 		String primeiroArgumento,segundoArgumento;
 		int tipo1,tipo2;
 		
-		primeiroArgumento = codigo.substring(10,14);
-		segundoArgumento = codigo.substring(14,18);
+		primeiroArgumento = codigo.substring(8,12);
+		segundoArgumento = codigo.substring(12,16);
 		
 		tipo1 = getTipoFonte(primeiroArgumento);
 		tipo2 = getTipoDestino(segundoArgumento);
