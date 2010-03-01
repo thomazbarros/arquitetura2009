@@ -615,7 +615,8 @@ public class GeradorEnderecos {
 			case Constantes.ENDERECO_ENDERECO:
 				return rEndRecebeRi(codigo);
 			case Constantes.REGISTRADOR:
-				return Constantes.ATUALIZA_PC;
+				System.out.println("TESTEI MICROINSTRUCAO");
+				return rxRecebeRi2(codigo);
 			case Constantes.ENDERECO:
 				return rEndRecebeRj(codigo);
 			//case Constantes.LABEL:
