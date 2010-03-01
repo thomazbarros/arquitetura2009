@@ -458,8 +458,8 @@ public class GeradorEnderecos {
 	}
 	
 	public int indiceOperacao(String codigo){
-		String operacao = codigo.substring(Constantes.BITS_INSTRUCAO.length(),
-				Constantes.BITS_INSTRUCAO.length()+Constantes.ADD.length());
+		String operacao = codigo.substring(0,Constantes.ADD.length());
+		System.out.println("OPERACAO :"+operacao);
 		if(operacao.equals(Constantes.ADD)){
 			return Constantes.INDICE_ADD;
 		}
@@ -488,8 +488,7 @@ public class GeradorEnderecos {
 	}
 	
 	public String realizaOperacao(String codigo){
-		String operacao = codigo.substring(Constantes.BITS_INSTRUCAO.length(),
-				Constantes.BITS_INSTRUCAO.length()+Constantes.ADD.length());
+		String operacao = codigo.substring(0,Constantes.ADD.length());
 		if(operacao.equals(Constantes.ADD)){
 			return Constantes.OPERACAO_ADD;
 		}
@@ -578,8 +577,7 @@ public class GeradorEnderecos {
 	}
 	
 	public boolean isHalt(String codigo){
-		String operacao = codigo.substring(Constantes.BITS_INSTRUCAO.length(),
-				Constantes.BITS_INSTRUCAO.length()+Constantes.ADD.length());
+		String operacao = codigo.substring(0,Constantes.ADD.length());
 		if(operacao.equals(Constantes.HALT)){
 			return true;
 		}
@@ -683,6 +681,8 @@ public class GeradorEnderecos {
 		int posicao = -1;
 		
 		posicao += indiceOperacao(codigo) + identificaRegistradorDestino(codigo.substring(14,18));
+		
+		System.out.println(posicao);
 		
 		return registradorOperacao.get(posicao);
 	}
