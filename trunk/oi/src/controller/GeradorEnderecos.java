@@ -678,6 +678,11 @@ public class GeradorEnderecos {
 					return Constantes.RX_COMPARA_RY;
 				}
 				return rjRecebeOperacao(codigo);
+			case Constantes.REGISTRADOR_REGISTRADOR:
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
+					return Constantes.RX_COMPARA_RY;
+				}
+				return rjRecebeOperacao(codigo);
 		}
 		return "";
 	}
