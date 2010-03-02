@@ -648,6 +648,8 @@ public class GeradorEnderecos {
 					return Constantes.RY_RECEBE_RDADO_2;
 				}
 				return Constantes.RX_RECEBE_RDADO_2;
+			case Constantes.ENDERECO_ENDERECO:
+				return Constantes.RX_RECEBE_RDADO_2;
 			case Constantes.ENDERECO:
 				return Constantes.RX_RECEBE_RDADO_2;
 		}
@@ -658,6 +660,13 @@ public class GeradorEnderecos {
 		int tipo = getTipo(codigo);
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
+					System.out.println("INSTRUCAO");
+					
+					return rjRecebeRDado(codigo);
+				}
+				return Constantes.RX_RECEBE_RDADO;
+			case Constantes.ENDERECO_REGISTRADOR:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
 					System.out.println("INSTRUCAO");
 					
@@ -687,7 +696,9 @@ public class GeradorEnderecos {
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
 					return Constantes.RX_COMPARA_RY;
 				}
-				return rjRecebeOperacao(codigo);
+			return rjRecebeOperacao(codigo);
+			case Constantes.ENDERECO_REGISTRADOR:
+				return Constantes.RX_COMPARA_RY;
 		}
 		System.out.println("O CAMINHO 4 esta retornando vazio");
 		return "";
@@ -791,6 +802,11 @@ public class GeradorEnderecos {
 					return Constantes.RX_COMPARA_RY;
 				}
 				return ryRecebeOperacao(codigo);
+			case Constantes.ENDERECO_ENDERECO:
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
+					return Constantes.RX_COMPARA_RY;
+				}
+				return ryRecebeOperacao(codigo);
 			case Constantes.ENDERECO:
 				return rxRecebeOperacao(codigo);
 		}
@@ -800,6 +816,8 @@ public class GeradorEnderecos {
 	public String caminho6(String codigo){
 		int tipo = getTipo(codigo);
 		switch(tipo){
+			case Constantes.REGISTRADOR_REGISTRADOR:
+				return ryRecebeRj(codigo);
 			case Constantes.REGISTRADOR_ENDERECO:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
 					return Constantes.RX_COMPARA_RY;
