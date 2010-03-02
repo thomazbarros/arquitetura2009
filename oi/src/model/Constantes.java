@@ -196,7 +196,7 @@ public class Constantes {
 	public static final String OPERACAO_BRO = "BRO";
 	public static final String OPERACAO_BRNO = "BRNO";
 	public static final String OPERACAO_HALT = "HALT";
-	public static final String ENDERECO_HALT = "HALT";
+	//public static final String ENDERECO_HALT = "HALT";
 	public static final int INDICE_ADD = 0;
 	public static final int INDICE_SUB = 5;
 	public static final int INDICE_AND = 10;
