@@ -419,7 +419,10 @@ import model.ULA;
 			memoria.setLer(false);
 		}
 		
-		ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()))));
+		if(!isHalt()){
+			System.out.println("E QUALQUER DESATENCAO");
+			ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()))));
+		}
 	}
 
 	

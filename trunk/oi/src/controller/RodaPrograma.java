@@ -23,15 +23,16 @@ public class RodaPrograma extends Thread{
 		Conversor conversor = new Conversor();
 		
 		arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(Constantes.REND_RECEBE_PC_2)));
-		
+		System.out.println("RODEI UMA VEZ NA VIDA");
 		while(!arquitetura.isHalt()){
-			
+			System.out.println("Voce vai me cegar e eu vou consentir");
 			manipulaMemoria.ler((int) arquitetura.getPc().getValor());
 			
 			if(arquitetura.getModo() == Constantes.RODAINSTRUCAO){
 				travaThread();
 			}
 		}
+		System.out.println("E JA SAI");
 		manipulaMemoria.getArquitetura().zeraPontosDeControle();
 		manipulaMemoria.getArquitetura().atualizaPainel();
 

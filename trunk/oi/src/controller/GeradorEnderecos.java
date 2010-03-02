@@ -593,9 +593,12 @@ public class GeradorEnderecos {
 		int tipo = getTipo(codigo);
 		System.out.println("GETEI O TIPO");
 		boolean testaHalt = isHalt(codigo);
+		System.out.println("CODIGO DA PRIMEIRA MICRO:"+codigo);
 		
 		if(testaHalt){
-			return Constantes.ENDERECO_HALT;
+			System.out.println("ENTREI NO HALT!!!!");
+			//return Constantes.ENDERECO_HALT;
+			return Constantes.INSTRUCAO_HALT;
 		}
 		
 		System.out.println("TESTEI O HALT");
@@ -675,8 +678,10 @@ public class GeradorEnderecos {
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
+					System.out.println("O CAMINHO 4 esta retornando rxcomparary");
 					return Constantes.RX_COMPARA_RY;
 				}
+				System.out.println("O CAMINHO 4 esta retornando rjrecebeoperacao");
 				return rjRecebeOperacao(codigo);
 			case Constantes.REGISTRADOR_REGISTRADOR:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
@@ -684,6 +689,7 @@ public class GeradorEnderecos {
 				}
 				return rjRecebeOperacao(codigo);
 		}
+		System.out.println("O CAMINHO 4 esta retornando vazio");
 		return "";
 	}
 	
