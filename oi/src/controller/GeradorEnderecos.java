@@ -48,6 +48,31 @@ public class GeradorEnderecos {
 		registradorOperacao.add(Constantes.R2_RECEBE_DESLOCAMENTO_DIREITA);
 		registradorOperacao.add(Constantes.R3_RECEBE_DESLOCAMENTO_DIREITA);
 		registradorOperacao.add(Constantes.R4_RECEBE_DESLOCAMENTO_DIREITA);
+		registradorOperacao.add(Constantes.R0_RECEBE_NEGACAO);
+		registradorOperacao.add(Constantes.R1_RECEBE_NEGACAO);
+		registradorOperacao.add(Constantes.R2_RECEBE_NEGACAO);
+		registradorOperacao.add(Constantes.R3_RECEBE_NEGACAO);
+		registradorOperacao.add(Constantes.R4_RECEBE_NEGACAO);
+		registradorOperacao.add(Constantes.R0_LIMPA);
+		registradorOperacao.add(Constantes.R1_LIMPA);
+		registradorOperacao.add(Constantes.R2_LIMPA);
+		registradorOperacao.add(Constantes.R3_LIMPA);
+		registradorOperacao.add(Constantes.R4_LIMPA);
+		registradorOperacao.add(Constantes.R0_RECEBE_OU_EXCLUSIVO);
+		registradorOperacao.add(Constantes.R1_RECEBE_OU_EXCLUSIVO);
+		registradorOperacao.add(Constantes.R2_RECEBE_OU_EXCLUSIVO);
+		registradorOperacao.add(Constantes.R3_RECEBE_OU_EXCLUSIVO);
+		registradorOperacao.add(Constantes.R4_RECEBE_OU_EXCLUSIVO);
+		registradorOperacao.add(Constantes.R0_RECEBE_INCREMENTA);
+		registradorOperacao.add(Constantes.R1_RECEBE_INCREMENTA);
+		registradorOperacao.add(Constantes.R2_RECEBE_INCREMENTA);
+		registradorOperacao.add(Constantes.R3_RECEBE_INCREMENTA);
+		registradorOperacao.add(Constantes.R4_RECEBE_INCREMENTA);
+		registradorOperacao.add(Constantes.R0_RECEBE_DECREMENTA);
+		registradorOperacao.add(Constantes.R1_RECEBE_DECREMENTA);
+		registradorOperacao.add(Constantes.R2_RECEBE_DECREMENTA);
+		registradorOperacao.add(Constantes.R3_RECEBE_DECREMENTA);
+		registradorOperacao.add(Constantes.R4_RECEBE_DECREMENTA);
 	}
 	
 	public String proximoEndereco(String endereco,String codigo){
@@ -485,6 +510,21 @@ public class GeradorEnderecos {
 		if(operacao.equals(Constantes.SHR)){
 			return Constantes.INDICE_SHR;	
 		}
+		if(operacao.equals(Constantes.NEG)){
+			return Constantes.INDICE_NEG;
+		}
+		if(operacao.equals(Constantes.CLR)){
+			return Constantes.INDICE_CLR;
+		}
+		if(operacao.equals(Constantes.XOR)){
+			return Constantes.INDICE_XOR;
+		}
+		if(operacao.equals(Constantes.INC)){
+			return Constantes.INDICE_INC;
+		}
+		if(operacao.equals(Constantes.DEC)){
+			return Constantes.INDICE_DEC;
+		}
 		
 		System.out.println("Erro2");
 		
@@ -733,6 +773,19 @@ public class GeradorEnderecos {
 		if(operacao.equals(Constantes.OPERACAO_SHR)){
 			return Constantes.RX_RECEBE_DESLOCAMENTO_DIREITA;
 		}
+		if(operacao.equals(Constantes.OPERACAO_NEG)){
+			return Constantes.RX_RECEBE_NEGACAO;
+		}
+		if(operacao.equals(Constantes.OPERACAO_CLR)){
+			return Constantes.RX_LIMPA;
+		}
+		if(operacao.equals(Constantes.OPERACAO_INC)){
+			return Constantes.RX_RECEBE_INCREMENTA;
+		}
+		if(operacao.equals(Constantes.OPERACAO_DEC)){
+			return Constantes.RX_RECEBE_DECREMENTA;
+		}
+		
 		return "";
 	}
 	
@@ -790,6 +843,10 @@ public class GeradorEnderecos {
 		if(operacao.equals(Constantes.OPERACAO_OR)){
 			return Constantes.RY_RECEBE_OU;
 		}
+		if(operacao.equals(Constantes.OPERACAO_XOR)){
+			return Constantes.RY_RECEBE_OU_EXCLUSIVO;
+		}
+		
 		return "";
 	}
 	

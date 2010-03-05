@@ -336,6 +336,44 @@ public class Microinstrucao {
 				pontoDeControle.add('u');
 				pontoDeControle2[20] = '1';
 			}
+			if(pontosDeControle[i] == Constantes.NEGACAO_A){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '0';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '1';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '1';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '0';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '0';
+			}
+			if(pontosDeControle[i] == Constantes.CLEAR_A){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '0';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '1';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '0';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '1';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '1';
+			}
 			if(pontosDeControle[i] == Constantes.A_SHIFT_LEFT){
 				pontoDeControle.add('p');
 				pontoDeControle2[15] = '0';
@@ -374,34 +412,15 @@ public class Microinstrucao {
 				pontoDeControle.add('u');
 				pontoDeControle2[20] = '0';
 			}
-			if(pontosDeControle[i] == Constantes.B_SHIFT_LEFT){
+			if(pontosDeControle[i] == Constantes.A_XOR_B){
 				pontoDeControle.add('p');
 				pontoDeControle2[15] = '0';
 				j++;
 				pontoDeControle.add('q');
-				pontoDeControle2[16] = '0';
+				pontoDeControle2[16] = '1';
 				j++;
 				pontoDeControle.add('r');
-				pontoDeControle2[17] = '1';
-				j++;
-				pontoDeControle.add('s');
-				pontoDeControle2[18] = '0';
-				j++;
-				pontoDeControle.add('t');
-				pontoDeControle2[19] = '0';
-				j++;
-				pontoDeControle.add('u');
-				pontoDeControle2[20] = '1';
-			}
-			if(pontosDeControle[i] == Constantes.B_SHIFT_RIGHT){
-				pontoDeControle.add('p');
-				pontoDeControle2[15] = '0';
-				j++;
-				pontoDeControle.add('q');
-				pontoDeControle2[16] = '0';
-				j++;
-				pontoDeControle.add('r');
-				pontoDeControle2[17] = '1';
+				pontoDeControle2[17] = '0';
 				j++;
 				pontoDeControle.add('s');
 				pontoDeControle2[18] = '0';
