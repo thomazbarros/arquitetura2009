@@ -72,12 +72,9 @@ public class Conversor {
 		//Nao existem numeros negativos como em constantes
 		
 		int numero = 0;
-		String aux;
-		
-		aux = binario.substring(2, binario.length());
-		
-		for(int i = 0; i < aux.length(); i++){
-			if(aux.charAt(aux.length()-i-1) == '1'){
+				
+		for(int i = 0; i < binario.length(); i++){
+			if(binario.charAt(binario.length()-i-1) == '1'){
 
 				numero += Math.pow(2,i);
 
