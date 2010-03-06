@@ -67,6 +67,26 @@ public class Conversor {
 		return numero;
 	}
 	
+	public int enderecoParaInteiro(String binario){
+		//Metodo responsavel por converter enderecos para inteiros 
+		//Nao existem numeros negativos como em constantes
+		
+		int numero = 0;
+		String aux;
+		
+		aux = binario.substring(2, binario.length());
+		
+		for(int i = 0; i < aux.length(); i++){
+			if(aux.charAt(aux.length()-i-1) == '1'){
+
+				numero += Math.pow(2,i);
+
+			}
+		}
+		
+		return numero;
+	}
+	
 	public String completaBinario(String fim,boolean isNegativo){
 		//Metodo responsavel por preencher os 0's que faltam em um binario
 		

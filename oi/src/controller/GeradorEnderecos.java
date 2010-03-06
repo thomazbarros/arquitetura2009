@@ -442,19 +442,19 @@ public class GeradorEnderecos {
 	
 	public int identificaRegistradorFonte(String codigo){
 		
-		if(codigo.equals(Constantes.R0_FONTE)){// || codigo.equals(Constantes.PR0_FONTE)){
+		if(codigo.equals(Constantes.R0_FONTE) || codigo.equals(Constantes.PR0_FONTE)){
 			return Constantes.R0;
 		}
-		if(codigo.equals(Constantes.R1_FONTE)){// || codigo.equals(Constantes.PR1_FONTE)){
+		if(codigo.equals(Constantes.R1_FONTE) || codigo.equals(Constantes.PR1_FONTE)){
 			return Constantes.R1;
 		}
-		if(codigo.equals(Constantes.R2_FONTE)){// || codigo.equals(Constantes.PR2_FONTE)){
+		if(codigo.equals(Constantes.R2_FONTE) || codigo.equals(Constantes.PR2_FONTE)){
 			return Constantes.R2;
 		}
-		if(codigo.equals(Constantes.R3_FONTE)){// || codigo.equals(Constantes.PR3_FONTE)){
+		if(codigo.equals(Constantes.R3_FONTE) || codigo.equals(Constantes.PR3_FONTE)){
 			return Constantes.R3;
 		}
-		if(codigo.equals(Constantes.R4_FONTE)){//) || codigo.equals(Constantes.PR4_FONTE)){
+		if(codigo.equals(Constantes.R4_FONTE) || codigo.equals(Constantes.PR4_FONTE)){
 			return Constantes.R4;
 		}
 		
@@ -465,19 +465,19 @@ public class GeradorEnderecos {
 	
 	public int identificaRegistradorDestino(String codigo){
 		System.out.println("CODIGO DESTINO :"+codigo);
-		if(codigo.equals(Constantes.R0_DESTINO)){// || codigo.equals(Constantes.PR0_DESTINO)){
+		if(codigo.equals(Constantes.R0_DESTINO) || codigo.equals(Constantes.PR0_DESTINO)){
 			return Constantes.R0;
 		}
-		if(codigo.equals(Constantes.R1_DESTINO)){// || codigo.equals(Constantes.PR1_DESTINO)){
+		if(codigo.equals(Constantes.R1_DESTINO) || codigo.equals(Constantes.PR1_DESTINO)){
 			return Constantes.R1;
 		}
-		if(codigo.equals(Constantes.R2_DESTINO)){// || codigo.equals(Constantes.PR2_DESTINO)){
+		if(codigo.equals(Constantes.R2_DESTINO) || codigo.equals(Constantes.PR2_DESTINO)){
 			return Constantes.R2;
 		}
-		if(codigo.equals(Constantes.R3_DESTINO)){// || codigo.equals(Constantes.PR3_DESTINO)){
+		if(codigo.equals(Constantes.R3_DESTINO) || codigo.equals(Constantes.PR3_DESTINO)){
 			return Constantes.R3;
 		}
-		if(codigo.equals(Constantes.R4_DESTINO)){// || codigo.equals(Constantes.PR4_DESTINO)){
+		if(codigo.equals(Constantes.R4_DESTINO) || codigo.equals(Constantes.PR4_DESTINO)){
 			return Constantes.R4;
 		}
 		

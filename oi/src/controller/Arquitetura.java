@@ -420,7 +420,8 @@ import model.ULA;
 		}
 		
 		if(!isHalt()){
-			System.out.println("E QUALQUER DESATENCAO");
+			System.out.println("ENDERECO UTILIZADO PELO GERADOR : " +gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()));
+			System.out.println("Index procurada na memoria de controle : "+conversor.binarioParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo())));
 			ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()))));
 		}
 	}
