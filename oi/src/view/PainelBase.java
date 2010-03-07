@@ -48,6 +48,9 @@ public class PainelBase extends JPanel {
 	public PainelBaixo getPainelBaixo() {
 		return painelBaixo;
 	}
+	public PainelULA getPainelULA() {
+		return painelULA;
+	}
 	
 
 

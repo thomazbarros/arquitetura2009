@@ -55,7 +55,7 @@ import model.ULA;
 		painelBaixo = null;
 		continuar = false;
 		rodaThread = false;
-		isHexa = false;
+		isHexa = true;
 		gerador = new GeradorEnderecos();
 		halt = false;
 	}
@@ -663,7 +663,7 @@ import model.ULA;
 	}
 	
 	public void atualizaRegistradores(){
-		if(isHexa){
+		if(!isHexa){
 			System.out.println("RDados :" + getRDado().getValor());
 			System.out.println("R0 :" + getR0().getValor());
 			System.out.println("R1 :" + getR1().getValor());
