@@ -95,7 +95,7 @@ public class Memoria{
 		if(pontoDeControle){
 			
 			if(ler){
-				this.valor = getDado((int) posicao);
+				valor = getDado((int) posicao);
 				posicaoAtual = (int) posicao;
 			}
 			else{
