@@ -193,8 +193,6 @@ public class GeradorEnderecos {
 		fonte = identificaRegistradorFonte(codigo.substring(8,12));
 		destino = identificaRegistradorDestino(codigo.substring(12,16));
 		
-		System.out.println("RJ RECEBE RI");
-		
 		switch(destino){
 			case Constantes.R0:
 				switch(fonte){
