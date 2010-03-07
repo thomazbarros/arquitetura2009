@@ -99,6 +99,8 @@ public class Memoria{
 				posicaoAtual = (int) posicao;
 			}
 			else{
+				System.out.println("GRAVANDO");
+				
 				dados[posicaoAtual] = conversor.inteiroParaBinario(posicao);
 				ler = true;
 			}
