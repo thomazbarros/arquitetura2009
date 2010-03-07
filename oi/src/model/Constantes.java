@@ -166,7 +166,7 @@ public class Constantes {
 	public static final String PC_RECEBE_DESVIO_SE_NAO_CARRY = "010100001";
 	public static final String PC_RECEBE_DESVIO_SE_OVERFLOW = "010100010";
 	public static final String PC_RECEBE_DESVIO_SE_NAO_OVERFLOW = "010100011";
-	public static final String PC_RECEBE_RDADO = "010100100";
+	public static final String PC_RECEBE_JUMP = "010100100";
 	public static final String R0_RECEBE_NEGACAO = "010100101";
 	public static final String R1_RECEBE_NEGACAO = "010100110";
 	public static final String R2_RECEBE_NEGACAO = "010100111";
@@ -319,6 +319,7 @@ public class Constantes {
 	public static final int NEGACAO_A = 61;
 	public static final int CLEAR_A = 62;
 	public static final int A_XOR_B = 63;
+	public static final int ULA_JUMP = 64;
 	public static final String BITS_CONSTANTE = "00";
 	public static final String BITS_LABEL = "01";
 	public static final String BITS_INSTRUCAO = "10";

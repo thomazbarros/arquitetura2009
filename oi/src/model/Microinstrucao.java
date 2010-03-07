@@ -697,6 +697,25 @@ public class Microinstrucao {
 				pontoDeControle.add('u');
 				pontoDeControle2[20] = '0';
 			}
+			if(pontosDeControle[i]== Constantes.ULA_JUMP){
+				pontoDeControle.add('p');
+				pontoDeControle2[15] = '0';
+				j++;
+				pontoDeControle.add('q');
+				pontoDeControle2[16] = '1';
+				j++;
+				pontoDeControle.add('r');
+				pontoDeControle2[17] = '1';
+				j++;
+				pontoDeControle.add('s');
+				pontoDeControle2[18] = '1';
+				j++;
+				pontoDeControle.add('t');
+				pontoDeControle2[19] = '1';
+				j++;
+				pontoDeControle.add('u');
+				pontoDeControle2[20] = '1';
+			}
 			if(pontosDeControle[i] == Constantes.MEMORIA_ATIVADO){
 				pontoDeControle.add('v');
 				pontoDeControle2[21] = '1';
