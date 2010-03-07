@@ -653,6 +653,9 @@ public class GeradorEnderecos {
 			case Constantes.REGISTRADOR_ENDERECO:
 				return rEndRecebeRj(codigo);
 			case Constantes.ENDERECO_REGISTRADOR:
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
+					return rjRecebeRi(codigo);
+				}
 				return rEndRecebeRi(codigo);
 			case Constantes.ENDERECO_ENDERECO:
 				return rEndRecebeRi(codigo);
