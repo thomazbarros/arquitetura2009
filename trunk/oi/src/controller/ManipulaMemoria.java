@@ -300,7 +300,7 @@ public class ManipulaMemoria {
 	
 	public void instrucaoGrupo3(String label, String instrucao) {
 		String codigoInstrucao = getConstanteInstrucao(instrucao); 
-		codigoInstrucao += Constantes.LABEL + Constantes.NENHUM_DESTINO;
+		codigoInstrucao += Constantes.LABEL_FONTE + Constantes.NENHUM_DESTINO;
 
 		codigoInstrucao += Constantes.ZEROS_FINAL_INSTRUCAO;
 		arquitetura.getMemoria().addDado(codigoInstrucao);

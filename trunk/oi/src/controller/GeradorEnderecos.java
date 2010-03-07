@@ -649,7 +649,6 @@ public class GeradorEnderecos {
 				return rEndRecebeRi(codigo);
 			case Constantes.REGISTRADOR_REGISTRADOR:
 				System.out.println("INSTRUCAO");
-				
 				return rxRecebeRi(codigo);
 			case Constantes.REGISTRADOR_ENDERECO:
 				return rEndRecebeRj(codigo);
@@ -662,7 +661,8 @@ public class GeradorEnderecos {
 				return rxRecebeRi2(codigo);
 			case Constantes.ENDERECO:
 				return rEndRecebeRj(codigo);
-			//case Constantes.LABEL:
+			case Constantes.LABEL:
+				return Constantes.ATUALIZA_PC;
 		}
 		return "";
 	}
@@ -929,7 +929,7 @@ public class GeradorEnderecos {
 		if(argumento.equals(Constantes.CONSTANTE_FONTE)){
 			return Constantes.TIPO_CONSTANTE;
 		}
-		if(argumento.equals(Constantes.LABEL)){
+		if(argumento.equals(Constantes.LABEL_FONTE)){
 			return Constantes.TIPO_LABEL;
 		}
 		if(argumento.equals(Constantes.R0_FONTE)||

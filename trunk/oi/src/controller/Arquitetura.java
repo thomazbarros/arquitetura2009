@@ -419,7 +419,13 @@ import model.ULA;
 			memoria.setLer(false);
 		}
 		
+		if(!isHalt()){
+			System.out.println("MEMORIA : ");
+			getMemoria().imprimeTestes();
+			//System.out.println("ENDERECO UTILIZADO PELO GERADOR : " +gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()));
+			//System.out.println("Index procurada na memoria de controle : "+conversor.binarioParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo())));
 			ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.enderecoParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()))));
+		}
 	}
 
 	
