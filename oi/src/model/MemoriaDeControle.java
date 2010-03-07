@@ -139,7 +139,7 @@ public class MemoriaDeControle {
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_DESATIVADO, Constantes.RDADO_ATIVADO}, Constantes.RY_RECEBE_RDADO));
 		
 		//rYRecebeRDado - 000101011
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RX_ATIVADO}, Constantes.CAMINHO));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.RY_ATIVADO}, Constantes.CAMINHO));
 		
 		//rEndRecebePCMais1 - 000101100
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_PC, Constantes.B_MAIS_1, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}, Constantes.RDADO_RECEBE_INFORMACAO_LIDA_3));
@@ -193,16 +193,16 @@ public class MemoriaDeControle {
 		memoriaDeControle.add(new Microinstrucao(new int[] {}, ""));
 		
 		//rYRecebeSoma - 000111101
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.MUX_B_RY, Constantes.A_MAIS_B, Constantes.RX_ATIVADO}, Constantes.REND_RECEBE_RJ_2));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.MUX_B_RY, Constantes.A_MAIS_B, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ_2));
 		
 		//rYRecebeDiferenca - 000111110
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.MUX_B_RY, Constantes.A_MENOS_B, Constantes.RX_ATIVADO}, Constantes.REND_RECEBE_RJ_2));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.MUX_B_RY, Constantes.A_MENOS_B, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ_2));
 		
 		//rYRecebeELogico - 000111111
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.MUX_B_RY, Constantes.A_AND_B, Constantes.RX_ATIVADO}, Constantes.REND_RECEBE_RJ_2));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.MUX_B_RY, Constantes.A_AND_B, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ_2));
 		
 		//rYRecebeOuLogico - 001000000
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.MUX_B_RY, Constantes.A_OR_B, Constantes.RX_ATIVADO}, Constantes.REND_RECEBE_RJ_2));
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.MUX_B_RY, Constantes.A_OR_B, Constantes.RY_ATIVADO}, Constantes.REND_RECEBE_RJ_2));
 		
 		//rEndRecebeRI - 001000001
 		memoriaDeControle.add(new Microinstrucao(new int[]{}, ""));
