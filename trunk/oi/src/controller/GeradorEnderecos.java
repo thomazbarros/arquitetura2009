@@ -714,9 +714,6 @@ public class GeradorEnderecos {
 				}
 				return Constantes.RX_RECEBE_RDADO;
 			case Constantes.LABEL:
-				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_JMP)){
-					return Constantes.PC_RECEBE_RDADO;
-				}
 				return pcRecebeOperacao(codigo);
 		}
 		return "";
@@ -824,6 +821,9 @@ public class GeradorEnderecos {
 		}
 		if(operacao.equals(Constantes.OPERACAO_BRNO)){
 			return Constantes.PC_RECEBE_DESVIO_SE_NAO_OVERFLOW;
+		}
+		if(operacao.equals(Constantes.OPERACAO_JMP)){
+			return Constantes.PC_RECEBE_JUMP;
 		}
 		
 		return "";

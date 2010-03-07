@@ -501,8 +501,8 @@ public class MemoriaDeControle {
 		//pCRecebeDesvioSeNaoOverflow - 010100011
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.MUX_B_PC, Constantes.ULA_BRZ, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
 		
-		//pCRecebeRDado - 010100100
-		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.A, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
+		//pCRecebeJump - 010100100
+		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RDADO, Constantes.MUX_B_PC, Constantes.ULA_JUMP, Constantes.PC_ATIVADO}, Constantes.REND_RECEBE_PC_2));
 		
 		//r0RecebeNegacao - 010100101
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_A_RX, Constantes.NEGACAO_A, Constantes.R0_ATIVADO}, Constantes.ATUALIZA_PC_2));
