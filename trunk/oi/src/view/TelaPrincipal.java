@@ -31,6 +31,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 	private JMenuItem carregarMicroprograma = null;
 	private JMenuItem criarMicroprograma = null;
 	private JMenuItem executar = null;
+	private JMenuItem hexa = null;
 	private JMenuItem sair = null;
 	private JMenuItem instrucoes = null;
 	private JMenuItem execMicroinst = null;
@@ -106,6 +107,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 			opcoes.add(getExecutar2());
 			opcoes.add(getExecMicroinst());
 			opcoes.add(getExecMicroprog());
+			opcoes.add(getHexa());
 			opcoes.add(getSair());
 		}
 		return opcoes;
@@ -119,6 +121,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 	private JMenu getAjuda() {
 		if (ajuda == null) {
 			ajuda = new JMenu();
+			//ajuda.setText("Ajuda");
 			ajuda.setText("Ajuda");
 			ajuda.add(getInstrucoes());
 		}
@@ -176,6 +179,29 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 		}
 		return executar;
 	}
+	
+	private JMenuItem getHexa() {
+		if (hexa == null) {
+			hexa = new JMenuItem();
+			//executar.setText("Executar");
+			hexa.setText("Mudar para Decimal");
+			hexa.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				manipulaMemoria.getArquitetura().setHexa(!manipulaMemoria.getArquitetura().isHexa());
+				manipulaMemoria.getArquitetura().atualizaRegistradores();
+				painelbase.getPainelBaixo().atualizarConteudo();
+				painelbase.getPainelULA().atualizarConteudo();
+				if(manipulaMemoria.getArquitetura().isHexa()){
+					hexa.setText("Mudar para Decimal");
+				}else{
+					hexa.setText("Mudar para Hexadecimal");
+				}
+			}
+			});
+		}
+		return hexa;
+	}
+	
 	/**
 	 * This method initializes sair	
 	 * 	
