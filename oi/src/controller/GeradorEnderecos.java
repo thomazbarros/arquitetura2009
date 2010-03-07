@@ -193,9 +193,11 @@ public class GeradorEnderecos {
 		fonte = identificaRegistradorFonte(codigo.substring(8,12));
 		destino = identificaRegistradorDestino(codigo.substring(12,16));
 		
-		switch(fonte){
+		System.out.println("RJ RECEBE RI");
+		
+		switch(destino){
 			case Constantes.R0:
-				switch(destino){
+				switch(fonte){
 					case Constantes.R1:
 						return Constantes.R0_RECEBE_R1;
 					case Constantes.R2:
@@ -208,7 +210,7 @@ public class GeradorEnderecos {
 						return "";
 				}
 			case Constantes.R1:
-				switch(destino){
+				switch(fonte){
 					case Constantes.R0:
 						return Constantes.R1_RECEBE_R0;
 					case Constantes.R2:
@@ -221,7 +223,7 @@ public class GeradorEnderecos {
 						return "";
 				}
 			case Constantes.R2:
-				switch(destino){
+				switch(fonte){	
 					case Constantes.R0:
 						return Constantes.R2_RECEBE_R0;
 					case Constantes.R1:
@@ -234,7 +236,7 @@ public class GeradorEnderecos {
 						return "";
 				}
 			case Constantes.R3:
-				switch(destino){
+				switch(fonte){
 					case Constantes.R0:
 						return Constantes.R3_RECEBE_R0;
 					case Constantes.R1:
@@ -247,7 +249,7 @@ public class GeradorEnderecos {
 						return "";
 				}
 			case Constantes.R4:
-				switch(destino){
+				switch(fonte){
 					case Constantes.R0:
 						return Constantes.R4_RECEBE_R0;
 					case Constantes.R1:
@@ -649,13 +651,15 @@ public class GeradorEnderecos {
 				return rEndRecebeRi(codigo);
 			case Constantes.REGISTRADOR_REGISTRADOR:
 				System.out.println("INSTRUCAO");
+				
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
+					return rjRecebeRi(codigo);
+				}
+				
 				return rxRecebeRi(codigo);
 			case Constantes.REGISTRADOR_ENDERECO:
 				return rEndRecebeRj(codigo);
 			case Constantes.ENDERECO_REGISTRADOR:
-				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
-					return rjRecebeRi(codigo);
-				}
 				return rEndRecebeRi(codigo);
 			case Constantes.ENDERECO_ENDERECO:
 				return rEndRecebeRi(codigo);
