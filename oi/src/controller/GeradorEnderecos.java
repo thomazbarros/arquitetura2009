@@ -533,6 +533,7 @@ public class GeradorEnderecos {
 	
 	public String realizaOperacao(String codigo){
 		String operacao = codigo.substring(0,Constantes.ADD.length());
+		
 		if(operacao.equals(Constantes.ADD)){
 			return Constantes.OPERACAO_ADD;
 		}
@@ -646,7 +647,12 @@ public class GeradorEnderecos {
 			case Constantes.CONSTANTE_REGISTRADOR:
 				return Constantes.ATUALIZA_PC;
 			case Constantes.CONSTANTE_ENDERECO:
-				return rEndRecebeRi(codigo);
+				
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
+					return Constantes.ATUALIZA_PC_3;
+				}
+				
+				return rEndRecebeRj(codigo);
 			case Constantes.REGISTRADOR_REGISTRADOR:
 				System.out.println("INSTRUCAO");
 				
@@ -656,16 +662,26 @@ public class GeradorEnderecos {
 				
 				return rxRecebeRi(codigo);
 			case Constantes.REGISTRADOR_ENDERECO:
+				
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
+					return ryRecebeRi(codigo);
+				}
+				
 				return rEndRecebeRj(codigo);
 			case Constantes.ENDERECO_REGISTRADOR:
 				return rEndRecebeRi(codigo);
 			case Constantes.ENDERECO_ENDERECO:
-				return rEndRecebeRi(codigo);
+				
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
+					return rEndRecebeRi2(codigo);
+				}
+				
+				return rEndRecebeRj(codigo);
 			case Constantes.REGISTRADOR:
 				System.out.println("TESTEI MICROINSTRUCAO");
 				return rxRecebeRi2(codigo);
 			case Constantes.ENDERECO:
-				return rEndRecebeRj(codigo);
+				return rEndRecebeRi2(codigo);
 			case Constantes.LABEL:
 				return Constantes.ATUALIZA_PC;
 		}
@@ -676,7 +692,7 @@ public class GeradorEnderecos {
 		int tipo = getTipo(codigo);
 		switch(tipo){
 			case Constantes.CONSTANTE_ENDERECO:
-				return Constantes.REND_RECEBE_PC_MAIS_1;
+				return Constantes.ATUALIZA_PC_3;
 			case Constantes.REGISTRADOR_ENDERECO:
 				return rxRecebeRi(codigo);
 			case Constantes.ENDERECO_ENDERECO:
@@ -690,6 +706,7 @@ public class GeradorEnderecos {
 		switch(tipo){
 			case Constantes.CONSTANTE_ENDERECO:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
+					
 					return Constantes.RY_RECEBE_RDADO_2;
 				}
 				return Constantes.RX_RECEBE_RDADO_2;
