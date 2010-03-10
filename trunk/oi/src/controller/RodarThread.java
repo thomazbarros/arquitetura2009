@@ -49,11 +49,14 @@ public class RodarThread extends Thread{
 		String binario = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());
 		int label = conversor.binarioParaInteiro(binario);
 		System.out.println(label);
+		System.out.println("RODAR TRHEAD BUGADA. TESTES : ");
 		arquitetura.getMemoria().imprimeTestes();
-		int temp = (int) arquitetura.getMemoria().getPosicaoLabel(label);
+		long temp = (int) arquitetura.getMemoria().getPosicaoLabel(label);
+		System.out.println("TEMP VALE "+temp);
 		if(temp != -1){
-			arquitetura.getMemoria().setPosicaoAtual(temp);
-			return temp;
+			arquitetura.getMemoria().setPosicaoAtual((int)temp);
+			arquitetura.getMemoria().setPosicao(temp-1);
+			return (int)temp;
 
 		}else{
 			return -1;

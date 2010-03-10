@@ -11,10 +11,11 @@ public class Memoria{
 	private String valor, codigo;
 	private Integer posicaoLivre, posicaoAtual;
 	private final int tamanho = 1024;
-	private TreeMap<String,Long> labels; 
-    private TreeMap<Long,Long> labelMemoria;
+	private TreeMap<String,Integer> labels; 
+    private TreeMap<Integer,Long> labelMemoria;
 	private MemoriaCache cache;
-	private long constanteLabel, posicao;
+	private long posicao;
+	private int constanteLabel;
 	
 	public Memoria(boolean pontoDeControle,MemoriaCache cache){
 		this.pontoDeControle = pontoDeControle;
@@ -23,8 +24,8 @@ public class Memoria{
 			dados[i] = "00000000000000000000000000000000";
 		}
 		posicaoLivre = 0;
-		labels = new TreeMap<String, Long>();
-		labelMemoria = new TreeMap<Long, Long>();
+		labels = new TreeMap<String, Integer>();
+		labelMemoria = new TreeMap<Integer, Long>();
 		conversor = new Conversor();
 		this.cache = cache;
 		constanteLabel = 1;
@@ -121,7 +122,7 @@ public class Memoria{
 		for(String chave : labels.keySet()){
 			labels.remove(chave);
 		}
-		for(Long chave : labelMemoria.keySet()){
+		for(Integer chave : labelMemoria.keySet()){
 			labelMemoria.remove(chave);
 		}
 	}
@@ -149,6 +150,7 @@ public class Memoria{
 			temp = labelMemoria.get(label);
 			return temp;
 		}catch(Exception e){
+			e.printStackTrace();
 			return -1;
 		}
 	}
