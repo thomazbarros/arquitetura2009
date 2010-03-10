@@ -535,6 +535,7 @@ public class GeradorEnderecos {
 		String operacao = codigo.substring(0,Constantes.ADD.length());
 		
 		if(operacao.equals(Constantes.ADD)){
+			System.out.println("EH UM ADD!!!!!");
 			return Constantes.OPERACAO_ADD;
 		}
 		if(operacao.equals(Constantes.SUB)){
