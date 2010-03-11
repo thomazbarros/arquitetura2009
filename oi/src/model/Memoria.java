@@ -61,11 +61,12 @@ public class Memoria{
 	
 	public void atualizaPosicao(){
 		while(!dados[(int) posicao + 1].substring(0,2).equals(Constantes.BITS_INSTRUCAO)){
+			System.out.println("DEBUGANDO POSICAO :"+posicao);
 			posicao++;
 		}
-		
+
 		posicao++;
-		
+		System.out.println("POSICAO FINAL:"+posicao);
 		codigo = dados[(int) posicao];
 		
 		System.out.println("codigo" + codigo);
