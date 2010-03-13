@@ -23,7 +23,7 @@ public class RodaPrograma extends Thread{
 
 		Conversor conversor = new Conversor();
 		if(arquitetura.getMemoria().obtemDadoBacking(0).substring(0,2).equals(Constantes.BITS_INSTRUCAO)){
-			arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(Constantes.REND_RECEBE_PC_2)));
+			arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.enderecoParaInteiro(Constantes.REND_RECEBE_PC_2)));
 		}
 		else{
 			//System.out.println("ESTOU FAZENDO MAIS UM");
