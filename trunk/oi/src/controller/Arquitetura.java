@@ -316,11 +316,13 @@ import model.ULA;
 
 					break;
 				case 'g':
-					memoria.atualizaPosicao();
+					System.out.println("VIM PRA MEMORIA E ATUALIZEI A POSICAO");
 
 					pontosDeControle[6] = pontoDeControle2[i];
 					ir.setPontoDeControle(pontoDeControle2[i]);
 					ir.ativaPontoDeControle(ula.getValor());					
+
+					memoria.atualizaPosicao();
 					
 					break;
 				case 'h':

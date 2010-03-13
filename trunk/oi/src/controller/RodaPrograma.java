@@ -26,7 +26,10 @@ public class RodaPrograma extends Thread{
 			arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(Constantes.REND_RECEBE_PC_2)));
 		}
 		else{
-			arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(Constantes.REND_RECEBE_PC_MAIS_1)));
+			//System.out.println("ESTOU FAZENDO MAIS UM");
+			//System.out.println("INDEX: " + memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(Constantes.REND_RECEBE_PC_MAIS_1)));
+			//arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(Constantes.REND_RECEBE_PC_MAIS_1)));
+			arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.enderecoParaInteiro(Constantes.REND_RECEBE_PC_MAIS_1)));
 		}
 		while(!arquitetura.isHalt()){
 			manipulaMemoria.ler((int) arquitetura.getPc().getValor());
