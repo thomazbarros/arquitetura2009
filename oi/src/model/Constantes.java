@@ -5,7 +5,7 @@ public class Constantes {
 	public static final String ATUALIZA_PC = "000000000";
 	public static final String REND_RECEBE_PC = "000000001";
 	public static final String RDADO_RECEBE_INFORMACAO_LIDA = "000000010";
-	public static final String RX_RECBE_RDADO = "000000011";
+	public static final String RX_RECEBE_RDADO = "000000011";
 	public static final String RY_RECEBE_RJ = "000000100";
 	public static final String RY_RECEBE_R0 = "000000101";
 	public static final String RY_RECEBE_R1 = "000000110";
@@ -48,7 +48,7 @@ public class Constantes {
 	public static final String RY_RECEBE_RDADO = "000101011";
 	public static final String ATUALIZA_PC_3 = "000101100";
 	public static final String RDADO_RECEBE_INFORMACAO_LIDA_3 = "000101101";
-	public static final String RX_RECEBE_RDADO = "000101110";
+	public static final String RX_RECEBE_RDADO_2 = "000101110";
 	public static final String REND_RECEBE_RJ_2 = "000101111";
 	public static final String REND_RECEBE_R0_2 = "000110000";
 	public static final String REND_RECEBE_R1_2 = "000110001";
@@ -147,7 +147,7 @@ public class Constantes {
 	public static final String R4_RECEBE_R1 = "010001110";
 	public static final String R4_RECEBE_R2 = "010001111";
 	public static final String R4_RECEBE_R3 = "010010000";
-	public static final String RX_RECEBE_RDADO_2 = "010010001";
+	public static final String REND_RECEBE_PC_MAIS_1 = "010010001";
 	public static final String RY_RECEBE_RDADO_2 = "010010010";
 	public static final String RY_RECEBE_RI = "010010011";
 	public static final String RY_RECEBE_R0_2 = "010010100";
@@ -198,8 +198,6 @@ public class Constantes {
 	public static final String RX_RECEBE_INCREMENTA = "011000001";
 	public static final String RX_RECEBE_DECREMENTA = "011000010";
 	public static final String REND_RECEBE_PC_3 = "011000011";
-	public static final String REND_RECEBE_PC_MAIS_1 = "011000100";
-	//public static final String REND_RECEBE_PC_MAIS_1 = "011000011";
 	public static final String REALIZA_OPERACAO = "OPERACAO";
 	public static final String OPERACAO_ADD = "ADD";
 	public static final String OPERACAO_SUB = "SUB";
