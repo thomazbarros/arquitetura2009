@@ -428,7 +428,10 @@ import model.ULA;
 			System.out.println("CODIGO UTILIZADO NO GERADOR"+memoria.getCodigo());
 			//System.out.println("ENDERECO UTILIZADO PELO GERADOR : " +gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()));
 			//System.out.println("Index procurada na memoria de controle : "+conversor.binarioParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo())));
-
+			
+			
+			System.out.println("PROXIMO:"+microinstrucao.getProximo());
+			
 			ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.enderecoParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()))));
 		}
 	}

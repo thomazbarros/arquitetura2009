@@ -26,6 +26,12 @@ public class Main {
 		arquitetura.setRodarThread(rodarThread);
 
 		new TelaPrincipal("",manipulaMemoria,rodaPrograma);
+		
+		/*Arquitetura arquitetura = new Arquitetura();
+		
+		for(int i = 0; i < arquitetura.getMemoriaDeControle().getMemoriaDeControle().size(); i++){
+			System.out.println(arquitetura.getMemoriaDeControle().getMemoriaDeControle().get(i).getProximo());
+		}*/
 
 	}
 	
