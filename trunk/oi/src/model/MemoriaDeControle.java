@@ -243,7 +243,7 @@ public class MemoriaDeControle {
 		//rEndRecebeR4 - 001001101
 		memoriaDeControle.add(new Microinstrucao(new int[]{Constantes.MUX_B_R4, Constantes.B, Constantes.REND_ATIVADO, Constantes.MEMORIA_ATIVADO}, Constantes.RDADO_RECEBE_INFORMACAO_LIDA));
 		
-		//rEndRecebeRI2 - 001001110
+		//rEndRecebeRI - 001001110
 		memoriaDeControle.add(new Microinstrucao(new int[]{}, ""));
 		
 		//rEndRecebeR0 - 001001111

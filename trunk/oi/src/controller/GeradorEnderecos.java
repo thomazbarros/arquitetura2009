@@ -345,15 +345,15 @@ public class GeradorEnderecos {
 		registrador = identificaRegistradorFonte(codigo.substring(8,12));
 		switch(registrador){
 			case Constantes.R0:
-				return Constantes.REND_RECEBE_R0;
+				return Constantes.REND_RECEBE_R0_3;
 			case Constantes.R1:
-				return Constantes.REND_RECEBE_R1;
+				return Constantes.REND_RECEBE_R1_3;
 			case Constantes.R2:
-				return Constantes.REND_RECEBE_R2;
+				return Constantes.REND_RECEBE_R2_3;
 			case Constantes.R3:
-				return Constantes.REND_RECEBE_R3;
+				return Constantes.REND_RECEBE_R3_3;
 			case Constantes.R4:
-				return Constantes.REND_RECEBE_R4;
+				return Constantes.REND_RECEBE_R4_3;
 		}
 		return "";
 	}
@@ -381,15 +381,15 @@ public class GeradorEnderecos {
 		registrador = identificaRegistradorFonte(codigo.substring(8,12));
 		switch(registrador){
 			case Constantes.R0:
-				return Constantes.REND_RECEBE_R0_2;
+				return Constantes.REND_RECEBE_R0_4;
 			case Constantes.R1:
-				return Constantes.REND_RECEBE_R1_2;
+				return Constantes.REND_RECEBE_R1_4;
 			case Constantes.R2:
-				return Constantes.REND_RECEBE_R2_2;
+				return Constantes.REND_RECEBE_R2_4;
 			case Constantes.R3:
-				return Constantes.REND_RECEBE_R3_2;
+				return Constantes.REND_RECEBE_R3_4;
 			case Constantes.R4:
-				return Constantes.REND_RECEBE_R4_2;
+				return Constantes.REND_RECEBE_R4_4;
 		}
 		return "";
 	}
@@ -804,10 +804,16 @@ public class GeradorEnderecos {
 				
 				return rjRecebeOperacao(codigo);
 			case Constantes.ENDERECO_REGISTRADOR:
+				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
+					
+					System.out.println("RXCOMPARARY");
+					
+					return Constantes.RX_COMPARA_RY;
+				}
 				
-				System.out.println("RXCOMPARARY");
+				System.out.println("RJRECEBEOPERACAO");
 				
-				return Constantes.RX_COMPARA_RY;
+				return rjRecebeOperacao(codigo);
 		}
 		
 		return "";
