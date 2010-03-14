@@ -431,7 +431,8 @@ import model.ULA;
 			
 			
 			System.out.println("PROXIMO:"+microinstrucao.getProximo());
-			
+			String temp = gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo());
+			System.out.println("MICRO ATUAL : "+temp);
 			ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.enderecoParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()))));
 		}
 	}
