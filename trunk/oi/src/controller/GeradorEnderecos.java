@@ -634,7 +634,7 @@ public class GeradorEnderecos {
 	public String primeiraMicro(String codigo){
 		
 		if(codigo.substring(0,2).equals(Constantes.BITS_LABEL)){
-			return Constantes.ATUALIZA_PC_2;
+			return Constantes.ATUALIZA_PC_4;
 		}
 		
 		System.out.println("PRIMEIRA MICRO");

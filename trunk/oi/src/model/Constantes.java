@@ -198,7 +198,8 @@ public class Constantes {
 	public static final String RX_RECEBE_INCREMENTA = "011000001";
 	public static final String RX_RECEBE_DECREMENTA = "011000010";
 	public static final String REND_RECEBE_PC_3 = "011000011";
-	//public static final String ATUALIZA_PC_4 = "011000100";
+	public static final String ATUALIZA_PC_4 = "011000100";
+	public static final String REND_RECEBE_PC_4 = "011000101";
 	public static final String REALIZA_OPERACAO = "OPERACAO";
 	public static final String OPERACAO_ADD = "ADD";
 	public static final String OPERACAO_SUB = "SUB";

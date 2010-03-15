@@ -417,6 +417,11 @@ import model.ULA;
 			halt = true;
 		}
 		
+		if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()).equals(Constantes.REND_RECEBE_PC_2)){
+			//halt = true;
+			rodarThread.travaThreadInstrucao();
+		}
+		
 		if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()).equals(Constantes.REND_RECEBE_RY)){
 			memoria.setLer(false);
 		}

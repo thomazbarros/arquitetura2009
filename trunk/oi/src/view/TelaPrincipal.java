@@ -170,7 +170,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 		if (executar == null) {
 			executar = new JMenuItem();
 			//executar.setText("Executar");
-			executar.setText("Executar Microinstruções Inteiro");
+			executar.setText("Executar Microprograma");
 			executar.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 				manipulaMemoria.getArquitetura().setModo(Constantes.RODAPROGRAMA);
@@ -248,7 +248,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 	private JMenuItem getExecMicroinst() {
 		if (execMicroinst == null) {
 			execMicroinst = new JMenuItem();
-			execMicroinst.setText("Executar Microinstruções passo a passo");
+			execMicroinst.setText("Executar microinstrução");
 			execMicroinst.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 					manipulaMemoria.getArquitetura().setModo(Constantes.RODAMICRO);
@@ -267,7 +267,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 	private JMenuItem getExecMicroprog() {
 		if (execMicroprog == null) {
 			execMicroprog = new JMenuItem();
-			execMicroprog.setText("Executar Microprograma passo a passo");
+			execMicroprog.setText("Executar instrução");
 			execMicroprog.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 					manipulaMemoria.getArquitetura().setModo(Constantes.RODAINSTRUCAO);
