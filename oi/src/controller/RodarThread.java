@@ -82,4 +82,23 @@ public class RodarThread extends Thread{
 		}
 	}
 	
+	public void travaThreadInstrucao(){
+		if(manipulaMemoria.getArquitetura().getModo() == Constantes.RODAINSTRUCAO){
+			try {				
+
+				while (!manipulaMemoria.getArquitetura().isContinuar() && !sair) {// interrompe a thread
+
+					sleep(1000 / 80);
+
+				}
+				manipulaMemoria.getArquitetura().setContinuar(false);
+				sair = false;
+
+				System.out.println("SAINDO DA INSTRUCAO");
+			} catch (Exception e) {
+				System.out.println("Erro na Thread Instrucoes");
+			}
+		}
+	}
+	
 }
