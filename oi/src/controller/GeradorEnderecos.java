@@ -632,6 +632,11 @@ public class GeradorEnderecos {
 	}
 	
 	public String primeiraMicro(String codigo){
+		
+		if(codigo.substring(0,2).equals(Constantes.BITS_LABEL)){
+			return Constantes.ATUALIZA_PC_2;
+		}
+		
 		System.out.println("PRIMEIRA MICRO");
 		int tipo = getTipo(codigo);
 		System.out.println("GETEI O TIPO");
@@ -647,6 +652,7 @@ public class GeradorEnderecos {
 		System.out.println("TESTEI O HALT");
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
+				System.out.println("ELE INTERPRETOU CERTO");
 				return Constantes.ATUALIZA_PC;
 			case Constantes.CONSTANTE_ENDERECO:
 				

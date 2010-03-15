@@ -60,26 +60,27 @@ public class Memoria{
 	}
 	
 	public void atualizaPosicao(){
-		while(!dados[(int) posicao + 1].substring(0,2).equals(Constantes.BITS_INSTRUCAO)){
-			System.out.println("DEBUGANDO POSICAO :"+posicao);
+		while(!(dados[(int) posicao + 1].substring(0,2).equals(Constantes.BITS_INSTRUCAO)) && 
+				!(dados[(int) posicao + 1].substring(0,2).equals(Constantes.BITS_LABEL))){
+			//System.out.println("DEBUGANDO POSICAO :"+posicao);
 			posicao++;
 		}
 
 		posicao++;
-		System.out.println("POSICAO FINAL:"+posicao);
+		//System.out.println("POSICAO FINAL:"+posicao);
 		codigo = dados[(int) posicao];
 		
-		System.out.println("codigo" + codigo);
+		//System.out.println("CODIGO ATUAL" + codigo);
 	}
 	
 	public String getDado(int posicao){
-		System.out.println("PEGANDO DADOS. POSICAO :"+posicao);
+		//System.out.println("PEGANDO DADOS. POSICAO :"+posicao);
 		if(cache.verificaElementoCache(posicao)){
-			System.out.println("Esta na cache");
+			//System.out.println("Esta na cache");
 			return cache.getElementoCache(posicao);
 		}
 		if(posicao < tamanho){
-				System.out.println("nao esta na cache");
+				//System.out.println("nao esta na cache");
 				cache.getDadosBacking(posicao, this);
 				return dados[posicao];
 		}
@@ -101,7 +102,7 @@ public class Memoria{
 				posicaoAtual = (int) posicao;
 			}
 			else{
-				System.out.println("GRAVANDO");
+				//System.out.println("GRAVANDO");
 				
 				dados[posicaoAtual] = conversor.inteiroParaBinario(posicao);
 				ler = true;

@@ -22,15 +22,15 @@ public class RodaPrograma extends Thread{
 	public void run(){
 
 		Conversor conversor = new Conversor();
-		if(arquitetura.getMemoria().obtemDadoBacking(0).substring(0,2).equals(Constantes.BITS_INSTRUCAO)){
-			arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.enderecoParaInteiro(Constantes.REND_RECEBE_PC_2)));
-		}
-		else{
+		//if(arquitetura.getMemoria().obtemDadoBacking(0).substring(0,2).equals(Constantes.BITS_INSTRUCAO)){
+		arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.enderecoParaInteiro(Constantes.REND_RECEBE_PC_2)));
+		//}
+		//else{
 			//System.out.println("ESTOU FAZENDO MAIS UM");
 			//System.out.println("INDEX: " + memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(Constantes.REND_RECEBE_PC_MAIS_1)));
 			//arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.binarioParaInteiro(Constantes.REND_RECEBE_PC_MAIS_1)));
-			arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.enderecoParaInteiro(Constantes.REND_RECEBE_PC_MAIS_1)));
-		}
+		//	arquitetura.ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.enderecoParaInteiro(Constantes.REND_RECEBE_PC_MAIS_1)));
+		//}
 		while(!arquitetura.isHalt()){
 			manipulaMemoria.ler((int) arquitetura.getPc().getValor());
 			
