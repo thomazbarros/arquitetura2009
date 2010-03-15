@@ -288,15 +288,15 @@ public class GeradorEnderecos {
 		registrador = identificaRegistradorFonte(codigo.substring(8,12));
 		switch(registrador){
 			case Constantes.R0:
-				return Constantes.RY_RECEBE_R0;
+				return Constantes.RY_RECEBE_R0_2;
 			case Constantes.R1:
-				return Constantes.RY_RECEBE_R1;
+				return Constantes.RY_RECEBE_R1_2;
 			case Constantes.R2:
-				return Constantes.RY_RECEBE_R2;
+				return Constantes.RY_RECEBE_R2_2;
 			case Constantes.R3:
-				return Constantes.RY_RECEBE_R3;
+				return Constantes.RY_RECEBE_R3_2;
 			case Constantes.R4:
-				return Constantes.RY_RECEBE_R4;
+				return Constantes.RY_RECEBE_R4_2;
 		}
 		return "";
 	}
@@ -417,15 +417,15 @@ public class GeradorEnderecos {
 		registrador = identificaRegistradorFonte(codigo.substring(8,12));
 		switch(registrador){
 			case Constantes.R0:
-				return Constantes.REND_RECEBE_R0_3;
+				return Constantes.REND_RECEBE_R0_5;
 			case Constantes.R1:
-				return Constantes.REND_RECEBE_R1_3;
+				return Constantes.REND_RECEBE_R1_5;
 			case Constantes.R2:
-				return Constantes.REND_RECEBE_R2_3;
+				return Constantes.REND_RECEBE_R2_5;
 			case Constantes.R3:
-				return Constantes.REND_RECEBE_R3_3;
+				return Constantes.REND_RECEBE_R3_5;
 			case Constantes.R4:
-				return Constantes.REND_RECEBE_R4_3;
+				return Constantes.REND_RECEBE_R4_5;
 		}
 		return "";
 	}
