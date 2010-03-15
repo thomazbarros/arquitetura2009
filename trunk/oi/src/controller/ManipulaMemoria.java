@@ -25,12 +25,13 @@ public class ManipulaMemoria {
 		ArrayList<String> linhas = manipulaArquivo
 		.ler(caminhoArquivo);
 		for (String linha : linhas) {
+			
 			instrucao = parser.decifraInstrucao(linha);
-
+			
 			if(parser.hasLabel(linha)){
 				label = parser.decifraLabel(linha);
-				arquitetura.getMemoria().relacionaLabelMemoria(label, posicao);
 				posicao++;
+				arquitetura.getMemoria().relacionaLabelMemoria(label, posicao);
 			}
 			
 			if (getTipo(instrucao) == 1) {
@@ -48,8 +49,9 @@ public class ManipulaMemoria {
 					posicao++;
 				}
 			}
-			
-			posicao++;
+			if(!linha.equals("\n") && !linha.equals("")){
+				posicao++;
+			}
 		}
 	}
 	
