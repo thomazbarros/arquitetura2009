@@ -298,7 +298,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 			File file = fileChooser.getSelectedFile();
 			try {
 
-				System.out.println("_________________________");
+				//System.out.println("_________________________");
 
 				manipulaMemoria.decifraInstrucao(file.getPath());
 				painelbase.getPainelBaixo().preencheMemoria();

@@ -76,7 +76,7 @@ public class GeradorEnderecos {
 	}
 	
 	public String proximoEndereco(String endereco,String codigo){
-		System.out.println("PROXIMO ENDERECO :" + endereco);
+		//System.out.println("PROXIMO ENDERECO :" + endereco);
 		if(endereco.equals(Constantes.RX_RECEBE_RI)){
 			return rxRecebeRi(codigo);
 		}
@@ -126,7 +126,7 @@ public class GeradorEnderecos {
 			return pcRecebeOperacao(codigo);
 		}
 		if(endereco.equals(Constantes.PRIMEIRA_MICRO_INSTRUCAO)){
-			System.out.println("ENTREI NA PRIMEIRA MICRO INSTRUCAO");
+			//System.out.println("ENTREI NA PRIMEIRA MICRO INSTRUCAO");
 			return primeiraMicro(codigo);
 		}
 		if(endereco.equals(Constantes.CAMINHO)){
@@ -155,32 +155,32 @@ public class GeradorEnderecos {
 		
 		registrador = identificaRegistradorFonte(codigo.substring(8,12));
 				
-		System.out.println("REGISTRADOR :" + registrador);
+		//System.out.println("REGISTRADOR :" + registrador);
 		
 		switch(registrador){
 			case Constantes.R0:
 				
-				System.out.println("R0");
+				//System.out.println("R0");
 				
 				return Constantes.RX_RECEBE_R0;
 			case Constantes.R1:
 				
-				System.out.println("R1");
+				//System.out.println("R1");
 				
 				return Constantes.RX_RECEBE_R1;
 			case Constantes.R2:
 				
-				System.out.println("R2");
+				//System.out.println("R2");
 				
 				return Constantes.RX_RECEBE_R2;
 			case Constantes.R3:
 				
-				System.out.println("R3");
+				//System.out.println("R3");
 				
 				return Constantes.RX_RECEBE_R3;
 			case Constantes.R4:
 				
-				System.out.println("R4");
+				//System.out.println("R4");
 				
 				return Constantes.RX_RECEBE_R4;
 		}
@@ -304,13 +304,13 @@ public class GeradorEnderecos {
 	public String ryRecebeRj(String codigo){
 		int registrador;
 		registrador = identificaRegistradorDestino(codigo.substring(12,16));
-		System.out.println("DESTINO :"+registrador);
+		//System.out.println("DESTINO :"+registrador);
 		switch(registrador){
 			case Constantes.R0:
-				System.out.println("A CONSTANTE ESTA ERRADA!!!!!");
+				//System.out.println("A CONSTANTE ESTA ERRADA!!!!!");
 				return Constantes.RY_RECEBE_R0;
 			case Constantes.R1:
-				System.out.println("A CONSTANTE ESTA CERTA!!!!!!!");
+				//System.out.println("A CONSTANTE ESTA CERTA!!!!!!!");
 				return Constantes.RY_RECEBE_R1;
 			case Constantes.R2:
 				return Constantes.RY_RECEBE_R2;
@@ -458,13 +458,13 @@ public class GeradorEnderecos {
 			return Constantes.R4;
 		}
 		
-		System.out.println("Erro");
+		//System.out.println("Erro");
 		
 		return Constantes.ERRO;
 	}
 	
 	public int identificaRegistradorDestino(String codigo){
-		System.out.println("CODIGO DESTINO :"+codigo);
+		//System.out.println("CODIGO DESTINO :"+codigo);
 		if(codigo.equals(Constantes.R0_DESTINO) || codigo.equals(Constantes.PR0_DESTINO)){
 			return Constantes.R0;
 		}
@@ -481,14 +481,14 @@ public class GeradorEnderecos {
 			return Constantes.R4;
 		}
 		
-		System.out.println("Erro1");
+		//System.out.println("Erro1");
 		
 		return Constantes.ERRO;
 	}
 	
 	public int indiceOperacao(String codigo){
 		String operacao = codigo.substring(0,Constantes.ADD.length());
-		System.out.println("OPERACAO :"+operacao);
+		//System.out.println("OPERACAO :"+operacao);
 		if(operacao.equals(Constantes.ADD)){
 			return Constantes.INDICE_ADD;
 		}
@@ -526,7 +526,7 @@ public class GeradorEnderecos {
 			return Constantes.INDICE_DEC;
 		}
 		
-		System.out.println("Erro2");
+		//System.out.println("Erro2");
 		
 		return Constantes.ERRO;
 	}
@@ -535,11 +535,11 @@ public class GeradorEnderecos {
 		String operacao = codigo.substring(0,Constantes.ADD.length());
 		
 		if(operacao.equals(Constantes.ADD)){
-			System.out.println("EH UM ADD!!!!!");
+			//System.out.println("EH UM ADD!!!!!");
 			return Constantes.OPERACAO_ADD;
 		}
 		if(operacao.equals(Constantes.SUB)){
-			System.out.println("SUB");
+			//System.out.println("SUB");
 			return Constantes.OPERACAO_SUB;	
 		}
 		if(operacao.equals(Constantes.MOV)){
@@ -637,22 +637,22 @@ public class GeradorEnderecos {
 			return Constantes.ATUALIZA_PC_4;
 		}
 		
-		System.out.println("PRIMEIRA MICRO");
+		//System.out.println("PRIMEIRA MICRO");
 		int tipo = getTipo(codigo);
-		System.out.println("GETEI O TIPO");
+		//System.out.println("GETEI O TIPO");
 		boolean testaHalt = isHalt(codigo);
-		System.out.println("CODIGO DA PRIMEIRA MICRO:"+codigo);
+		//System.out.println("CODIGO DA PRIMEIRA MICRO:"+codigo);
 		
 		if(testaHalt){
-			System.out.println("ENTREI NO HALT!!!!");
+			//System.out.println("ENTREI NO HALT!!!!");
 			//return Constantes.ENDERECO_HALT;
 			return Constantes.INSTRUCAO_HALT;
 		}
 		
-		System.out.println("TESTEI O HALT");
+		//System.out.println("TESTEI O HALT");
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
-				System.out.println("ELE INTERPRETOU CERTO");
+				//System.out.println("ELE INTERPRETOU CERTO");
 				return Constantes.ATUALIZA_PC;
 			case Constantes.CONSTANTE_ENDERECO:
 				
@@ -662,7 +662,7 @@ public class GeradorEnderecos {
 				
 				return rEndRecebeRj(codigo);
 			case Constantes.REGISTRADOR_REGISTRADOR:
-				System.out.println("INSTRUCAO");
+				//System.out.println("INSTRUCAO");
 				
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
 					return rjRecebeRi(codigo);
@@ -686,7 +686,7 @@ public class GeradorEnderecos {
 				
 				return rEndRecebeRj(codigo);
 			case Constantes.REGISTRADOR:
-				System.out.println("TESTEI MICROINSTRUCAO");
+				//System.out.println("TESTEI MICROINSTRUCAO");
 				return rxRecebeRi2(codigo);
 			case Constantes.ENDERECO:
 				return rEndRecebeRi2(codigo);
@@ -698,19 +698,19 @@ public class GeradorEnderecos {
 	
 	public String caminho(String codigo){
 		int tipo = getTipo(codigo);
-		System.out.println("CAMINHO:");
+		//System.out.println("CAMINHO:");
 		
 		switch(tipo){
 			case Constantes.CONSTANTE_ENDERECO:
-				System.out.println("ATUALIZAPC3");
+				//System.out.println("ATUALIZAPC3");
 				
 				return Constantes.ATUALIZA_PC_3;
 			case Constantes.REGISTRADOR_ENDERECO:
-				System.out.println("RXRECEBERI");
+				//System.out.println("RXRECEBERI");
 				
 				return rxRecebeRi(codigo);
 			case Constantes.ENDERECO_ENDERECO:
-				System.out.println("RENDRECEBERI2");
+				//System.out.println("RENDRECEBERI2");
 				
 				return rEndRecebeRi2(codigo);
 		}
@@ -719,26 +719,26 @@ public class GeradorEnderecos {
 	
 	public String caminho2(String codigo){
 		int tipo = getTipo(codigo);
-		System.out.println("CAMINHO2");
+		//System.out.println("CAMINHO2");
 		
 		switch(tipo){
 			case Constantes.CONSTANTE_ENDERECO:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
-					System.out.println("RYRECEBERDADO2");
+					//System.out.println("RYRECEBERDADO2");
 					
 					return Constantes.RY_RECEBE_RDADO_2;
 				}
 				
-				System.out.println("RXRECEBERDADO2");
+				//System.out.println("RXRECEBERDADO2");
 				
 				return Constantes.RX_RECEBE_RDADO_2;
 			case Constantes.ENDERECO_ENDERECO:
 				
-				System.out.println("RXRECEBERDADO2");
+				//System.out.println("RXRECEBERDADO2");
 				
 				return Constantes.RX_RECEBE_RDADO_2;
 			case Constantes.ENDERECO:
-				System.out.println("RXRECEBERDADO2");
+				//System.out.println("RXRECEBERDADO2");
 				
 				return Constantes.RX_RECEBE_RDADO_2;
 		}
@@ -748,34 +748,34 @@ public class GeradorEnderecos {
 	public String caminho3(String codigo){
 		int tipo = getTipo(codigo);
 		
-		System.out.println("CAMINHO3");
+		//System.out.println("CAMINHO3");
 		
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
 					
-					System.out.println("RJRECEBERDADO");
+					//System.out.println("RJRECEBERDADO");
 					
 					return rjRecebeRDado(codigo);
 				}
 				
-				System.out.println("RXRECEBERDADO");
+				//System.out.println("RXRECEBERDADO");
 				
 				return Constantes.RX_RECEBE_RDADO;
 			case Constantes.ENDERECO_REGISTRADOR:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_MOV)){
 					
-					System.out.println("RJRECEBERDADO");
+					//System.out.println("RJRECEBERDADO");
 					
 					return rjRecebeRDado(codigo);
 				}
 				
-				System.out.println("RXRECEBERDADO");
+				//System.out.println("RXRECEBERDADO");
 				
 				return Constantes.RX_RECEBE_RDADO;
 			case Constantes.LABEL:
 				
-				System.out.println("PCRECEBEOPERACAO");
+				//System.out.println("PCRECEBEOPERACAO");
 				
 				return pcRecebeOperacao(codigo);
 		}
@@ -784,40 +784,40 @@ public class GeradorEnderecos {
 	
 	public String caminho4(String codigo){
 		int tipo = getTipo(codigo);
-		System.out.println("CAMINHO4");
+		//System.out.println("CAMINHO4");
 		
 		switch(tipo){
 			case Constantes.CONSTANTE_REGISTRADOR:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
 					
-					System.out.println("RXCOMPARARY");
+					//System.out.println("RXCOMPARARY");
 					
 					return Constantes.RX_COMPARA_RY;
 				}
 				
-				System.out.println("RJRECEBEOPERACAO");
+				//System.out.println("RJRECEBEOPERACAO");
 				
 				return rjRecebeOperacao(codigo);
 			case Constantes.REGISTRADOR_REGISTRADOR:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
 					
-					System.out.println("RXCOMPARARY");
+					//System.out.println("RXCOMPARARY");
 					
 					return Constantes.RX_COMPARA_RY;
 				}
 				
-				System.out.println("RJRECEBEOPERACAO");
+				//System.out.println("RJRECEBEOPERACAO");
 				
 				return rjRecebeOperacao(codigo);
 			case Constantes.ENDERECO_REGISTRADOR:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
 					
-					System.out.println("RXCOMPARARY");
+					//System.out.println("RXCOMPARARY");
 					
 					return Constantes.RX_COMPARA_RY;
 				}
 				
-				System.out.println("RJRECEBEOPERACAO");
+				//System.out.println("RJRECEBEOPERACAO");
 				
 				return rjRecebeOperacao(codigo);
 		}
@@ -830,7 +830,7 @@ public class GeradorEnderecos {
 		
 		posicao += indiceOperacao(codigo) + identificaRegistradorDestino(codigo.substring(12,16));
 		
-		System.out.println(posicao);
+		//System.out.println(posicao);
 		
 		return registradorOperacao.get(posicao);
 	}
@@ -937,34 +937,34 @@ public class GeradorEnderecos {
 	public String caminho5(String codigo){
 		int tipo = getTipo(codigo);
 		
-		System.out.println("CAMINHO5");
+		//System.out.println("CAMINHO5");
 		
 		switch(tipo){
 			case Constantes.CONSTANTE_ENDERECO:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
 					
-					System.out.println("RXCOMPARARY");
+					//System.out.println("RXCOMPARARY");
 					
 					return Constantes.RX_COMPARA_RY;
 				}
 				
-				System.out.println("RYRECEBEOPERACAO");
+				//System.out.println("RYRECEBEOPERACAO");
 				
 				return ryRecebeOperacao(codigo);
 			case Constantes.ENDERECO_ENDERECO:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
 					
-					System.out.println("RXCOMPARARY");
+					//System.out.println("RXCOMPARARY");
 					
 					return Constantes.RX_COMPARA_RY;
 				}
 				
-				System.out.println("RYRECEBEOPERACAO");
+				//System.out.println("RYRECEBEOPERACAO");
 				
 				return ryRecebeOperacao(codigo);
 			case Constantes.ENDERECO:
 				
-				System.out.println("RXRECEBEOPERACAO");
+				//System.out.println("RXRECEBEOPERACAO");
 				
 				return rxRecebeOperacao(codigo);
 		}
@@ -974,23 +974,23 @@ public class GeradorEnderecos {
 	public String caminho6(String codigo){
 		int tipo = getTipo(codigo);
 		
-		System.out.println("CAMINHO6");
+		//System.out.println("CAMINHO6");
 		
 		switch(tipo){
 			case Constantes.REGISTRADOR_REGISTRADOR:
 				
-				System.out.println("RYRECEBERJ");
+				//System.out.println("RYRECEBERJ");
 				
 				return ryRecebeRj(codigo);
 			case Constantes.REGISTRADOR_ENDERECO:
 				if(realizaOperacao(codigo).equals(Constantes.OPERACAO_CMP)){
 					
-					System.out.println("RXCOMPARARY");
+					//System.out.println("RXCOMPARARY");
 					
 					return Constantes.RX_COMPARA_RY;
 				}
 				
-				System.out.println("RYRECEBEOPERACAO");
+				//System.out.println("RYRECEBEOPERACAO");
 				
 				return ryRecebeOperacao(codigo);
 		}

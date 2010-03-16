@@ -43,9 +43,9 @@ public class MemoriaCache {
 	}
 	
 	public void adicionaCache(int posicaoInicial,int numeroPalavras,Memoria backing){
-		System.out.println("POSICOES OCUPADAS :"+posicoesOcupadas);
-		System.out.println("NUMEROPALAVRAS :"+numeroPalavras);
-		System.out.println("TAMANHO :"+tamanho);
+		//System.out.println("POSICOES OCUPADAS :"+posicoesOcupadas);
+		//System.out.println("NUMEROPALAVRAS :"+numeroPalavras);
+		//System.out.println("TAMANHO :"+tamanho);
 		if(posicoesOcupadas+numeroPalavras <= tamanho){
 			posicoesOcupadas += numeroPalavras;
 		}else{

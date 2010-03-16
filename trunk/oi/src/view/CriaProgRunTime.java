@@ -161,7 +161,7 @@ public class CriaProgRunTime extends JFrame implements WindowListener, ActionLis
 		
 			} catch (Exception e2) {
 				e2.printStackTrace();
-				System.out.println(" ERRO ");
+				//System.out.println(" ERRO ");
 			}
 	    }
 

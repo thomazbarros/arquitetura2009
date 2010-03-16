@@ -316,7 +316,7 @@ import model.ULA;
 
 					break;
 				case 'g':
-					System.out.println("VIM PRA MEMORIA E ATUALIZEI A POSICAO");
+					//System.out.println("VIM PRA MEMORIA E ATUALIZEI A POSICAO");
 
 					pontosDeControle[6] = pontoDeControle2[i];
 					ir.setPontoDeControle(pontoDeControle2[i]);
@@ -411,7 +411,7 @@ import model.ULA;
 		}
 		atualizaPainel();	
 		
-		System.out.println(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()));
+		//System.out.println(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()));
 		
 		if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()).equals(Constantes.INSTRUCAO_HALT)){
 			halt = true;
@@ -428,14 +428,14 @@ import model.ULA;
 		
 
 		if(!isHalt()){
-			System.out.println("MEMORIA : ");
+			//System.out.println("MEMORIA : ");
 			getMemoria().imprimeTestes();
-			System.out.println("CODIGO UTILIZADO NO GERADOR"+memoria.getCodigo());
+			//System.out.println("CODIGO UTILIZADO NO GERADOR"+memoria.getCodigo());
 			//System.out.println("ENDERECO UTILIZADO PELO GERADOR : " +gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()));
 			//System.out.println("Index procurada na memoria de controle : "+conversor.binarioParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo())));	
-			System.out.println("PROXIMO:"+microinstrucao.getProximo());
-			String temp = gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo());
-			System.out.println("MICRO ATUAL : "+temp);
+			//System.out.println("PROXIMO:"+microinstrucao.getProximo());
+			//String temp = gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo());
+			//System.out.println("MICRO ATUAL : "+temp);
 			//if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()).equals(Constantes.ATUALIZA_PC_4)){
 			//	System.out.println("ATUALIZOU PC 4");
 			//	memoria.atualizaPosicao();
