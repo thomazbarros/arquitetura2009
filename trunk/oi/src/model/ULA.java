@@ -553,6 +553,7 @@ public class ULA{
 			}
 		}
 		else{
+			rodarThread.atualizaPosicao();
 			valor = b+1;
 		}
 	}
@@ -565,6 +566,7 @@ public class ULA{
 			}
 		}
 		else{
+			rodarThread.atualizaPosicao();
 			valor = b+1;
 		}
 	}
@@ -577,6 +579,7 @@ public class ULA{
 			}
 		}
 		else{
+			rodarThread.atualizaPosicao();
 			valor = b+1;
 		}
 	}
@@ -589,6 +592,7 @@ public class ULA{
 			}
 		}
 		else{
+			rodarThread.atualizaPosicao();
 			valor = b+1;
 		}
 	}
@@ -601,6 +605,7 @@ public class ULA{
 			}
 		}
 		else{
+			rodarThread.atualizaPosicao();
 			valor = b+1;
 		}
 	}
@@ -613,6 +618,7 @@ public class ULA{
 			}
 		}
 		else{
+			rodarThread.atualizaPosicao();
 			valor = b+1;
 		}
 	}
@@ -625,6 +631,7 @@ public class ULA{
 			}
 		}
 		else{
+			rodarThread.atualizaPosicao();
 			valor = b+1;
 		}
 	}
@@ -637,6 +644,7 @@ public class ULA{
 			}
 		}
 		else{
+			rodarThread.atualizaPosicao();
 			valor = b+1;
 		}
 	}
@@ -678,18 +686,26 @@ public class ULA{
 	
 	public void bro(){
 		if(o == 1){
-			valor = a;
+			valor = rodarThread.getValorDesvio();
+			if(valor == -1){
+				valor = b+1;
+			}
 		}
 		else{
-			 valor = b+1;
+			rodarThread.atualizaPosicao();
+			valor = b+1;
 		}
 	}
 	
 	public void brno(){
 		if(o == 0){
-			valor = a;
+			valor = rodarThread.getValorDesvio();
+			if(valor == -1){
+				valor = b+1;
+			}
 		}
 		else{
+			rodarThread.atualizaPosicao();
 			valor = b+1;
 		}
 	}

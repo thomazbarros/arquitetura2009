@@ -63,6 +63,11 @@ public class RodarThread extends Thread{
 		}
 	}
 	
+	public void atualizaPosicao(){
+		Arquitetura arquitetura = manipulaMemoria.getArquitetura();
+		arquitetura.getMemoria().atualizaPosicao();
+	}
+	
 	public void travaThread(){
 		if(manipulaMemoria.getArquitetura().getModo() == Constantes.RODAMICRO){
 			try {				
