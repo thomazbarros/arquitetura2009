@@ -50,7 +50,7 @@ public class RodarThread extends Thread{
 		int label = conversor.binarioParaInteiro(binario);
 		//System.out.println(label);
 		//System.out.println("RODAR TRHEAD BUGADA. TESTES : ");
-		arquitetura.getMemoria().imprimeTestes();
+		//arquitetura.getMemoria().imprimeTestes();
 		long temp = (int) arquitetura.getMemoria().getPosicaoLabel(label);
 		//System.out.println("TEMP VALE "+temp);
 		if(temp != -1){

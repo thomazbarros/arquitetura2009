@@ -429,7 +429,7 @@ import model.ULA;
 
 		if(!isHalt()){
 			//System.out.println("MEMORIA : ");
-			getMemoria().imprimeTestes();
+			//getMemoria().imprimeTestes();
 			//System.out.println("CODIGO UTILIZADO NO GERADOR"+memoria.getCodigo());
 			//System.out.println("ENDERECO UTILIZADO PELO GERADOR : " +gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()));
 			//System.out.println("Index procurada na memoria de controle : "+conversor.binarioParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo())));	

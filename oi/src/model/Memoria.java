@@ -206,10 +206,10 @@ public class Memoria{
 	}
 
 	
-	public void imprimeTestes(){
+	/*public void imprimeTestes(){
 		System.out.println(labels);
 		System.out.println(labelMemoria);
-	}
+	}*/
 
 	public long getPosicao() {
 		return posicao;
