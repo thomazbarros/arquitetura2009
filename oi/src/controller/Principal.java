@@ -14,11 +14,11 @@ public class Principal {
 		rodaPrograma.run(); 
 
 		
-		System.out.println(arquitetura.getR0().getValor());
-		System.out.println(arquitetura.getR1().getValor());
-		System.out.println(arquitetura.getR2().getValor());
-		System.out.println(arquitetura.getR3().getValor());
-		System.out.println(arquitetura.getR4().getValor());
+		//System.out.println(arquitetura.getR0().getValor());
+		//System.out.println(arquitetura.getR1().getValor());
+		//System.out.println(arquitetura.getR2().getValor());
+		//System.out.println(arquitetura.getR3().getValor());
+		//System.out.println(arquitetura.getR4().getValor());
 	}
 
 }

@@ -3,7 +3,6 @@ package controller;
 import java.util.ArrayList;
 
 import model.Constantes;
-import model.Registrador;
 
 public class ManipulaMemoria {
 	private Arquitetura arquitetura;

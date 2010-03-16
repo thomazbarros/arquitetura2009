@@ -48,11 +48,11 @@ public class RodarThread extends Thread{
 		
 		String binario = arquitetura.getMemoria().obtemDadoBacking((int) arquitetura.getPc().getValor());
 		int label = conversor.binarioParaInteiro(binario);
-		System.out.println(label);
-		System.out.println("RODAR TRHEAD BUGADA. TESTES : ");
+		//System.out.println(label);
+		//System.out.println("RODAR TRHEAD BUGADA. TESTES : ");
 		arquitetura.getMemoria().imprimeTestes();
 		long temp = (int) arquitetura.getMemoria().getPosicaoLabel(label);
-		System.out.println("TEMP VALE "+temp);
+		//System.out.println("TEMP VALE "+temp);
 		if(temp != -1){
 			arquitetura.getMemoria().setPosicaoAtual((int)temp);
 			arquitetura.getMemoria().setPosicao(temp-1);
@@ -80,7 +80,7 @@ public class RodarThread extends Thread{
 				manipulaMemoria.getArquitetura().setContinuar(false);
 				sair = false;
 
-				System.out.println("SAINDO DA INSTRUCAO");
+				//System.out.println("SAINDO DA INSTRUCAO");
 			} catch (Exception e) {
 				System.out.println("Erro na Thread Instrucoes");
 			}
@@ -99,7 +99,7 @@ public class RodarThread extends Thread{
 				manipulaMemoria.getArquitetura().setContinuar(false);
 				sair = false;
 
-				System.out.println("SAINDO DA INSTRUCAO");
+				//System.out.println("SAINDO DA INSTRUCAO");
 			} catch (Exception e) {
 				System.out.println("Erro na Thread Instrucoes");
 			}

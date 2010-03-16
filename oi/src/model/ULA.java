@@ -650,15 +650,15 @@ public class ULA{
 	}
 	
 	public void jmp(){
-		System.out.println("CHEGUEI A JUMPAR");
+		//System.out.println("CHEGUEI A JUMPAR");
 		valor = rodarThread.getValorDesvio();
 		if(valor == -1){
-			System.out.println("DEU ERRADO :/");
+			//System.out.println("DEU ERRADO :/");
 			valor = b+1;
-		}else{
-			System.out.println("PSEUDO DEU CERTO");
-		}
-		System.out.println("VALOR FINAL : "+valor);
+		}//else{
+		//	System.out.println("PSEUDO DEU CERTO");
+		//}
+		//System.out.println("VALOR FINAL : "+valor);
 	}
 	
 	public void zeraPSW(){

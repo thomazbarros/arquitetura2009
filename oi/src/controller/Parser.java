@@ -191,13 +191,12 @@ public class Parser {
 	}
 	
 	public int getFonte(String instrucao){
-		String fonte;
+		//String fonte;
 		return getTipo(instrucao);
 	}
 	
 	public int getDestino(String instrucao){
-		String destino;
-		
+		//String destino;
 		return getTipo(instrucao);
 	}
 	

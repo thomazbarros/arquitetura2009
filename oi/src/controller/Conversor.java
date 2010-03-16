@@ -15,7 +15,7 @@ public class Conversor {
 		}
 		numero = Math.abs(numero);
 
-		System.out.println("NUMERO :"+numero);
+		//System.out.println("NUMERO :"+numero);
 
 		while(numero != 0){
 			temp += String.valueOf(numero%2);
