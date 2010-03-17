@@ -21,7 +21,6 @@ BRG Label Desvia se no resultado da comparação o fonte era maior
 BRC Label Desvia se o resultado da instrução anterior teve carry
 JMP Label Desvia
 XOR Constante, Rj Constante, (Rj) Ri, Rj Ri, (Rj) (Ri), Rj (Ri), (Rj) Ou exclusivo lógico
-TEST Constante, Rj Constante, (Rj) Ri, Rj Ri, (Rj) (Ri), Rj (Ri), (Rj) E lógico, sem alterar registradores
 INC Ri (Ri) Incrementa registrador
 DEC Ri (Ri) Decrementa registrador
 BRNZ Label Desvia se o resultado da instrução anterior não é zero

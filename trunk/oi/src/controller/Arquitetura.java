@@ -414,6 +414,7 @@ import model.ULA;
 		//System.out.println(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()));
 		
 		if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()).equals(Constantes.INSTRUCAO_HALT)){
+			painelBaixo.setTextoEnderecoMicro("");
 			halt = true;
 		}
 		
@@ -440,6 +441,16 @@ import model.ULA;
 			//	System.out.println("ATUALIZOU PC 4");
 			//	memoria.atualizaPosicao();
 			//}
+			memoria.setCodigoTemp(memoria.getCodigo());
+			if(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()).equals(Constantes.IR_RECEBE_RDADO)){
+				memoria.proximaPosicao();
+			}
+			
+			String atual = gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo());
+			Microinstrucao microTemp = memoriaDeControle.getMemoriaDeControle().get(conversor.enderecoParaInteiro(atual));
+			System.out.println("CODIGO :"+memoria.getCodigo());
+			System.out.println("CODIGO TEMP :"+memoria.getCodigoTemp());
+			painelBaixo.setTextoEnderecoMicro(gerador.proximoEndereco(microTemp.getProximo(), memoria.getCodigoTemp()));
 			ativaPontoDeControle(memoriaDeControle.getMemoriaDeControle().get(conversor.enderecoParaInteiro(gerador.proximoEndereco(microinstrucao.getProximo(), memoria.getCodigo()))));
 			
 		}

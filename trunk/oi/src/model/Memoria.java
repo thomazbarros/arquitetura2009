@@ -15,6 +15,7 @@ public class Memoria{
     private TreeMap<Integer,Long> labelMemoria;
 	private MemoriaCache cache;
 	private long posicao;
+	private String codigoTemp;
 	private int constanteLabel;
 	
 	public Memoria(boolean pontoDeControle,MemoriaCache cache){
@@ -69,6 +70,21 @@ public class Memoria{
 		posicao++;
 		//System.out.println("POSICAO FINAL:"+posicao);
 		codigo = dados[(int) posicao];
+		
+		//System.out.println("CODIGO ATUAL" + codigo);
+	}
+	
+	public void proximaPosicao(){
+		long temp = posicao;
+		while(!(dados[(int) temp + 1].substring(0,2).equals(Constantes.BITS_INSTRUCAO)) && 
+				!(dados[(int) temp + 1].substring(0,2).equals(Constantes.BITS_LABEL))){
+			//System.out.println("DEBUGANDO POSICAO :"+posicao);
+			temp++;
+		}
+
+		temp++;
+		//System.out.println("POSICAO FINAL:"+posicao);
+		codigoTemp = dados[(int) temp];
 		
 		//System.out.println("CODIGO ATUAL" + codigo);
 	}
@@ -221,6 +237,18 @@ public class Memoria{
 
 	public String getCodigo() {
 		return codigo;
+	}
+
+	//public long getTemp() {
+	//	return temp;
+	//}
+
+	public String getCodigoTemp() {
+		return codigoTemp;
+	}
+
+	public void setCodigoTemp(String codigoTemp) {
+		this.codigoTemp = codigoTemp;
 	}
 
 }
