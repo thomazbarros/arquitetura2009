@@ -10,7 +10,15 @@ public class Microinstrucao {
 	public String getProximo() {
 		return proximo;
 	}
-
+	
+	public void microinstrucao(){
+	  for(int i = 0; i < 33; i++){
+	    System.out.print(pontoDeControle2[i]);
+	  }
+	  
+	  System.out.println(proximo);
+	}
+	
 	public Microinstrucao(int[] pontosDeControle, String proximo){
 		int j = 0;
 		this.proximo = proximo;
