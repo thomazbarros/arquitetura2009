@@ -17,22 +17,31 @@ public class Main {
 	private static ManipulaMemoria manipulaMemoria;
 	
 	public static void main(String[] args) {
+	  
+	  String j = new String(); 
+	    j = "3bbb";
+	    int b = Integer.parseInt(j, 16);
+	    System.out.println(Integer.toHexString(~b));
+	  
 		Arquitetura arquitetura = new Arquitetura();
-		ManipulaMemoria manipulaMemoria = new ManipulaMemoria(arquitetura);
+		
+		System.out.println("Memória de controle");
+		
+		for(int i = 0; i < arquitetura.getMemoriaDeControle().getMemoriaDeControle().size(); i++){
+		  System.out.print(i+1 + "-");
+          arquitetura.getMemoriaDeControle().getMemoriaDeControle().get(i).microinstrucao();
+		}
+		
+		System.out.println("");
+		
+		manipulaMemoria = new ManipulaMemoria(arquitetura);
 		RodaPrograma rodaPrograma = new RodaPrograma(arquitetura,manipulaMemoria);
 		rodaPrograma.start();
 		RodarThread rodarThread = new RodarThread(manipulaMemoria,rodaPrograma);
 		rodarThread.start();
 		arquitetura.setRodarThread(rodarThread);
 
-		new TelaPrincipal("",manipulaMemoria,rodaPrograma);
-		
-		/*Arquitetura arquitetura = new Arquitetura();
-		
-		for(int i = 0; i < arquitetura.getMemoriaDeControle().getMemoriaDeControle().size(); i++){
-			System.out.println(arquitetura.getMemoriaDeControle().getMemoriaDeControle().get(i).getProximo());
-		}*/
-
+		new TelaPrincipal("",manipulaMemoria,rodaPrograma);	
 	}
 	
 }
