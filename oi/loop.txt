@@ -1,4 +1,4 @@
-MOV <10, R0>
+MOV <3, R0>
 LABEL : INC <R4>
 CMP <R0, R4>
 BRNN LABEL

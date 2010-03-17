@@ -47,6 +47,8 @@ public class PainelBaixo extends JPanel {
 	private JLabel labelProxPasso = null;
 	private JLabel labelPercentagemCache = null;
 	private JLabel labelLocalBusca = null;
+	private JLabel labelMicro = null;
+	private JLabel enderecoMicro = null;
 	
 	private JTextField campoOverflow = null;
 	private JTextField campoZero = null;  //  @jve:decl-index=0:visual-constraint="537,10"
@@ -100,8 +102,13 @@ public class PainelBaixo extends JPanel {
 			labelPercentagemCache.setBounds(new Rectangle(610, 150, 362, 23));
 			labelPercentagemCache.setText("Percentagem do Cache:");
 			labelLocalBusca = new JLabel();
-			labelLocalBusca.setBounds(new Rectangle(610, 200, 362, 23));
-			//labelLocalBusca.setText("Local da busca");
+			labelLocalBusca.setBounds(new Rectangle(610, 180, 362, 23));
+			labelMicro = new JLabel();
+			labelMicro.setBounds(new Rectangle(610, 240, 362, 23));
+			labelMicro.setText("Próxima microinstrução:");
+			enderecoMicro = new JLabel();
+			enderecoMicro.setBounds(new Rectangle(610, 270, 362, 23));
+			//enderecoMicro.setText("Local da busca");
 			cache = new JLabel();
 			cache.setBounds(new Rectangle(405+20, 40, 153, 18));
 			cache.setText("Cache");
@@ -134,6 +141,8 @@ public class PainelBaixo extends JPanel {
 			this.add(labelProxPasso, null);
 			this.add(labelPercentagemCache,null);
 			this.add(labelLocalBusca,null);
+			this.add(labelMicro,null);
+			this.add(enderecoMicro,null);
 	}
 	
 
@@ -328,6 +337,7 @@ public class PainelBaixo extends JPanel {
 			setDisponibilidadeComecar(false);
 			comecar.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
+					setTextoEnderecoMicro(Constantes.RDADO_RECEBE_INFORMACAO_LIDA_BUSCA);
 					setTextoLabelLocalBusca("");
 					manipulaMemoria.getArquitetura().setRodaThread(true);
 					setDisponibilidadeComecar(false);
@@ -390,6 +400,10 @@ public class PainelBaixo extends JPanel {
 		if(manipulaMemoria.getArquitetura().getModo() == Constantes.RODAMICRO){
 			labelLocalBusca.setText(texto);
 		}
+	}
+	
+	public void setTextoEnderecoMicro(String endereco){
+		enderecoMicro.setText(endereco);
 	}
 
 }  //  @jve:decl-index=0:visual-constraint="10,10"

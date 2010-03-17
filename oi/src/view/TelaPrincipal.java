@@ -309,7 +309,7 @@ public class TelaPrincipal extends JFrame implements ActionListener{
 				painelbase.getPainelBaixo().preencheMicroprograma(file.getPath());
 				painelbase.getPainelBaixo().preenchePSW();
 				painelbase.getPainelBaixo().setDisponibilidadeComecar(true);
-
+				painelbase.getPainelBaixo().setTextoEnderecoMicro(Constantes.REND_RECEBE_PC_2);
 				fileChooser.setSelectedFile(null);
 
 			} catch (Exception e2) {
