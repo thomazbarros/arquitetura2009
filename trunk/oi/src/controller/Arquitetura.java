@@ -714,29 +714,29 @@ import model.ULA;
 			ulaGrafica.setPc(String.valueOf(getPc().getValor()));
 			ulaGrafica.setIr(String.valueOf(getIr().getValor()));
 		}else{
-			System.out.println("RDados :" + Long.toHexString(getRDado().getValor()));
-			System.out.println("R0 :" + Long.toHexString(getR0().getValor()));
-			System.out.println("R1 :" + Long.toHexString(getR1().getValor()));
-			System.out.println("R2 :" + Long.toHexString(getR2().getValor()));
-			System.out.println("R3 :" + Long.toHexString(getR3().getValor()));
-			System.out.println("R4 :" + Long.toHexString(getR4().getValor()));
-			System.out.println("RX :" + Long.toHexString(getRx().getValor()));
-			System.out.println("RY :" + Long.toHexString(getRy().getValor()));
-			System.out.println("REnd :" + Long.toHexString(getREnd().getValor()));
-			System.out.println("PC :" + Long.toHexString(getPc().getValor()));
-			System.out.println("IR :" + Long.toHexString(getIr().getValor()));
+			System.out.println("RDados :" + Integer.toHexString((int)getRDado().getValor()));
+			System.out.println("R0 :" + Integer.toHexString((int)getR0().getValor()));
+			System.out.println("R1 :" + Integer.toHexString((int)getR1().getValor()));
+			System.out.println("R2 :" + Integer.toHexString((int)getR2().getValor()));
+			System.out.println("R3 :" + Integer.toHexString((int)getR3().getValor()));
+			System.out.println("R4 :" + Integer.toHexString((int)getR4().getValor()));
+			System.out.println("RX :" + Integer.toHexString((int)getRx().getValor()));
+			System.out.println("RY :" + Integer.toHexString((int)getRy().getValor()));
+			System.out.println("REnd :" + Integer.toHexString((int)getREnd().getValor()));
+			System.out.println("PC :" + Integer.toHexString((int)getPc().getValor()));
+			System.out.println("IR :" + Integer.toHexString((int)getIr().getValor()));
 			
-			ulaGrafica.setRdados(Long.toHexString(getRDado().getValor()));
-			ulaGrafica.setReg0(Long.toHexString(getR0().getValor()));
-			ulaGrafica.setReg1(Long.toHexString(getR1().getValor()));
-			ulaGrafica.setReg2(Long.toHexString(getR2().getValor()));
-			ulaGrafica.setReg3(Long.toHexString(getR3().getValor()));
-			ulaGrafica.setReg4(Long.toHexString(getR4().getValor()));
-			ulaGrafica.setRegX(Long.toHexString(getRx().getValor()));
-			ulaGrafica.setRegY(Long.toHexString(getRy().getValor()));
-			ulaGrafica.setRend(Long.toHexString(getREnd().getValor()));
-			ulaGrafica.setPc(Long.toHexString(getPc().getValor()));
-			ulaGrafica.setIr(Long.toHexString(getIr().getValor()));
+			ulaGrafica.setRdados(Integer.toHexString((int)getRDado().getValor()));
+			ulaGrafica.setReg0(Integer.toHexString((int)getR0().getValor()));
+			ulaGrafica.setReg1(Integer.toHexString((int)getR1().getValor()));
+			ulaGrafica.setReg2(Integer.toHexString((int)getR2().getValor()));
+			ulaGrafica.setReg3(Integer.toHexString((int)getR3().getValor()));
+			ulaGrafica.setReg4(Integer.toHexString((int)getR4().getValor()));
+			ulaGrafica.setRegX(Integer.toHexString((int)getRx().getValor()));
+			ulaGrafica.setRegY(Integer.toHexString((int)getRy().getValor()));
+			ulaGrafica.setRend(Integer.toHexString((int)getREnd().getValor()));
+			ulaGrafica.setPc(Integer.toHexString((int)getPc().getValor()));
+			ulaGrafica.setIr(Integer.toHexString((int)getIr().getValor()));
 		}
 
 	}

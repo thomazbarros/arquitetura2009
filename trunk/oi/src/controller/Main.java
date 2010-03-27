@@ -17,15 +17,9 @@ public class Main {
 	private static ManipulaMemoria manipulaMemoria;
 	
 	public static void main(String[] args) {
-	  
-	  String j = new String(); 
-	    j = "3bbb";
-	    int b = Integer.parseInt(j, 16);
-	    System.out.println(Integer.toHexString(~b));
-	  
-		Arquitetura arquitetura = new Arquitetura();
+	  Arquitetura arquitetura = new Arquitetura();
 		
-		System.out.println("MemÃ³ria de controle");
+		System.out.println("Memória de controle");
 		
 		for(int i = 0; i < arquitetura.getMemoriaDeControle().getMemoriaDeControle().size(); i++){
 		  System.out.print(i+1 + "-");

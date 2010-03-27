@@ -73,7 +73,9 @@ public class PainelULA extends JPanel {
 
 		//Pontos de Controle
 		for (int i = 0; i < pontosDeControle.length; i++) {
-			circulo(g2d, pontosDeControle[i].getStr(), pontosDeControle[i].getX(), pontosDeControle[i].getY(), pontosDeControle[i].getCor());
+			if(i!=18){
+				circulo(g2d, pontosDeControle[i].getStr(), pontosDeControle[i].getX(), pontosDeControle[i].getY(), pontosDeControle[i].getCor());
+			}
 		}
 			
 	
@@ -312,7 +314,7 @@ public class PainelULA extends JPanel {
 		g2d.drawLine(384, 434, 400, 434);
 		g2d.drawLine(392, 460, 406, 460);
 		g2d.drawLine(398, 480, 410, 468);
-		g2d.drawLine(362, 364, 380, 370);
+		//g2d.drawLine(362, 364, 380, 370);
 		
 //Fim de linhas finas ----------------------------------------------------------------------------------
 		
